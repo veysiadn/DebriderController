@@ -22,24 +22,23 @@ public:
         m_CloseBlade=0;
         m_emergency=0;
         m_NewTargetVel=0;
-        m_Osc_State=false;
         btn_MAXRPM_LastState=0;
         btn_ChangeDirLastState=0;
         m_closeBladeWindow=0;
+        btn_MAXRPM_GUI=0;
+        btn_ChangeDir_GUI=0;
     }
     virtual void run();
     long m_NewTargetVel;
     int m_TargetVel;
     int m_Oscillate;
-    bool m_Osc_State;
     bool m_running;
     int m_CloseBlade;            // VysADN CloseBlade function parameters
     int m_TargetPos;            
     int m_emergency;
     int m_closeBladeWindow;
-    QElapsedTimer timer;
-    bool WD_State=true;
-    serial_com arduino;
+    int btn_MAXRPM_GUI;
+    int btn_ChangeDir_GUI;
 private:
     // CKim - Motor class
     int m_currState, m_prevState;
@@ -48,6 +47,9 @@ private:
     int m_LeftPedalDown;
     int btn_ChangeDirLastState;
     int btn_MAXRPM_LastState;
+    serial_com arduino;
+    QElapsedTimer timer;
+    bool WD_State=true;
 signals:
     void UpdateGUI(int state);
 };

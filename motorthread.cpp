@@ -79,14 +79,29 @@ while(true){
         {
            // std::cout << "last state : "<< btn_MAXRPM_LastState <<
              //            " frst state : " << arduino.btn_MAXRPM << std::endl;
-
-            btn_MAXRPM_LastState=arduino.btn_MAXRPM;
-            emit UpdateGUI(m_currState);
+            if(m_currState!=DEBRIDER_STATE_ENABLED)
+            {
+                btn_MAXRPM_GUI=0;
+            }
+            else
+            {
+                btn_MAXRPM_GUI=1;
+                emit UpdateGUI(m_currState);
+                btn_MAXRPM_LastState = arduino.btn_MAXRPM;
+            }
         }
         if(arduino.btn_ChangeDirection!=btn_ChangeDirLastState)
         {
-            emit UpdateGUI(m_currState);
-            btn_ChangeDirLastState=arduino.btn_ChangeDirection;
+            if(m_currState!=DEBRIDER_STATE_ENABLED)
+            {
+                btn_ChangeDir_GUI=0;
+            }
+            else
+            {
+                btn_ChangeDir_GUI=1;
+                emit UpdateGUI(m_currState);
+                btn_ChangeDirLastState=arduino.btn_ChangeDirection;
+            }
         }
 
 

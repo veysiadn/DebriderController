@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
    // CKim - Initialize variables
     target_vel = 0;
-    btn_ChangdirLastState=0;
     // CKim - wiringPi Set
     if(wiringPiSetup() == -1)
     {
@@ -53,13 +52,20 @@ void MainWindow::StateChanged(int state)
     }
     if(state==DEBRIDER_STATE_ENABLED)
     {
-        if (m_Thread.arduino.btn_MAXRPM && !(ui->radioMAXRPM->isChecked()))
+        // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
+        if (m_Thread.btn_MAXRPM_GUI && !(ui->radioMAXRPM->isChecked()))
         {
             ui->radioMAXRPM->setChecked(true);
             on_radioMAXRPM_clicked();
         }
+        else if (m_Thread.btn_MAXRPM_GUI && (ui->radioMAXRPM->isChecked()))
+        {
+            ui->radioMAXRPM->setChecked(false);
+        }
+       // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
 
-        if(m_Thread.arduino.btn_ChangeDirection != btn_ChangdirLastState)
+        // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS START   #########
+        if(m_Thread.btn_ChangeDir_GUI)
         {
             if(ui->radioCW->isChecked())
             {
@@ -76,9 +82,10 @@ void MainWindow::StateChanged(int state)
                 ui->radioCW->setChecked(true);
                 on_radioCW_toggled(true);
             }
-            btn_ChangdirLastState = m_Thread.arduino.btn_ChangeDirection;
         }
     }
+    // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH   #########
+
     if(state > DEBRIDER_STATE_ENABLED && state!=DEBRIDER_STATE_EMERGENCY)
     {
         ui->btnDecreaseRPM->setEnabled(false);

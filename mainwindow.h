@@ -57,7 +57,6 @@ private:
     // CKim - Variables
     long target_vel;    // Target rpm of the debrider
     int current_pos;
-    int btn_ChangdirLastState;
     Emergency_Window emergencyWindow;
     motorThread m_Thread;
 };
