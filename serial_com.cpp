@@ -11,7 +11,7 @@ void serial_com::run()
         } 
         else 
         {
-            if(serial.isOpen())closeSerialPort();
+            closeSerialPort();
             if(serial.isOpen()) ClearPort();
             if(!serial.isOpen()) openSerialPort();
         }
@@ -134,10 +134,10 @@ void serial_com::readData()
             if(Get_Analog_Pedal_Val < 20) Get_Analog_Pedal_Val=0;
                 //           std::cout<< "Number of Read bytes =  " << NumRead << std::endl;
                 //           std::cout<< "bytes available = " << bytes_Avail << std::endl;
-                //          std::cout<< "Analog Pedal Val  = " << Get_Analog_Pedal_Val << std::endl;
-                //          std::cout<< "Button state max = " << btn_MAXRPM << std::endl;
-                //          std::cout<< "Button state close = " << btn_CloseBlade << std::endl;
-                //          std::cout<< "Button Change Direction = " << btn_ChangeDirection << std::endl;
+                          std::cout<< "Analog Pedal Val  = " << Get_Analog_Pedal_Val << std::endl;
+                          std::cout<< "Button state max = " << btn_MAXRPM << std::endl;
+                          std::cout<< "Button state close = " << btn_CloseBlade << std::endl;
+                          std::cout<< "Button Change Direction = " << btn_ChangeDirection << std::endl;
                //           std::cout<< "------------------------------------------------------------" << std::endl;
     }
     if (!NumRead && !serial.waitForReadyRead())

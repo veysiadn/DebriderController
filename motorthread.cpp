@@ -75,6 +75,7 @@ while(true){
                                                {   m_LeftPedalDown = 1; }
         else                                   {   m_LeftPedalDown = 0; }
 
+        // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
         if(arduino.btn_MAXRPM != btn_MAXRPM_LastState)
         {
            // std::cout << "last state : "<< btn_MAXRPM_LastState <<
@@ -86,10 +87,14 @@ while(true){
             else
             {
                 btn_MAXRPM_GUI=1;
-                emit UpdateGUI(m_currState);
-                btn_MAXRPM_LastState = arduino.btn_MAXRPM;
             }
+            btn_MAXRPM_LastState = arduino.btn_MAXRPM;
+            emit UpdateGUI(m_currState);
         }
+        // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISHED  ###########
+
+        // ######### HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS START  ###########
+
         if(arduino.btn_ChangeDirection!=btn_ChangeDirLastState)
         {
             if(m_currState!=DEBRIDER_STATE_ENABLED)
@@ -99,10 +104,11 @@ while(true){
             else
             {
                 btn_ChangeDir_GUI=1;
-                emit UpdateGUI(m_currState);
-                btn_ChangeDirLastState=arduino.btn_ChangeDirection;
             }
+            btn_ChangeDirLastState=arduino.btn_ChangeDirection;
+            emit UpdateGUI(m_currState);
         }
+        // ######### HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH  ###########
 
 
         if((m_currState==DEBRIDER_STATE_RUNNING || m_currState==DEBRIDER_STATE_OSC ||

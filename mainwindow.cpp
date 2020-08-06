@@ -57,10 +57,13 @@ void MainWindow::StateChanged(int state)
         {
             ui->radioMAXRPM->setChecked(true);
             on_radioMAXRPM_clicked();
+            m_Thread.btn_MAXRPM_GUI=0;
         }
         else if (m_Thread.btn_MAXRPM_GUI && (ui->radioMAXRPM->isChecked()))
         {
             ui->radioMAXRPM->setChecked(false);
+            std::cout << "MAXRPM Check False" << std::endl;
+            m_Thread.btn_MAXRPM_GUI=0;
         }
        // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
 
@@ -71,16 +74,22 @@ void MainWindow::StateChanged(int state)
             {
                 ui->radioCCW->setChecked(true);
                 on_radioCCW_toggled(true);
+                std::cout << "Debug Change dir ; cw to ccw" << std::endl;
+                m_Thread.btn_ChangeDir_GUI=0;
             }
             else if(ui->radioCCW->isChecked())
             {
                 ui->radioOSC->setChecked(true);
                 on_radioOSC_toggled(true);
+                std::cout << "Debug Change dir ; ccw to osc" << std::endl;
+                m_Thread.btn_ChangeDir_GUI=0;
             }
             else
             {
                 ui->radioCW->setChecked(true);
                 on_radioCW_toggled(true);
+                std::cout << "Debug Change dir ; osc to cw" << std::endl;
+                m_Thread.btn_ChangeDir_GUI=0;
             }
         }
     }
