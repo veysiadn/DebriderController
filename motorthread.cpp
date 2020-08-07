@@ -9,44 +9,42 @@ while(true){
     if(digitalRead(EMERGENCY_BUTTON)==LOW){
     m_Motor.CloseAllDevice();
     m_Motor.ActiviateAllDevice();
-    if(!arduino.isRunning()) arduino.start();
-    std::cout << "INITIALIZATION BEGINS..." << std::endl;
+
+    if(!arduino.isRunning()) arduino.start();  // If serial thread isn't running start thread.
+
     if (!m_Motor.EPOSGetError())
     {
-        m_running = true;
-        digitalWrite(WATCHDOG_PIN, HIGH);
-        m_currState = DEBRIDER_STATE_ENABLED;
-        timer.start();
+        std::cout << "EPOS CONNECTION SUCCESFULL" << std::endl;
     }
     else
     {
         std::cout << "EPOS CONNECTION ERROR " << std::endl;
-
-        m_Motor.CloseAllDevice();
-        m_Motor.ActiviateAllDevice();
-        if(m_Motor.EPOSGetError())
-        {
-            m_currState = DEBRIDER_STATE_EPOS_ERROR;
-            emit UpdateGUI(DEBRIDER_STATE_EPOS_ERROR);
-            std::cout << "EPOS CONNECTION ERROR " << std::endl;
-            m_running=false;
-        }
-    }
-    if (arduino.SerialGetError())
-    {
-        m_currState = DEBRIDER_STATE_SERIAL_ERROR;
+        m_currState = DEBRIDER_STATE_EPOS_ERROR;
+        emit UpdateGUI(DEBRIDER_STATE_EPOS_ERROR);
         m_running=false;
-        emit UpdateGUI(m_currState);
-        std::cout << "Serial bef. CONNECTION ERROR " << std::endl;
-        arduino.exit();
-        arduino.start();
+    }
+
+    if (!arduino.SerialGetError())
+    {
+        std::cout << "Serial Connection Initialized..." << std::endl;
+        arduino.SerialSetError(false);
     }
     else
     {
-        m_currState=DEBRIDER_STATE_ENABLED;
-        m_running=true;
-        std::cout << "Serial Connection Initialized..." << std::endl;
+        std::cout << "Serial CONNECTION ERROR : Serial Connection couldn't initialized... " << std::endl;
+        m_currState = DEBRIDER_STATE_SERIAL_ERROR;
+        m_running=false;
+        arduino.SerialSetError(true);
         emit UpdateGUI(m_currState);
+    }
+
+    if(!arduino.SerialGetError() && !m_Motor.EPOSGetError())
+    {
+        timer.start();
+        m_running=true;
+        if(m_currState!=DEBRIDER_STATE_EMERGENCY)
+        m_currState = DEBRIDER_STATE_ENABLED;
+        std::cout<< " DEBRIDER STATE ENABLED " << std::endl;
     }
     while(m_running)
     {
@@ -114,7 +112,8 @@ while(true){
         // ######### HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH  ###########
 
 
-        if(m_emergency && m_prevState != DEBRIDER_STATE_EMERGENCY){
+        if(m_emergency && m_prevState != DEBRIDER_STATE_EMERGENCY)
+        {
             m_currState = DEBRIDER_STATE_EMERGENCY;         // VysADN Emergency_Mode function parameters
             m_running=false;
             digitalWrite(PUMP_ENABLE,0);
@@ -219,5 +218,10 @@ while(true){
 
    m_Motor.DisableAllDevice();
         }
+    else if(m_currState!=DEBRIDER_STATE_EMERGENCY)
+    {
+        m_currState=DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
+    }
     }
 }

@@ -278,7 +278,7 @@ void MainWindow::on_btnCloseBlade_clicked()
 void MainWindow::on_btnEmergencyMode_clicked()
 {
     if (emergencyWindow.m_EmergencyStatus!=DEBRIDER_STATE_EMERGENCY)
-                                    m_Thread.m_emergencyMainWindow=1;
+    m_Thread.m_emergencyMainWindow=1;
     emergencyWindow.setModal(true);
     emergencyWindow.setWindowState(Qt::WindowFullScreen);
     emergencyWindow.SetEmergencyText();
