@@ -39,6 +39,7 @@ public:
     int m_closeBladeWindow;
     int btn_MAXRPM_GUI;
     int btn_ChangeDir_GUI;
+    int m_emergencyMainWindow;
 private:
     // CKim - Motor class
     int m_currState, m_prevState;

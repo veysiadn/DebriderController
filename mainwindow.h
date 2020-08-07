@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-private slots:
+    private slots:
     void on_btnDecreaseRPM_clicked();
 
     void on_btnIncreaseRPM_clicked();

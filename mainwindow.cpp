@@ -14,13 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
    // CKim - Initialize variables
     target_vel = 0;
     // CKim - wiringPi Set
-    if(wiringPiSetup() == -1)
-    {
-       // cout << "wiringPi Set Error" << endl;
-        //exit(1);
-    }
-
-    pinMode(EMERGENCY_BUTTON,INPUT);
+    wiringPiSetup();
+    m_Thread.m_emergencyMainWindow=0;
     //VYS ADD START
     pump_MotorSpeed = 0;
     speedLabel.sprintf(" %d ",pump_MotorSpeed);
@@ -49,9 +44,12 @@ void MainWindow::StateChanged(int state)
     {
         on_btnEmergencyMode_clicked();
         on_radioCW_toggled(true);
+        m_Thread.m_TargetVel = target_vel=0;
+        m_Thread.m_emergencyMainWindow=0;
     }
     if(state==DEBRIDER_STATE_ENABLED)
     {
+        m_Thread.m_emergencyMainWindow=0;
         // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
         if (m_Thread.btn_MAXRPM_GUI && !(ui->radioMAXRPM->isChecked()))
         {
@@ -62,7 +60,6 @@ void MainWindow::StateChanged(int state)
         else if (m_Thread.btn_MAXRPM_GUI && (ui->radioMAXRPM->isChecked()))
         {
             ui->radioMAXRPM->setChecked(false);
-            std::cout << "MAXRPM Check False" << std::endl;
             m_Thread.btn_MAXRPM_GUI=0;
         }
        // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
@@ -74,28 +71,26 @@ void MainWindow::StateChanged(int state)
             {
                 ui->radioCCW->setChecked(true);
                 on_radioCCW_toggled(true);
-                std::cout << "Debug Change dir ; cw to ccw" << std::endl;
                 m_Thread.btn_ChangeDir_GUI=0;
             }
             else if(ui->radioCCW->isChecked())
             {
                 ui->radioOSC->setChecked(true);
                 on_radioOSC_toggled(true);
-                std::cout << "Debug Change dir ; ccw to osc" << std::endl;
                 m_Thread.btn_ChangeDir_GUI=0;
             }
             else
             {
                 ui->radioCW->setChecked(true);
                 on_radioCW_toggled(true);
-                std::cout << "Debug Change dir ; osc to cw" << std::endl;
                 m_Thread.btn_ChangeDir_GUI=0;
             }
         }
+        emergencyWindow.close();
     }
     // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH   #########
 
-    if(state > DEBRIDER_STATE_ENABLED && state!=DEBRIDER_STATE_EMERGENCY)
+    if(state == DEBRIDER_STATE_RUNNING || state == DEBRIDER_STATE_OSC)
     {
         ui->btnDecreaseRPM->setEnabled(false);
         ui->btnIncreaseRPM->setEnabled(false);
@@ -104,8 +99,15 @@ void MainWindow::StateChanged(int state)
         ui->radioCW->setEnabled(false);
         ui->radioOSC->setEnabled(false);
         ui->radioMAXRPM->setEnabled(false);
+        emergencyWindow.close();
     }
-    else
+    else if(state == DEBRIDER_STATE_SERIAL_ERROR || state == DEBRIDER_STATE_EPOS_ERROR)
+    {
+        on_btnEmergencyMode_clicked();
+        on_radioCW_toggled(true);
+        m_Thread.m_TargetVel = target_vel=0;
+    }
+        else 
     {
         ui->btnDecreaseRPM->setEnabled(true);
         ui->btnIncreaseRPM->setEnabled(true);
@@ -115,21 +117,25 @@ void MainWindow::StateChanged(int state)
         ui->radioOSC->setEnabled(true);
         ui->radioMAXRPM->setEnabled(true);
     }
-    if(m_Thread.m_NewTargetVel < 0){
+    if(m_Thread.m_NewTargetVel < 0)
+    {
         statusLabel.sprintf(" CW Debrider Velocity:  %ld RPM \n Pump Motor : %d RPM ",
-                            m_Thread.m_NewTargetVel*(-1),pump_MotorSpeed);
+                        m_Thread.m_NewTargetVel*(-1),pump_MotorSpeed);
         ui->lblMsg->setText(statusLabel);
     }
-    else if(m_Thread.m_NewTargetVel) {
+    else if(m_Thread.m_NewTargetVel)
+     {
         statusLabel.sprintf(" CCW Debrider Velocity:  %ld RPM \n Pump Motor : %d RPM ",
                             m_Thread.m_NewTargetVel,pump_MotorSpeed);
         ui->lblMsg->setText(statusLabel);
     }
-    else {
+    else 
+    {
         statusLabel.sprintf(" Debrider Velocity Set:  %ld RPM \n Pump Motor : %d RPM ",
                             target_vel,pump_MotorSpeed);
         ui->lblMsg->setText(statusLabel);
     }
+    emergencyWindow.m_EmergencyStatus=state;
 }
 
 void MainWindow::on_btnDecreaseRPM_clicked()
@@ -142,12 +148,13 @@ void MainWindow::on_btnDecreaseRPM_clicked()
         target_vel = 0;
         ui->lblMsg->setText(QString("error : cannot decrease RPM"));
     }
-    else {
+    else
+    {
         statusLabel.sprintf(" Debrider Motor Set:  %ld RPM \n Pump Motor : %d RPM ",target_vel,pump_MotorSpeed);
         ui->lblMsg->setText(statusLabel);
     }
-    qstr = QString("%1").arg(target_vel);
-    ui->p_BLDCspeedInfo->setText(qstr);
+     qstr = QString("%1").arg(target_vel);
+     ui->p_BLDCspeedInfo->setText(qstr);
 
     if(ui->radioCCW->isChecked())
     {
@@ -162,8 +169,8 @@ void MainWindow::on_btnDecreaseRPM_clicked()
 void MainWindow::on_btnIncreaseRPM_clicked()
 {
     if(target_vel!=15000) ui->radioMAXRPM->setChecked(false);
-        target_vel += CHANGE_RPM_RATE;
 
+        target_vel += CHANGE_RPM_RATE;
         QString qstr;
 
         if(target_vel > MAX_RPM)
@@ -172,7 +179,8 @@ void MainWindow::on_btnIncreaseRPM_clicked()
             ui->lblMsg->setText(QString("error : cannot increase \n more than MAX RPM"));
             //cout << "error : cannot increase more than MAX RPM" << endl;
         }
-        else {
+        else 
+        {
             statusLabel.sprintf(" Debrider Motor Set:  %ld RPM \n Pump Motor : %d RPM ",target_vel,pump_MotorSpeed);
             ui->lblMsg->setText(statusLabel);
         }
@@ -192,7 +200,8 @@ void MainWindow::on_btnIncreaseRPM_clicked()
 
 void MainWindow::on_radioCW_toggled(bool checked)
 {
-    if(checked) {
+    if(checked) 
+    {
         m_Thread.m_TargetVel = -target_vel;
         m_Thread.m_Oscillate = 0;
     }
@@ -200,10 +209,11 @@ void MainWindow::on_radioCW_toggled(bool checked)
 
 void MainWindow::on_radioCCW_toggled(bool checked)
 {
-   if(checked) {
+   if(checked)
+    {
        m_Thread.m_TargetVel = target_vel;
        m_Thread.m_Oscillate = 0;
-   }
+    }
 }
 
 void MainWindow::on_radioOSC_toggled(bool checked)
@@ -217,7 +227,7 @@ void MainWindow::on_radioOSC_toggled(bool checked)
 void MainWindow::on_btnDecreaseFlow_clicked()
 {
     if(pump_MotorSpeed > 0)    pump_MotorSpeed-=20;
-   if(Pump_Status) pwmWrite(PUMP_HARDPWM,pump_MotorSpeed);
+    if(Pump_Status) pwmWrite(PUMP_HARDPWM,pump_MotorSpeed);
     speedLabel.sprintf(" %d ",pump_MotorSpeed);
     ui->p_MotorSpeedInfo->setText(speedLabel);
     statusLabel.sprintf(" Debrider Motor Set:  %ld RPM \n Pump Motor Set: %d RPM ",target_vel,pump_MotorSpeed);
@@ -267,9 +277,11 @@ void MainWindow::on_btnCloseBlade_clicked()
 
 void MainWindow::on_btnEmergencyMode_clicked()
 {
-    m_Thread.m_emergency=1;
+    if (emergencyWindow.m_EmergencyStatus!=DEBRIDER_STATE_EMERGENCY)
+                                    m_Thread.m_emergencyMainWindow=1;
     emergencyWindow.setModal(true);
     emergencyWindow.setWindowState(Qt::WindowFullScreen);
+    emergencyWindow.SetEmergencyText();
     emergencyWindow.exec();
 }
 

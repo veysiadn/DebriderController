@@ -3,6 +3,7 @@
 void motorThread::run()
 {
     pinMode(WATCHDOG_PIN,OUTPUT);
+    pinMode(EMERGENCY_BUTTON,INPUT);
     int dir = 1;
 while(true){
     if(digitalRead(EMERGENCY_BUTTON)==LOW){
@@ -45,6 +46,7 @@ while(true){
         m_currState=DEBRIDER_STATE_ENABLED;
         m_running=true;
         std::cout << "Serial Connection Initialized..." << std::endl;
+        emit UpdateGUI(m_currState);
     }
     while(m_running)
     {
@@ -64,8 +66,9 @@ while(true){
         }
 
         // VYSADN EmergencyButton Start
-        if(digitalRead(EMERGENCY_BUTTON)==HIGH) {m_emergency=1; }
-        else                                    {m_emergency=0; }
+        if(digitalRead(EMERGENCY_BUTTON)==HIGH || m_emergencyMainWindow)
+                                                { m_emergency=1; }
+        else                                    { m_emergency=0; }
 
         if((arduino.btn_CloseBlade && arduino.Get_Analog_Pedal_Val < 10) || m_closeBladeWindow)
                                                {  m_CloseBlade = 1; }
@@ -111,9 +114,7 @@ while(true){
         // ######### HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH  ###########
 
 
-        if((m_currState==DEBRIDER_STATE_RUNNING || m_currState==DEBRIDER_STATE_OSC ||
-            m_currState==DEBRIDER_STATE_CLOSE_BLADES) &&
-                m_emergency && m_prevState != DEBRIDER_STATE_EMERGENCY){
+        if(m_emergency && m_prevState != DEBRIDER_STATE_EMERGENCY){
             m_currState = DEBRIDER_STATE_EMERGENCY;         // VysADN Emergency_Mode function parameters
             m_running=false;
             digitalWrite(PUMP_ENABLE,0);
