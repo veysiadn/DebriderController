@@ -46,6 +46,8 @@ public:
 
     void on_radioMAXRPM_clicked();
 
+    void Emergency_Window_Exit(int a);
+
 private:
     Ui::MainWindow *ui;
       int pump_MotorSpeed;

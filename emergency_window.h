@@ -18,7 +18,8 @@ public:
     void SetEmergencyText();
 private slots:
     void on_btnEmergencyExit_clicked();
-
+signals:
+    void Emergency_Exit_Clicked(int s);
 private:
     Ui::Emergency_Window *ui;
 };

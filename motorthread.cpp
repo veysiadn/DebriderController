@@ -40,11 +40,13 @@ while(true){
 
     if(!arduino.SerialGetError() && !m_Motor.EPOSGetError())
     {
-        timer.start();
-        m_running=true;
-        if(m_currState!=DEBRIDER_STATE_EMERGENCY)
-        m_currState = DEBRIDER_STATE_ENABLED;
-        std::cout<< " DEBRIDER STATE ENABLED " << std::endl;
+        if(m_currState!=DEBRIDER_STATE_EMERGENCY || !m_emergencyMainWindow)
+        {
+            m_currState = DEBRIDER_STATE_ENABLED;
+            m_running=true;
+            std::cout<< " DEBRIDER STATE ENABLED " << std::endl;
+            timer.start();
+        }
     }
     while(m_running)
     {

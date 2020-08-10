@@ -17,26 +17,26 @@ void Emergency_Window::on_btnEmergencyExit_clicked()
 {
     Emergency_Window::close();
     m_secEmergency=0;
+    emit Emergency_Exit_Clicked(0);
 }
-
 void Emergency_Window::SetEmergencyText()
 {
     QString txtEmergency;
     if(m_EmergencyStatus==DEBRIDER_STATE_EMERGENCY)
     {
-        txtEmergency=("EMERGENCY MODE ACTIVE");
+        txtEmergency=(" \n \t !EMERGENCY MODE ACTIVE!");
     }
     else if (m_EmergencyStatus==DEBRIDER_STATE_SERIAL_ERROR)
     {
-        txtEmergency=("\n \t \t EMERGENCY MODE ACTIVE : \n \t \t SERIAL ERROR");
+        txtEmergency=("\n \t! EMERGENCY MODE ACTIVE ! \n \n \t SERIAL CONNECTION ERROR");
     }
     else if (m_EmergencyStatus==DEBRIDER_STATE_EPOS_ERROR)
     {
-        txtEmergency=("\n \t \t EMERGENCY MODE ACTIVE : \n \t \t  EPOS CONNECTION ERROR");
+        txtEmergency=("\n \t! EMERGENCY MODE ACTIVE ! \n \n \t EPOS CONNECTION ERROR");
     }
     else
     {
-        txtEmergency=("EMERGENCY MODE ACTIVE");
+        txtEmergency=(" \n \t !EMERGENCY MODE ACTIVE!");
     }
     ui->lblEmergencyTxt->setText(txtEmergency);
 }

@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     digitalWrite(PUMP_ENABLE,0);
     //VYS ADD FINISH
     connect(&m_Thread, &motorThread::UpdateGUI, this, &MainWindow::StateChanged);
+    connect(&emergencyWindow,&Emergency_Window::Emergency_Exit_Clicked,this,&MainWindow::Emergency_Window_Exit);
     if(!m_Thread.isRunning()) m_Thread.start();
 }
 
@@ -37,15 +38,21 @@ MainWindow::~MainWindow()
     m_Thread.m_running = false;
     delete ui;
 }
-
+void MainWindow::Emergency_Window_Exit(int a)
+{
+    m_Thread.m_emergencyMainWindow=a;
+}
 void MainWindow::StateChanged(int state)
 {
     if (state==DEBRIDER_STATE_EMERGENCY && m_Thread.m_emergency)
     {
+        emergencyWindow.m_EmergencyStatus=state;
         on_btnEmergencyMode_clicked();
         on_radioCW_toggled(true);
         m_Thread.m_TargetVel = target_vel=0;
-        m_Thread.m_emergencyMainWindow=0;
+        QString qstr;
+        qstr = QString("%1").arg(target_vel);
+        ui->p_BLDCspeedInfo->setText(qstr);
     }
     if(state==DEBRIDER_STATE_ENABLED)
     {
@@ -278,11 +285,11 @@ void MainWindow::on_btnCloseBlade_clicked()
 void MainWindow::on_btnEmergencyMode_clicked()
 {
     if (emergencyWindow.m_EmergencyStatus!=DEBRIDER_STATE_EMERGENCY)
-    m_Thread.m_emergencyMainWindow=1;
-    emergencyWindow.setModal(true);
-    emergencyWindow.setWindowState(Qt::WindowFullScreen);
-    emergencyWindow.SetEmergencyText();
-    emergencyWindow.exec();
+        m_Thread.m_emergencyMainWindow=1;
+        emergencyWindow.setModal(true);
+        emergencyWindow.setWindowState(Qt::WindowFullScreen);
+        emergencyWindow.SetEmergencyText();
+        emergencyWindow.exec();
 }
 
 void MainWindow::on_radioMAXRPM_clicked()
