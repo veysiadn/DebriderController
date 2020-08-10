@@ -2,18 +2,17 @@
 #include <iostream>
 void serial_com::run()
 {
-    openSerialPort();
-    for (;;) 
+    for (;;)
     {
-        if(!s_errorFlag && serial.isOpen())
+        while(s_run)
         {
-        readData();
-        } 
-        else 
-        {
-            closeSerialPort();
-            if(serial.isOpen()) ClearPort();
             if(!serial.isOpen()) openSerialPort();
+            if(!s_errorFlag && serial.isOpen()){ readData(); }
+            else
+            {
+                closeSerialPort();
+                break;
+            }
         }
     }
 }

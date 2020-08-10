@@ -29,6 +29,7 @@ public:
         btn_CloseBlade=0;
         btn_ChangeDirection=0;
         Get_Analog_Pedal_Val=0;
+        s_run = true;
     }
 
     int btn_MAXRPM;
@@ -38,6 +39,8 @@ public:
     int btn_ChangeDirection;
 
     int Get_Analog_Pedal_Val;
+
+    bool s_run;
 
     void SerialSetError(bool s);
 

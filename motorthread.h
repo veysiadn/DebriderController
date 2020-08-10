@@ -27,6 +27,7 @@ public:
         m_closeBladeWindow=0;
         btn_MAXRPM_GUI=0;
         btn_ChangeDir_GUI=0;
+        m_emergencyMainWindow=0;
     }
     virtual void run();
     long m_NewTargetVel;

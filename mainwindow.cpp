@@ -41,22 +41,27 @@ MainWindow::~MainWindow()
 void MainWindow::Emergency_Window_Exit(int a)
 {
     m_Thread.m_emergencyMainWindow=a;
+    StateChanged(DEBRIDER_STATE_ENABLED);
 }
 void MainWindow::StateChanged(int state)
 {
     if (state==DEBRIDER_STATE_EMERGENCY && m_Thread.m_emergency)
     {
         emergencyWindow.m_EmergencyStatus=state;
-        on_btnEmergencyMode_clicked();
+        on_EmergencyWindowCall();
         on_radioCW_toggled(true);
         m_Thread.m_TargetVel = target_vel=0;
         QString qstr;
         qstr = QString("%1").arg(target_vel);
         ui->p_BLDCspeedInfo->setText(qstr);
+        pwmWrite(PUMP_HARDPWM,0);
+        digitalWrite(PUMP_ENABLE,0);
     }
     if(state==DEBRIDER_STATE_ENABLED)
     {
         m_Thread.m_emergencyMainWindow=0;
+        pwmWrite(PUMP_HARDPWM,0);
+        //digitalWrite(PUMP_ENABLE,0);
         // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
         if (m_Thread.btn_MAXRPM_GUI && !(ui->radioMAXRPM->isChecked()))
         {
@@ -107,12 +112,17 @@ void MainWindow::StateChanged(int state)
         ui->radioOSC->setEnabled(false);
         ui->radioMAXRPM->setEnabled(false);
         emergencyWindow.close();
+        pwmWrite(PUMP_HARDPWM,pump_MotorSpeed);
+        digitalWrite(PUMP_ENABLE,1);
+        Pump_Status=true;
     }
     else if(state == DEBRIDER_STATE_SERIAL_ERROR || state == DEBRIDER_STATE_EPOS_ERROR)
     {
-        on_btnEmergencyMode_clicked();
+        on_EmergencyWindowCall();
         on_radioCW_toggled(true);
         m_Thread.m_TargetVel = target_vel=0;
+        pwmWrite(PUMP_HARDPWM,0);
+       // digitalWrite(PUMP_ENABLE,0);
     }
         else 
     {
@@ -282,7 +292,7 @@ void MainWindow::on_btnCloseBlade_clicked()
    m_Thread.m_closeBladeWindow=1;
 }
 
-void MainWindow::on_btnEmergencyMode_clicked()
+void MainWindow::on_EmergencyWindowCall()
 {
     if (emergencyWindow.m_EmergencyStatus!=DEBRIDER_STATE_EMERGENCY)
         m_Thread.m_emergencyMainWindow=1;

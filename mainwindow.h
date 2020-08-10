@@ -40,7 +40,7 @@ public:
 
     void on_btnIrrigationStop_clicked();
     
-    void on_btnEmergencyMode_clicked();
+    void on_EmergencyWindowCall();
     
     void on_btnCloseBlade_clicked();
 

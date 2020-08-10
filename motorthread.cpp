@@ -6,7 +6,7 @@ void motorThread::run()
     pinMode(EMERGENCY_BUTTON,INPUT);
     int dir = 1;
 while(true){
-    if(digitalRead(EMERGENCY_BUTTON)==LOW){
+    if(digitalRead(EMERGENCY_BUTTON)==LOW && !m_emergencyMainWindow){
     m_Motor.CloseAllDevice();
     m_Motor.ActiviateAllDevice();
 
@@ -40,11 +40,12 @@ while(true){
 
     if(!arduino.SerialGetError() && !m_Motor.EPOSGetError())
     {
-        if(m_currState!=DEBRIDER_STATE_EMERGENCY || !m_emergencyMainWindow)
+        if(m_currState < DEBRIDER_STATE_EMERGENCY || !m_emergencyMainWindow)
         {
             m_currState = DEBRIDER_STATE_ENABLED;
             m_running=true;
             std::cout<< " DEBRIDER STATE ENABLED " << std::endl;
+            emit UpdateGUI(m_currState);
             timer.start();
         }
     }
@@ -218,12 +219,15 @@ while(true){
                                  }
                 }
 
-   m_Motor.DisableAllDevice();
+   if (!(m_Motor.EPOSGetError()==0)) m_Motor.DisableAllDevice();
         }
-    else if(m_currState!=DEBRIDER_STATE_EMERGENCY)
+    else if(m_currState < DEBRIDER_STATE_EMERGENCY)
     {
-        m_currState=DEBRIDER_STATE_EMERGENCY;
         emit UpdateGUI(m_currState);
     }
+    else if (m_currState >= DEBRIDER_STATE_EMERGENCY && arduino.isRunning())
+    {
+     arduino.exit();
     }
+  }
 }
