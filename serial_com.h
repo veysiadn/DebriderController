@@ -11,13 +11,13 @@ class serial_com : public QThread
 private:
 
     virtual void run();
-    bool s_errorFlag = false;               // Error flag for serial communication errors.
-    QSerialPort serial;
+    bool serialErrorFlag = false;               // Error flag for serial communication errors.
+    QSerialPort serialArduinoNanoEvery;
     
     // ### VysADN 2 byte serial communication protocol with arduino nano every variables for reciever (Raspberry Pi3b+) side.  ### (Details about these variables is explained in readData() function)
     unsigned char FirstByte, SecondByte;
-    int NumRead=0 ,numReadTotal=0;
-    char get_Pack[50]={};
+    int numReadByte=0 , numTotalReadByte=0;
+    char recievedSerialPack[50]={};
 
     // ### Arduino Nano Every product id and vendor id , universal for all Arduino Nano Every ###
     static const quint16 ArduinoNanoEvery_vendor_id =9025;
@@ -25,30 +25,30 @@ private:
 
 public:
     serial_com(){
-        btn_MAXRPM=0;
-        btn_CloseBlade=0;
-        btn_ChangeDirection=0;
-        Get_Analog_Pedal_Val=0;
-        s_run = true;
+        pedalBtnMaxRPM=0;
+        pedalBtnCloseBlade=0;
+        pedalBtnChangeDirection=0;
+        pedalAnalogBLDCval=0;
+        serialArduinoRunning=1;
     }
 
-    int btn_MAXRPM;
+    int pedalBtnMaxRPM;
 
-    int btn_CloseBlade;
+    int pedalBtnCloseBlade;
 
-    int btn_ChangeDirection;
+    int pedalBtnChangeDirection;
 
-    int Get_Analog_Pedal_Val;
+    int pedalAnalogBLDCval;
 
-    bool s_run;
+    int  serialArduinoRunning;
 
-    void SerialSetError(bool s);
+    void setSerialError(bool s);
 
-    bool SerialGetError();
+    bool getSerialError();
 
-    void ClearPort();
+    void clearSerialPort();
 
-    void readData();
+    void readSerialPort();
 
     void openSerialPort();
 

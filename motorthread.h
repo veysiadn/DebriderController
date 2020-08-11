@@ -16,42 +16,45 @@ public:
     motorThread() {
         m_currState = DEBRIDER_STATE_INIT;
         m_prevState = DEBRIDER_STATE_INIT;
-        m_TargetVel = 0;
+        m_DebriderTargetSpeed = 0;
         m_Oscillate = 0;
         m_TargetPos = 0;        
         m_CloseBlade=0;
         m_emergency=0;
-        m_NewTargetVel=0;
-        btn_MAXRPM_LastState=0;
-        btn_ChangeDirLastState=0;
-        m_closeBladeWindow=0;
-        btn_MAXRPM_GUI=0;
-        btn_ChangeDir_GUI=0;
-        m_emergencyMainWindow=0;
+        m_instantSpeed=0;
+        pedalBtnMaxRPM_LastState=0;
+        pedalBtnChangeDir_LastState=0;
+        guiBtnCloseBlade=0;
+        guiBtnMaxRPM=0;
+        guiBtnChangeDirection=0;
+        guiEmergencyMode=0;
     }
     virtual void run();
-    long m_NewTargetVel;
-    int m_TargetVel;
+    int m_instantSpeed;
+    int m_DebriderTargetSpeed;
     int m_Oscillate;
     bool m_running;
     int m_CloseBlade;            // VysADN CloseBlade function parameters
     int m_TargetPos;            
     int m_emergency;
-    int m_closeBladeWindow;
-    int btn_MAXRPM_GUI;
-    int btn_ChangeDir_GUI;
-    int m_emergencyMainWindow;
+    int guiBtnCloseBlade;
+    int guiBtnMaxRPM;
+    int guiBtnChangeDirection;
+    int guiEmergencyMode;
 private:
     // CKim - Motor class
     int m_currState, m_prevState;
     MaxonMotor m_Motor;
     int m_RightPedalDown;
     int m_LeftPedalDown;
-    int btn_ChangeDirLastState;
-    int btn_MAXRPM_LastState;
-    serial_com arduino;
-    QElapsedTimer timer;
-    bool WD_State=true;
+    int pedalBtnChangeDir_LastState;
+    int pedalBtnMaxRPM_LastState;
+    serial_com arduinoNano;
+    QElapsedTimer watchDogTimer;
+    bool watchDogState=true;
+private:
+    void setBtnMaxRPM();
+    void setBtnChangeDirection();
 signals:
     void UpdateGUI(int state);
 };

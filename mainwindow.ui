@@ -97,6 +97,12 @@
         <property name="styleSheet">
          <string notr="true">background-color: rgb(238, 238, 236);</string>
         </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </item>
       <item>
@@ -575,11 +581,14 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <pointsize>14</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(238, 238, 236);</string>
+        </property>
+        <property name="text">
+         <string>0</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -651,7 +660,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="lblStatus">
+     <widget class="QLabel" name="lblConstStatus">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -684,7 +693,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="lblMsg">
+     <widget class="QLabel" name="lblStatusMsg">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>

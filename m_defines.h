@@ -1,9 +1,9 @@
 #ifndef M_DEFINES_H
 #define M_DEFINES_H
 
-#define MAX_RPM             15000  // Maximum RPM value for BLDC Motor
+#define DEBRIDER_MAX_RPM    15000  // Maximum RPM value for BLDC Motor
 #define CHANGE_RPM_RATE     1000   // Increment and decrement values for BLDC MOTOR RPM 
-
+#define PUMP_MAX_RPM        480    // Maximum RPM value for Pump Motor
 // Pump Motor PIN MAP
 #define PUMP_HARDPWM    26          // CKim - GPIO 12,Physically Pin 32
 #define PUMP_ENABLE     1           // CKim - GPIO 18, Physically Pin 12
@@ -21,7 +21,7 @@
 // DEBRIDER_STATES CKim Finish 
 
 // ### VysAdn DEFINITIONS OF NEW STATES START ###
-#define DEBRIDER_STATE_CLOSE_BLADES 4
+#define DEBRIDER_STATE_CLOSE_BLADE 4
 #define DEBRIDER_STATE_EMERGENCY 5
 #define DEBRIDER_STATE_SERIAL_ERROR  6
 #define DEBRIDER_STATE_EPOS_ERROR 7

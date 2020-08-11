@@ -19,12 +19,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
     private slots:
     void on_btnDecreaseRPM_clicked();
 
     void on_btnIncreaseRPM_clicked();
 
-    void StateChanged(int state);
+    void stateChanged(int state);
 
     void on_radioCW_toggled(bool checked);
 
@@ -40,27 +41,30 @@ public:
 
     void on_btnIrrigationStop_clicked();
     
-    void on_EmergencyWindowCall();
+    void callEmergencyWindow();
     
     void on_btnCloseBlade_clicked();
 
     void on_radioMAXRPM_clicked();
 
-    void Emergency_Window_Exit(int a);
+    void exitEmergencyWindow(int a);
 
 private:
-    Ui::MainWindow *ui;
-      int pump_MotorSpeed;
-      bool Pump_Status=false;
+      Ui::MainWindow *ui;
+      int pumpMotorTargetSpeed;
+      bool pumpRunningStatus=false;
       QString speedLabel;
       QString statusLabel;
-    // CKim - Motor class
-
-    // CKim - Variables
-    long target_vel;    // Target rpm of the debrider
-    int current_pos;
-    Emergency_Window emergencyWindow;
-    motorThread m_Thread;
+      int debriderMotorTargetSpeed;
+      Emergency_Window emergencyWindow;
+      motorThread m_Thread;
+private:
+      void printStatus(int dSpeed, int pSpeed);
+      void stopPumpMotor();
+      void movePumpMotor();
+      void enableGUI();
+      void disableGUI();
+      void showPedalBtnStates();
 };
 
 #endif // MAINWINDOW_H

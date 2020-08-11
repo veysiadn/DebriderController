@@ -13,7 +13,6 @@ class Emergency_Window : public QDialog
 public:
     explicit Emergency_Window(QWidget *parent = nullptr);
     ~Emergency_Window();
-    int m_secEmergency;
     int m_EmergencyStatus;
     void SetEmergencyText();
 private slots:
