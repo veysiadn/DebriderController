@@ -25,8 +25,6 @@ public:
 
     void on_btnIncreaseRPM_clicked();
 
-    void stateChanged(int state);
-
     void on_radioCW_toggled(bool checked);
 
     void on_radioCCW_toggled(bool checked);
@@ -41,30 +39,42 @@ public:
 
     void on_btnIrrigationStop_clicked();
     
-    void callEmergencyWindow();
-    
     void on_btnCloseBlade_clicked();
 
     void on_radioMAXRPM_clicked();
+
+    void stateChanged(int state);
+
+    void callEmergencyWindow();
 
     void exitEmergencyWindow(int a);
 
 private:
       Ui::MainWindow *ui;
-      int pumpMotorTargetSpeed;
-      bool pumpRunningStatus=false;
       QString speedLabel;
       QString statusLabel;
+
+      int pumpMotorTargetSpeed;
+      bool pumpRunningStatus=false;
+
       int debriderMotorTargetSpeed;
+
       Emergency_Window emergencyWindow;
       motorThread m_Thread;
+
 private:
       void printStatus(int dSpeed, int pSpeed);
+
       void stopPumpMotor();
+
       void movePumpMotor();
+
       void enableGUI();
+
       void disableGUI();
+
       void showPedalBtnStates();
+
 };
 
 #endif // MAINWINDOW_H

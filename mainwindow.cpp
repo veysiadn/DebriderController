@@ -55,7 +55,7 @@ void MainWindow::stateChanged(int state)
         case DEBRIDER_STATE_RUNNING:
             disableGUI();
             movePumpMotor();
-            printStatus(m_Thread.m_instantSpeed,pumpMotorTargetSpeed);
+            printStatus(m_Thread.m_DebriderInstantSpeed,pumpMotorTargetSpeed);
             break;
 
         case DEBRIDER_STATE_OSC:
@@ -68,7 +68,7 @@ void MainWindow::stateChanged(int state)
 
         case DEBRIDER_STATE_CLOSE_BLADE:
             disableGUI();
-            printStatus(m_Thread.m_instantSpeed,pumpMotorTargetSpeed);
+            printStatus(m_Thread.m_DebriderInstantSpeed,pumpMotorTargetSpeed);
         break;
 
         case DEBRIDER_STATE_EMERGENCY:
@@ -132,9 +132,9 @@ void MainWindow::on_btnIncreaseRPM_clicked()
 
         debriderMotorTargetSpeed += CHANGE_RPM_RATE;
 
-        if(debriderMotorTargetSpeed > DEBRIDER_MAX_RPM)
+        if(debriderMotorTargetSpeed > BLDC_MAX_RPM)
         {
-            debriderMotorTargetSpeed = DEBRIDER_MAX_RPM;
+            debriderMotorTargetSpeed = BLDC_MAX_RPM;
             ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
                                               "Max RPM for Debrider : 15000 RPM"));
         }
@@ -214,7 +214,7 @@ void MainWindow::callEmergencyWindow()
 
 void MainWindow::on_radioMAXRPM_clicked()
 {
-    debriderMotorTargetSpeed = DEBRIDER_MAX_RPM;
+    debriderMotorTargetSpeed = BLDC_MAX_RPM;
     printStatus(debriderMotorTargetSpeed,pumpMotorTargetSpeed);
     m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
 }
@@ -228,12 +228,12 @@ void MainWindow::printStatus(int dSpeed, int pSpeed)
     statusLabel.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %d RPM ",dSpeed,pSpeed);
     else
     statusLabel.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %d RPM ",dSpeed,pSpeed);
-    if(m_Thread.m_instantSpeed < 0)
+    if(m_Thread.m_DebriderInstantSpeed < 0)
     {
         statusLabel.sprintf(" Debrider Motor Running at CW MODE at :  %d RPM \n "
                             "Pump Motor Running at : %d RPM ",dSpeed*(-1),pSpeed);
     }
-    else if(m_Thread.m_instantSpeed > 0)
+    else if(m_Thread.m_DebriderInstantSpeed > 0)
     {
         statusLabel.sprintf(" Debrider Motor Running at CCW MODE at :  %d RPM \n "
                             "Pump Motor Running at : %d RPM ",dSpeed,pSpeed);

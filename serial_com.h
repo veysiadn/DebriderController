@@ -24,12 +24,13 @@ private:
     static const quint16 ArduinoNanoEvery_product_id =88;
 
 public:
-    serial_com(){
+    serial_com()
+    {
         pedalBtnMaxRPM=0;
         pedalBtnCloseBlade=0;
         pedalBtnChangeDirection=0;
         pedalAnalogBLDCval=0;
-        serialArduinoRunning=1;
+        arduinoSerialRunning=1;
     }
 
     int pedalBtnMaxRPM;
@@ -40,7 +41,9 @@ public:
 
     int pedalAnalogBLDCval;
 
-    int  serialArduinoRunning;
+    int  arduinoSerialRunning;
+
+public:
 
     void setSerialError(bool s);
 

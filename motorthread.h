@@ -21,7 +21,7 @@ public:
         m_TargetPos = 0;        
         m_CloseBlade=0;
         m_emergency=0;
-        m_instantSpeed=0;
+        m_DebriderInstantSpeed=0;
         pedalBtnMaxRPM_LastState=0;
         pedalBtnChangeDir_LastState=0;
         guiBtnCloseBlade=0;
@@ -30,7 +30,7 @@ public:
         guiEmergencyMode=0;
     }
     virtual void run();
-    int m_instantSpeed;
+    int m_DebriderInstantSpeed;
     int m_DebriderTargetSpeed;
     int m_Oscillate;
     bool m_running;
@@ -49,12 +49,12 @@ private:
     int m_LeftPedalDown;
     int pedalBtnChangeDir_LastState;
     int pedalBtnMaxRPM_LastState;
-    serial_com arduinoNano;
+    serial_com serialArduino;
     QElapsedTimer watchDogTimer;
     bool watchDogState=true;
 private:
-    void setBtnMaxRPM();
-    void setBtnChangeDirection();
+    void setBtnMaxRPMGUI();
+    void setBtnChangeDirectionGUI();
 signals:
     void UpdateGUI(int state);
 };

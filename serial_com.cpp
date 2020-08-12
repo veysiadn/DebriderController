@@ -4,18 +4,18 @@ void serial_com::run()
 {
    closeSerialPort();
    openSerialPort();
-   serialArduinoRunning=1;
+   arduinoSerialRunning=1;
    while(true)
     {
        closeSerialPort();
-     while(serialArduinoRunning)
+     while(arduinoSerialRunning)
         {
             if(!serialArduinoNanoEvery.isOpen()) { openSerialPort(); }
             if(!serialErrorFlag && serialArduinoNanoEvery.isOpen())
                 readSerialPort();
             else if (serialErrorFlag)
             {
-                serialArduinoRunning=0;
+                arduinoSerialRunning=0;
                 std::cout << "Serial Error detected" << std::endl;
                 break;
             }
