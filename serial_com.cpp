@@ -164,11 +164,11 @@ void serial_com::readSerialPort()
             pedalAnalogBLDCval    = ((FirstByte >> 6) | (SecondByte << 2)) & 1023;
             // {|0|0|0|0|0|0|A1|A0|} | {A9|A8|A7|A6|A5|A4|A3|A2|0|0|} & 111111111  = {|A9|A8|A7|A6|A5|A4|A3|A2|A1|A0|} = Analog value from pedal
 
-            if(pedalAnalogBLDCval < 20) pedalAnalogBLDCval=0;
+            if(pedalAnalogBLDCval < 23) pedalAnalogBLDCval=0;
                 //           std::cout<< "Number of Read bytes =  " << numReadByte << std::endl;
                 //           std::cout<< "bytes available = " << bytes_Avail << std::endl;
                 //          std::cout<< "Analog Pedal Val  = " << Get_Analog_Pedal_Val << std::endl;
-                //          std::cout<< "Button state max = " << btn_MAXRPM << std::endl;
+                //          std::cout<< "Button state max = " << pedalBtnMaxRPM << std::endl;
                 //          std::cout<< "Button state close = " << btn_CloseBlade << std::endl;
                 //          std::cout<< "Button Change Direction = " << btn_ChangeDirection << std::endl;
                 //           std::cout<< "------------------------------------------------------------" << std::endl;

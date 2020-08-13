@@ -261,6 +261,12 @@ void MainWindow::enableGUI()
     ui->radioCW->setEnabled(true);
     ui->radioOSC->setEnabled(true);
     ui->radioMAXRPM->setEnabled(true);
+    ui->btnDecreaseFlow->setEnabled(true);
+    ui->btnIncreaseFlow->setEnabled(true);
+    ui->btnIrrigationMove->setEnabled(true);
+    ui->btnIrrigationStop->setEnabled(true);
+    ui->p_BLDCspeedInfo->setEnabled(true);
+    ui->p_MotorSpeedInfo->setEnabled(true);
 }
 void MainWindow::disableGUI()
 {
@@ -271,6 +277,12 @@ void MainWindow::disableGUI()
     ui->radioCW->setEnabled(false);
     ui->radioOSC->setEnabled(false);
     ui->radioMAXRPM->setEnabled(false);
+    ui->btnDecreaseFlow->setEnabled(false);
+    ui->btnIncreaseFlow->setEnabled(false);
+    ui->btnIrrigationMove->setEnabled(false);
+    ui->btnIrrigationStop->setEnabled(false);
+    ui->p_BLDCspeedInfo->setEnabled(false);
+    ui->p_MotorSpeedInfo->setEnabled(false);
 }
 void MainWindow::showPedalBtnStates()
 {

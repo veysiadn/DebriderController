@@ -232,14 +232,14 @@
             <bool>true</bool>
            </property>
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>100</width>
              <height>90</height>
             </size>
            </property>
@@ -264,14 +264,14 @@ selection-background-color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QRadioButton" name="radioCCW">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>100</width>
              <height>90</height>
             </size>
            </property>
@@ -291,14 +291,14 @@ selection-background-color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QRadioButton" name="radioOSC">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>150</width>
              <height>90</height>
             </size>
            </property>
@@ -312,7 +312,7 @@ selection-background-color: rgb(255, 255, 255);</string>
 </string>
            </property>
            <property name="text">
-            <string>OSC</string>
+            <string>OSCILLATION</string>
            </property>
           </widget>
          </item>
@@ -322,14 +322,14 @@ selection-background-color: rgb(255, 255, 255);</string>
       <item>
        <widget class="QGroupBox" name="BoxMAXRPM">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>200</width>
           <height>0</height>
          </size>
         </property>
@@ -367,6 +367,19 @@ alternate-background-color: rgb(255, 255, 255);</string>
             <string>MAX RPM </string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>

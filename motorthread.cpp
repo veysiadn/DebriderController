@@ -7,13 +7,13 @@ void motorThread::run()
     int dir = 1;
     while(true)
     {
+        m_currState=DEBRIDER_STATE_INIT;
         if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW && !guiEmergencyMode)
         {
             serialArduino.arduinoSerialRunning=1  ;
             if(!serialArduino.isRunning())
                 serialArduino.start();
 
-            m_Motor.CloseAllDevice();
             m_Motor.ActiviateAllDevice();
 
             if(!serialArduino.getSerialError() && !m_Motor.EPOSGetError())
@@ -134,11 +134,12 @@ void motorThread::run()
                     {
                         m_currState = DEBRIDER_STATE_RUNNING;
                         m_Motor.EnableVelocityMode();
-                        m_DebriderInstantSpeed=(m_DebriderTargetSpeed/1000)*(serialArduino.pedalAnalogBLDCval-23);
+                        m_DebriderInstantSpeed=(m_DebriderTargetSpeed/1000)*
+                                (serialArduino.pedalAnalogBLDCval-23);
 
-                        //  std::cout << "Target velocity is : " << m_TargetVel << std::endl;
-                        //  std::cout << "New Target Velocity is : "<< m_NewTargetVel << std::endl;
-                        //  std::cout << "Analog Value is : " << m_Motor.Get_Analog_Pedal_Val << std::endl;
+                        //  std::cout << "Target velocity is : " << m_DebriderTargetSpeed << std::endl;
+                        //  std::cout << "New Target Velocity is : "<< m_DebriderInstantSpeed << std::endl;
+                        //  std::cout << "Analog Value is : " << serialArduino.pedalAnalogBLDCval << std::endl;
                         m_Motor.MoveVelocity(m_DebriderInstantSpeed);
                         emit UpdateGUI(m_currState);
                     }
@@ -194,6 +195,7 @@ void motorThread::run()
                     }
                 } // if watchDogTimer.nsecsElapsed
               } // while(m_running)
+                    m_Motor.CloseAllDevice();
                     m_Motor.DisableAllDevice();
                     serialArduino.closeSerialPort();
         } //if(EMERGENCY_BUTTON==LOW || !guiEmergencyMode)
