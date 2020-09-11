@@ -55,6 +55,7 @@ private:
 private:
     void setBtnMaxRPMGUI();
     void setBtnChangeDirectionGUI();
+    void initWatchDog();
 signals:
     void UpdateGUI(int state);
 };

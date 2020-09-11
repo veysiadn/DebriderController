@@ -4,13 +4,15 @@ void motorThread::run()
 {
     pinMode(WATCHDOG_PIN,OUTPUT);
     pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
+    watchDogTimer.start();
+    initWatchDog();
     int dir = 1;
     while(true)
     {
         m_currState=DEBRIDER_STATE_INIT;
         if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW && !guiEmergencyMode)
         {
-            serialArduino.arduinoSerialRunning=1  ;
+            serialArduino.arduinoSerialRunning=TRUE;
             if(!serialArduino.isRunning())
                 serialArduino.start();
 
@@ -23,7 +25,6 @@ void motorThread::run()
                 std::cout<< " DEBRIDER STATE ENABLED " << std::endl;
                 std::cout << "EPOS & SERIAL CONNECTION INITIALIZED..." << std::endl;
                 emit UpdateGUI(m_currState);
-                watchDogTimer.start();
             }
             else if (m_Motor.EPOSGetError())
             {
@@ -241,4 +242,14 @@ void motorThread::setBtnChangeDirectionGUI()
     }
     // ######### HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH  ###########
 
+}
+void motorThread::initWatchDog()
+{
+    for (int i = 0; i < 3 ;i++)
+    {
+        digitalWrite(WATCHDOG_PIN,LOW);
+        delay(60);
+        digitalWrite(WATCHDOG_PIN,HIGH);
+        delay(60);
+    }
 }

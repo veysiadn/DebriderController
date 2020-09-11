@@ -29,11 +29,13 @@ void Emergency_Window::SetEmergencyText()
     }
     else if (m_EmergencyStatus==DEBRIDER_STATE_SERIAL_ERROR)
     {
-        txtEmergency=("\n \t! EMERGENCY MODE ACTIVE ! \n \n \t SERIAL CONNECTION ERROR");
+        txtEmergency=("\n \t! EMERGENCY MODE ACTIVE ! \n \n \t SERIAL CONNECTION ERROR \n \t"
+                      "CLICK EXIT TO TRY TO RECONNECT ");
     }
     else if (m_EmergencyStatus==DEBRIDER_STATE_EPOS_ERROR)
     {
-        txtEmergency=("\n \t! EMERGENCY MODE ACTIVE ! \n \n \t EPOS CONNECTION ERROR");
+        txtEmergency=("\n \t! EMERGENCY MODE ACTIVE ! \n \n \t EPOS CONNECTION ERROR \n \t "
+                      "CLICK EXIT TO TRY TO RECONNECT");
     }
     else
     {

@@ -54,9 +54,9 @@ private:
       QString speedLabel;
       QString statusLabel;
 
-      int pumpMotorTargetSpeed;
+      float pumpMotorTargetSpeed;
+      int pumpMotorSpeedPrintVal=0;
       bool pumpRunningStatus=false;
-
       int debriderMotorTargetSpeed;
 
       Emergency_Window emergencyWindow;

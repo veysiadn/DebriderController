@@ -2,8 +2,9 @@
 #define M_DEFINES_H
 
 #define BLDC_MAX_RPM        15000   // Maximum RPM value for BLDC Motor
-#define CHANGE_RPM_RATE     1000   // Increment and decrement values for BLDC MOTOR RPM 
-#define PUMP_MAX_RPM        480    // Maximum RPM value for Pump Motor
+#define CHANGE_RPM_RATE     1000    // Increment and decrement values for BLDC MOTOR RPM
+#define PUMP_PWM_RANGE      480     // Maximum RPM value for Pump Motor
+#define PUMP_MAX_PWM        480
 // Pump Motor PIN MAP
 #define PUMP_HARDPWM    26          // CKim - GPIO 12,Physically Pin 32
 #define PUMP_ENABLE     1           // CKim - GPIO 18, Physically Pin 12

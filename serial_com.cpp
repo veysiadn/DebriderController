@@ -7,7 +7,7 @@ void serial_com::run()
    arduinoSerialRunning=1;
    while(true)
     {
-       closeSerialPort();
+       if(serialArduinoNanoEvery.isOpen()) closeSerialPort();
      while(arduinoSerialRunning)
         {
             if(!serialArduinoNanoEvery.isOpen()) { openSerialPort(); }
