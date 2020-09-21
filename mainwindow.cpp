@@ -227,18 +227,18 @@ void MainWindow::printStatus(int dSpeed, int pSpeed)
     speedLabel.sprintf(" %d ",pSpeed);
     ui->p_MotorSpeedInfo->setText(speedLabel);
     if(pumpRunningStatus==false)
-    statusLabel.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %d  ",dSpeed,pSpeed);
+    statusLabel.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %% %d  ",dSpeed,pSpeed);
     else
-    statusLabel.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %d  ",dSpeed,pSpeed);
+    statusLabel.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
     if(m_Thread.m_DebriderInstantSpeed < 0)
     {
         statusLabel.sprintf(" Debrider Motor Running at CW MODE at :  %d RPM \n "
-                            "Pump Motor Running at : %d  ",dSpeed*(-1),pSpeed);
+                            "Pump Motor Running at : %% %d  ",dSpeed*(-1),pSpeed);
     }
     else if(m_Thread.m_DebriderInstantSpeed > 0)
     {
         statusLabel.sprintf(" Debrider Motor Running at CCW MODE at :  %d RPM \n "
-                            "Pump Motor Running at : %d  ",dSpeed,pSpeed);
+                            "Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
     }
     ui->lblStatusMsg->setText(statusLabel);
 }
@@ -250,8 +250,10 @@ void MainWindow::stopPumpMotor()
 }
 void MainWindow::movePumpMotor()
 {
+    int pumpSpeed;
+    pumpSpeed=int(pumpMotorTargetSpeed);
     pumpRunningStatus=true;
-    pwmWrite(PUMP_HARDPWM,pumpMotorTargetSpeed);
+    pwmWrite(PUMP_HARDPWM,pumpSpeed);
     digitalWrite(PUMP_ENABLE,1);
 }
 void MainWindow::enableGUI()

@@ -36,6 +36,7 @@ private:
 
     void Move(void* keyHandle_, long target_velocity, unsigned short Node_ID);
     void MoveToPosition(void* keyHandle_, long target_position, unsigned short Node_ID);
+    void GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID);
 
 public:
     MaxonMotor();
@@ -50,7 +51,7 @@ public:
 
     void MoveAllDevice(long* target_velocity);
 
-    int CloseBlade();
+    int getCloseBladePosition();
 
     int EPOSGetError();
     // -----------------------------------------------
@@ -60,9 +61,7 @@ public:
     void MoveVelocity(const long& target_velocity);
     void MovePosition(const long& target_pos);
 
-    void GetCurrentVelocity();
-    void GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID);
-
+    int GetCurrentVelocity();
     void SetOscMode(int Amp);
     void RunOscMode(int dir);
     void StopMotion();

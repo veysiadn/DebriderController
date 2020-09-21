@@ -4,8 +4,9 @@ void motorThread::run()
 {
     pinMode(WATCHDOG_PIN,OUTPUT);
     pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
-    watchDogTimer.start();
+    delay(1000);
     initWatchDog();
+    watchDogTimer.start();
     int dir = 1;
     while(true)
     {
@@ -15,9 +16,9 @@ void motorThread::run()
             serialArduino.arduinoSerialRunning=TRUE;
             if(!serialArduino.isRunning())
                 serialArduino.start();
-
-            m_Motor.ActiviateAllDevice();
-
+                m_Motor.ActiviateAllDevice();
+                m_Motor.DisableAllDevice();
+                m_Motor.ActiviateAllDevice();
             if(!serialArduino.getSerialError() && !m_Motor.EPOSGetError())
             {
                 m_currState = DEBRIDER_STATE_ENABLED;
@@ -25,7 +26,7 @@ void motorThread::run()
                 std::cout<< " DEBRIDER STATE ENABLED " << std::endl;
                 std::cout << "EPOS & SERIAL CONNECTION INITIALIZED..." << std::endl;
                 emit UpdateGUI(m_currState);
-            }
+               }
             else if (m_Motor.EPOSGetError())
             {
                 std::cout << "EPOS CONNECTION ERROR " << std::endl;
@@ -35,7 +36,8 @@ void motorThread::run()
             }
             else if (serialArduino.getSerialError())
             {
-                std::cout << "Serial CONNECTION ERROR : Serial Connection couldn't initialized... " << std::endl;
+                std::cout << "Serial CONNECTION ERROR : "
+                             "Serial Connection couldn't initialized... " << std::endl;
                 m_currState = DEBRIDER_STATE_SERIAL_ERROR;
                 serialArduino.arduinoSerialRunning=0;
                 m_running=false;
@@ -43,7 +45,8 @@ void motorThread::run()
             }
             else
             {
-                std::cout << "Critical ERROR : Serial & EPOS Couldn't be initialized... " << std::endl;
+                std::cout << "Critical ERROR : Serial & "
+                             "EPOS Couldn't be initialized... " << std::endl;
                 m_currState = DEBRIDER_STATE_EMERGENCY;
                 m_running=false;
                 emit UpdateGUI(m_currState);
@@ -70,10 +73,16 @@ void motorThread::run()
                     m_running=false;
                     break;
                 }
-
+                if(!firstSetup)
+                {
                 if(digitalRead(EMERGENCY_RELAY_CONTROL)==HIGH)
                                                         { m_emergency=1; }
                 else                                    { m_emergency=0; }
+                }
+                else
+                {
+                    initWatchDog();
+                }
 
                 if((serialArduino.pedalBtnCloseBlade && serialArduino.pedalAnalogBLDCval < 23)
                         || (guiBtnCloseBlade && serialArduino.pedalAnalogBLDCval < 23))
@@ -109,7 +118,7 @@ void motorThread::run()
                 {
                     m_currState = DEBRIDER_STATE_CLOSE_BLADE;
                     m_Motor.EnablePositionMode();
-                    m_TargetPos = m_Motor.CloseBlade();
+                    m_TargetPos = m_Motor.getCloseBladePosition();
                     m_Motor.MovePosition(m_TargetPos);
                     m_CloseBlade=0;
                     guiBtnCloseBlade=0;
@@ -180,6 +189,7 @@ void motorThread::run()
                 }
 
                 m_prevState = m_currState;
+                if(firstSetup) { firstSetup=false; }
                 if(watchDogTimer.nsecsElapsed()>=50000000)
                 {
                     if(watchDogState)
@@ -248,8 +258,8 @@ void motorThread::initWatchDog()
     for (int i = 0; i < 3 ;i++)
     {
         digitalWrite(WATCHDOG_PIN,LOW);
-        delay(60);
+        delay(50);
         digitalWrite(WATCHDOG_PIN,HIGH);
-        delay(60);
+        delay(50);
     }
 }

@@ -299,6 +299,7 @@ void* MaxonMotor::ActivateDevice(char *PortName, unsigned short Node_ID)
     }
 
     // Fault & State 함수 실행
+    delay(100);
     EnableDevice(keyHandle_, Node_ID);
 
     return keyHandle_;
@@ -340,7 +341,7 @@ void MaxonMotor::GetCurrentPositionAllDevice(int* current_position)
 }
 
 //  VysADN CloseBlade Function //
-int MaxonMotor::CloseBlade()
+int MaxonMotor::getCloseBladePosition()
 {
     int Current_Pos, new_Pos;
 
@@ -384,5 +385,21 @@ int MaxonMotor::EPOSGetError()
 {
     return m_errorFlag ;
 }
+int MaxonMotor::GetCurrentVelocity()
+{
+    unsigned int error_code = 0;
+    int currentVelocity=0;
+    if(m_Mode == OMD_PROFILE_VELOCITY_MODE)
+    {
+        if(!VCS_GetVelocityIs(m_keyHandle_MCP, m_Node_ID_MCP, &currentVelocity, &error_code))
+        {
 
-
+        }
+    }
+    else
+    {
+     std::cout << "Error Velocity Mode is not active!!" << std::endl;
+     return 0;
+    }
+    return currentVelocity;
+}

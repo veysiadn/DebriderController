@@ -13,7 +13,8 @@ class motorThread : public QThread
 
 public:
 
-    motorThread() {
+    motorThread()
+    {
         m_currState = DEBRIDER_STATE_INIT;
         m_prevState = DEBRIDER_STATE_INIT;
         m_DebriderTargetSpeed = 0;
@@ -28,10 +29,12 @@ public:
         guiBtnMaxRPM=0;
         guiBtnChangeDirection=0;
         guiEmergencyMode=0;
+        watchDogState=true;
+        firstSetup=true;
     }
     virtual void run();
     int m_DebriderInstantSpeed;
-    int m_DebriderTargetSpeed;
+        int m_DebriderTargetSpeed;
     int m_Oscillate;
     bool m_running;
     int m_CloseBlade;            // VysADN CloseBlade function parameters
@@ -51,7 +54,8 @@ private:
     int pedalBtnMaxRPM_LastState;
     serial_com serialArduino;
     QElapsedTimer watchDogTimer;
-    bool watchDogState=true;
+    bool watchDogState;
+    bool firstSetup;
 private:
     void setBtnMaxRPMGUI();
     void setBtnChangeDirectionGUI();
