@@ -13,7 +13,6 @@ MaxonMotor::MaxonMotor()
 
     m_Mode = 0;
 
-    std::cout<< "Instance initialized...\n ";
 }
 
 
