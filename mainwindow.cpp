@@ -62,7 +62,7 @@ void MainWindow::stateChanged(int state)
             disableGUI();
             movePumpMotor();
             statusLabel.sprintf(" Debrider Motor in Oscillation MODE \n"
-                                "Pump Motor Running : %d ",pumpMotorSpeedPrintVal);
+                                "Pump Motor Running : %% %d ",pumpMotorSpeedPrintVal);
             ui->lblStatusMsg->setText(statusLabel);
             break;
 

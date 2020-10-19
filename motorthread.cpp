@@ -4,7 +4,6 @@ void motorThread::run()
 {
     pinMode(WATCHDOG_PIN,OUTPUT);
     pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
-    delay(1000);
     initWatchDog();
     watchDogTimer.start();
     int dir = 1;
@@ -13,12 +12,14 @@ void motorThread::run()
         m_currState=DEBRIDER_STATE_INIT;
         if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW && !guiEmergencyMode)
         {
+            std::cout << "I pass control relay" << std::endl;
             serialArduino.arduinoSerialRunning=TRUE;
             if(!serialArduino.isRunning())
                 serialArduino.start();
                 m_Motor.ActiviateAllDevice();
-                m_Motor.DisableAllDevice();
-                m_Motor.ActiviateAllDevice();
+                std::cout << "I pass activation relay" << std::endl;
+                //m_Motor.DisableAllDevice();
+                //m_Motor.ActiviateAllDevice();
             if(!serialArduino.getSerialError() && !m_Motor.EPOSGetError())
             {
                 m_currState = DEBRIDER_STATE_ENABLED;
@@ -190,7 +191,7 @@ void motorThread::run()
 
                 m_prevState = m_currState;
                 if(firstSetup) { firstSetup=false; }
-                if(watchDogTimer.nsecsElapsed()>=50000000)
+                if(watchDogTimer.nsecsElapsed()>=5000000)
                 {
                     if(watchDogState)
                     {
@@ -255,11 +256,11 @@ void motorThread::setBtnChangeDirectionGUI()
 }
 void motorThread::initWatchDog()
 {
-    for (int i = 0; i < 3 ;i++)
+    for (int i = 0; i < 200 ;i++)
     {
         digitalWrite(WATCHDOG_PIN,LOW);
-        delay(50);
+        delay(5);
         digitalWrite(WATCHDOG_PIN,HIGH);
-        delay(50);
+        delay(5);
     }
 }

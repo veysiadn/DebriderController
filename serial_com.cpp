@@ -1,5 +1,8 @@
 #include "serial_com.h"
 #include <iostream>
+#include<wiringPi.h>
+#include<m_defines.h>
+
 void serial_com::run()
 {
    closeSerialPort();
