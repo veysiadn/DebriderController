@@ -5,7 +5,7 @@ MaxonMotor::MaxonMotor()
 {
     m_errorFlag = 0;
 
-    PortName_MCP = "CAN0";
+    m_PortName_MCP = "CAN0";
 
     m_Node_ID_MCP = 1;
 
@@ -13,8 +13,148 @@ MaxonMotor::MaxonMotor()
 
     m_Mode = 0;
 
+    m_keyHandle_MCP = 0;
+
 }
 
+int MaxonMotor::OpenCANCommunication()
+{
+    char DeviceName[]           = "EPOS4";          // CKim - Name of the Device
+    char ProtocolStackName[]    = "CANopen";        // CKim - Name of the protocol
+    char InterfaceName[]        = "CAN_mcp251x 0";  // CKim - Name of the interface (for PiCAN2 Board Chip)
+
+    unsigned int error_code = 0x00;
+    unsigned long timeout_ = 10;
+    unsigned long baudrate_ = 1000000;
+
+    // CKim - Get the handle of the CAN port
+    m_keyHandle_MCP = VCS_OpenDevice(DeviceName, ProtocolStackName, InterfaceName, m_PortName_MCP, &error_code);
+
+    // CKim - Handle is NULL if failed to open device
+    if( m_keyHandle_MCP == 0 )
+    {
+        std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
+        m_errorFlag = 1;
+        return 0;
+    }
+    else
+    {
+        std::cout<<"Open Device Success!" << std::endl;
+        m_errorFlag = 0;
+    }
+
+    // CKim - Configure CAN commuication (baudrates and etc...)
+    if(!VCS_SetProtocolStackSettings(m_keyHandle_MCP, baudrate_, timeout_, &error_code) )
+    {
+        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << error_code << std::endl;
+        m_errorFlag = 1;
+        CloseDevice(m_keyHandle_MCP);
+        return 0;
+    }
+    return 1;
+}
+
+int MaxonMotor::EnableMotorController()
+{
+    unsigned int error_code = 0;
+
+    int IsFault = FALSE;
+
+    // CKim - Get current state and clear faults
+    if( VCS_GetFaultState(m_keyHandle_MCP, m_Node_ID_MCP, &IsFault, &error_code) )
+    {
+        if( IsFault && !VCS_ClearFault(m_keyHandle_MCP, m_Node_ID_MCP, &error_code) )
+        {
+            std::cout << "Clear Fault Failed!, error_code = " << error_code << std::endl;
+            m_errorFlag = 1;
+            return 0;
+        }
+
+        int IsEnabled = FALSE;
+
+        // CKim - Check if the device is enabled
+        if( VCS_GetEnableState(m_keyHandle_MCP, m_Node_ID_MCP, &IsEnabled, &error_code) )
+        {
+            if (!IsEnabled && !VCS_SetEnableState(m_keyHandle_MCP, m_Node_ID_MCP, &error_code))
+            {
+                std::cout << "Set Enable State Failed!, error_code = " << error_code << std::endl;
+                m_errorFlag = 1;
+                return 0;
+            }
+            else
+            {
+                std::cout << "Set Enable State Succeeded!" << std::endl;
+                m_errorFlag = 0;
+            }
+        }
+    }
+    else
+    {
+        std::cout << "Get fault state failed!, error_code =" << error_code << std::endl;
+        m_errorFlag = 1;
+        return 0;
+    }
+    return 1;
+}
+
+void* MaxonMotor::ActivateDevice(char *PortName, unsigned short Node_ID)
+{
+    char DeviceName[]           = "EPOS4";          // Device 이름
+    char ProtocolStackName[]    = "CANopen";        // Protocol 이름
+    char InterfaceName[]        = "CAN_mcp251x 0";  // Interface 이름 (PiCAN2 Board Chip 이름)
+
+    unsigned int error_code = 0x00;
+    unsigned long timeout_ = 10;                    // Port를 여는데 경과되는 시간
+    unsigned long baudrate_ = 1000000;              // 통신 속도
+    void *keyHandle_;
+
+    // OpenDevice 함수 반환(HANDLE) 값
+    keyHandle_ = VCS_OpenDevice(DeviceName, ProtocolStackName, InterfaceName, PortName, &error_code);
+
+    // OpenDevice 실패
+    if( keyHandle_ == 0 )
+    {
+        std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
+        m_errorFlag = 1;
+        exit(0);
+    }
+
+    else
+    {
+        std::cout<<"Open Device Success!" << std::endl;
+        m_errorFlag = 0;
+    }
+
+    // 지정한 Protocol 설정
+    if(!VCS_SetProtocolStackSettings(keyHandle_, baudrate_, timeout_, &error_code) )
+    {
+        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << error_code << std::endl;
+        m_errorFlag = 1;
+        CloseDevice(keyHandle_);
+        exit(0);
+    }
+
+    // Fault & State 함수 실행
+    delay(100);
+    EnableDevice(keyHandle_, Node_ID);
+
+    return keyHandle_;
+}
+
+void MaxonMotor::ActiviateAllDevice()
+{
+    m_keyHandle_MCP = ActivateDevice(m_PortName_MCP, m_Node_ID_MCP);
+}
+
+void MaxonMotor::DisableAllDevice()
+{
+    DisableDevice(m_keyHandle_MCP, m_Node_ID_MCP);
+}
+
+void MaxonMotor::CloseAllDevice()
+{
+    CloseDevice(m_keyHandle_MCP);
+}
 
 void MaxonMotor::CloseDevice(void *keyHandle_)
 {
@@ -27,7 +167,6 @@ void MaxonMotor::CloseDevice(void *keyHandle_)
 
     VCS_CloseAllDevices(&error_code);
 }
-
 
 void MaxonMotor::EnableDevice(void *keyHandle_, unsigned short Node_ID)
 {
@@ -67,6 +206,47 @@ void MaxonMotor::EnableDevice(void *keyHandle_, unsigned short Node_ID)
         std::cout << "Get fault state failed!, error_code =" << error_code << std::endl;
         m_errorFlag = 1;
     }
+}
+
+void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
+{
+    unsigned int error_code = 0;
+    int IsFault = FALSE;
+
+    if( VCS_GetFaultState(keyHandle_, Node_ID, &IsFault, &error_code) )
+    {
+        if( IsFault && !VCS_ClearFault(keyHandle_, Node_ID, &error_code) )
+        {
+            std::cout << "Clear Fault Failed!, error_code = "<< error_code << std::endl;
+            m_errorFlag = 1;
+            return;
+        }
+
+        int IsEnabled = FALSE;
+
+        if( VCS_GetEnableState(keyHandle_, Node_ID, &IsEnabled, &error_code) )
+        {
+            if (IsEnabled && !VCS_SetDisableState(keyHandle_, Node_ID, &error_code))
+            {
+                std::cout << "Set Disable state failed!, error_code = " << error_code << std::endl;
+                m_errorFlag = 1;
+            }
+
+            else
+            {
+               std::cout << "Set Disable State Succeeded!" << std::endl;
+                 digitalWrite(PUMP_ENABLE,0);
+                 pwmWrite(PUMP_HARDPWM,0);
+                 m_errorFlag = 0;
+            }
+        }
+    }
+    else
+    {
+        std::cout<<"Get Fault State Failed!, error_code=" << error_code << std::endl;
+        m_errorFlag = 1;
+    }
+
 }
 
 
@@ -157,47 +337,6 @@ void MaxonMotor::RunOscMode(int dir)
     }
 }
 
-void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
-{
-    unsigned int error_code = 0;
-    int IsFault = FALSE;
-
-    if( VCS_GetFaultState(keyHandle_, Node_ID, &IsFault, &error_code) )
-    {
-        if( IsFault && !VCS_ClearFault(keyHandle_, Node_ID, &error_code) )
-        {
-            std::cout << "Clear Fault Failed!, error_code = "<< error_code << std::endl;
-            m_errorFlag = 1;
-            return;
-        }
-
-        int IsEnabled = FALSE;
-
-        if( VCS_GetEnableState(keyHandle_, Node_ID, &IsEnabled, &error_code) )
-        {
-            if (IsEnabled && !VCS_SetDisableState(keyHandle_, Node_ID, &error_code)) 
-            {
-                std::cout << "Set Disable state failed!, error_code = " << error_code << std::endl;
-                m_errorFlag = 1;
-            }
-
-            else
-            {
-               std::cout << "Set Disable State Succeeded!" << std::endl;
-                 digitalWrite(PUMP_ENABLE,0);
-                 pwmWrite(PUMP_HARDPWM,0);
-                 m_errorFlag = 0;
-            }
-        }
-    }
-    else
-    {
-        std::cout<<"Get Fault State Failed!, error_code=" << error_code << std::endl;
-        m_errorFlag = 1;
-    }
-
-}
-
 void MaxonMotor::Move(void *keyHandle_, long target_velocity, unsigned short Node_ID)
 {
     unsigned int error_code = 0;
@@ -259,66 +398,6 @@ void MaxonMotor::WaitForMotion()
     }
 
 }
-
-void* MaxonMotor::ActivateDevice(char *PortName, unsigned short Node_ID)
-{
-    char DeviceName[]           = "EPOS4";          // Device 이름
-    char ProtocolStackName[]    = "CANopen";        // Protocol 이름
-    char InterfaceName[]        = "CAN_mcp251x 0";  // Interface 이름 (PiCAN2 Board Chip 이름)
-
-    unsigned int error_code = 0x00;
-    unsigned long timeout_ = 10;                    // Port를 여는데 경과되는 시간
-    unsigned long baudrate_ = 1000000;              // 통신 속도
-    void *keyHandle_;
-
-    // OpenDevice 함수 반환(HANDLE) 값
-    keyHandle_ = VCS_OpenDevice(DeviceName, ProtocolStackName, InterfaceName, PortName, &error_code);
-
-    // OpenDevice 실패
-    if( keyHandle_ == 0 )
-    {
-        std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
-        m_errorFlag = 1;
-        exit(0);
-    }
-
-    else
-    {
-        std::cout<<"Open Device Success!" << std::endl;
-        m_errorFlag = 0;
-    }
-
-    // 지정한 Protocol 설정
-    if(!VCS_SetProtocolStackSettings(keyHandle_, baudrate_, timeout_, &error_code) )
-    {
-        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << error_code << std::endl;
-        m_errorFlag = 1;
-        CloseDevice(keyHandle_);
-        exit(0);
-    }
-
-    // Fault & State 함수 실행
-    delay(100);
-    EnableDevice(keyHandle_, Node_ID);
-
-    return keyHandle_;
-}
-
-void MaxonMotor::ActiviateAllDevice()
-{
-    m_keyHandle_MCP = ActivateDevice(PortName_MCP, m_Node_ID_MCP);
-}
-
-void MaxonMotor::DisableAllDevice()
-{
-    DisableDevice(m_keyHandle_MCP, m_Node_ID_MCP);
-}
-
-void MaxonMotor::CloseAllDevice()
-{
-    CloseDevice(m_keyHandle_MCP);
-}
-
 
 void MaxonMotor::GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID)
 {

@@ -1,8 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <motorthread.h>
-#include <epos4_can.h>
+//#include <epos4_can.h>
 #include "qstring.h"
+#include "wiringPi.h"
 
 MainWindow* theWindow = NULL;
 
@@ -11,34 +12,51 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // CKim - Initializing Variables
     debriderMotorTargetSpeed = 0;
     pumpMotorTargetSpeed = 0;
     pumpRunningStatus=false;
-    wiringPiSetup();
+
+    // CKim - Initialize Raspberry Pi
+    wiringPiSetup();                // CKim - Should be called first before using any wiringPi functions
+
+    // CKim - Initialize RPi's GPIO
     pinMode(PUMP_ENABLE,OUTPUT);
     pinMode(PUMP_DIR,OUTPUT);
     pinMode(PUMP_HARDPWM,PWM_OUTPUT);
+    pinMode(WATCHDOG_PIN,OUTPUT);
+    pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
+
+    // CKim - Initialize RPi's pwm for Pump control
     pwmSetMode(PWM_MODE_MS);
     pwmSetRange(PUMP_PWM_RANGE);    //19.2 Oscillator freq / 480 / 2 = 20kHz
     pwmSetClock(2);
     digitalWrite(PUMP_ENABLE,0);
+
+    // CKim - Connect Signals and Slots
     connect(&m_Thread, &motorThread::UpdateGUI, this, &MainWindow::stateChanged);
     connect(&emergencyWindow,&Emergency_Window::Emergency_Exit_Clicked,
             this,&MainWindow::exitEmergencyWindow);
+
+    // CKim - Start Control Thread
     if(!m_Thread.isRunning()) m_Thread.start();
 }
 
 MainWindow::~MainWindow()
 {
-    m_Thread.m_running = false;
+    //m_Thread.m_running = false;
     delete ui;
 }
+
 void MainWindow::exitEmergencyWindow(int a)
 {
     m_Thread.guiEmergencyMode=a;
-    stateChanged(DEBRIDER_STATE_ENABLED);
+    m_Thread.ReInitialize();
+    //stateChanged(DEBRIDER_STATE_ENABLED);
     std::cout << "Exit Clicked ON Emergency Window" << std::endl;
 }
+
 void MainWindow::stateChanged(int state)
 {
     emergencyWindow.m_EmergencyStatus=state;
@@ -127,19 +145,19 @@ void MainWindow::on_btnDecreaseRPM_clicked()
 
 void MainWindow::on_btnIncreaseRPM_clicked()
 {
-    if(debriderMotorTargetSpeed==15000)
+    debriderMotorTargetSpeed += CHANGE_RPM_RATE;
+
+    if(debriderMotorTargetSpeed > BLDC_MAX_RPM)
+    {
+        debriderMotorTargetSpeed = BLDC_MAX_RPM;
+        ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
+                                          "Max RPM for Debrider : 15000 RPM"));
+    }
+    else
+        printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+
+    if(debriderMotorTargetSpeed==BLDC_MAX_RPM)
         ui->radioMAXRPM->setChecked(true);
-
-        debriderMotorTargetSpeed += CHANGE_RPM_RATE;
-
-        if(debriderMotorTargetSpeed > BLDC_MAX_RPM)
-        {
-            debriderMotorTargetSpeed = BLDC_MAX_RPM;
-            ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
-                                              "Max RPM for Debrider : 15000 RPM"));
-        }
-        else 
-            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 
     if(ui->radioCCW->isChecked())
       m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
@@ -175,6 +193,7 @@ void MainWindow::on_radioOSC_toggled(bool checked)
 
 void MainWindow::on_btnDecreaseFlow_clicked()
 {
+    // CKim - Pump speed updated here, perhaps pwm command should be issued in main thread instead of here??
     if(pumpMotorTargetSpeed > 0)    pumpMotorTargetSpeed-=48;
     if(pumpRunningStatus) pwmWrite(PUMP_HARDPWM,pumpMotorTargetSpeed);
     pumpMotorSpeedPrintVal=int(pumpMotorTargetSpeed/4.8);
@@ -188,11 +207,13 @@ void MainWindow::on_btnIncreaseFlow_clicked()
     pumpMotorSpeedPrintVal=int(pumpMotorTargetSpeed/4.8);
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 }
+
 void MainWindow::on_btnIrrigationMove_clicked()
 {
     movePumpMotor();
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 }
+
 void MainWindow::on_btnIrrigationStop_clicked()
 {
     pumpMotorTargetSpeed=0;
@@ -205,21 +226,29 @@ void MainWindow::on_btnCloseBlade_clicked()
    m_Thread.guiBtnCloseBlade=1;
 }
 
-void MainWindow::callEmergencyWindow()
-{
-        m_Thread.guiEmergencyMode=1;
-        emergencyWindow.SetEmergencyText();
-        emergencyWindow.setModal(true);
-        emergencyWindow.setWindowState(Qt::WindowFullScreen);
-        emergencyWindow.exec();
-}
-
 void MainWindow::on_radioMAXRPM_clicked()
 {
     debriderMotorTargetSpeed = BLDC_MAX_RPM;
     printStatus(debriderMotorTargetSpeed,pumpMotorTargetSpeed);
     m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
 }
+
+void MainWindow::stopPumpMotor()
+{
+    pumpRunningStatus=false;
+    pwmWrite(PUMP_HARDPWM,0);
+    //digitalWrite(PUMP_ENABLE,0);
+}
+
+void MainWindow::movePumpMotor()
+{
+    int pumpSpeed;
+    pumpSpeed=int(pumpMotorTargetSpeed);
+    pumpRunningStatus=true;
+    pwmWrite(PUMP_HARDPWM,pumpSpeed);
+    digitalWrite(PUMP_ENABLE,1);
+}
+
 void MainWindow::printStatus(int dSpeed, int pSpeed)
 {
     speedLabel.sprintf(" %d ", debriderMotorTargetSpeed);
@@ -242,20 +271,7 @@ void MainWindow::printStatus(int dSpeed, int pSpeed)
     }
     ui->lblStatusMsg->setText(statusLabel);
 }
-void MainWindow::stopPumpMotor()
-{
-    pumpRunningStatus=false;
-    pwmWrite(PUMP_HARDPWM,0);
-    //digitalWrite(PUMP_ENABLE,0);
-}
-void MainWindow::movePumpMotor()
-{
-    int pumpSpeed;
-    pumpSpeed=int(pumpMotorTargetSpeed);
-    pumpRunningStatus=true;
-    pwmWrite(PUMP_HARDPWM,pumpSpeed);
-    digitalWrite(PUMP_ENABLE,1);
-}
+
 void MainWindow::enableGUI()
 {
     ui->btnDecreaseRPM->setEnabled(true);
@@ -272,6 +288,7 @@ void MainWindow::enableGUI()
     ui->p_BLDCspeedInfo->setEnabled(true);
     ui->p_MotorSpeedInfo->setEnabled(true);
 }
+
 void MainWindow::disableGUI()
 {
     ui->btnDecreaseRPM->setEnabled(false);
@@ -288,6 +305,8 @@ void MainWindow::disableGUI()
     ui->p_BLDCspeedInfo->setEnabled(false);
     ui->p_MotorSpeedInfo->setEnabled(false);
 }
+
+// CKim - Updates gui from the button inputs
 void MainWindow::showPedalBtnStates()
 {
     // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
@@ -329,3 +348,12 @@ void MainWindow::showPedalBtnStates()
     emergencyWindow.close();
 }
 // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH   #########
+
+void MainWindow::callEmergencyWindow()
+{
+    m_Thread.guiEmergencyMode=1;
+    emergencyWindow.SetEmergencyText();
+    emergencyWindow.setModal(true);
+    emergencyWindow.setWindowState(Qt::WindowFullScreen);
+    emergencyWindow.exec();
+}

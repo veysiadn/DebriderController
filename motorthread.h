@@ -1,3 +1,8 @@
+// --------------------------------------------------------------- //
+// CKim - class "motorthread" encapsulating main thread of the
+// debrider controller. Uses 'QThread'
+// Last Updated : 2020.10.19 CKim & VysADN
+// --------------------------------------------------------------- //
 #ifndef MOTORTHREAD_H
 #define MOTORTHREAD_H
 
@@ -5,63 +10,72 @@
 #include "epos4_can.h"
 #include <QElapsedTimer>
 #include <m_defines.h>
-#include <wiringPi.h>
-#include <serial_com.h>
+#include "wiringPi.h"
+#include <footpedal.h>
+#include "eposthread.h"
+
 class motorThread : public QThread
 {
     Q_OBJECT
 
 public:
 
-    motorThread()
-    {
-        m_currState = DEBRIDER_STATE_INIT;
-        m_prevState = DEBRIDER_STATE_INIT;
-        m_DebriderTargetSpeed = 0;
-        m_Oscillate = 0;
-        m_TargetPos = 0;        
-        m_CloseBlade=0;
-        m_emergency=0;
-        m_DebriderInstantSpeed=0;
-        pedalBtnMaxRPM_LastState=0;
-        pedalBtnChangeDir_LastState=0;
-        guiBtnCloseBlade=0;
-        guiBtnMaxRPM=0;
-        guiBtnChangeDirection=0;
-        guiEmergencyMode=0;
-        watchDogState=true;
-        firstSetup=true;
-    }
+    motorThread();
+
+
+    // CKim - Control loop is implemented in run() function
     virtual void run();
+
+    void ReInitialize();
+
+    // CKim - Variables
+public:
     int m_DebriderInstantSpeed;
-        int m_DebriderTargetSpeed;
+    int m_DebriderTargetSpeed;
     int m_Oscillate;
-    bool m_running;
-    int m_CloseBlade;            // VysADN CloseBlade function parameters
+
+
     int m_TargetPos;            
     int m_emergency;
-    int guiBtnCloseBlade;
-    int guiBtnMaxRPM;
-    int guiBtnChangeDirection;
-    int guiEmergencyMode;
+
+    int guiBtnCloseBlade;       // CKim - Close button pressed
+    int guiBtnMaxRPM;           // CKim - Left Foot pedal button clicked
+    int guiBtnChangeDirection;  // CKim - Right Foot pedal button clicked
+    int guiEmergencyMode;       // CKim - Flag indicating notification of the emrgency to GUI. 1 if notified
+
 private:
-    // CKim - Motor class
+    MaxonMotor m_Motor;                 // CKim - Motor class
+    FootPedal m_FootPedal;              // CKim - Serial Communication class for foot pedal
+    QElapsedTimer watchDogTimer;        // CKim - Timer class for watchdog??
+    EposThread m_eposThread;             // CKim - Thread class for doing time consuming jobs
+
     int m_currState, m_prevState;
-    MaxonMotor m_Motor;
-    int m_RightPedalDown;
-    int m_LeftPedalDown;
-    int pedalBtnChangeDir_LastState;
-    int pedalBtnMaxRPM_LastState;
-    serial_com serialArduino;
-    QElapsedTimer watchDogTimer;
+    int m_RightPedalClicked;
+    int m_RightButtonClicked;
+    int m_LeftButtonClicked;
     bool watchDogState;
-    bool firstSetup;
+
+    int m_CloseBlade;            // VysADN CloseBlade function parameters
+    int m_LeftPedalDown;
+    int m_LeftPedalDepth;
+
 private:
-    void setBtnMaxRPMGUI();
-    void setBtnChangeDirectionGUI();
-    void initWatchDog();
+    void ProcessPedalButtons();
+    void PulseWatchDog();
+
+private slots:
+    // CKim - Callbacks from EPOS thread
+    void OnInitComplete(int errcode);
+    void OnTransToOscComplete(int errcode);
+    void OnBladeClosed(int errcode);
+
+    // CKim - Callbacks from foot pedal
+    void OnFootPedalLButton();
+    void OnFootPedalRButton();
+    void OnRightFootPedal();
+
 signals:
-    void UpdateGUI(int state);
+    void UpdateGUI(int state);  // CKim - This signal is emitted to notify window for GUI update
 };
 
 

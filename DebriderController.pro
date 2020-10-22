@@ -27,18 +27,20 @@ CONFIG += c++11
 SOURCES += \
         emergency_window.cpp \
         epos4_can.cpp \
+        eposthread.cpp \
+        footpedal.cpp \
         main.cpp \
         mainwindow.cpp \
-        motorthread.cpp \
-        serial_com.cpp
+        motorthread.cpp
 
 HEADERS += \
         emergency_window.h \
         epos4_can.h \
+        eposthread.h \
+        footpedal.h \
         m_defines.h \
         mainwindow.h \
-        motorthread.h \
-        serial_com.h
+        motorthread.h
 
 FORMS += \
         emergency_window.ui \

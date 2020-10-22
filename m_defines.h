@@ -15,18 +15,21 @@
 #define WATCHDOG_PIN               0       // VysAdn - GPIO 17, Physically Pin 11
 
 //  DEBRIDER_STATES CKim Starts 
+#define DEBRIDER_STATE_EMERGENCY        -5
+#define DEBRIDER_STATE_SERIAL_ERROR     -4
+#define DEBRIDER_STATE_EPOS_ERROR       -3
+#define DEBRIDER_STATE_UNINIT           -2
+#define DEBRIDER_STATE_INITIALIZING     -1
 #define DEBRIDER_STATE_INIT             0
 #define DEBRIDER_STATE_ENABLED          1
+
 #define DEBRIDER_STATE_RUNNING          2
 #define DEBRIDER_STATE_OSC              3
-
 #define DEBRIDER_STATE_CLOSE_BLADE      4
-#define DEBRIDER_STATE_EMERGENCY        5
-#define DEBRIDER_STATE_SERIAL_ERROR     6
-#define DEBRIDER_STATE_EPOS_ERROR       7
+#define DEBRIDER_STATE_BLADE_CLOSED     5
 
-#define TRUE 1
-#define FALSE 0
+//#define TRUE 1
+//#define FALSE 0
 
 
 #endif // M_DEFINES_H

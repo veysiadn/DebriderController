@@ -25,7 +25,8 @@ void Emergency_Window::SetEmergencyText()
     QString txtEmergency;
     if(m_EmergencyStatus==DEBRIDER_STATE_EMERGENCY)
     {
-        txtEmergency=(" \n !EMERGENCY MODE ACTIVE!");
+        txtEmergency=(" \n !EMERGENCY MODE ACTIVE! \n \n \t If emergency button is pressed release the button \n \t"
+                      " and click exit to restart the controller");
     }
     else if (m_EmergencyStatus==DEBRIDER_STATE_SERIAL_ERROR)
     {
