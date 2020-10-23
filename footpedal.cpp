@@ -132,7 +132,7 @@ void FootPedal::readSerialPort()
     D2 = ButtonChangeDirState       ; 1 bit 0-1
     RSV = Reserved bits.            ; Unused
     A0-A9 = Analog value from pedal ; 10 bit 0-1023 (2byte value)
-        Before transmitting the values arduino shifts FirstByte_transmitter 6 bit left to and shifts SecondByte_transmitter 2 bit to the right
+        Before transmitting the values, arduino shifts FirstByte_transmitter(1stByte) 6 bit left to and shifts SecondByte_transmitter(2ndByte) 2 bit to the right
     //Explanation of shifting :  since analog value is 10 bit and we can only send 8 bit at one cycle we need to divide it to 8 + 2 bits.
         // 8 bit will be SecondByte  {|A9|A8|A7|A6|A5|A4|A3|A2|}   and FirstByte :  {|A1|A0|X|X|X|X|X|X|}
       // Analog value before shifting :              {|X|X|X|X|X|X|A9|A8|A7|A6|A5|A4|A3|A2|A1|A0|}

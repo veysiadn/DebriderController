@@ -40,11 +40,13 @@ void motorThread::OnInitComplete(int errcode)
         std::cout << "Initialization Complete\n";
         //m_currState = DEBRIDER_STATE_INIT;
         m_currState = DEBRIDER_STATE_ENABLED;
+        emit UpdateGUI(m_currState);
     }
     else
     {
         std::cout << "Initialization error\n";
         m_currState = DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
     }
 }
 
@@ -55,11 +57,13 @@ void motorThread::OnTransToOscComplete(int errcode)
         std::cout << "Oscillation mode ended\n";
         //m_currState = DEBRIDER_STATE_INIT;
         m_currState = DEBRIDER_STATE_ENABLED;
+        emit UpdateGUI(m_currState);
     }
     else
     {
         std::cout << "Failed to start oscillation mode\n";
         m_currState = DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
     }
 }
 
@@ -70,11 +74,13 @@ void motorThread::OnBladeClosed(int errcode)
     {
         std::cout << "Blade closed\n";
         m_currState = DEBRIDER_STATE_BLADE_CLOSED;
+        emit UpdateGUI(m_currState);
     }
     else
     {
         std::cout << "Blade closing error\n";
         m_currState = DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
     }
 }
 
@@ -181,7 +187,7 @@ void motorThread::run()
         if(m_currState < DEBRIDER_STATE_UNINIT)   // UNINIT = -2 state
         {
             // CKim - Except for when emergency occured and Emergency Window needs to be raised
-            if(m_currState == DEBRIDER_STATE_EMERGENCY && guiEmergencyMode == 0)
+            if(m_currState <= DEBRIDER_STATE_EPOS_ERROR  && guiEmergencyMode == 0)
             {
                 guiEmergencyMode = 1;
                 // CKim - Close EPOS
@@ -233,7 +239,7 @@ void motorThread::run()
             // CKim - Stop Pump Motors
             digitalWrite(PUMP_ENABLE,0);
             pwmWrite(PUMP_HARDPWM,0);
-
+            m_eposThread.Abort();
             // CKim - Close EPOS
             m_Motor.CloseAllDevice();
             m_Motor.DisableAllDevice();

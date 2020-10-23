@@ -91,30 +91,41 @@ void MainWindow::stateChanged(int state)
 
         case DEBRIDER_STATE_EMERGENCY:
             disableGUI();
-            callEmergencyWindow();
+            ui->radioMAXRPM->setChecked(false);
+            ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
             m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed=0;
             pumpMotorTargetSpeed=0;
+            pumpMotorSpeedPrintVal=0;
             stopPumpMotor();
             printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+            callEmergencyWindow();
         break;
 
         case DEBRIDER_STATE_SERIAL_ERROR:
             disableGUI();
-            callEmergencyWindow();
+            ui->radioMAXRPM->setChecked(false);
+            ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
             m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed=0;
             stopPumpMotor();
             pumpMotorTargetSpeed=0;
+            pumpMotorSpeedPrintVal=0;
+            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+            callEmergencyWindow();
         break;
 
         case DEBRIDER_STATE_EPOS_ERROR:
             disableGUI();
-            callEmergencyWindow();
+            ui->radioMAXRPM->setChecked(false);
+            ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
             m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed=0;
             stopPumpMotor();
             pumpMotorTargetSpeed=0;
+            pumpMotorSpeedPrintVal=0;
+            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+            callEmergencyWindow();
         break;
 
         default:
@@ -194,17 +205,18 @@ void MainWindow::on_radioOSC_toggled(bool checked)
 void MainWindow::on_btnDecreaseFlow_clicked()
 {
     // CKim - Pump speed updated here, perhaps pwm command should be issued in main thread instead of here??
-    if(pumpMotorTargetSpeed > 0)    pumpMotorTargetSpeed-=48;
+    if(pumpMotorTargetSpeed >= 120)    pumpMotorTargetSpeed-=40;
     if(pumpRunningStatus) pwmWrite(PUMP_HARDPWM,pumpMotorTargetSpeed);
-    pumpMotorSpeedPrintVal=int(pumpMotorTargetSpeed/4.8);
+    pumpMotorSpeedPrintVal=int(((pumpMotorTargetSpeed-120.0)/4.0)+10.0);
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 }
 
 void MainWindow::on_btnIncreaseFlow_clicked()
 {
-    if(pumpMotorTargetSpeed < PUMP_MAX_PWM)    pumpMotorTargetSpeed+=48;
+    if(pumpMotorSpeedPrintVal==0) pumpMotorTargetSpeed=80;
+    if(pumpMotorTargetSpeed < PUMP_MAX_PWM)    pumpMotorTargetSpeed+=40;
     if(pumpRunningStatus) pwmWrite(PUMP_HARDPWM,pumpMotorTargetSpeed);
-    pumpMotorSpeedPrintVal=int(pumpMotorTargetSpeed/4.8);
+    pumpMotorSpeedPrintVal=int(((pumpMotorTargetSpeed-120.0)/4.0)+10);
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 }
 
@@ -218,6 +230,7 @@ void MainWindow::on_btnIrrigationStop_clicked()
 {
     pumpMotorTargetSpeed=0;
     stopPumpMotor();
+    pumpMotorSpeedPrintVal=0;
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 }
 
@@ -236,7 +249,7 @@ void MainWindow::on_radioMAXRPM_clicked()
 void MainWindow::stopPumpMotor()
 {
     pumpRunningStatus=false;
-    pwmWrite(PUMP_HARDPWM,0);
+    pwmWrite(PUMP_HARDPWM,0); 
     //digitalWrite(PUMP_ENABLE,0);
 }
 

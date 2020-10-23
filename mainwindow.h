@@ -66,7 +66,7 @@ private:
       QString statusLabel;
 
       // CKim - Variables updated from GUI input
-      float pumpMotorTargetSpeed;
+      float pumpMotorTargetSpeed=0.0;
       int pumpMotorSpeedPrintVal=0;
       bool pumpRunningStatus=false;
       int debriderMotorTargetSpeed;
