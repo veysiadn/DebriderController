@@ -94,7 +94,8 @@ void MainWindow::stateChanged(int state)
             ui->radioMAXRPM->setChecked(false);
             ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
-            m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed=0;
+            m_Thread.m_DebriderTargetSpeed=0;
+            debriderMotorTargetSpeed=0;
             pumpMotorTargetSpeed=0;
             pumpMotorSpeedPrintVal=0;
             stopPumpMotor();
@@ -107,7 +108,8 @@ void MainWindow::stateChanged(int state)
             ui->radioMAXRPM->setChecked(false);
             ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
-            m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed=0;
+            m_Thread.m_DebriderTargetSpeed = 0;
+            debriderMotorTargetSpeed=0;
             stopPumpMotor();
             pumpMotorTargetSpeed=0;
             pumpMotorSpeedPrintVal=0;
@@ -120,7 +122,8 @@ void MainWindow::stateChanged(int state)
             ui->radioMAXRPM->setChecked(false);
             ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
-            m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed=0;
+            m_Thread.m_DebriderTargetSpeed = 0;
+            debriderMotorTargetSpeed=0;
             stopPumpMotor();
             pumpMotorTargetSpeed=0;
             pumpMotorSpeedPrintVal=0;
@@ -228,9 +231,9 @@ void MainWindow::on_btnIrrigationMove_clicked()
 
 void MainWindow::on_btnIrrigationStop_clicked()
 {
-    pumpMotorTargetSpeed=0;
+    //pumpMotorTargetSpeed=0;
     stopPumpMotor();
-    pumpMotorSpeedPrintVal=0;
+   // pumpMotorSpeedPrintVal=0;
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 }
 
@@ -242,7 +245,7 @@ void MainWindow::on_btnCloseBlade_clicked()
 void MainWindow::on_radioMAXRPM_clicked()
 {
     debriderMotorTargetSpeed = BLDC_MAX_RPM;
-    printStatus(debriderMotorTargetSpeed,pumpMotorTargetSpeed);
+    printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
     m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
 }
 
@@ -272,15 +275,15 @@ void MainWindow::printStatus(int dSpeed, int pSpeed)
     statusLabel.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %% %d  ",dSpeed,pSpeed);
     else
     statusLabel.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
-    if(m_Thread.m_DebriderInstantSpeed < 0)
+    if(m_Thread.m_DebriderInstantSpeed < 20 && pumpRunningStatus==true)
     {
         statusLabel.sprintf(" Debrider Motor Running at CW MODE at :  %d RPM \n "
-                            "Pump Motor Running at : %% %d  ",dSpeed*(-1),pSpeed);
+                            "Pump Motor Running at : %% %d  ",m_Thread.m_DebriderInstantSpeed*(-1),pSpeed);
     }
-    else if(m_Thread.m_DebriderInstantSpeed > 0)
+    else if(m_Thread.m_DebriderInstantSpeed > 20 && pumpRunningStatus==true)
     {
         statusLabel.sprintf(" Debrider Motor Running at CCW MODE at :  %d RPM \n "
-                            "Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
+                            "Pump Motor Running at : %% %d  ",m_Thread.m_DebriderInstantSpeed,pSpeed);
     }
     ui->lblStatusMsg->setText(statusLabel);
 }

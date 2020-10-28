@@ -28,13 +28,13 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>40</width>
-        <height>18</height>
+        <width>60</width>
+        <height>30</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>22</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -60,8 +60,8 @@
         </property>
         <property name="font">
          <font>
-          <family>Piboto</family>
-          <pointsize>36</pointsize>
+          <family>DejaVu Sans</family>
+          <pointsize>46</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -91,7 +91,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>22</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -121,8 +121,8 @@
         </property>
         <property name="font">
          <font>
-          <family>Piboto</family>
-          <pointsize>36</pointsize>
+          <family>DejaVu Sans</family>
+          <pointsize>46</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -169,7 +169,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>22</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -207,16 +207,39 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="lytWorkingModes">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QGroupBox" name="BoxModes">
         <property name="enabled">
          <bool>true</bool>
         </property>
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>1</pointsize>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(85, 87, 83);
@@ -245,13 +268,26 @@
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>20</pointsize>
             </font>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
+            <string notr="true">
+
+QRadioButton {
+color: rgb(255, 255, 255);
 selection-color: rgb(255, 255, 255);
-selection-background-color: rgb(255, 255, 255);</string>
+selection-background-color: rgb(255, 255, 255);
+}
+
+QRadioButton::indicator {
+    width: 50px;
+    height: 50px;
+}
+</string>
            </property>
            <property name="text">
             <string>CW</string>
@@ -277,11 +313,23 @@ selection-background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>18</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
+            <string notr="true">
+
+QRadioButton {
+color: rgb(255, 255, 255);
+selection-color: rgb(255, 255, 255);
+selection-background-color: rgb(255, 255, 255);
+}
+
+QRadioButton::indicator {
+    width: 50px;
+    height: 50px;
+}
+</string>
            </property>
            <property name="text">
             <string>CCW</string>
@@ -290,8 +338,11 @@ selection-background-color: rgb(255, 255, 255);</string>
          </item>
          <item>
           <widget class="QRadioButton" name="radioOSC">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -304,11 +355,25 @@ selection-background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>18</pointsize>
             </font>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
+            <string notr="true">
+
+QRadioButton {
+color: rgb(255, 255, 255);
+selection-color: rgb(255, 255, 255);
+selection-background-color: rgb(255, 255, 255);
+}
+
+QRadioButton::indicator {
+    width: 50px;
+    height: 50px;
+}
 </string>
            </property>
            <property name="text">
@@ -333,6 +398,11 @@ selection-background-color: rgb(255, 255, 255);</string>
           <height>0</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>1</pointsize>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(85, 87, 83);</string>
         </property>
@@ -343,7 +413,7 @@ selection-background-color: rgb(255, 255, 255);</string>
          <item>
           <widget class="QRadioButton" name="radioMAXRPM">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -356,12 +426,23 @@ selection-background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>14</pointsize>
+             <pointsize>18</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);
-alternate-background-color: rgb(255, 255, 255);</string>
+            <string notr="true">
+
+QRadioButton {
+color: rgb(255, 255, 255);
+selection-color: rgb(255, 255, 255);
+selection-background-color: rgb(255, 255, 255);
+}
+
+QRadioButton::indicator {
+    width: 50px;
+    height: 50px;
+}
+</string>
            </property>
            <property name="text">
             <string>MAX RPM </string>
@@ -424,7 +505,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>22</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -473,14 +554,14 @@ alternate-background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>22</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Irrigation</string>
+       <string>IRRIGATION PUMP</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -505,8 +586,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <family>Piboto</family>
-          <pointsize>17</pointsize>
+          <family>DejaVu Sans</family>
+          <pointsize>24</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -542,8 +623,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <family>Piboto</family>
-          <pointsize>17</pointsize>
+          <family>DejaVu Sans</family>
+          <pointsize>24</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -572,8 +653,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <family>Serif</family>
-          <pointsize>36</pointsize>
+          <family>DejaVu Serif</family>
+          <pointsize>40</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -594,7 +675,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>22</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -618,8 +699,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="font">
          <font>
-          <family>Piboto</family>
-          <pointsize>36</pointsize>
+          <family>DejaVu Sans</family>
+          <pointsize>40</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -716,8 +797,6 @@ alternate-background-color: rgb(255, 255, 255);</string>
       <property name="font">
        <font>
         <pointsize>20</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -742,24 +821,6 @@ alternate-background-color: rgb(255, 255, 255);</string>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>726</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

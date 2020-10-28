@@ -189,6 +189,7 @@ void motorThread::run()
             // CKim - Except for when emergency occured and Emergency Window needs to be raised
             if(m_currState <= DEBRIDER_STATE_EPOS_ERROR  && guiEmergencyMode == 0)
             {
+                m_eposThread.Abort();
                 guiEmergencyMode = 1;
                 // CKim - Close EPOS
                 m_Motor.CloseAllDevice();
