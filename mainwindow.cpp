@@ -246,7 +246,10 @@ void MainWindow::on_radioMAXRPM_clicked()
 {
     debriderMotorTargetSpeed = BLDC_MAX_RPM;
     printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
-    m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+    if(ui->radioCCW->isChecked())
+      m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+    else
+      m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
 }
 
 void MainWindow::stopPumpMotor()
@@ -326,17 +329,28 @@ void MainWindow::disableGUI()
 void MainWindow::showPedalBtnStates()
 {
     // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
-    if (m_Thread.guiBtnMaxRPM && !(ui->radioMAXRPM->isChecked()))
-    {
-        ui->radioMAXRPM->setChecked(true);
-        on_radioMAXRPM_clicked();
-        m_Thread.guiBtnMaxRPM=0;
-    }
-    else if (m_Thread.guiBtnMaxRPM && (ui->radioMAXRPM->isChecked()))
-    {
-        ui->radioMAXRPM->setChecked(false);
-        m_Thread.guiBtnMaxRPM=0;
-    }
+int debriderMotorSetSpeed=debriderMotorTargetSpeed;
+if(m_Thread.guiChangePresetRPM){
+            if((debriderMotorTargetSpeed < 1000)  || debriderMotorTargetSpeed==15000) debriderMotorSetSpeed=1000;
+            if((debriderMotorTargetSpeed >= 1000) && debriderMotorTargetSpeed < 3000) debriderMotorSetSpeed=3000;
+            if((debriderMotorTargetSpeed >= 3000) && debriderMotorTargetSpeed < 5000) debriderMotorSetSpeed=5000;
+            if((debriderMotorTargetSpeed >= 5000) && debriderMotorTargetSpeed < 7000) debriderMotorSetSpeed=7000;
+            if((debriderMotorTargetSpeed >= 7000) && debriderMotorTargetSpeed < 10000) debriderMotorSetSpeed=10000;
+            if((debriderMotorTargetSpeed >= 10000) && debriderMotorTargetSpeed < 12000) debriderMotorSetSpeed=12000;
+            if((debriderMotorTargetSpeed >= 12000) && debriderMotorTargetSpeed<15000) debriderMotorSetSpeed=15000;
+            debriderMotorTargetSpeed=debriderMotorSetSpeed;
+            if(debriderMotorTargetSpeed!=15000){ ui->radioMAXRPM->setChecked(false);  }
+            else                               { ui->radioMAXRPM->setChecked(true);   }
+
+            m_Thread.guiChangePresetRPM=0;
+            if(ui->radioCCW->isChecked())
+              m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+            else if(ui->radioCW->isChecked())
+              m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
+            else {}
+            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+
+}
    // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
 
     // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS START   #########

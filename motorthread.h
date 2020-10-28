@@ -39,7 +39,7 @@ public:
     int m_emergency;
 
     int guiBtnCloseBlade;       // CKim - Close button pressed
-    int guiBtnMaxRPM;           // CKim - Left Foot pedal button clicked
+    int guiChangePresetRPM;           // CKim - Left Foot pedal button clicked
     int guiBtnChangeDirection;  // CKim - Right Foot pedal button clicked
     int guiEmergencyMode;       // CKim - Flag indicating notification of the emrgency to GUI. 1 if notified
 

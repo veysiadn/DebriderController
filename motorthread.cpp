@@ -15,7 +15,7 @@ motorThread::motorThread()
     m_LeftButtonClicked =   m_RightButtonClicked = m_RightPedalClicked = 0;
 
     guiBtnCloseBlade=0;
-    guiBtnMaxRPM=0;
+    guiChangePresetRPM=0;
     guiBtnChangeDirection=0;
     guiEmergencyMode=0;
     watchDogState=true;
@@ -120,9 +120,9 @@ void motorThread::ProcessPedalButtons()
         {
             m_LeftButtonClicked = 0;
             if(m_currState!=DEBRIDER_STATE_ENABLED)     {
-                guiBtnMaxRPM=0;             }
+                guiChangePresetRPM=0;             }
             else    {
-                guiBtnMaxRPM=1;             }
+                guiChangePresetRPM=1;             }
         }
 
         if(m_RightButtonClicked)
