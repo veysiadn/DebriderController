@@ -279,7 +279,7 @@ void motorThread::run()
 
         // CKim - Based on left and right pedal inputs, system will be in
         // two different operating state (close blade or spinning blade)
-        if(m_LeftPedalDepth > 23)   {   m_LeftPedalDown = 1; }
+        if(m_LeftPedalDepth > 23 && m_DebriderTargetSpeed)   {   m_LeftPedalDown = 1; }
         else                        {   m_LeftPedalDown = 0; }
 
         if(guiBtnCloseBlade)
@@ -299,6 +299,7 @@ void motorThread::run()
             {
                 m_currState = DEBRIDER_STATE_OSC;
                 m_eposThread.SetTransition(3);
+                m_eposThread.setOscillationRPM(m_DebriderTargetSpeed);
                 m_eposThread.start();
             }
             else

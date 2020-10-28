@@ -13,6 +13,7 @@
 #include <QElapsedTimer>
 #include <m_defines.h>
 #include "emergency_window.h"
+#include <eposthread.h>
 namespace Ui {
 class MainWindow;
 }
@@ -73,7 +74,6 @@ private:
 
       Emergency_Window emergencyWindow;
       motorThread m_Thread;
-
 private:
       void printStatus(int dSpeed, int pSpeed);
 
@@ -87,7 +87,6 @@ private:
 
       // CKim - Processes foot pedal inputs
       void showPedalBtnStates();
-
 };
 
 #endif // MAINWINDOW_H

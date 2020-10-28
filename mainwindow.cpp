@@ -347,7 +347,7 @@ if(m_Thread.guiChangePresetRPM){
               m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
             else if(ui->radioCW->isChecked())
               m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
-            else {}
+            else m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
             printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
 
 }

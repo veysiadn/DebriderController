@@ -481,3 +481,33 @@ int MaxonMotor::GetCurrentVelocity()
     }
     return currentVelocity;
 }
+
+
+void MaxonMotor::EnablePositionModeWithSpeed(unsigned int speed)
+{
+    //if(m_Mode == OMD_PROFILE_POSITION_MODE)     return;
+
+    unsigned int error_code = 0;
+
+    // Profile Position Mode 활성화
+    if( !VCS_ActivateProfilePositionMode(m_keyHandle_MCP, m_Node_ID_MCP, &error_code) )
+    {
+        std::cout << "Activate Profile Position Mode Failed!" << std::endl;
+        m_errorFlag = 1;
+        return;
+    }
+
+    m_Mode = OMD_PROFILE_POSITION_MODE;
+
+    // profile 값 설정 : 속도, 가감속 값
+    unsigned int ProfileVelocity = speed;
+    unsigned int ProfileAcceleration = 50000;
+    unsigned int ProfileDeceleration = 50000;
+
+    // 설정한 위치값으로 이동시켜주는 VCS 함수
+    if (!VCS_SetPositionProfile(m_keyHandle_MCP, m_Node_ID_MCP, ProfileVelocity,
+        ProfileAcceleration, ProfileDeceleration, &error_code)) {
+        std::cout << "VCS_SetPositionProfile Failed!, error_code = " << error_code << std::endl;
+        m_errorFlag = 1;
+    }
+}

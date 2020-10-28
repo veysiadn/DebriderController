@@ -25,12 +25,15 @@ public:
     void SetPedal(FootPedal* p)     {   m_pPedal = p;           }
     void SetTransition(int type)    {   m_Transition = type;    }
     void Abort()                    {   m_Abort = 1;            }
+    void setOscillationRPM(int s)   {   m_OscSpeed=s;           }
 
 private:
     MaxonMotor* m_pMotor;           // CKim - Motor class
     FootPedal* m_pPedal;            // CKim - Foot pedal class
     int m_Transition;               // 1: from uninit to init / 2: to close blade / 3: to osc
     int m_Abort;
+    int m_OscSpeed;
+
 
 private:
     // CKim - Control loop is implemented in run() function

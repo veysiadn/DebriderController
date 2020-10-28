@@ -94,9 +94,9 @@ void EposThread::RunOscillation()
 {
     m_Abort = 0;
     int dir = 1;
-
     // Set Oscillation Motion
-    m_pMotor->EnablePositionMode();
+    if(m_OscSpeed < 0 ) m_OscSpeed*=-1;
+    m_pMotor->EnablePositionModeWithSpeed(m_OscSpeed);
     m_pMotor->SetOscMode(15000);
 
     // Start motion and continue until m_Abort is set to true from outside

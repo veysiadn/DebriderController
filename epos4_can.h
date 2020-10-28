@@ -57,7 +57,7 @@ public:
     void DisableAllDevice();
     void CloseAllDevice();
     int EPOSGetError();
-
+    void EnablePositionModeWithSpeed(unsigned int speed);
     void GetCurrentPositionAllDevice(int* current_position);
     void MoveAllDevice(long* target_velocity);
     int getCloseBladePosition();
