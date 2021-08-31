@@ -419,7 +419,7 @@ void MaxonMotor::GetCurrentPositionAllDevice(int* current_position)
 }
 
 //  VysADN CloseBlade Function //
-int MaxonMotor::getCloseBladePosition()
+int MaxonMotor::GetCloseBladePosition()
 {
     int Current_Pos, new_Pos;
 
@@ -510,4 +510,9 @@ void MaxonMotor::EnablePositionModeWithSpeed(unsigned int speed)
         std::cout << "VCS_SetPositionProfile Failed!, error_code = " << error_code << std::endl;
         m_errorFlag = 1;
     }
+}
+void MaxonMotor::MoveInCloseBladeMode()
+{
+    EnableVelocityMode();
+    MoveVelocity(CLOSE_BLADE_VELOCITY);
 }

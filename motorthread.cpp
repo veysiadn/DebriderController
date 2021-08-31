@@ -137,10 +137,12 @@ void motorThread::ProcessPedalButtons()
         if(m_RightPedalClicked)
         {
             m_RightPedalClicked = 0;
-            if(m_currState!=DEBRIDER_STATE_ENABLED)     {
-                guiBtnCloseBlade=0;    }
-            else    {
-                guiBtnCloseBlade=1;    }
+            if(m_currState!=DEBRIDER_STATE_ENABLED){
+                guiBtnCloseBlade=0;
+            }
+            else{
+                guiBtnCloseBlade=1;
+            }
         }
         emit UpdateGUI(m_currState);
     }
@@ -336,7 +338,7 @@ void motorThread::run()
         {
             // CKim - Change speed
             m_DebriderInstantSpeed=(m_DebriderTargetSpeed/1000)*
-                    (m_LeftPedalDepth-23);
+                    (m_LeftPedalDepth-23)*5;
 
             //  std::cout << "Target velocity is : " << m_DebriderTargetSpeed << std::endl;
             //  std::cout << "New Target Velocity is : "<< m_DebriderInstantSpeed << std::endl;

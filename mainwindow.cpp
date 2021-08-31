@@ -1,9 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <motorthread.h>
+#include "motorthread.h"
 //#include <epos4_can.h>
 #include "qstring.h"
-#include "wiringPi.h"
+#include <wiringPi.h>
 
 MainWindow* theWindow = NULL;
 
@@ -28,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
     pinMode(WATCHDOG_PIN,OUTPUT);
     pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
 
+
+    //VeysiAdn Valve enable/disable input init.
+    pinMode(VALVE_ENABLE,OUTPUT);
+    disableValve();
     // CKim - Initialize RPi's pwm for Pump control
     pwmSetMode(PWM_MODE_MS);
     pwmSetRange(PUMP_PWM_RANGE);    //19.2 Oscillator freq / 480 / 2 = 20kHz
@@ -66,6 +70,7 @@ void MainWindow::stateChanged(int state)
             enableGUI();
             m_Thread.guiEmergencyMode=0;
             stopPumpMotor();
+            disableValve();
             showPedalBtnStates();
             printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
             break;
@@ -73,12 +78,14 @@ void MainWindow::stateChanged(int state)
         case DEBRIDER_STATE_RUNNING:
             disableGUI();
             movePumpMotor();
+            enableValve();
             printStatus(m_Thread.m_DebriderInstantSpeed,pumpMotorSpeedPrintVal);
             break;
 
         case DEBRIDER_STATE_OSC:
             disableGUI();
             movePumpMotor();
+            enableValve();
             statusLabel.sprintf(" Debrider Motor in Oscillation MODE \n"
                                 "Pump Motor Running : %% %d ",pumpMotorSpeedPrintVal);
             ui->lblStatusMsg->setText(statusLabel);
@@ -99,6 +106,7 @@ void MainWindow::stateChanged(int state)
             pumpMotorTargetSpeed=0;
             pumpMotorSpeedPrintVal=0;
             stopPumpMotor();
+            disableValve();
             printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
             callEmergencyWindow();
         break;
@@ -111,6 +119,7 @@ void MainWindow::stateChanged(int state)
             m_Thread.m_DebriderTargetSpeed = 0;
             debriderMotorTargetSpeed=0;
             stopPumpMotor();
+            disableValve();
             pumpMotorTargetSpeed=0;
             pumpMotorSpeedPrintVal=0;
             printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
@@ -386,4 +395,14 @@ void MainWindow::callEmergencyWindow()
     emergencyWindow.setModal(true);
     emergencyWindow.setWindowState(Qt::WindowFullScreen);
     emergencyWindow.exec();
+}
+
+void MainWindow::enableValve()
+{
+    digitalWrite(VALVE_ENABLE,1);
+}
+
+void MainWindow::disableValve()
+{
+    digitalWrite(VALVE_ENABLE,0);
 }

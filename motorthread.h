@@ -9,9 +9,9 @@
 #include <QThread>
 #include "epos4_can.h"
 #include <QElapsedTimer>
-#include <m_defines.h>
+#include "m_defines.h"
 #include "wiringPi.h"
-#include <footpedal.h>
+#include "footpedal.h"
 #include "eposthread.h"
 
 class motorThread : public QThread

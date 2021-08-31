@@ -3,13 +3,14 @@
 
 #define BLDC_MAX_RPM        15000   // Maximum RPM value for BLDC Motor
 #define CHANGE_RPM_RATE     1000    // Increment and decrement values for BLDC MOTOR RPM
+#define CLOSE_BLADE_VELOCITY 500    // VeysiAdn - Velocity that will be used in close blade mode.
 #define PUMP_PWM_RANGE      480     // Maximum RPM value for Pump Motor
 #define PUMP_MAX_PWM        480
 // Pump Motor PIN MAP
 #define PUMP_HARDPWM    26          // CKim - GPIO 12,Physically Pin 32
 #define PUMP_ENABLE     1           // CKim - GPIO 18, Physically Pin 12
 #define PUMP_DIR        5           // CKim - GPIO 24, Physically Pin 18
-
+#define VALVE_ENABLE    21          // VysAdn - GPIO5, Physically Pin 29
 
 #define EMERGENCY_RELAY_CONTROL    7       // VysAdn - GPIO 4,  Physically Pin 7
 #define WATCHDOG_PIN               0       // VysAdn - GPIO 17, Physically Pin 11

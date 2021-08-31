@@ -87,6 +87,10 @@ private:
 
       // CKim - Processes foot pedal inputs
       void showPedalBtnStates();
+
+      // VeysiAdn Valve On/Off
+      void enableValve();
+      void disableValve();
 };
 
 #endif // MAINWINDOW_H

@@ -11,7 +11,7 @@
 #include <EposCmdLib_6.5.1.0/include/Definitions.h>
 #include <iostream>
 #include <wiringPi.h>
-#include <m_defines.h>
+#include "m_defines.h"
 
 class MaxonMotor
 {
@@ -56,11 +56,11 @@ public:
     void ActiviateAllDevice();
     void DisableAllDevice();
     void CloseAllDevice();
-    int EPOSGetError();
+    int  EPOSGetError();
     void EnablePositionModeWithSpeed(unsigned int speed);
     void GetCurrentPositionAllDevice(int* current_position);
     void MoveAllDevice(long* target_velocity);
-    int getCloseBladePosition();
+    int  GetCloseBladePosition();
 
     // -----------------------------------------------
     void EnableVelocityMode();
@@ -74,6 +74,7 @@ public:
     void RunOscMode(int dir);
     void StopMotion();
     void WaitForMotion();
+    void MoveInCloseBladeMode();
 };
 
 

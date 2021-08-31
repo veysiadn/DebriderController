@@ -1,6 +1,6 @@
 #include "eposthread.h"
 #include "epos4_can.h"
-#include <m_defines.h>
+#include "m_defines.h"
 #include "wiringPi.h"
 
 EposThread::EposThread() :
@@ -84,11 +84,17 @@ void EposThread::RunInitialization()
 void EposThread::RunCloseBlade()
 {
     m_pMotor->EnablePositionMode();
-    int tgtPos = m_pMotor->getCloseBladePosition();
+    int tgtPos = m_pMotor->GetCloseBladePosition();
     m_pMotor->MovePosition(tgtPos);
     m_pMotor->WaitForMotion();
     emit CloseBladeComplete(m_pMotor->EPOSGetError());
 }
+
+//void EposThread::RunCloseBlade()
+//{
+//    m_pMotor->MoveInCloseBladeMode();
+//    emit CloseBladeComplete(m_pMotor->EPOSGetError());
+//}
 
 void EposThread::RunOscillation()
 {
