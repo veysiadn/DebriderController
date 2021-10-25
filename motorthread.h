@@ -1,14 +1,20 @@
-// --------------------------------------------------------------- //
-// CKim - class "motorthread" encapsulating main thread of the
-// debrider controller. Uses 'QThread'
-// Last Updated : 2020.10.19 CKim & VysADN
-// --------------------------------------------------------------- //
+/*****************************************************************************
+ * \file  motorthread.h
+ * \brief Header file includes motorThread class blueprint which is
+ * encapsulation of main thread of debrider controller, using QThread.
+ *
+ * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
+ *******************************************************************************/
+
+
 #ifndef MOTORTHREAD_H
 #define MOTORTHREAD_H
 
 #include <QThread>
-#include "epos4_can.h"
 #include <QElapsedTimer>
+
+#include "epos4_can.h"
 #include "m_defines.h"
 #include "wiringPi.h"
 #include "footpedal.h"
@@ -44,9 +50,9 @@ public:
     int guiEmergencyMode;       // CKim - Flag indicating notification of the emrgency to GUI. 1 if notified
 
 private:
-    MaxonMotor m_Motor;                 // CKim - Motor class
-    FootPedal m_FootPedal;              // CKim - Serial Communication class for foot pedal
-    QElapsedTimer watchDogTimer;        // CKim - Timer class for watchdog??
+    MaxonMotor m_Motor;                  // CKim - Motor class
+    FootPedal m_FootPedal;               // CKim - SPI Communication class for foot pedal
+    QElapsedTimer watchDogTimer;         // CKim - Timer class for watchdog
     EposThread m_eposThread;             // CKim - Thread class for doing time consuming jobs
 
     int m_currState, m_prevState;
@@ -65,14 +71,14 @@ private:
 
 private slots:
     // CKim - Callbacks from EPOS thread
-    void OnInitComplete(int errcode);
-    void OnTransToOscComplete(int errcode);
-    void OnBladeClosed(int errcode);
+    void on_InitComplete(int errcode);
+    void on_TransToOscComplete(int errcode);
+    void on_BladeClosed(int errcode);
 
     // CKim - Callbacks from foot pedal
-    void OnFootPedalLButton();
-    void OnFootPedalRButton();
-    void OnRightFootPedal();
+    void on_FootPedalLButton();
+    void on_FootPedalRButton();
+    void on_RightFootPedal();
 
 signals:
     void UpdateGUI(int state);  // CKim - This signal is emitted to notify window for GUI update

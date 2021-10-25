@@ -1,5 +1,4 @@
 #include <motorthread.h>
-#include <epos4_can.h>
 
 motorThread::motorThread()
 {
@@ -7,10 +6,10 @@ motorThread::motorThread()
     m_prevState = DEBRIDER_STATE_UNINIT;
     m_DebriderTargetSpeed = 0;          // CKim - Debrider speed at maximum pedal press
     m_DebriderInstantSpeed=0;           // CKim - Current debrider speed.
-    m_Oscillate = 0;
-    m_TargetPos = 0;
-    m_CloseBlade=0;
-    m_emergency=0;
+    m_Oscillate  = 0;
+    m_TargetPos  = 0;
+    m_CloseBlade = 0;
+    m_emergency  = 0;
 
     m_LeftButtonClicked =   m_RightButtonClicked = m_RightPedalClicked = 0;
 
@@ -22,157 +21,19 @@ motorThread::motorThread()
 
     m_eposThread.SetMotor(&m_Motor);
     m_eposThread.SetPedal(&m_FootPedal);
-    connect(&m_eposThread,&EposThread::InitializationComplete,this,&motorThread::OnInitComplete);
-    connect(&m_eposThread,&EposThread::OscillationComplete,this,&motorThread::OnTransToOscComplete);
-    connect(&m_eposThread,&EposThread::CloseBladeComplete,this,&motorThread::OnBladeClosed);
+    connect(&m_eposThread,&EposThread::InitializationComplete,this,&motorThread::on_InitComplete);
+    connect(&m_eposThread,&EposThread::OscillationComplete,this,&motorThread::on_TransToOscComplete);
+    connect(&m_eposThread,&EposThread::CloseBladeComplete,this,&motorThread::on_BladeClosed);
 
-    connect(&m_FootPedal,&FootPedal::LbuttonClicked,this,&motorThread::OnFootPedalLButton);
-    connect(&m_FootPedal,&FootPedal::RbuttonClicked,this,&motorThread::OnFootPedalRButton);
-    connect(&m_FootPedal,&FootPedal::RPedalClicked,this,&motorThread::OnRightFootPedal);
-
-}
-
-// CKim - Initialization thread completed
-void motorThread::OnInitComplete(int errcode)
-{
-    if(errcode == 0)
-    {
-        std::cout << "Initialization Complete\n";
-        //m_currState = DEBRIDER_STATE_INIT;
-        m_currState = DEBRIDER_STATE_ENABLED;
-        emit UpdateGUI(m_currState);
-    }
-    else
-    {
-        std::cout << "Initialization error\n";
-        m_currState = DEBRIDER_STATE_EMERGENCY;
-        emit UpdateGUI(m_currState);
-    }
-}
-
-void motorThread::OnTransToOscComplete(int errcode)
-{
-    if(errcode == 0)
-    {
-        std::cout << "Oscillation mode ended\n";
-        //m_currState = DEBRIDER_STATE_INIT;
-        m_currState = DEBRIDER_STATE_ENABLED;
-        emit UpdateGUI(m_currState);
-    }
-    else
-    {
-        std::cout << "Failed to start oscillation mode\n";
-        m_currState = DEBRIDER_STATE_EMERGENCY;
-        emit UpdateGUI(m_currState);
-    }
-}
-
-
-void motorThread::OnBladeClosed(int errcode)
-{
-    if(errcode == 0)
-    {
-        std::cout << "Blade closed\n";
-        m_currState = DEBRIDER_STATE_BLADE_CLOSED;
-        emit UpdateGUI(m_currState);
-    }
-    else
-    {
-        std::cout << "Blade closing error\n";
-        m_currState = DEBRIDER_STATE_EMERGENCY;
-        emit UpdateGUI(m_currState);
-    }
-}
-
-void motorThread::OnFootPedalLButton()
-{
-    // CKim - Left Button changes RPM to MAX
-    m_LeftButtonClicked = 1;
-    //std::cout<<"Left Click\n";
-}
-
-void motorThread::OnFootPedalRButton()
-{
-    // CKim - Right button changes spin direction
-    m_RightButtonClicked = 1;
-    //std::cout<<"Right Click\n";
-}
-
-void motorThread::OnRightFootPedal()
-{
-    std::cout<<"Right Pedal Click\n";
-    // CKim - Right Foot Pedal has effect of pressing "Close" button in GUI
-    m_RightPedalClicked = 1;
-}
-
-void motorThread::ReInitialize()
-{
-    std::cout << "Reinitializing\n";
-    m_currState = DEBRIDER_STATE_UNINIT;
-    guiEmergencyMode = 0;
-}
-
-void motorThread::ProcessPedalButtons()
-{
-    if(m_LeftButtonClicked || m_RightButtonClicked || m_RightPedalClicked)
-    {
-        if(m_LeftButtonClicked)
-        {
-            m_LeftButtonClicked = 0;
-            if(m_currState!=DEBRIDER_STATE_ENABLED)     {
-                guiChangePresetRPM=0;             }
-            else    {
-                guiChangePresetRPM=1;             }
-        }
-
-        if(m_RightButtonClicked)
-        {
-            m_RightButtonClicked = 0;
-            if(m_currState!=DEBRIDER_STATE_ENABLED)     {
-                guiBtnChangeDirection=0;    }
-            else    {
-                guiBtnChangeDirection=1;    }
-        }
-
-        if(m_RightPedalClicked)
-        {
-            m_RightPedalClicked = 0;
-            if(m_currState!=DEBRIDER_STATE_ENABLED){
-                guiBtnCloseBlade=0;
-            }
-            else{
-                guiBtnCloseBlade=1;
-            }
-        }
-        emit UpdateGUI(m_currState);
-    }
-}
-
-void motorThread::PulseWatchDog()
-{
-    // CKim - Pulse watchdog
-    if(watchDogTimer.nsecsElapsed()>=5000000)
-    {
-        if(watchDogState)
-        {
-            digitalWrite(WATCHDOG_PIN,LOW);
-            watchDogTimer.restart();
-            watchDogState=false;
-        }
-        else
-        {
-            digitalWrite(WATCHDOG_PIN,HIGH);
-            watchDogTimer.restart();
-            watchDogState=true;
-        }
-    } // if watchDogTimer.nsecsElapsed
+    connect(&m_FootPedal,&FootPedal::LButtonClicked,this,&motorThread::on_FootPedalLButton);
+    connect(&m_FootPedal,&FootPedal::RButtonClicked,this,&motorThread::on_FootPedalRButton);
+    connect(&m_FootPedal,&FootPedal::RPedalClicked,this,&motorThread::on_RightFootPedal);
 
 }
+
 
 void motorThread::run()
 {
-//    pinMode(WATCHDOG_PIN,OUTPUT);
-//    pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
     watchDogTimer.start();
     int dir = 1;
 
@@ -219,8 +80,7 @@ void motorThread::run()
                 m_eposThread.SetTransition(1);
                 m_eposThread.start();
 
-                // CKim - Open serial port
-                //m_pPedal->clearSerialPort();
+                // CKim - Open SPI port
                 m_FootPedal.start();
             }
             PulseWatchDog();
@@ -240,7 +100,6 @@ void motorThread::run()
             m_currState = DEBRIDER_STATE_EMERGENCY;
 
             // CKim - Stop Pump Motors
-            digitalWrite(PUMP_ENABLE,0);
             pwmWrite(PUMP_HARDPWM,0);
             m_eposThread.Abort();
             // CKim - Close EPOS
@@ -251,14 +110,14 @@ void motorThread::run()
             continue;
         }
 
-        // 2. Check EPOS and serial communication state
-        if(m_FootPedal.getSerialError() || !m_FootPedal.isRunning())
+        // 2. Check EPOS and SPI communication state
+        if(m_FootPedal.GetSPIError() || !m_FootPedal.isRunning())
         {
-            // ###SERIAL_ERROR ACTIONS###
-            m_currState=DEBRIDER_STATE_SERIAL_ERROR;
-            m_FootPedal.setSerialError(true);
+            // ###SPI_ERROR ACTIONS###
+            m_currState=DEBRIDER_STATE_SPI_ERROR;
+            m_FootPedal.SetSPIError(true);
             emit UpdateGUI(m_currState);
-            std::cout << "Serial CONNECTION ERROR " << std::endl;
+            std::cout << "SPI CONNECTION ERROR " << std::endl;
             continue;
         }
         // ###EPOS_ERROR ACTIONS###
@@ -277,7 +136,7 @@ void motorThread::run()
         ProcessPedalButtons();
 
         // CKim - Read and process left pedal input.
-        m_FootPedal.getLeftPedalValue(m_LeftPedalDepth);
+        m_LeftPedalDepth = m_FootPedal.GetLeftPedalValue();
 
         // CKim - Based on left and right pedal inputs, system will be in
         // two different operating state (close blade or spinning blade)
@@ -301,7 +160,7 @@ void motorThread::run()
             {
                 m_currState = DEBRIDER_STATE_OSC;
                 m_eposThread.SetTransition(3);
-                m_eposThread.setOscillationRPM(m_DebriderTargetSpeed);
+                m_eposThread.setOscillationRPM(m_DebriderTargetSpeed*5);
                 m_eposThread.start();
             }
             else
@@ -337,13 +196,13 @@ void motorThread::run()
         if(m_currState == DEBRIDER_STATE_RUNNING)
         {
             // CKim - Change speed
-            m_DebriderInstantSpeed=(m_DebriderTargetSpeed/1000)*
-                    (m_LeftPedalDepth-23)*5;
-
-            //  std::cout << "Target velocity is : " << m_DebriderTargetSpeed << std::endl;
-            //  std::cout << "New Target Velocity is : "<< m_DebriderInstantSpeed << std::endl;
-            //  std::cout << "Analog Value is : " << m_FootPedal.pedalAnalogBLDCval << std::endl;
-            m_Motor.MoveVelocity(m_DebriderInstantSpeed);
+            m_DebriderInstantSpeed=int(m_Motor.GetCurrentVelocity()/5);
+//            std::cout << "Target velocity is : " << m_DebriderTargetSpeed << std::endl;
+//            std::cout << "New Target Velocity is : "<< m_DebriderInstantSpeed << std::endl;
+//            std::cout << "Analog Value is : " << m_FootPedal.GetLeftPedalValue() << std::endl;
+            // Analog pedal value varies from 0-1023, we discard 23 and map analog value to from 0-1000.
+            // Based on received analog value from pedal we adjust speed. 200 is when we take gear ratio in to account.
+            m_Motor.MoveVelocity((m_DebriderTargetSpeed/200)*(m_LeftPedalDepth-23));
             emit UpdateGUI(m_currState);
         }
         // ---------------------------------------------------------------------------------
@@ -386,4 +245,143 @@ void motorThread::run()
         PulseWatchDog();
 
     }
+}
+
+
+// CKim - Initialization thread completed
+void motorThread::on_InitComplete(int errcode)
+{
+    if(errcode == 0)
+    {
+        std::cout << "Initialization Complete\n";
+        //m_currState = DEBRIDER_STATE_INIT;
+        m_currState = DEBRIDER_STATE_ENABLED;
+        emit UpdateGUI(m_currState);
+    }
+    else
+    {
+        std::cout << "Initialization error\n";
+        m_currState = DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
+    }
+}
+
+void motorThread::on_TransToOscComplete(int errcode)
+{
+    if(errcode == 0)
+    {
+        std::cout << "Oscillation mode ended\n";
+        //m_currState = DEBRIDER_STATE_INIT;
+        m_currState = DEBRIDER_STATE_ENABLED;
+        emit UpdateGUI(m_currState);
+    }
+    else
+    {
+        std::cout << "Failed to start oscillation mode\n";
+        m_currState = DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
+    }
+}
+
+
+void motorThread::on_BladeClosed(int errcode)
+{
+    if(errcode == 0)
+    {
+        std::cout << "Blade closed\n";
+        m_currState = DEBRIDER_STATE_BLADE_CLOSED;
+        emit UpdateGUI(m_currState);
+    }
+    else
+    {
+        std::cout << "Blade closing error\n";
+        m_currState = DEBRIDER_STATE_EMERGENCY;
+        emit UpdateGUI(m_currState);
+    }
+}
+
+void motorThread::on_FootPedalLButton()
+{
+    // CKim - Left Button changes RPM to MAX
+    m_LeftButtonClicked = 1;
+    //std::cout<<"Left Click\n";
+}
+
+void motorThread::on_FootPedalRButton()
+{
+    // CKim - Right button changes spin direction
+    m_RightButtonClicked = 1;
+    //std::cout<<"Right Click\n";
+}
+
+void motorThread::on_RightFootPedal()
+{
+    //std::cout<<"Right Pedal Click\n";
+    // CKim - Right Foot Pedal has effect of pressing "Close" button in GUI
+    m_RightPedalClicked = 1;
+}
+
+void motorThread::ReInitialize()
+{
+    std::cout << "Reinitializing\n";
+    m_currState = DEBRIDER_STATE_UNINIT;
+    guiEmergencyMode = 0;
+}
+
+void motorThread::ProcessPedalButtons()
+{
+    if(m_LeftButtonClicked || m_RightButtonClicked || m_RightPedalClicked){
+
+        if(m_LeftButtonClicked){
+            m_LeftButtonClicked = 0;
+            if(m_currState!=DEBRIDER_STATE_ENABLED){
+                guiChangePresetRPM=0;
+            }else{
+                guiChangePresetRPM=1;
+            }
+        }
+
+        if(m_RightButtonClicked)
+        {
+            m_RightButtonClicked = 0;
+            if(m_currState!=DEBRIDER_STATE_ENABLED){
+                guiBtnChangeDirection=0;
+            }else{
+                guiBtnChangeDirection=1;
+            }
+        }
+
+        if(m_RightPedalClicked)
+        {
+            m_RightPedalClicked = 0;
+            if(m_currState!=DEBRIDER_STATE_ENABLED){
+                guiBtnCloseBlade=0;
+            }
+            else{
+                guiBtnCloseBlade=1;
+            }
+        }
+        emit UpdateGUI(m_currState);
+    }
+}
+
+void motorThread::PulseWatchDog()
+{
+    // CKim - Pulse watchdog
+    if(watchDogTimer.nsecsElapsed()>=5000000)
+    {
+        if(watchDogState)
+        {
+            digitalWrite(WATCHDOG_PIN,LOW);
+            watchDogTimer.restart();
+            watchDogState=false;
+        }
+        else
+        {
+            digitalWrite(WATCHDOG_PIN,HIGH);
+            watchDogTimer.restart();
+            watchDogState=true;
+        }
+    } // if watchDogTimer.nsecsElapsed
+
 }

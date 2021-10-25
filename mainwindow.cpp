@@ -1,9 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "motorthread.h"
-//#include <epos4_can.h>
-#include "qstring.h"
-#include <wiringPi.h>
 
 MainWindow* theWindow = NULL;
 
@@ -13,37 +9,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // CKim - Initializing Variables
-    debriderMotorTargetSpeed = 0;
-    pumpMotorTargetSpeed = 0;
-    pumpRunningStatus=false;
+    InitializeIO();
 
-    // CKim - Initialize Raspberry Pi
-    wiringPiSetup();                // CKim - Should be called first before using any wiringPi functions
+    connect(&m_Thread, &motorThread::UpdateGUI, this, &MainWindow::on_StateChanged);
+    connect(&emergencyWindow,&Emergency_Window::EmergencyExitClicked,this,&MainWindow::on_ExitEmergencyClicked);
 
-    // CKim - Initialize RPi's GPIO
-    pinMode(PUMP_ENABLE,OUTPUT);
-    pinMode(PUMP_DIR,OUTPUT);
-    pinMode(PUMP_HARDPWM,PWM_OUTPUT);
-    pinMode(WATCHDOG_PIN,OUTPUT);
-    pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
-
-
-    //VeysiAdn Valve enable/disable input init.
-    pinMode(VALVE_ENABLE,OUTPUT);
-    disableValve();
-    // CKim - Initialize RPi's pwm for Pump control
-    pwmSetMode(PWM_MODE_MS);
-    pwmSetRange(PUMP_PWM_RANGE);    //19.2 Oscillator freq / 480 / 2 = 20kHz
-    pwmSetClock(2);
-    digitalWrite(PUMP_ENABLE,0);
-
-    // CKim - Connect Signals and Slots
-    connect(&m_Thread, &motorThread::UpdateGUI, this, &MainWindow::stateChanged);
-    connect(&emergencyWindow,&Emergency_Window::Emergency_Exit_Clicked,
-            this,&MainWindow::exitEmergencyWindow);
-
-    // CKim - Start Control Thread
     if(!m_Thread.isRunning()) m_Thread.start();
 }
 
@@ -53,7 +23,36 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::exitEmergencyWindow(int a)
+void MainWindow::InitializeIO()
+{
+    // CKim - Initializing Variables
+    debrider_motor_target_speed = 0;
+    pump_motor_target_speed = 0;
+    pump_running_status=false;
+
+    // CKim - Initialize Raspberry Pi
+    wiringPiSetupGpio(); // VysAdn, instead of WiringPi pin numbering this will use GPIO pin numbering.
+
+    // CKim - Initialize RPi's GPIO
+    pinMode(PUMP_HARDPWM,PWM_OUTPUT);
+    pinMode(WATCHDOG_PIN,OUTPUT);
+    pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
+
+    //VysAdn Valve enable/disable input init.
+    pinMode(VALVE_ENABLE,OUTPUT);
+    DisableValve();
+    // VysAdn ADC SPI input/output init.
+    pinMode(ADC_SPI_CLK,OUTPUT);
+    pinMode(ADC_SPI_MOSI,OUTPUT);
+    pinMode(ADC_SPI_CS,OUTPUT);
+    pinMode(ADC_SPI_MISO,INPUT);
+    // CKim - Initialize RPi's pwm for Pump control
+    pwmSetMode(PWM_MODE_MS);
+    pwmSetRange(PUMP_PWM_RANGE);    //19.2 Oscillator freq / 480 / 2 = 20kHz
+    pwmSetClock(2);
+}
+
+void MainWindow::on_ExitEmergencyClicked(int a)
 {
     m_Thread.guiEmergencyMode=a;
     m_Thread.ReInitialize();
@@ -61,138 +60,138 @@ void MainWindow::exitEmergencyWindow(int a)
     std::cout << "Exit Clicked ON Emergency Window" << std::endl;
 }
 
-void MainWindow::stateChanged(int state)
+void MainWindow::on_StateChanged(int state)
 {
-    emergencyWindow.m_EmergencyStatus=state;
+    emergencyWindow.emergency_status=state;
     switch(state)
     {
         case DEBRIDER_STATE_ENABLED:
-            enableGUI();
+            EnableGUI();
             m_Thread.guiEmergencyMode=0;
-            stopPumpMotor();
-            disableValve();
-            showPedalBtnStates();
-            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+            StopPumpMotor();
+            DisableValve();
+            ShowPedalButtonStates();
+            PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
             break;
 
         case DEBRIDER_STATE_RUNNING:
-            disableGUI();
-            movePumpMotor();
-            enableValve();
-            printStatus(m_Thread.m_DebriderInstantSpeed,pumpMotorSpeedPrintVal);
+            DisableGUI();
+            MovePumpMotor();
+            EnableValve();
+            PrintStatus(m_Thread.m_DebriderInstantSpeed,pump_motor_printed_speed_val);
             break;
 
         case DEBRIDER_STATE_OSC:
-            disableGUI();
-            movePumpMotor();
-            enableValve();
-            statusLabel.sprintf(" Debrider Motor in Oscillation MODE \n"
-                                "Pump Motor Running : %% %d ",pumpMotorSpeedPrintVal);
-            ui->lblStatusMsg->setText(statusLabel);
+            DisableGUI();
+            MovePumpMotor();
+            EnableValve();
+            status_label.sprintf(" Debrider Motor in Oscillation MODE \n"
+                                "Pump Motor Running : %% %d ",pump_motor_printed_speed_val);
+            ui->lblStatusMsg->setText(status_label);
             break;
 
         case DEBRIDER_STATE_CLOSE_BLADE:
-            disableGUI();
-            printStatus(m_Thread.m_DebriderInstantSpeed,pumpMotorSpeedPrintVal);
+            DisableGUI();
+            PrintStatus(m_Thread.m_DebriderInstantSpeed,pump_motor_printed_speed_val);
         break;
 
         case DEBRIDER_STATE_EMERGENCY:
-            disableGUI();
+            DisableGUI();
             ui->radioMAXRPM->setChecked(false);
             ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
             m_Thread.m_DebriderTargetSpeed=0;
-            debriderMotorTargetSpeed=0;
-            pumpMotorTargetSpeed=0;
-            pumpMotorSpeedPrintVal=0;
-            stopPumpMotor();
-            disableValve();
-            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
-            callEmergencyWindow();
+            debrider_motor_target_speed=0;
+            pump_motor_target_speed=0;
+            pump_motor_printed_speed_val=0;
+            StopPumpMotor();
+            DisableValve();
+            PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
+            on_CallEmergencyWindow();
         break;
 
-        case DEBRIDER_STATE_SERIAL_ERROR:
-            disableGUI();
+        case DEBRIDER_STATE_SPI_ERROR:
+            DisableGUI();
             ui->radioMAXRPM->setChecked(false);
             ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
             m_Thread.m_DebriderTargetSpeed = 0;
-            debriderMotorTargetSpeed=0;
-            stopPumpMotor();
-            disableValve();
-            pumpMotorTargetSpeed=0;
-            pumpMotorSpeedPrintVal=0;
-            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
-            callEmergencyWindow();
+            debrider_motor_target_speed=0;
+            StopPumpMotor();
+            DisableValve();
+            pump_motor_target_speed=0;
+            pump_motor_printed_speed_val=0;
+            PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
+            on_CallEmergencyWindow();
         break;
 
         case DEBRIDER_STATE_EPOS_ERROR:
-            disableGUI();
+            DisableGUI();
             ui->radioMAXRPM->setChecked(false);
             ui->radioCW->setChecked(true);
             on_radioCW_toggled(true);
             m_Thread.m_DebriderTargetSpeed = 0;
-            debriderMotorTargetSpeed=0;
-            stopPumpMotor();
-            pumpMotorTargetSpeed=0;
-            pumpMotorSpeedPrintVal=0;
-            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
-            callEmergencyWindow();
+            debrider_motor_target_speed=0;
+            StopPumpMotor();
+            pump_motor_target_speed=0;
+            pump_motor_printed_speed_val=0;
+            PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
+            on_CallEmergencyWindow();
         break;
 
         default:
-             enableGUI();
-             printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+             EnableGUI();
+             PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
     }
 }
 
 void MainWindow::on_btnDecreaseRPM_clicked()
 {
     ui->radioMAXRPM->setChecked(false);
-    debriderMotorTargetSpeed -= CHANGE_RPM_RATE;
+    debrider_motor_target_speed -= CHANGE_RPM_RATE;
     QString qstr;
-    if(debriderMotorTargetSpeed < 0)
+    if(debrider_motor_target_speed < 0)
     {
-        debriderMotorTargetSpeed = 0;
+        debrider_motor_target_speed = 0;
         ui->lblStatusMsg->setText(QString("error : cannot decrease RPM\n"
                                           "RPM cannot be less then 0 "));
     }
     else
-        printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+        PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 
     if(ui->radioCCW->isChecked())
-        m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+        m_Thread.m_DebriderTargetSpeed = debrider_motor_target_speed;
     else
-        m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
+        m_Thread.m_DebriderTargetSpeed = -debrider_motor_target_speed;
 }
 
 void MainWindow::on_btnIncreaseRPM_clicked()
 {
-    debriderMotorTargetSpeed += CHANGE_RPM_RATE;
+    debrider_motor_target_speed += CHANGE_RPM_RATE;
 
-    if(debriderMotorTargetSpeed > BLDC_MAX_RPM)
+    if(debrider_motor_target_speed > BLDC_MAX_RPM)
     {
-        debriderMotorTargetSpeed = BLDC_MAX_RPM;
+        debrider_motor_target_speed = BLDC_MAX_RPM;
         ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
-                                          "Max RPM for Debrider : 15000 RPM"));
+                                          "Max RPM for Debrider : 12000 RPM"));
     }
     else
-        printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+        PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 
-    if(debriderMotorTargetSpeed==BLDC_MAX_RPM)
+    if(debrider_motor_target_speed==BLDC_MAX_RPM)
         ui->radioMAXRPM->setChecked(true);
 
     if(ui->radioCCW->isChecked())
-      m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+      m_Thread.m_DebriderTargetSpeed = debrider_motor_target_speed;
     else
-      m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
+      m_Thread.m_DebriderTargetSpeed = -debrider_motor_target_speed;
 }
 
 void MainWindow::on_radioCW_toggled(bool checked)
 {
     if(checked) 
     {
-        m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
+        m_Thread.m_DebriderTargetSpeed = -debrider_motor_target_speed;
         m_Thread.m_Oscillate = 0;
     }
 }
@@ -201,7 +200,7 @@ void MainWindow::on_radioCCW_toggled(bool checked)
 {
    if(checked)
     {
-       m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+       m_Thread.m_DebriderTargetSpeed = debrider_motor_target_speed;
        m_Thread.m_Oscillate = 0;
     }
 }
@@ -217,33 +216,33 @@ void MainWindow::on_radioOSC_toggled(bool checked)
 void MainWindow::on_btnDecreaseFlow_clicked()
 {
     // CKim - Pump speed updated here, perhaps pwm command should be issued in main thread instead of here??
-    if(pumpMotorTargetSpeed >= 120)    pumpMotorTargetSpeed-=40;
-    if(pumpRunningStatus) pwmWrite(PUMP_HARDPWM,pumpMotorTargetSpeed);
-    pumpMotorSpeedPrintVal=int(((pumpMotorTargetSpeed-120.0)/4.0)+10.0);
-    printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+    if(pump_motor_target_speed >= 120)    pump_motor_target_speed-=40;
+    if(pump_running_status) pwmWrite(PUMP_HARDPWM,pump_motor_target_speed);
+    pump_motor_printed_speed_val=int(((pump_motor_target_speed-120.0)/4.0)+10.0);
+    PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 }
 
 void MainWindow::on_btnIncreaseFlow_clicked()
 {
-    if(pumpMotorSpeedPrintVal==0) pumpMotorTargetSpeed=80;
-    if(pumpMotorTargetSpeed < PUMP_MAX_PWM)    pumpMotorTargetSpeed+=40;
-    if(pumpRunningStatus) pwmWrite(PUMP_HARDPWM,pumpMotorTargetSpeed);
-    pumpMotorSpeedPrintVal=int(((pumpMotorTargetSpeed-120.0)/4.0)+10);
-    printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+    if(pump_motor_printed_speed_val==0) pump_motor_target_speed=80;
+    if(pump_motor_target_speed < PUMP_PWM_RANGE)    pump_motor_target_speed+=40;
+    if(pump_running_status) pwmWrite(PUMP_HARDPWM,pump_motor_target_speed);
+    pump_motor_printed_speed_val=int(((pump_motor_target_speed-120.0)/4.0)+10);
+    PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 }
 
 void MainWindow::on_btnIrrigationMove_clicked()
 {
-    movePumpMotor();
-    printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+    MovePumpMotor();
+    PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 }
 
 void MainWindow::on_btnIrrigationStop_clicked()
 {
     //pumpMotorTargetSpeed=0;
-    stopPumpMotor();
+    StopPumpMotor();
    // pumpMotorSpeedPrintVal=0;
-    printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+    PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 }
 
 void MainWindow::on_btnCloseBlade_clicked()
@@ -253,54 +252,52 @@ void MainWindow::on_btnCloseBlade_clicked()
 
 void MainWindow::on_radioMAXRPM_clicked()
 {
-    debriderMotorTargetSpeed = BLDC_MAX_RPM;
-    printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+    debrider_motor_target_speed = BLDC_MAX_RPM;
+    PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
     if(ui->radioCCW->isChecked())
-      m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+      m_Thread.m_DebriderTargetSpeed = debrider_motor_target_speed;
     else
-      m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
+      m_Thread.m_DebriderTargetSpeed = -debrider_motor_target_speed;
 }
 
-void MainWindow::stopPumpMotor()
+void MainWindow::StopPumpMotor()
 {
-    pumpRunningStatus=false;
+    pump_running_status=false;
     pwmWrite(PUMP_HARDPWM,0); 
-    //digitalWrite(PUMP_ENABLE,0);
 }
 
-void MainWindow::movePumpMotor()
+void MainWindow::MovePumpMotor()
 {
     int pumpSpeed;
-    pumpSpeed=int(pumpMotorTargetSpeed);
-    pumpRunningStatus=true;
+    pumpSpeed=int(pump_motor_target_speed);
+    pump_running_status=true;
     pwmWrite(PUMP_HARDPWM,pumpSpeed);
-    digitalWrite(PUMP_ENABLE,1);
 }
 
-void MainWindow::printStatus(int dSpeed, int pSpeed)
+void MainWindow::PrintStatus(int dSpeed, int pSpeed)
 {
-    speedLabel.sprintf(" %d ", debriderMotorTargetSpeed);
-    ui->p_BLDCspeedInfo->setText(speedLabel);
-    speedLabel.sprintf(" %d ",pSpeed);
-    ui->p_MotorSpeedInfo->setText(speedLabel);
-    if(pumpRunningStatus==false)
-    statusLabel.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %% %d  ",dSpeed,pSpeed);
+    speed_label.sprintf(" %d ", debrider_motor_target_speed);
+    ui->p_BLDCspeedInfo->setText(speed_label);
+    speed_label.sprintf(" %d ",pSpeed);
+    ui->p_MotorSpeedInfo->setText(speed_label);
+    if(pump_running_status==false)
+    status_label.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %% %d  ",dSpeed,pSpeed);
     else
-    statusLabel.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
-    if(m_Thread.m_DebriderInstantSpeed < 20 && pumpRunningStatus==true)
+    status_label.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
+    if(m_Thread.m_DebriderInstantSpeed < 20 && pump_running_status==true)
     {
-        statusLabel.sprintf(" Debrider Motor Running at CW MODE at :  %d RPM \n "
+        status_label.sprintf(" Debrider Motor Running at CW MODE at :  %d RPM \n "
                             "Pump Motor Running at : %% %d  ",m_Thread.m_DebriderInstantSpeed*(-1),pSpeed);
     }
-    else if(m_Thread.m_DebriderInstantSpeed > 20 && pumpRunningStatus==true)
+    else if(m_Thread.m_DebriderInstantSpeed > 20 && pump_running_status==true)
     {
-        statusLabel.sprintf(" Debrider Motor Running at CCW MODE at :  %d RPM \n "
+        status_label.sprintf(" Debrider Motor Running at CCW MODE at :  %d RPM \n "
                             "Pump Motor Running at : %% %d  ",m_Thread.m_DebriderInstantSpeed,pSpeed);
     }
-    ui->lblStatusMsg->setText(statusLabel);
+    ui->lblStatusMsg->setText(status_label);
 }
 
-void MainWindow::enableGUI()
+void MainWindow::EnableGUI()
 {
     ui->btnDecreaseRPM->setEnabled(true);
     ui->btnIncreaseRPM->setEnabled(true);
@@ -317,7 +314,7 @@ void MainWindow::enableGUI()
     ui->p_MotorSpeedInfo->setEnabled(true);
 }
 
-void MainWindow::disableGUI()
+void MainWindow::DisableGUI()
 {
     ui->btnDecreaseRPM->setEnabled(false);
     ui->btnIncreaseRPM->setEnabled(false);
@@ -335,29 +332,28 @@ void MainWindow::disableGUI()
 }
 
 // CKim - Updates gui from the button inputs
-void MainWindow::showPedalBtnStates()
+void MainWindow::ShowPedalButtonStates()
 {
     // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
-int debriderMotorSetSpeed=debriderMotorTargetSpeed;
+int debriderMotorSetSpeed=debrider_motor_target_speed;
 if(m_Thread.guiChangePresetRPM){
-            if((debriderMotorTargetSpeed < 1000)  || debriderMotorTargetSpeed==15000) debriderMotorSetSpeed=1000;
-            if((debriderMotorTargetSpeed >= 1000) && debriderMotorTargetSpeed < 3000) debriderMotorSetSpeed=3000;
-            if((debriderMotorTargetSpeed >= 3000) && debriderMotorTargetSpeed < 5000) debriderMotorSetSpeed=5000;
-            if((debriderMotorTargetSpeed >= 5000) && debriderMotorTargetSpeed < 7000) debriderMotorSetSpeed=7000;
-            if((debriderMotorTargetSpeed >= 7000) && debriderMotorTargetSpeed < 10000) debriderMotorSetSpeed=10000;
-            if((debriderMotorTargetSpeed >= 10000) && debriderMotorTargetSpeed < 12000) debriderMotorSetSpeed=12000;
-            if((debriderMotorTargetSpeed >= 12000) && debriderMotorTargetSpeed<15000) debriderMotorSetSpeed=15000;
-            debriderMotorTargetSpeed=debriderMotorSetSpeed;
-            if(debriderMotorTargetSpeed!=15000){ ui->radioMAXRPM->setChecked(false);  }
+            if((debrider_motor_target_speed < 1000)  || debrider_motor_target_speed==BLDC_MAX_RPM) debriderMotorSetSpeed=1000;
+            if((debrider_motor_target_speed >= 1000) && debrider_motor_target_speed < 3000) debriderMotorSetSpeed=3000;
+            if((debrider_motor_target_speed >= 3000) && debrider_motor_target_speed < 5000) debriderMotorSetSpeed=5000;
+            if((debrider_motor_target_speed >= 5000) && debrider_motor_target_speed < 7000) debriderMotorSetSpeed=7000;
+            if((debrider_motor_target_speed >= 7000) && debrider_motor_target_speed < 10000) debriderMotorSetSpeed=10000;
+            if((debrider_motor_target_speed >= 10000) && debrider_motor_target_speed < 12000) debriderMotorSetSpeed=BLDC_MAX_RPM;
+            debrider_motor_target_speed=debriderMotorSetSpeed;
+            if(debrider_motor_target_speed!=BLDC_MAX_RPM){ ui->radioMAXRPM->setChecked(false);  }
             else                               { ui->radioMAXRPM->setChecked(true);   }
 
             m_Thread.guiChangePresetRPM=0;
             if(ui->radioCCW->isChecked())
-              m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
+              m_Thread.m_DebriderTargetSpeed = debrider_motor_target_speed;
             else if(ui->radioCW->isChecked())
-              m_Thread.m_DebriderTargetSpeed = -debriderMotorTargetSpeed;
-            else m_Thread.m_DebriderTargetSpeed = debriderMotorTargetSpeed;
-            printStatus(debriderMotorTargetSpeed,pumpMotorSpeedPrintVal);
+              m_Thread.m_DebriderTargetSpeed = -debrider_motor_target_speed;
+            else m_Thread.m_DebriderTargetSpeed = debrider_motor_target_speed;
+            PrintStatus(debrider_motor_target_speed,pump_motor_printed_speed_val);
 
 }
    // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
@@ -388,7 +384,7 @@ if(m_Thread.guiChangePresetRPM){
 }
 // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH   #########
 
-void MainWindow::callEmergencyWindow()
+void MainWindow::on_CallEmergencyWindow()
 {
     m_Thread.guiEmergencyMode=1;
     emergencyWindow.SetEmergencyText();
@@ -397,12 +393,12 @@ void MainWindow::callEmergencyWindow()
     emergencyWindow.exec();
 }
 
-void MainWindow::enableValve()
+void MainWindow::EnableValve()
 {
     digitalWrite(VALVE_ENABLE,1);
 }
 
-void MainWindow::disableValve()
+void MainWindow::DisableValve()
 {
     digitalWrite(VALVE_ENABLE,0);
 }

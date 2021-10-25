@@ -1,16 +1,24 @@
-// --------------------------------------------------------------- //
-// CKim - class "eposthread" for executing time consuming processes
-// related to EPOS controller, such as initialization process and
-// position command and wait, in separate thread Uses 'QThread'
-// Last Updated : 2020.10.22 CKim & VysADN
-// --------------------------------------------------------------- //
+/*****************************************************************************
+ * \file  eposthread.h
+ * \brief Header file includes EposThread class, which implements time
+ * consuming processes related to EPOS controller, such as initialization
+ * process and waiting for position command to complete, in seperate thread
+ * using QThread.
+ *
+ * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
+ *******************************************************************************/
+
 
 #ifndef EPOSTHREAD_H
 #define EPOSTHREAD_H
 
 #include <QThread>
+
 #include "epos4_can.h"
 #include "footpedal.h"
+#include "m_defines.h"
+#include "wiringPi.h"
 
 class EposThread : public QThread
 {

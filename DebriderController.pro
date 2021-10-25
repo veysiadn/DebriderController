@@ -4,11 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = DebriderControllerTest
+TARGET = DebriderControllerADC
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -48,7 +48,7 @@ FORMS += \
 INCLUDEPATH += $$[QT_SYSROOT]/opt
 INCLUDEPATH += $$[QT_SYSROOT]/opt/vc/lib
 
-INCLUDEPATH += $$[QT_SYSROOT]/usr/include/c++/8/iostream
+#INCLUDEPATH += $$[QT_SYSROOT]/usr/include/c++/8/iostream
 INCLUDEPATH += $$[QT_SYSROOT]/usr/include
 INCLUDEPATH += $$[QT_SYSROOT]/opt/EposCmdLib_6.5.1.0/lib/v7/
 LIBS += -lEposCmd -lftd2xx -lwiringPi
