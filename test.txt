@@ -1,0 +1,78 @@
+/********************** Cppcheck Output ************************************************/
+[epos4_can.cpp:3]: (warning) Member variable 'MaxonMotor::m_OscOffset' is not initialized in the constructor.
+[epos4_can.cpp:3]: (warning) Member variable 'MaxonMotor::m_OscAmp' is not initialized in the constructor.
+[epos4_can.cpp:3]: (warning) Member variable 'MaxonMotor::ReferencePosition' is not initialized in the constructor.
+[eposthread.cpp:19]: (style) The scope of the variable 'waitCnt' can be reduced.
+[eposthread.cpp:28]: (style) Variable 'waitCnt' is modified but its new value is never used.
+[eposthread.cpp:4]: (warning) Member variable 'EposThread::m_pMotor' is not initialized in the constructor.
+[eposthread.cpp:4]: (warning) Member variable 'EposThread::m_pPedal' is not initialized in the constructor.
+[eposthread.cpp:4]: (warning) Member variable 'EposThread::m_Abort' is not initialized in the constructor.
+[eposthread.cpp:4]: (warning) Member variable 'EposThread::m_OscSpeed' is not initialized in the constructor.
+[footpedal.cpp:4]: (warning) Member variable 'FootPedal::prev_R_pedal' is not initialized in the constructor.
+[motorthread.cpp:177]: (style) Variable 'dir' is assigned a value that is never used.
+[epos4_can.cpp:143]: (style) The function 'ActiviateAllDevice' is never used.
+[footpedal.cpp:109]: (style) The function 'ClearSPIPort' is never used.
+[epos4_can.cpp:417]: (style) The function 'GetCloseBladePosition' is never used.
+[epos4_can.cpp:337]: (style) The function 'Move' is never used.
+[mainwindow.cpp:246]: (style) The function 'on_btnCloseBlade_clicked' is never used.
+[mainwindow.cpp:214]: (style) The function 'on_btnDecreaseFlow_clicked' is never used.
+[mainwindow.cpp:146]: (style) The function 'on_btnDecreaseRPM_clicked' is never used.
+[emergency_window.cpp:17]: (style) The function 'on_btnEmergencyExit_clicked' is never used.
+[mainwindow.cpp:223]: (style) The function 'on_btnIncreaseFlow_clicked' is never used.
+[mainwindow.cpp:166]: (style) The function 'on_btnIncreaseRPM_clicked' is never used.
+[mainwindow.cpp:232]: (style) The function 'on_btnIrrigationMove_clicked' is never used.
+[mainwindow.cpp:238]: (style) The function 'on_btnIrrigationStop_clicked' is never used.
+[mainwindow.cpp:251]: (style) The function 'on_radioMAXRPM_clicked' is never used.
+[eposthread.cpp:10]: (style) The function 'run' is never used.
+(information) Cppcheck cannot find all the include files (use --check-config for details)
+
+
+/********************** Flawfinder Output ************************************************/
+Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
+Examining ./motorthread.cpp
+Examining ./emergency_window.cpp
+Examining ./eposthread.h
+Examining ./footpedal.h
+Examining ./epos4_can.cpp
+Examining ./m_defines.h
+Examining ./footpedal.cpp
+Examining ./mainwindow.h
+Examining ./epos4_can.h
+Examining ./main.cpp
+Examining ./eposthread.cpp
+Examining ./emergency_window.h
+Examining ./mainwindow.cpp
+Examining ./motorthread.h
+
+FINAL RESULTS:
+
+./mainwindow.cpp:86:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+./mainwindow.cpp:277:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+./mainwindow.cpp:279:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+./mainwindow.cpp:282:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+./mainwindow.cpp:284:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+./mainwindow.cpp:287:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+./mainwindow.cpp:292:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+
+ANALYSIS SUMMARY:
+
+Hits = 7
+Lines analyzed = 2178 in approximately 0.03 seconds (75111 lines/second)
+Physical Source Lines of Code (SLOC) = 1538
+Hits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   7 [5]   0
+Hits@level+ = [0+]   7 [1+]   7 [2+]   7 [3+]   7 [4+]   7 [5+]   0
+Hits/KSLOC@level+ = [0+] 4.55137 [1+] 4.55137 [2+] 4.55137 [3+] 4.55137 [4+] 4.55137 [5+]   0
+Dot directories skipped = 1 (--followdotdir overrides)
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming for Linux and Unix HOWTO'
+(http://www.dwheeler.com/secure-programs) for more information.

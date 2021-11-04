@@ -24,8 +24,9 @@ void FootPedal::run()
         while(adc_spi_running)
         {
             left_pedal_val = ReadSPIAnalog(0);
-           // ReadButtons();
+            //ReadButtons();
             L_pedal_value = left_pedal_val;
+
         }
     }
 
@@ -76,15 +77,15 @@ int FootPedal::ReadSPIAnalog(int pin_channel)
 
 void FootPedal::ReadButtons()
 {
-    //R_pedal  = digitalRead(FOOT_PEDAL_R_PEDAL);
-    R_pedal = ReadSPIAnalog(1);
-    if(R_pedal > ADC_VALUE_THRESHOLD) emit(RPedalClicked());
-    //L_button = digitalRead(FOOT_PEDAL_L_BUTTON);
-    L_button = ReadSPIAnalog(2);
-    if(L_button > ADC_VALUE_THRESHOLD) emit(LButtonClicked());
-    R_button = ReadSPIAnalog(3);
-    //R_button = digitalRead(FOOT_PEDAL_R_BUTTON);
-    if(R_button > ADC_VALUE_THRESHOLD) emit(RButtonClicked());
+      R_pedal  = digitalRead(FOOT_PEDAL_R_PEDAL);
+//    R_pedal = ReadSPIAnalog(1);
+    if(R_pedal > 0 ) emit(RPedalClicked());
+      L_button = digitalRead(FOOT_PEDAL_L_BUTTON);
+//    L_button = ReadSPIAnalog(2);
+    if(L_button > 0) emit(LButtonClicked());
+//    R_button = ReadSPIAnalog(3);
+      R_button = digitalRead(FOOT_PEDAL_R_BUTTON);
+    if(R_button > 0) emit(RButtonClicked());
 }
 
 void FootPedal::OpenSPIPort()

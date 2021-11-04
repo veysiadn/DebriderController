@@ -47,6 +47,7 @@ void motorThread::run()
         // ------------------------------------------------------------------ //
         // CKim - If the state is in bad state (communication error or emergency) (-5, -4, -3)
         // Pulse the watchdog and return
+        on_off_timer.start();
         if(m_currState < DEBRIDER_STATE_UNINIT)   // UNINIT = -2 state
         {
             // CKim - Except for when emergency occured and Emergency Window needs to be raised
@@ -155,7 +156,7 @@ void motorThread::run()
         // CKim - Left Pedal Pressed, state transition from ENABLED to RUNNING or OSC
         if(m_prevState == DEBRIDER_STATE_ENABLED && m_LeftPedalDown == 1)
         {
-            std::cout<<"State transition from enabled to run/osc\n";
+           // std::cout<<"State transition from enabled to run/osc\n";
             if(m_Oscillate)
             {
                 m_currState = DEBRIDER_STATE_OSC;
@@ -166,7 +167,15 @@ void motorThread::run()
             else
             {
                 m_currState = DEBRIDER_STATE_RUNNING;
+                testTimer.start();
                 m_Motor.EnableVelocityMode();
+                if (counter > 100 ) {
+                     std::cout << "Enabling Velocity Mode Timer : "<<testTimer.nsecsElapsed() <<  std::endl;
+                    counter=0;
+                    testTimer.restart();
+                }else {
+                    testTimer.restart();
+                }
             }
             emit UpdateGUI(m_currState);
             m_prevState = m_currState;
@@ -178,7 +187,7 @@ void motorThread::run()
         // Will return to ENABLED through callback upon completion of closing
         if (m_prevState == DEBRIDER_STATE_ENABLED && m_CloseBlade)
         {
-            std::cout<<"State transition from enabled to close\n";
+            //std::cout<<"State transition from enabled to close\n";
             m_currState = DEBRIDER_STATE_CLOSE_BLADE;
             m_CloseBlade = 0;
             m_eposThread.SetTransition(2);
@@ -202,7 +211,18 @@ void motorThread::run()
 //            std::cout << "Analog Value is : " << m_FootPedal.GetLeftPedalValue() << std::endl;
             // Analog pedal value varies from 0-1023, we discard 23 and map analog value to from 0-1000.
             // Based on received analog value from pedal we adjust speed. 200 is when we take gear ratio in to account.
+            testTimer.restart();
             m_Motor.MoveVelocity((m_DebriderTargetSpeed/200)*(m_LeftPedalDepth-23));
+            PulseWatchDog();
+            if (counter > 100 ) {
+                 std::cout << "Sending Target Velocity took : "<<testTimer.elapsed() << "ms" << std::endl;
+                counter=0;
+                testTimer.restart();
+            }else {
+                counter++;
+                testTimer.restart();
+            }
+
             emit UpdateGUI(m_currState);
         }
         // ---------------------------------------------------------------------------------
@@ -217,7 +237,7 @@ void motorThread::run()
                 m_DebriderInstantSpeed=0;
                 m_Motor.MoveVelocity(0);
                 m_currState = DEBRIDER_STATE_ENABLED;
-                std::cout << "Returning to Enabled from running\n";
+               // std::cout << "Returning to Enabled from running\n";
                 emit UpdateGUI(m_currState);
             }
 
@@ -225,7 +245,7 @@ void motorThread::run()
             {
                 m_eposThread.Abort();
                 m_currState = DEBRIDER_STATE_ENABLED;
-                std::cout << "Returning to Enabled from oscillation\n";
+               // std::cout << "Returning to Enabled from oscillation\n";
                 emit UpdateGUI(m_currState);
             }
         }
@@ -233,7 +253,7 @@ void motorThread::run()
         // CKim - Blade closed
         if(m_prevState == DEBRIDER_STATE_BLADE_CLOSED)
         {
-            std::cout << "Returning to Enabled from closed\n";
+            //std::cout << "Returning to Enabled from closed\n";
             m_currState = DEBRIDER_STATE_ENABLED;
             emit UpdateGUI(m_currState);
         }
@@ -270,7 +290,7 @@ void motorThread::on_TransToOscComplete(int errcode)
 {
     if(errcode == 0)
     {
-        std::cout << "Oscillation mode ended\n";
+        //std::cout << "Oscillation mode ended\n";
         //m_currState = DEBRIDER_STATE_INIT;
         m_currState = DEBRIDER_STATE_ENABLED;
         emit UpdateGUI(m_currState);
@@ -367,7 +387,7 @@ void motorThread::ProcessPedalButtons()
 
 void motorThread::PulseWatchDog()
 {
-    // CKim - Pulse watchdog
+
     if(watchDogTimer.nsecsElapsed()>=5000000)
     {
         if(watchDogState)

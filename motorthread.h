@@ -53,8 +53,12 @@ private:
     MaxonMotor m_Motor;                  // CKim - Motor class
     FootPedal m_FootPedal;               // CKim - SPI Communication class for foot pedal
     QElapsedTimer watchDogTimer;         // CKim - Timer class for watchdog
+    QElapsedTimer testTimer;             // VysADN - test timing information.
+    QElapsedTimer on_off_timer;
     EposThread m_eposThread;             // CKim - Thread class for doing time consuming jobs
-
+    int off_on_counter = 0;
+    int counter=0 ;
+    bool on_off_state = true;
     int m_currState, m_prevState;
     int m_RightPedalClicked;
     int m_RightButtonClicked;
