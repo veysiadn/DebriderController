@@ -206,6 +206,7 @@ void motorThread::run()
         {
             // CKim - Change speed
             m_DebriderInstantSpeed=int(m_Motor.GetCurrentVelocity()/5);
+            PulseWatchDog();
 //            std::cout << "Target velocity is : " << m_DebriderTargetSpeed << std::endl;
 //            std::cout << "New Target Velocity is : "<< m_DebriderInstantSpeed << std::endl;
 //            std::cout << "Analog Value is : " << m_FootPedal.GetLeftPedalValue() << std::endl;
