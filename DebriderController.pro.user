@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.1, 2021-11-05T17:58:51. -->
+<!-- Written by QtCreator 4.9.1, 2021-11-04T16:00:09. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -345,7 +345,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">DebriderController (on raspi)</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinuxRunConfiguration:/home/vysadn/Debrider_Controller_Serial_Version/DebriderController.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinuxRunConfiguration:/home/vysadn/Final_Version_Debrider/DebriderController.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="QString" key="RemoteLinux.RunConfig.AlternateRemoteExecutable"></value>
     <value type="bool" key="RemoteLinux.RunConfig.UseAlternateRemoteExecutable">false</value>

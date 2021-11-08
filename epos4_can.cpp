@@ -1,6 +1,5 @@
 #include "epos4_can.h"
 
-
 MaxonMotor::MaxonMotor()
 {
     m_errorFlag = 0;
@@ -235,7 +234,6 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
             else
             {
                std::cout << "Set Disable State Succeeded!" << std::endl;
-                 digitalWrite(PUMP_ENABLE,0);
                  pwmWrite(PUMP_HARDPWM,0);
                  m_errorFlag = 0;
             }
@@ -248,7 +246,6 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
     }
 
 }
-
 
 void MaxonMotor::EnableVelocityMode()
 {
@@ -292,7 +289,7 @@ void MaxonMotor::EnablePositionMode()
     m_Mode = OMD_PROFILE_POSITION_MODE;
 
     // profile 값 설정 : 속도, 가감속 값
-    unsigned int ProfileVelocity = 15000;
+    unsigned int ProfileVelocity = 50000;
     unsigned int ProfileAcceleration = 50000;
     unsigned int ProfileDeceleration = 50000;
 
@@ -410,12 +407,10 @@ void MaxonMotor::GetCurrentPosition(void *keyHandle_, int& current_position, uns
     }
 }
 
-void MaxonMotor::GetCurrentPositionAllDevice(int& current_position)
+void MaxonMotor::GetCurrentPositionAllDevice(int &current_position)
 {
-    int pos;
 
-    GetCurrentPosition(m_keyHandle_MCP, pos, m_Node_ID_MCP);
-    current_position = pos;
+    GetCurrentPosition(m_keyHandle_MCP, current_position, m_Node_ID_MCP);
 }
 
 //  VysADN CloseBlade Function //
@@ -430,22 +425,22 @@ int MaxonMotor::GetCloseBladePosition()
         std::cout << " Error while getting current position , error_code = " << error_code << std::endl;
         m_errorFlag = 1;
     }
-        new_Pos = ( Current_Pos % INC_PER_ROTATION);
+        new_Pos = ( Current_Pos % 20480);
 
-    if(new_Pos  < INC_PER_ROTATION/2 && new_Pos > -INC_PER_ROTATION/2 && new_Pos!=0 )
+    if(new_Pos  < 10240 && new_Pos > -10240 && new_Pos!=0 )
     {
             new_Pos=Current_Pos-new_Pos;
      //       std::cout << "First if .. : " << new_Pos << std::endl;
     }
 
-    else if(new_Pos > INC_PER_ROTATION/2)
+    else if(new_Pos > 10240)
     {
-        new_Pos = Current_Pos+(INC_PER_ROTATION-new_Pos);
+        new_Pos = Current_Pos+(20480-new_Pos);
        // std::cout << "CCW else if .. : " << new_Pos << std::endl;
     }
-    else if(new_Pos < -INC_PER_ROTATION/2)
+    else if(new_Pos < -10240)
     {
-        new_Pos = Current_Pos-(INC_PER_ROTATION+new_Pos);
+        new_Pos = Current_Pos-(20480+new_Pos);
         //std::cout << "CCW else if .. : " << new_Pos << std::endl;
     }
     else
@@ -463,6 +458,7 @@ int MaxonMotor::EPOSGetError()
 {
     return m_errorFlag ;
 }
+
 int MaxonMotor::GetCurrentVelocity()
 {
     unsigned int error_code = 0;
@@ -482,8 +478,7 @@ int MaxonMotor::GetCurrentVelocity()
     return currentVelocity;
 }
 
-
-void MaxonMotor::EnablePositionModeWithSpeed(unsigned int speed)
+void MaxonMotor::EnablePositionModeWithSpeed(int speed)
 {
     //if(m_Mode == OMD_PROFILE_POSITION_MODE)     return;
 
@@ -500,7 +495,7 @@ void MaxonMotor::EnablePositionModeWithSpeed(unsigned int speed)
     m_Mode = OMD_PROFILE_POSITION_MODE;
 
     // profile 값 설정 : 속도, 가감속 값
-    unsigned int ProfileVelocity = speed;
+    unsigned int ProfileVelocity = unsigned(speed);
     unsigned int ProfileAcceleration = 50000;
     unsigned int ProfileDeceleration = 50000;
 
@@ -510,9 +505,4 @@ void MaxonMotor::EnablePositionModeWithSpeed(unsigned int speed)
         std::cout << "VCS_SetPositionProfile Failed!, error_code = " << error_code << std::endl;
         m_errorFlag = 1;
     }
-}
-void MaxonMotor::MoveInCloseBladeMode()
-{
-    EnableVelocityMode();
-    MoveVelocity(CLOSE_BLADE_VELOCITY);
 }

@@ -1,16 +1,25 @@
-// --------------------------------------------------------------- //
-// CKim - class "footpedal" for opening and reading serial
-// communication from the foot pedal
-// Last Updated : 2020.10.20 CKim & VysADN
-// --------------------------------------------------------------- //
+/*****************************************************************************
+ * \file  footpedal.h
+ * \brief Header file includes footpedal class for opening port and reading
+ * data from foot pedal; reads one analog and three digital values from
+ * pedal.Uses Soft SPI protocol to communicate with MCP3004 ADC.
+ *
+ * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
+ *******************************************************************************/
+
 
 #ifndef FOOTPEDAL_H
 #define FOOTPEDAL_H
 
-#include <QSerialPort>
-#include <QSerialPortInfo>
-#include <qserialportinfo.h>
 #include <QThread>
+#include <wiringPi.h>
+#include "m_defines.h"
+#include <time.h> // nanosleep
+
+#ifndef Int8U
+typedef unsigned char Int8U;
+#endif
 
 class FootPedal : public QThread
 {   
@@ -18,48 +27,32 @@ class FootPedal : public QThread
 
 public:
     FootPedal();
+    ~FootPedal();
+    void OpenSPIPort();
+    void CloseSPIPort();
+    bool GetSPIError()                      {   return adc_error_flag;    }
+    int  GetLeftPedalValue()                {   return L_pedal_value;     }
 
-    void openSerialPort();
-    void closeSerialPort();
-    bool getSerialError()               {   return serialErrorFlag;         }
-    void getLeftPedalValue(int& L)      {   L = LPedal;                     }
-
-    void setSerialError(bool s);
-    void clearSerialPort();
-
+    void SetSPIError(bool s);
+    void ClearSPIPort();
 
 private:
     virtual void run();
-    void readSerialPort();
+    int  ReadSPIAnalog(int pin_channel);
+    void GetCmdOutInfo(const int pin_channel, Int8U& cmd_out, int& cmd_out_bits_count);
+    void TickClock();
+    void ReadButtons();
 
-    bool serialErrorFlag = false;               // Error flag for serial communication errors.
-    //QSerialPort serialArduinoNanoEvery;
-    QSerialPort* pSerialPort;
-    
-    // ### VysADN 2 byte serial communication protocol with arduino nano every variables for reciever (Raspberry Pi3b+) side.  ### (Details about these variables is explained in readData() function)
-    unsigned char FirstByte, SecondByte;
-    int numReadByte=0 , numTotalReadByte=0;
-    char recievedSerialPack[50]={};
-
-    // ### Arduino Nano Every product id and vendor id , universal for all Arduino Nano Every ###
-    static const quint16 ArduinoNanoEvery_vendor_id =9025;
-    static const quint16 ArduinoNanoEvery_product_id =88;
-
-//    int pedalBtnMaxRPM;
-//    int pedalBtnCloseBlade;
-//    int pedalBtnChangeDirection;
-//    int pedalAnalogBLDCval;
-
-    int LButton, prevLButton;
-    int RButton, prevRButton;
-    int LPedal;
-    int RPedal, prevRPedal;
-
-    int  arduinoSerialRunning;
+    bool adc_error_flag = false;               // Error flag for SPI communication errors.
+    int L_button, prev_L_button;
+    int R_button, prev_R_button;
+    int L_pedal_value;
+    int R_pedal, prev_R_pedal;
+    int adc_spi_running;
 
 signals:
-    void RbuttonClicked();      // CKim - This signal will be emitted when right button is clicked
-    void LbuttonClicked();      // CKim - This signal will be emitted when left button is clicked
+    void RButtonClicked();      // CKim - This signal will be emitted when right button is clicked
+    void LButtonClicked();      // CKim - This signal will be emitted when left button is clicked
     void RPedalClicked();       // CKim - This signal will be emitted when right pedal is clicked
 
 };

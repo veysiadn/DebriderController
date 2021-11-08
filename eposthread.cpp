@@ -1,7 +1,5 @@
 #include "eposthread.h"
-#include "epos4_can.h"
-#include "m_defines.h"
-#include "wiringPi.h"
+
 
 EposThread::EposThread() :
     QThread ()
@@ -40,7 +38,7 @@ void EposThread::RunInitialization()
         emit InitializationComplete(errcode);
         return;
     }
-    std::cout<<"Relay is closed, starting to establish CAN and serial\n";
+    std::cout<<"Relay is closed, starting to establish CAN and SPI\n";
 
     // ------------------------------------------------------------ //
     // CKim - CAN Initialization
@@ -83,9 +81,8 @@ void EposThread::RunInitialization()
 
 void EposThread::RunCloseBlade()
 {
-    int tgtPos=0;
+    int tgtPos;
     m_pMotor->EnablePositionMode();
-    //int tgtPos = m_pMotor->GetCloseBladePosition();
     m_pMotor->GetCurrentPositionAllDevice(tgtPos);
     tgtPos = tgtPos + INC_PER_ROTATION/12;
     m_pMotor->MovePosition(tgtPos);
@@ -107,7 +104,6 @@ void EposThread::RunOscillation()
     if(m_OscSpeed < 0 ) m_OscSpeed*=-1;
     m_pMotor->EnablePositionModeWithSpeed(m_OscSpeed);
     m_pMotor->SetOscMode(15000);
-
     // Start motion and continue until m_Abort is set to true from outside
     while(!m_Abort)
     {
