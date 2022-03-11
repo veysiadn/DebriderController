@@ -1,9 +1,9 @@
 #-------------------------------------------------
-#
-# Project created by QtCreator 2020-04-10T13:19:08
-#
+# This is a pro file, includes files to built,
+# directories and libraries to be included,
+# executable name, and build arguments.
+# Last update VeysiAdn 03/11/2022 16:58
 #-------------------------------------------------
-
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -22,7 +22,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-CONFIG += c++11
+CONFIG += c++14
 
 SOURCES += \
         emergency_window.cpp \
@@ -31,7 +31,8 @@ SOURCES += \
         footpedal.cpp \
         main.cpp \
         mainwindow.cpp \
-        motorthread.cpp
+        motorthread.cpp \
+        initialization_window.cpp
 
 HEADERS += \
         emergency_window.h \
@@ -40,26 +41,34 @@ HEADERS += \
         footpedal.h \
         m_defines.h \
         mainwindow.h \
-        motorthread.h
+        motorthread.h \
+        initialization_window.h
+
 
 FORMS += \
         emergency_window.ui \
-        mainwindow.ui
-INCLUDEPATH += $$[QT_SYSROOT]/opt
-INCLUDEPATH += $$[QT_SYSROOT]/opt/vc/lib
+        mainwindow.ui \
+        initialization_window.ui
 
-#INCLUDEPATH += $$[QT_SYSROOT]/usr/include/c++/8/iostream
-INCLUDEPATH += $$[QT_SYSROOT]/usr/include
-INCLUDEPATH += $$[QT_SYSROOT]/opt/EposCmdLib_6.5.1.0/lib/v7/
+RESOURCES += \
+    resources.qrc
+
 LIBS += -lEposCmd -lftd2xx -lwiringPi
+
+INCLUDEPATH += /opt
+INCLUDEPATH += /opt/vc/lib
+
+
+INCLUDEPATH += /opt/EposCmdLib_6.5.1.0/lib/v7/
+
+
+
+unix:!macx: LIBS += -L/opt/EposCmdLib_6.5.1.0/lib/v7/ -lEposCmd
+
+INCLUDEPATH += /opt/EposCmdLib_6.5.1.0/lib/v7
+DEPENDPATH += /opt/EposCmdLib_6.5.1.0/lib/v7
+
 
 target.path = /home/pi
 INSTALLS += target
 
-unix:!macx: LIBS += -L$$PWD/../raspi/sysroot/opt/EposCmdLib_6.5.1.0/lib/v7/ -lEposCmd
-
-INCLUDEPATH += $$PWD/../raspi/sysroot/opt/EposCmdLib_6.5.1.0/lib/v7
-DEPENDPATH += $$PWD/../raspi/sysroot/opt/EposCmdLib_6.5.1.0/lib/v7
-
-RESOURCES += \
-    resources.qrc
