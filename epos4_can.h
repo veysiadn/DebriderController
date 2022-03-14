@@ -115,29 +115,32 @@ public:
     void WaitForMotion();
 private:
 
-    // CKim - CAN port parameters
-    char* m_PortName_MCP;           // CKim - Port name
-    void* m_keyHandle_MCP;          // CKim - Handle to the CAN port
-    unsigned short m_Node_ID_MCP;   // CKim - Node ID
-    unsigned int ErrorCode;         // CKim - Error code returned from VCS functions
+    /// CKim - CAN port parameters
+    char* m_PortName_MCP;           /// CKim - Port name
+    void* m_keyHandle_MCP;          /// CKim - Handle to the CAN port
+    unsigned short m_Node_ID_MCP;   /// CKim - Node ID
+    unsigned int ErrorCode;         /// CKim - Error code returned from VCS functions
 
-    // CKim - Operating modes and parameters
+    /// CKim - Operating modes and parameters
     char m_Mode;
     int m_OscOffset;
     int m_OscAmp;
     long ReferencePosition;
     int m_errorFlag;
 
-    // CKim - Enable / Disable specific node in specific port
+    /// CKim - Enable specific node in specific port
     void EnableDevice(void* keyHandle_, unsigned short Node_ID);
+    /// CKim - Disable specific node in specific port
     void DisableDevice(void* keyHandle_, unsigned short Node_ID);
 
     void* ActivateDevice(char* PortName, unsigned short Node_ID);
     void CloseDevice(void* keyHandle_);
 
-    // CKim - Motion command for specific node in specific port
+    /// CKim - Move with specified target velocity command for specific node in specific port
     void Move(void* keyHandle_, long target_velocity, unsigned short Node_ID);
+    /// CKim - Move to specific target position command for specific node in specific port
     void MoveToPosition(void* keyHandle_, long target_position, unsigned short Node_ID);
+    /// CKim - Get current position command for specific node in specific port
     void GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID);
 };
 

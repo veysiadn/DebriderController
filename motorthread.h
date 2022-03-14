@@ -13,69 +13,66 @@
 
 #include <QThread>
 #include <QElapsedTimer>
-
 #include "epos4_can.h"
 #include "m_defines.h"
 #include "wiringPi.h"
 #include "footpedal.h"
 #include "eposthread.h"
 
-class motorThread : public QThread
+class MotorThread : public QThread
 {
     Q_OBJECT
 
 public:
 
-    motorThread();
+    MotorThread();
 
 
-    // CKim - Control loop is implemented in run() function
+    /// CKim - Control loop is implemented in run() function
     virtual void run();
 
     void ReInitialize();
 
-    // CKim - Variables
+    /// CKim - Variables
 public:
+    int m_DebriderDesiredSpeed;
     int m_DebriderInstantSpeed;
     int m_DebriderTargetSpeed;
     int m_Oscillate;
 
 
     int m_TargetPos;            
-    int m_emergency;
+    int m_Emergency;
 
-    int guiBtnCloseBlade;       // CKim - Close button pressed
-    int guiChangePresetRPM;           // CKim - Left Foot pedal button clicked
-    int guiBtnChangeDirection;  // CKim - Right Foot pedal button clicked
-    int guiEmergencyMode;       // CKim - Flag indicating notification of the emrgency to GUI. 1 if notified
+    int m_GuiBtnCloseBlade;       /// CKim - Close button pressed
+    int m_GuiChangePresetRPM;     /// CKim - Left Foot pedal button clicked
+    int m_GuiBtnChangeDirection;  /// CKim - Right Foot pedal button clicked
+    int m_GuiEmergencyMode;       /// CKim - Flag indicating notification of the emergency to GUI. 1 if notified
 
 private:
     MaxonMotor m_Motor;                  // CKim - Motor class
     FootPedal m_FootPedal;               // CKim - SPI Communication class for foot pedal
-    QElapsedTimer watchDogTimer;         // CKim - Timer class for watchdog
-    QElapsedTimer testTimer;             // VysADN - test timing information.
-    QElapsedTimer on_off_timer;
-    EposThread m_eposThread;             // CKim - Thread class for doing time consuming jobs
-    int off_on_counter = 0;
-    int counter=0 ;
-    bool on_off_state = true;
-    int m_currState, m_prevState;
-    int m_RightPedalClicked;
-    int m_RightButtonClicked;
-    int m_LeftButtonClicked;
-    bool watchDogState;
+    QElapsedTimer m_WatchdogTimer;       // CKim - Timer class for watchdog
+    EposThread m_EposThread;             // CKim - Thread class for doing time consuming jobs
+
+    int  m_CurrState, m_PrevState;
+    int  m_RightPedalClicked;
+    int  m_LeftPedalClicked;
+    int  m_RightButtonClicked;
+    int  m_LeftButtonClicked;
+    bool m_WatchdogState;
 
     int m_CloseBlade;            // VysADN CloseBlade function parameters
     int m_LeftPedalDown;
     int m_LeftPedalDepth;
-
 private:
     void ProcessPedalButtons();
     void PulseWatchDog();
+    void CalculateDesiredVelocity(int& desired_vel, int pedal_depth,int target_vel);
 
 private slots:
     // CKim - Callbacks from EPOS thread
-    void on_InitComplete(int errcode);
+    void on_InitComplete(int state);
     void on_TransToOscComplete(int errcode);
     void on_BladeClosed(int errcode);
 
@@ -83,12 +80,10 @@ private slots:
     void on_FootPedalLButton();
     void on_FootPedalRButton();
     void on_RightFootPedal();
-
+    void on_LeftFootPedal();
+    void on_SPIStateChanged(int state);
 signals:
     void UpdateGUI(int state);  // CKim - This signal is emitted to notify window for GUI update
 };
-
-
-
 
 #endif // MOTORTHREAD_H

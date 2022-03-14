@@ -234,7 +234,7 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
             else
             {
                std::cout << "Set Disable State Succeeded!" << std::endl;
-                 pwmWrite(PUMP_HARDPWM,0);
+                 pwmWrite(SUCTION_MOTOR_PWM,0);
                  m_errorFlag = 0;
             }
         }

@@ -19,13 +19,13 @@ namespace Ui {
 class Emergency_Window;
 }
 
-class Emergency_Window : public QDialog
+class EmergencyWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Emergency_Window(QWidget *parent = nullptr);
-    ~Emergency_Window();
+    explicit EmergencyWindow(QWidget *parent = nullptr);
+    ~EmergencyWindow();
     int emergency_status;
     void SetEmergencyText();
 private slots:

@@ -18,7 +18,7 @@
 #include <time.h> // nanosleep
 
 #ifndef Int8U
-typedef unsigned char Int8U;
+    typedef unsigned char Int8U;
 #endif
 
 class FootPedal : public QThread
@@ -48,12 +48,14 @@ private:
     int R_button, prev_R_button;
     int L_pedal_value;
     int R_pedal, prev_R_pedal;
+    int L_pedal, prev_L_pedal;
     int adc_spi_running;
 
 signals:
     void RButtonClicked();      // CKim - This signal will be emitted when right button is clicked
     void LButtonClicked();      // CKim - This signal will be emitted when left button is clicked
     void RPedalClicked();       // CKim - This signal will be emitted when right pedal is clicked
+    void LPedalClicked();       // CKim - This signal will be emitted when left pedal is clicked
 
 };
 

@@ -53,7 +53,7 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-LIBS += -lEposCmd -lftd2xx -lwiringPi
+LIBS += -lEposCmd -lftd2xx -lwiringPi -lpthread
 
 INCLUDEPATH += /opt
 INCLUDEPATH += /opt/vc/lib
@@ -69,6 +69,6 @@ INCLUDEPATH += /opt/EposCmdLib_6.5.1.0/lib/v7
 DEPENDPATH += /opt/EposCmdLib_6.5.1.0/lib/v7
 
 
-target.path = /home/pi
+target.path = /home/pi/dev_ws
 INSTALLS += target
 

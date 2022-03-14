@@ -5,6 +5,8 @@
  *
  * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
+ * @note Google C++ naming style applied, however for GUI sloths, Qt style naming
+ * is used, and for custom sloths on_FooBar() style is used.
  *******************************************************************************/
 
 #ifndef MAINWINDOW_H
@@ -20,7 +22,11 @@
 #include "m_defines.h"
 #include "emergency_window.h"
 #include "eposthread.h"
+#include "initialization_window.h"
+
+
 #include <wiringPi.h>
+#include <softPwm.h>
 
 namespace Ui {
 class MainWindow;
@@ -67,6 +73,12 @@ private slots:
     // CKim - Called on exit of emrgency dialog
     void on_ExitEmergencyClicked(int a);
 
+    void on_CallInitWindow();
+
+    void on_ReinitClicked(int state);
+signals:
+    void InitStateChanged(int state);
+
 private:
       void PrintStatus(int dSpeed, int pSpeed);
 
@@ -86,21 +98,23 @@ private:
       void DisableValve();
 
       void InitializeIO();
+
 private:
       Ui::MainWindow *ui;
 
       // CKim - QString for messages that will be displayed
-      QString speed_label;
-      QString status_label;
+      QString speed_label_;
+      QString status_label_;
 
       // CKim - Variables updated from GUI input
-      float pump_motor_target_speed=0.0;
-      int pump_motor_printed_speed_val=0;
-      bool pump_running_status=false;
-      int debrider_motor_target_speed;
+      int pump_motor_target_speed_=0;
+      int pump_motor_printed_speed_val_=0;
+      bool pump_running_status_=false;
+      int debrider_motor_target_speed_;
 
-      Emergency_Window emergencyWindow;
-      motorThread m_Thread;
+      EmergencyWindow emergency_window_;
+      MotorThread motor_thread_;
+      InitializationWindow init_window_;
 
 };
 

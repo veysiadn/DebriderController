@@ -39,10 +39,10 @@ void InitializationWindow::UpdateInitGUI(int state)
              cur_state = DEBRIDER_STATE_EPOS_ERROR;
             break;
 
-        case DEBRIDER_STATE_SERIAL_ERROR:
+        case DEBRIDER_STATE_SPI_ERROR:
                 ui->lbl_pedal_con->setText("Not Connected");
                 ui->lbl_system_status->setText("Missing Connection");
-                cur_state = DEBRIDER_STATE_SERIAL_ERROR;
+                cur_state = DEBRIDER_STATE_SPI_ERROR;
             break;
         case DEBRIDER_STATE_UNINIT:
             cur_state=DEBRIDER_STATE_UNINIT ;

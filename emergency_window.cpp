@@ -1,7 +1,7 @@
 #include "emergency_window.h"
 #include "ui_emergency_window.h"
 
-Emergency_Window::Emergency_Window(QWidget *parent) :
+EmergencyWindow::EmergencyWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Emergency_Window)
 {
@@ -9,17 +9,17 @@ Emergency_Window::Emergency_Window(QWidget *parent) :
     emergency_status=0;
 }
 
-Emergency_Window::~Emergency_Window()
+EmergencyWindow::~EmergencyWindow()
 {
     delete ui;
 }
 
-void Emergency_Window::on_ButtonEmergencyExit_clicked()
+void EmergencyWindow::on_ButtonEmergencyExit_clicked()
 {
-    Emergency_Window::close();
+    EmergencyWindow::close();
     emit EmergencyExitClicked(0);
 }
-void Emergency_Window::SetEmergencyText()
+void EmergencyWindow::SetEmergencyText()
 {
     QString txtEmergency;
     if(emergency_status==DEBRIDER_STATE_EMERGENCY)
