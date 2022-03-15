@@ -81,13 +81,17 @@ void FootPedal::ReadButtons()
 //   if(R_pedal > 0 ) emit(RPedalClicked());
 
       L_pedal  = digitalRead(FOOT_PEDAL_L_PEDAL_BUTTON);
-    if(L_pedal > 0 ) emit(LPedalClicked());
+    if(L_pedal !=  prev_L_pedal && L_pedal > 0)     emit(LPedalClicked());
 
       L_button = digitalRead(FOOT_PEDAL_L_BUTTON);
-    if(L_button > 0) emit(LButtonClicked());
+    if(L_button !=  prev_L_button && L_button > 0)  emit(LButtonClicked());
 
       R_button = digitalRead(FOOT_PEDAL_R_BUTTON);
-    if(R_button > 0) emit(RButtonClicked());
+    if(R_button !=  prev_R_button && R_button > 0)  emit(RButtonClicked());
+
+    prev_L_pedal  = L_pedal;
+    prev_L_button = L_button;
+    prev_R_button = R_button ;
 }
 
 void FootPedal::OpenSPIPort()
@@ -138,9 +142,9 @@ void FootPedal::GetCmdOutInfo(const int pin_channel, Int8U &cmd_out, int &cmd_ou
 void FootPedal::TickClock()
 {
     digitalWrite(ADC_SPI_CLK, HIGH);
-    nanosleep((const struct timespec []){{0,1000}},NULL);
+    nanosleep((const struct timespec []){{0,1000}},nullptr);
     digitalWrite(ADC_SPI_CLK, LOW);
-    nanosleep((const struct timespec []){{0,1000}},NULL);
+    nanosleep((const struct timespec []){{0,1000}},nullptr);
 
 }
 

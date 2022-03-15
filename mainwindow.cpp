@@ -95,6 +95,7 @@ void MainWindow::on_StateChanged(int state)
             DisableValve();
             ShowPedalButtonStates();
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+            softPwmWrite(PEDAL_BUZZER,0);
             break;
 
         case DEBRIDER_STATE_RUNNING:
@@ -102,6 +103,7 @@ void MainWindow::on_StateChanged(int state)
             MovePumpMotor();
             EnableValve();
             PrintStatus(motor_thread_.m_DebriderInstantSpeed,pump_motor_printed_speed_val_);
+            softPwmWrite(PEDAL_BUZZER,100);
             break;
 
         case DEBRIDER_STATE_OSC:
@@ -115,6 +117,7 @@ void MainWindow::on_StateChanged(int state)
 
         case DEBRIDER_STATE_CLOSE_BLADE:
             DisableGUI();
+            softPwmWrite(PEDAL_BUZZER,100);
             PrintStatus(motor_thread_.m_DebriderInstantSpeed,pump_motor_printed_speed_val_);
         break;
 
@@ -373,6 +376,7 @@ void MainWindow::ShowPedalButtonStates()
     // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
 int debriderMotorSetSpeed=debrider_motor_target_speed_;
 if(motor_thread_.m_GuiChangePresetRPM){
+            softPwmWrite(PEDAL_BUZZER,100);
             if((debrider_motor_target_speed_ < 1000)  || debrider_motor_target_speed_==BLDC_MAX_RPM) debriderMotorSetSpeed=1000;
             if((debrider_motor_target_speed_ >= 1000) && debrider_motor_target_speed_ < 3000) debriderMotorSetSpeed=3000;
             if((debrider_motor_target_speed_ >= 3000) && debrider_motor_target_speed_ < 5000) debriderMotorSetSpeed=5000;
@@ -391,12 +395,15 @@ if(motor_thread_.m_GuiChangePresetRPM){
             else motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
 
+}else {
+    softPwmWrite(PEDAL_BUZZER,0);
 }
    // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
 
     // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS START   #########
     if(motor_thread_.m_GuiBtnChangeDirection)
     {
+        softPwmWrite(PEDAL_BUZZER,100);
         if(ui->radioCW->isChecked())
         {
             ui->radioCCW->setChecked(true);
@@ -415,6 +422,8 @@ if(motor_thread_.m_GuiChangePresetRPM){
             on_radioCW_toggled(true);
             motor_thread_.m_GuiBtnChangeDirection=0;
         }
+    }else {
+        softPwmWrite(PEDAL_BUZZER,0);
     }
     emergency_window_.close();
 }
@@ -422,6 +431,8 @@ if(motor_thread_.m_GuiChangePresetRPM){
 
 void MainWindow::on_CallEmergencyWindow()
 {
+    init_window_.close();
+    init_window_.hide();
     motor_thread_.m_GuiEmergencyMode=1;
     std::cout << "Emergency window called\n";
     emergency_window_.SetEmergencyText();

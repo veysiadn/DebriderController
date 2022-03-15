@@ -11,7 +11,7 @@ MotorThread::MotorThread()
     m_CloseBlade = 0;
     m_Emergency  = 0;
 
-    m_LeftButtonClicked =   m_RightButtonClicked = m_RightPedalClicked = 0;
+    m_LeftButtonClicked =   m_RightButtonClicked = m_RightPedalClicked = m_LeftPedalClicked = 0;
 
     m_GuiBtnCloseBlade=0;
     m_GuiChangePresetRPM=0;
@@ -368,7 +368,7 @@ void MotorThread::on_SPIStateChanged(int state)
 
 void MotorThread::ProcessPedalButtons()
 {
-    if(m_LeftButtonClicked || m_RightButtonClicked || m_RightPedalClicked){
+    if(m_LeftButtonClicked || m_RightButtonClicked || m_RightPedalClicked || m_LeftPedalClicked){
 
         if(m_LeftButtonClicked){
             m_LeftButtonClicked = 0;
@@ -389,9 +389,9 @@ void MotorThread::ProcessPedalButtons()
             }
         }
 
-        if(m_RightPedalClicked)
+        if(m_LeftPedalClicked)
         {
-            m_RightPedalClicked = 0;
+            m_LeftPedalClicked = 0;
             if(m_CurrState!=DEBRIDER_STATE_ENABLED){
                 m_GuiBtnCloseBlade=0;
             }
