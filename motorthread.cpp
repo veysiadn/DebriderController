@@ -60,6 +60,10 @@ void MotorThread::run()
                 m_Motor.DisableAllDevice();
                 emit UpdateGUI(m_CurrState);
                 std::cout<<"Something is wrong.\n";
+                digitalWrite(VDD_RESET,LOW);
+                delay(10);
+                digitalWrite(VDD_RESET,HIGH);
+                delay(10);
             }
             m_PrevState = m_CurrState;
             PulseWatchDog();

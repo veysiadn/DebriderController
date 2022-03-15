@@ -3,7 +3,7 @@
  * \brief Header file includes motorThread class blueprint which is
  * encapsulation of main thread of debrider controller, using QThread.
  *
- * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
  *******************************************************************************/
 

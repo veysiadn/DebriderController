@@ -4,7 +4,7 @@
  * of the EPOS command library. Modified to 'Qthread' to provide execution of
  * initialization and oscillation mode in seperate thread.
  *
- * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
  *******************************************************************************/
 
@@ -142,6 +142,8 @@ private:
     void MoveToPosition(void* keyHandle_, long target_position, unsigned short Node_ID);
     /// CKim - Get current position command for specific node in specific port
     void GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID);
+    /// Close blade mode slow movement of motor (20RPM)
+    void MoveInCloseBladeMode();
 };
 
 

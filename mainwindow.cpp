@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-//MainWindow* theWindow = nullptr;
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -12,8 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
     init_window_.setWindowState(Qt::WindowFullScreen);
     init_window_.show();
 
+    /// Initialize wiringpi library and pinmapping.
     InitializeIO();
 
+    /// CKim - Connect signals and sloths.
     connect(&motor_thread_, &MotorThread::UpdateGUI, this, &MainWindow::on_StateChanged);
 
     connect(&emergency_window_,&EmergencyWindow::EmergencyExitClicked,this,&MainWindow::on_ExitEmergencyClicked);
@@ -31,6 +31,34 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_ExitEmergencyClicked(int a)
+{
+    motor_thread_.m_GuiEmergencyMode=a;
+    digitalWrite(VDD_RESET,LOW);
+    delay(10);
+    digitalWrite(VDD_RESET,HIGH);
+    delay(10);
+    if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
+        std::cout << "Emergency button not released\n" << std::endl;
+        return;
+    }
+    if(digitalRead(INITIALIZATION_SWTICH)==HIGH){
+        std::cout << "Initialization Switch not released\n" << std::endl;
+        return;
+    }
+    //stateChanged(DEBRIDER_STATE_ENABLED);
+    this->emergency_window_.hide();
+    delay(1);
+    this->emergency_window_.done(0);
+    delay(1);
+    this->emergency_window_.close();
+    delay(1);
+    this->on_CallInitWindow();
+    delay(10);
+    motor_thread_.ReInitialize();
+    std::cout << "Exit Clicked ON Emergency Window\n" << std::endl;
+}
+
 void MainWindow::on_ReinitClicked(int state)
 {
     if(state < DEBRIDER_STATE_INIT){
@@ -38,76 +66,9 @@ void MainWindow::on_ReinitClicked(int state)
     }
 }
 
-void MainWindow::on_CallInitWindow()
-{
-    init_window_.setWindowState(Qt::WindowFullScreen);
-    init_window_.show();
-}
-
-void MainWindow::InitializeIO()
-{
-    // CKim - Initializing Variables
-    debrider_motor_target_speed_ = 0;
-    pump_motor_target_speed_ = 0;
-    pump_running_status_=false;
-
-    /// VysAdn, instead of WiringPi pin numbering this will use GPIO pin numbering.
-    wiringPiSetupGpio();
-
-    /// SGN signal, output of watchdog and emergency button.
-    pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
-
-    /// Watchdog pin declaration
-    pinMode(WATCHDOG_PIN,OUTPUT);
-
-    /// VysAdn wiringpi softpwm init. softPwmCreate(int pin_number,int initial_val,int pwm_range)
-    softPwmCreate(PEDAL_BUZZER,0,100);
-
-    /// VysAdn pedal button pin declarations.
-    pinMode(FOOT_PEDAL_L_BUTTON,INPUT);
-    pinMode(FOOT_PEDAL_R_BUTTON,INPUT);
-    pinMode(FOOT_PEDAL_L_PEDAL_BUTTON,INPUT);
-    pinMode(FOOT_PEDAL_R_PEDAL_BUTTON,INPUT);
-
-    /// Watchdog power reset pin declaration.
-    pinMode(VDD_RESET, OUTPUT);
-
-    /// VysAdn operating signal, for init window.
-    pinMode(INITIALIZATION_SWTICH,INPUT);
-
-    /// Suction motor output declaration.
-    pinMode(SUCTION_MOTOR_PWM,PWM_OUTPUT);
-
-    /// Solenoid valve output declaration.
-    pinMode(SOLENOID_VALVE_ENABLE,OUTPUT);
-
-    DisableValve();
-
-    // VysAdn ADC SPI input/output init.
-    pinMode(ADC_SPI_CLK,OUTPUT);
-    pinMode(ADC_SPI_MOSI,OUTPUT);
-    pinMode(ADC_SPI_CS,OUTPUT);
-    pinMode(ADC_SPI_MISO,INPUT);
-
-
-    // CKim - Initialize RPi's pwm for Pump control
-    pwmSetMode(PWM_MODE_MS);
-    pwmSetRange(PUMP_PWM_RANGE);    //19.2 Oscillator freq / 480 / 2 = 20kHz
-    pwmSetClock(2);
-    digitalWrite(VDD_RESET,HIGH);
-}
-
-void MainWindow::on_ExitEmergencyClicked(int a)
-{
-    motor_thread_.m_GuiEmergencyMode=a;
-    motor_thread_.ReInitialize();
-    //stateChanged(DEBRIDER_STATE_ENABLED);
-    std::cout << "Exit Clicked ON Emergency Window" << std::endl;
-}
-
 void MainWindow::on_StateChanged(int state)
 {
-//    emergencyWindow.m_EmergencyStatus=state;
+    emergency_window_.emergency_status_=state;
     switch(state)
     {
         case DEBRIDER_STATE_READY:
@@ -462,10 +423,18 @@ if(motor_thread_.m_GuiChangePresetRPM){
 void MainWindow::on_CallEmergencyWindow()
 {
     motor_thread_.m_GuiEmergencyMode=1;
+    std::cout << "Emergency window called\n";
     emergency_window_.SetEmergencyText();
     emergency_window_.setModal(true);
     emergency_window_.setWindowState(Qt::WindowFullScreen);
-    emergency_window_.exec();
+//    emergency_window_.exec();
+    emergency_window_.show();
+}
+
+void MainWindow::on_CallInitWindow()
+{
+    init_window_.setWindowState(Qt::WindowFullScreen);
+    init_window_.show();
 }
 
 void MainWindow::EnableValve()
@@ -476,4 +445,61 @@ void MainWindow::EnableValve()
 void MainWindow::DisableValve()
 {
     digitalWrite(SOLENOID_VALVE_ENABLE,LOW);
+}
+
+void MainWindow::InitializeIO()
+{
+    // CKim - Initializing Variables
+    debrider_motor_target_speed_ = 0;
+    pump_motor_target_speed_ = 0;
+    pump_running_status_=false;
+
+    /// VysAdn, instead of WiringPi pin numbering this will use GPIO pin numbering.
+    wiringPiSetupGpio();
+
+    /// SGN signal, output of watchdog and emergency button.
+    pinMode(EMERGENCY_RELAY_CONTROL,INPUT);
+
+    /// Watchdog pin declaration
+    pinMode(WATCHDOG_PIN,OUTPUT);
+
+    /// VysAdn wiringpi softpwm init. softPwmCreate(int pin_number,int initial_val,int pwm_range)
+    softPwmCreate(PEDAL_BUZZER,0,100);
+
+    /// VysAdn pedal button pin declarations.
+    pinMode(FOOT_PEDAL_L_BUTTON,INPUT);
+    pinMode(FOOT_PEDAL_R_BUTTON,INPUT);
+    pinMode(FOOT_PEDAL_L_PEDAL_BUTTON,INPUT);
+    pinMode(FOOT_PEDAL_R_PEDAL_BUTTON,INPUT);
+
+    /// Watchdog power reset pin declaration.
+    pinMode(VDD_RESET, OUTPUT);
+
+    /// VysAdn operating signal, for init window.
+    pinMode(INITIALIZATION_SWTICH,INPUT);
+
+    /// Suction motor output declaration.
+    pinMode(SUCTION_MOTOR_PWM,PWM_OUTPUT);
+
+    /// Solenoid valve output declaration.
+    pinMode(SOLENOID_VALVE_ENABLE,OUTPUT);
+
+    DisableValve();
+
+    // VysAdn ADC SPI input/output init.
+    pinMode(ADC_SPI_CLK,OUTPUT);
+    pinMode(ADC_SPI_MOSI,OUTPUT);
+    pinMode(ADC_SPI_CS,OUTPUT);
+    pinMode(ADC_SPI_MISO,INPUT);
+
+
+    // CKim - Initialize RPi's pwm for Pump control
+    pwmSetMode(PWM_MODE_MS);
+    pwmSetRange(PUMP_PWM_RANGE);    //19.2 Oscillator freq / 480 / 2 = 20kHz
+    pwmSetClock(2);
+
+    digitalWrite(VDD_RESET,LOW);
+    delay(10);
+    digitalWrite(VDD_RESET,HIGH);
+    delay(10);
 }

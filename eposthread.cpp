@@ -17,7 +17,24 @@ void EposThread::run()
 void EposThread::RunInitialization()
 {
     int waitCnt = 0;
-    int errcode = 0;
+    int state = 0;
+    // VysADN check init switch, if it's on warn user.
+    if(digitalRead(INITIALIZATION_SWTICH)==HIGH)
+    {
+        std::cout<<"Waiting for initialization switch to turn off\n";
+        waitCnt++;
+        msleep(1000);
+    }
+
+    // CKim - If relay is still low after 1 sec. Throw error
+    if(digitalRead(INITIALIZATION_SWTICH)==HIGH)
+    {
+        // ERRR : Relay is not closed
+        std::cout<<"ERRR : Turn of initialization switch\n";
+        state = DEBRIDER_STATE_INITIALIZING;
+        emit InitializationComplete(state);
+        return;
+    }
 
     // CKim - First check the relay status, wait for 1 s until watchdog
     // starts pulsing and relay is closed to provide
@@ -34,11 +51,11 @@ void EposThread::RunInitialization()
     {
         // ERRR : Relay is not closed
         std::cout<<"ERRR : Relay is not closing\n";
-        errcode = -1;
-        emit InitializationComplete(errcode);
+        state = DEBRIDER_STATE_EMERGENCY;
+        emit InitializationComplete(state);
         return;
     }
-    std::cout<<"Relay is closed, starting to establish CAN and SPI\n";
+    std::cout<<"Relay is closed, starting to establish CAN and serial\n";
 
     // ------------------------------------------------------------ //
     // CKim - CAN Initialization
@@ -48,8 +65,9 @@ void EposThread::RunInitialization()
     if(!m_pMotor->OpenCANCommunication())
     {
         // ERRR : CAN Port was not opened or not properly configured
-        errcode = -2;
-        emit InitializationComplete(errcode);
+        std::cout << "Open CAN communication failed.\n";
+        state = DEBRIDER_STATE_EPOS_ERROR;
+        emit InitializationComplete(state);
         return;
     }
     //msleep(200);
@@ -60,21 +78,31 @@ void EposThread::RunInitialization()
         if(!m_pMotor->EnableMotorController())
         {
             // ERRR : Clear fault and enabling motor failed
-            errcode = -2;
-//            emit InitializationComplete(errcode);
-//            return;
+            state = DEBRIDER_STATE_EPOS_ERROR;
         }
         else
         {
-            errcode = 0;
+            state = DEBRIDER_STATE_READY;
+            emit InitializationComplete(state);
+            break;
         }
         msleep(200);
+    }
+    if(state==DEBRIDER_STATE_EPOS_ERROR)
+    {
+        emit InitializationComplete(state);
+        return ;
     }
     // ------------------------------------------------------------ //
     //m_pMotor->EnableVelocityMode();
     //msleep(200);
-    if(errcode == 0)    std::cout<<"Initialization thread no error!\n";
-    emit InitializationComplete(errcode);
+    while(digitalRead(INITIALIZATION_SWTICH)==LOW && state == DEBRIDER_STATE_READY){
+        msleep(500);
+        state=DEBRIDER_STATE_READY;
+        emit InitializationComplete(state);
+    }
+    state = DEBRIDER_STATE_ENABLED;
+    emit InitializationComplete(state);
     return;
 }
 

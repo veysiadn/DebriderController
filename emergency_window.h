@@ -5,7 +5,7 @@
  * such as motor driver error, SPI communication error, watchdog error.
  * Additionally clicking emergency button will wake this window as well.
  *
- * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
  *******************************************************************************/
 
@@ -26,7 +26,7 @@ class EmergencyWindow : public QDialog
 public:
     explicit EmergencyWindow(QWidget *parent = nullptr);
     ~EmergencyWindow();
-    int emergency_status;
+    int emergency_status_;
     void SetEmergencyText();
 private slots:
     void on_ButtonEmergencyExit_clicked();

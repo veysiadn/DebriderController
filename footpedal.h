@@ -4,7 +4,7 @@
  * data from foot pedal; reads one analog and three digital values from
  * pedal.Uses Soft SPI protocol to communicate with MCP3004 ADC.
  *
- * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
  *******************************************************************************/
 

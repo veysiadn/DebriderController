@@ -3,7 +3,7 @@
  * \brief Header file includes global definitions, including configuration
  * values, pin mapping, states and maximum/minumum values.
  *
- * Last Updated : 2021.10.18 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
  *******************************************************************************/
 
@@ -13,6 +13,7 @@
 #define ENCODER_RESOLUTION  1024    /// 1024 Counts Per Turn
 #define GEAR_RATIO          5       /// 5 : 1 Gear Ration
 #define INC_PER_ROTATION    ENCODER_RESOLUTION*GEAR_RATIO*4 /// Encoder increment value per rotation.
+#define CLOSE_BLADE_VELOCITY 100    /// VeysiAdn - Velocity that will be used in close blade mode.
 
 #define MAX_ANALOG_OUTPUT           310     /// Maximum analog value acquired from pedal.
 #define BLDC_MAX_RPM                12000   /// Maximum RPM value for BLDC Motor

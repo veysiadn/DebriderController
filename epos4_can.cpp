@@ -12,7 +12,7 @@ MaxonMotor::MaxonMotor()
 
     m_Mode = 0;
 
-    m_keyHandle_MCP = 0;
+    m_keyHandle_MCP = nullptr;
 
 }
 
@@ -30,7 +30,7 @@ int MaxonMotor::OpenCANCommunication()
     m_keyHandle_MCP = VCS_OpenDevice(DeviceName, ProtocolStackName, InterfaceName, m_PortName_MCP, &error_code);
 
     // CKim - Handle is NULL if failed to open device
-    if( m_keyHandle_MCP == 0 )
+    if( m_keyHandle_MCP == nullptr )
     {
         std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
         m_errorFlag = 1;
@@ -111,7 +111,7 @@ void* MaxonMotor::ActivateDevice(char *PortName, unsigned short Node_ID)
     keyHandle_ = VCS_OpenDevice(DeviceName, ProtocolStackName, InterfaceName, PortName, &error_code);
 
     // OpenDevice 실패
-    if( keyHandle_ == 0 )
+    if( keyHandle_ == nullptr )
     {
         std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
         m_errorFlag = 1;
@@ -161,7 +161,7 @@ void MaxonMotor::CloseDevice(void *keyHandle_)
 
     std::cout<<"Closing Device!"<<std::endl;
 
-    if(keyHandle_ != 0)
+    if(keyHandle_ != nullptr)
         VCS_CloseDevice(keyHandle_, &error_code);
 
     VCS_CloseAllDevices(&error_code);
@@ -322,7 +322,7 @@ void MaxonMotor::RunOscMode(int dir)
     int Absolute = TRUE;
     int Immediately = TRUE;
 
-    long tgtPos;
+    long tgtPos=0;
     if (dir > 0) { tgtPos = m_OscOffset + m_OscAmp; }
     if (dir < 0) { tgtPos = m_OscOffset - m_OscAmp; }
     if (dir == 0) { tgtPos = m_OscOffset; }
@@ -409,7 +409,6 @@ void MaxonMotor::GetCurrentPosition(void *keyHandle_, int& current_position, uns
 
 void MaxonMotor::GetCurrentPositionAllDevice(int &current_position)
 {
-
     GetCurrentPosition(m_keyHandle_MCP, current_position, m_Node_ID_MCP);
 }
 
@@ -425,22 +424,22 @@ int MaxonMotor::GetCloseBladePosition()
         std::cout << " Error while getting current position , error_code = " << error_code << std::endl;
         m_errorFlag = 1;
     }
-        new_Pos = ( Current_Pos % 20480);
+        new_Pos = ( Current_Pos % INC_PER_ROTATION);
 
-    if(new_Pos  < 10240 && new_Pos > -10240 && new_Pos!=0 )
+    if(new_Pos  < INC_PER_ROTATION/2 && new_Pos > -INC_PER_ROTATION/2 && new_Pos!=0 )
     {
             new_Pos=Current_Pos-new_Pos;
      //       std::cout << "First if .. : " << new_Pos << std::endl;
     }
 
-    else if(new_Pos > 10240)
+    else if(new_Pos > INC_PER_ROTATION/2)
     {
-        new_Pos = Current_Pos+(20480-new_Pos);
+        new_Pos = Current_Pos+(INC_PER_ROTATION-new_Pos);
        // std::cout << "CCW else if .. : " << new_Pos << std::endl;
     }
-    else if(new_Pos < -10240)
+    else if(new_Pos < -INC_PER_ROTATION/2)
     {
-        new_Pos = Current_Pos-(20480+new_Pos);
+        new_Pos = Current_Pos-(INC_PER_ROTATION+new_Pos);
         //std::cout << "CCW else if .. : " << new_Pos << std::endl;
     }
     else
@@ -505,4 +504,9 @@ void MaxonMotor::EnablePositionModeWithSpeed(int speed)
         std::cout << "VCS_SetPositionProfile Failed!, error_code = " << error_code << std::endl;
         m_errorFlag = 1;
     }
+}
+void MaxonMotor::MoveInCloseBladeMode()
+{
+    EnableVelocityMode();
+    MoveVelocity(CLOSE_BLADE_VELOCITY);
 }

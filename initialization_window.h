@@ -1,3 +1,16 @@
+/*****************************************************************************
+ * \file  initialization_window.h
+ * \brief Header file includes initialization window class, checks if system
+ * is ready for running, by checking pedal connection, motor connection and
+ * waiting for operator to press initialization switch.
+ * In case system is not ready operator have to click retry initialization
+ * button on GUI.
+ *
+ * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
+ *******************************************************************************/
+
+
 #ifndef INITIALIZATION_WINDOW_H
 #define INITIALIZATION_WINDOW_H
 
