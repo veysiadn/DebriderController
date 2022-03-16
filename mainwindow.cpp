@@ -68,7 +68,7 @@ void MainWindow::on_ReinitClicked(int state)
 
 void MainWindow::on_StateChanged(int state)
 {
-    emergency_window_.emergency_status_=state;
+    emergency_window_.SetEmergencyStatus(state);
     switch(state)
     {
         case DEBRIDER_STATE_READY:

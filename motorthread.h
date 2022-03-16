@@ -1,11 +1,13 @@
-/*****************************************************************************
+/**
+ ***************************************************************************
  * \file  motorthread.h
  * \brief Header file includes motorThread class blueprint which is
  * encapsulation of main thread of debrider controller, using QThread.
  *
- * Last Updated : 2022.03.15 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
+ * Last Updated : 2022.03.16 Chunwoo Kim (CKim) & Veysi ADIN (VysAdn)
  * Contact Info : cwkim@kist.re.kr & veysi.adin@kist.re.kr
- *******************************************************************************/
+ *****************************************************************************
+**/
 
 
 #ifndef MOTORTHREAD_H
@@ -28,62 +30,133 @@ public:
     MotorThread();
 
 
-    /// CKim - Control loop is implemented in run() function
+    /// - Control loop is implemented in run() function
     virtual void run();
 
     void ReInitialize();
 
-    /// CKim - Variables
 public:
+
+    /// Value describes target velocity value to send to motor after calculating based on analog pedal input.
     int m_DebriderDesiredSpeed;
+
+    /// Value describes current velocity of debirder motor.
     int m_DebriderInstantSpeed;
+
+    /// Value describes target velocity value set by user.
     int m_DebriderTargetSpeed;
+
+    /// Oscillation mode activation/deactivation flag.
     int m_Oscillate;
 
+    /// Target position to move motor to desired position.
+    int m_TargetPos;
 
-    int m_TargetPos;            
+    /// Emergency mode activation/deactivation flag.
     int m_Emergency;
 
-    int m_GuiBtnCloseBlade;       /// CKim - Close button pressed
-    int m_GuiChangePresetRPM;     /// CKim - Left Foot pedal button clicked
-    int m_GuiBtnChangeDirection;  /// CKim - Right Foot pedal button clicked
-    int m_GuiEmergencyMode;       /// CKim - Flag indicating notification of the emergency to GUI. 1 if notified
+    ///  - Flag representing Close blade button pressed in GUI.
+    int m_GuiBtnCloseBlade;
+
+    ///  - Flag representing left button clicked in pedal to notify GUI.
+    int m_GuiChangePresetRPM;
+
+    ///  - Flag representing right button clicked in pedal to notify GUI.
+    int m_GuiBtnChangeDirection;
+
+    ///  - Flag indicating notification of the emergency to GUI. 1 if notified.
+    int m_GuiEmergencyMode;
 
 private:
-    MaxonMotor m_Motor;                  // CKim - Motor class
-    FootPedal m_FootPedal;               // CKim - SPI Communication class for foot pedal
-    QElapsedTimer m_WatchdogTimer;       // CKim - Timer class for watchdog
-    EposThread m_EposThread;             // CKim - Thread class for doing time consuming jobs
+    /// - Motor class instance to access interface for controlling motor motion.
+    MaxonMotor m_Motor;
 
+    /// - SPI Communication class to get button and analog pedal data from foot pedal.
+    FootPedal m_FootPedal;
+
+    /// Timer class for pulsing watchdog in specific interval. Current interval is 5ms
+    QElapsedTimer m_WatchdogTimer;
+
+    /// - Thread class for doing time consuming jobs to not miss watchdog pulse.
+    EposThread m_EposThread;
+
+    /// Values representing current and previous state of debrider.
     int  m_CurrState, m_PrevState;
+
+    /// Flag set by foot pedal class when right pedal is clicked.
     int  m_RightPedalClicked;
+
+    /// Flag set by foot pedal class when left pedal is clicked.
     int  m_LeftPedalClicked;
+
+    /// Flag set by foot pedal class when right button is clicked.
     int  m_RightButtonClicked;
+
+    /// Flag set by foot pedal class when left button is clicked.
     int  m_LeftButtonClicked;
+
+    /// Flag representing HIGH or LOW state of watchdog.
     bool m_WatchdogState;
 
-    int m_CloseBlade;            // VysADN CloseBlade function parameters
+    /// Flag representing close blade function call required or not.
+    int m_CloseBlade;
+
+    /// Flag representing if user pressed analog pedal or not.
     int m_LeftPedalDown;
+
+    /// Value representing analog pedal value.
     int m_LeftPedalDepth;
+
 private:
+
+    /**
+     * @brief ProcessPedalButtons Notifies GUI in case of change in pedal buttons. Uptades all flags
+     * related to pedal buttons.
+     */
     void ProcessPedalButtons();
+
+    /**
+     * @brief PulseWatchDog Pulses watchdog output with 5ms period.
+     */
     void PulseWatchDog();
+
+    /**
+     * @brief CalculateDesiredVelocity Calculates desired velocity based on target velocity and analog pedal value.
+     * @param desired_vel output value.
+     * @param pedal_depth analog pedal value.
+     * @param target_vel target velocity set by user.
+     */
     void CalculateDesiredVelocity(int& desired_vel, int pedal_depth,int target_vel);
 
 private slots:
-    // CKim - Callbacks from EPOS thread
+
+    /// - Callback from EPOS thread. Called when initialization is complete.
     void on_InitComplete(int state);
+
+    /// - Callback from EPOS thread. Called when oscillation mode is complete.
     void on_TransToOscComplete(int errcode);
+
+    /// - Callback from EPOS thread. Called when blade close function is complete.
     void on_BladeClosed(int errcode);
 
-    // CKim - Callbacks from foot pedal
+    /// - Callback from foot pedal. Called when left button is clicked in pedal.
     void on_FootPedalLButton();
+
+    /// - Callback from foot pedal. Called when right button is clicked in pedal.
     void on_FootPedalRButton();
+
+    /// - Callback from foot pedal. Called when right pedal is clicked in pedal.
     void on_RightFootPedal();
+
+    /// - Callback from foot pedal. Called when left pedal is pressed in pedal.
     void on_LeftFootPedal();
+
+    /// - Callback from foot pedal. Called when SPI communication state changed.
     void on_SPIStateChanged(int state);
+
 signals:
-    void UpdateGUI(int state);  // CKim - This signal is emitted to notify window for GUI update
+    /// - This signal is emitted to notify window for GUI update.
+    void UpdateGUI(int state);
 };
 
 #endif // MOTORTHREAD_H

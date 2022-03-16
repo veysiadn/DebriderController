@@ -9,9 +9,9 @@ EposThread::EposThread() :
 
 void EposThread::run()
 {
-    if(m_Transition == 1)   {   RunInitialization();    }
-    if(m_Transition == 2)   {   RunCloseBlade();        }
-    if(m_Transition == 3)   {   RunOscillation();       }
+    if(m_Transition == kInit)                {   RunInitialization();    }
+    if(m_Transition == kCloseBlade)          {   RunCloseBlade();        }
+    if(m_Transition == kRunOscillation)      {   RunOscillation();       }
 }
 
 void EposThread::RunInitialization()
@@ -131,7 +131,7 @@ void EposThread::RunOscillation()
     // Set Oscillation Motion
     if(m_OscSpeed < 0 ) m_OscSpeed*=-1;
     m_pMotor->EnablePositionModeWithSpeed(m_OscSpeed);
-    m_pMotor->SetOscMode(15000);
+    m_pMotor->SetOscMode(OSC_MODE_AMP);
     // Start motion and continue until m_Abort is set to true from outside
     while(!m_Abort)
     {

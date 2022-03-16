@@ -19,6 +19,7 @@ void EmergencyWindow::on_ButtonEmergencyExit_clicked()
 //    EmergencyWindow::close();
     emit EmergencyExitClicked(0);
 }
+
 void EmergencyWindow::SetEmergencyText()
 {
     QString txtEmergency;
@@ -43,4 +44,14 @@ void EmergencyWindow::SetEmergencyText()
         txtEmergency=(" \n !EMERGENCY MODE ACTIVE!");
     }
     ui->lblEmergencyTxt->setText(txtEmergency);
+}
+
+void EmergencyWindow::SetEmergencyStatus(int status)
+{
+    emergency_status_ = status;
+}
+
+int EmergencyWindow::GetEmergencyStatus()
+{
+    return  emergency_status_ ;
 }

@@ -84,7 +84,7 @@ void MotorThread::run()
                 m_CurrState = DEBRIDER_STATE_INITIALIZING;  // INITAILIZING = -1 state
                 std::cout<<"Initializing Connections\n";
                 m_FootPedal.start();
-                m_EposThread.SetTransition(1);
+                m_EposThread.SetTransition(kInit);
                 m_EposThread.start();
 
             }
@@ -167,8 +167,8 @@ void MotorThread::run()
             if(m_Oscillate)
             {
                 m_CurrState = DEBRIDER_STATE_OSC;
-                m_EposThread.SetTransition(3);
-                m_EposThread.setOscillationRPM(m_DebriderTargetSpeed*GEAR_RATIO);
+                m_EposThread.SetTransition(kRunOscillation);
+                m_EposThread.SetOscillationVelocity(m_DebriderTargetSpeed*GEAR_RATIO);
                 m_EposThread.start();
             }
             else
@@ -189,7 +189,7 @@ void MotorThread::run()
             //std::cout<<"State transition from enabled to close\n";
             m_CurrState = DEBRIDER_STATE_CLOSE_BLADE;
             m_CloseBlade = 0;
-            m_EposThread.SetTransition(2);
+            m_EposThread.SetTransition(kCloseBlade);
             m_EposThread.start();
 
             emit UpdateGUI(m_CurrState);
