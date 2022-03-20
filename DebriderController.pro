@@ -25,30 +25,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++14
 
 SOURCES += \
-        emergency_window.cpp \
-        epos4_can.cpp \
-        eposthread.cpp \
-        footpedal.cpp \
-        main.cpp \
-        mainwindow.cpp \
-        motorthread.cpp \
-        initialization_window.cpp
+        src/emergency_window.cpp \
+        src/epos4_can.cpp \
+        src/eposthread.cpp \
+        src/footpedal.cpp \
+        src/main.cpp \
+        src/mainwindow.cpp \
+        src/motorthread.cpp \
+        src/initialization_window.cpp
 
 HEADERS += \
-        emergency_window.h \
-        epos4_can.h \
-        eposthread.h \
-        footpedal.h \
-        m_defines.h \
-        mainwindow.h \
-        motorthread.h \
-        initialization_window.h
+        include/emergency_window.h \
+        include/epos4_can.h \
+        include/eposthread.h \
+        include/footpedal.h \
+        include/m_defines.h \
+        include/mainwindow.h \
+        include/motorthread.h \
+        include/initialization_window.h
 
 
 FORMS += \
-        emergency_window.ui \
-        mainwindow.ui \
-        initialization_window.ui
+        ui/emergency_window.ui \
+        ui/mainwindow.ui \
+        ui/initialization_window.ui
 
 RESOURCES += \
     resources.qrc
