@@ -1,0 +1,8 @@
+src/eposthread.cpp:45:16: style: Variable 'waitCnt' is assigned a value that is never used. [unreadVariable]
+        waitCnt++;
+               ^
+src/footpedal.cpp:20:24: style: Variable 'left_pedal_val' is assigned a value that is never used. [unreadVariable]
+    int left_pedal_val = 0;
+                       ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
