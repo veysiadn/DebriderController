@@ -1,4 +1,4 @@
-#include "epos4_can.h"
+#include "include/epos4_can.h"
 
 MaxonMotor::MaxonMotor()
 {

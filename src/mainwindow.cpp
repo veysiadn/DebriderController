@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "include/mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -6,9 +6,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    init_window_.setWindowTitle("Flexdeb Initialization");
-    init_window_.setWindowState(Qt::WindowFullScreen);
-    init_window_.show();
+
+    on_CallInitWindow();
 
     /// Initialize wiringpi library and pinmapping.
     InitializeIO();
@@ -34,10 +33,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_ExitEmergencyClicked(int a)
 {
     motor_thread_.m_GuiEmergencyMode=a;
-    digitalWrite(VDD_RESET,LOW);
-    delay(10);
-    digitalWrite(VDD_RESET,HIGH);
-    delay(10);
     if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
         std::cout << "Emergency button not released\n" << std::endl;
         return;
@@ -48,14 +43,9 @@ void MainWindow::on_ExitEmergencyClicked(int a)
     }
     //stateChanged(DEBRIDER_STATE_ENABLED);
     this->emergency_window_.hide();
-    delay(1);
-    this->emergency_window_.done(0);
-    delay(1);
-    this->emergency_window_.close();
-    delay(1);
-    this->on_CallInitWindow();
-    delay(10);
     motor_thread_.ReInitialize();
+    delay(500);
+    if(emergency_window_.isHidden()) on_CallInitWindow();
     std::cout << "Exit Clicked ON Emergency Window\n" << std::endl;
 }
 
@@ -134,6 +124,10 @@ void MainWindow::on_StateChanged(int state)
             DisableValve();
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
             this->hide();
+            digitalWrite(VDD_RESET,LOW);
+            delay(10);
+            digitalWrite(VDD_RESET,HIGH);
+            delay(10);
             on_CallEmergencyWindow();
         break;
 
@@ -431,19 +425,26 @@ if(motor_thread_.m_GuiChangePresetRPM){
 
 void MainWindow::on_CallEmergencyWindow()
 {
-    init_window_.close();
-    init_window_.hide();
+//    init_window_.close();
     motor_thread_.m_GuiEmergencyMode=1;
     std::cout << "Emergency window called\n";
-    emergency_window_.SetEmergencyText();
-    emergency_window_.setModal(true);
-    emergency_window_.setWindowState(Qt::WindowFullScreen);
-//    emergency_window_.exec();
-    emergency_window_.show();
+    if(!emergency_window_.isVisible()){
+        init_window_.hide();
+        emergency_window_.setWindowTitle("Emergency Window");
+        emergency_window_.SetEmergencyText();
+    //    emergency_window_.setModal(true);
+        emergency_window_.setWindowState(Qt::WindowFullScreen);
+    //    emergency_window_.exec();
+        emergency_window_.show();
+    }
 }
 
 void MainWindow::on_CallInitWindow()
 {
+    std::cout << "Init windows called." << std::endl;
+    this->hide();
+    emergency_window_.hide();
+    init_window_.setWindowTitle("Flexdeb Initialization");
     init_window_.setWindowState(Qt::WindowFullScreen);
     init_window_.show();
 }

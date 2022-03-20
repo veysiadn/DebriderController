@@ -1,4 +1,4 @@
-#include "eposthread.h"
+#include "include/eposthread.h"
 
 
 EposThread::EposThread() :

@@ -1,4 +1,4 @@
-#include <motorthread.h>
+#include <include/motorthread.h>
 
 MotorThread::MotorThread()
 {
@@ -60,10 +60,6 @@ void MotorThread::run()
                 m_Motor.DisableAllDevice();
                 emit UpdateGUI(m_CurrState);
                 std::cout<<"Something is wrong.\n";
-                digitalWrite(VDD_RESET,LOW);
-                delay(10);
-                digitalWrite(VDD_RESET,HIGH);
-                delay(10);
             }
             m_PrevState = m_CurrState;
             PulseWatchDog();
@@ -268,7 +264,7 @@ void MotorThread::on_InitComplete(int state)
         m_CurrState = DEBRIDER_STATE_ENABLED;
         emit UpdateGUI(m_CurrState);
     }else if (state==DEBRIDER_STATE_READY) {
-        std::cout << "Waiting for Initialization Switch\n";
+//        std::cout << "Waiting for Initialization Switch\n";
         m_CurrState = DEBRIDER_STATE_READY;
         emit UpdateGUI(m_CurrState);
     }
@@ -354,9 +350,9 @@ void MotorThread::ReInitialize()
     std::cout << "Reinitializing\n";
     m_CurrState = DEBRIDER_STATE_UNINIT;
     m_FootPedal.requestInterruption();
-    if(m_FootPedal.isRunning()){
-        m_FootPedal.SetSPIError(false);
-    }
+//    if(m_FootPedal.isRunning()){
+//        m_FootPedal.SetSPIError(false);
+//    }
     m_GuiEmergencyMode = 0;
 }
 

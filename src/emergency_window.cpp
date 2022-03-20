@@ -1,4 +1,4 @@
-#include "emergency_window.h"
+#include "include/emergency_window.h"
 #include "ui_emergency_window.h"
 
 EmergencyWindow::EmergencyWindow(QWidget *parent) :

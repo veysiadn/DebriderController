@@ -1,7 +1,8 @@
-#include "footpedal.h"
+#include "include/footpedal.h"
+#include "include/m_defines.h"
+
 #include <iostream>
 #include <wiringPi.h>
-#include <m_defines.h>
 #include <time.h>
 
 FootPedal::FootPedal()
