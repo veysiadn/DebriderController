@@ -1,0 +1,11 @@
+<map id="include/eposthread.h" name="include/eposthread.h">
+<area shape="rect" id="node1" title="Header file includes EposThread class, which implements time consuming processes related to EPOS cont..." alt="" coords="152,5,293,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,162,77,189"/>
+<area shape="rect" id="node3" href="$epos4__can_8h.html" title=" " alt="" coords="311,80,406,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="183,162,262,189"/>
+<area shape="rect" id="node7" href="$m__defines_8h.html" title="Header file includes global definitions, including configuration values, pin mapping,..." alt="" coords="287,162,377,189"/>
+<area shape="rect" id="node8" href="$footpedal_8h.html" title="Header file includes footpedal class for opening port and reading data from foot pedal; reads one ana..." alt="" coords="100,80,185,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="401,155,543,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="567,162,639,189"/>
+<area shape="rect" id="node9" title=" " alt="" coords="102,162,159,189"/>
+</map>

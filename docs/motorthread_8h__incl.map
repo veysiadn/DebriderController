@@ -1,0 +1,13 @@
+<map id="include/motorthread.h" name="include/motorthread.h">
+<area shape="rect" id="node1" title="Header file includes motorThread class blueprint which is encapsulation of main thread of debrider co..." alt="" coords="211,5,357,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,237,77,263"/>
+<area shape="rect" id="node3" title=" " alt="" coords="458,80,569,107"/>
+<area shape="rect" id="node4" href="$epos4__can_8h.html" title=" " alt="" coords="407,155,502,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="183,237,262,263"/>
+<area shape="rect" id="node8" href="$m__defines_8h.html" title="Header file includes global definitions, including configuration values, pin mapping,..." alt="" coords="287,237,377,263"/>
+<area shape="rect" id="node9" href="$footpedal_8h.html" title="Header file includes footpedal class for opening port and reading data from foot pedal; reads one ana..." alt="" coords="95,155,180,181"/>
+<area shape="rect" id="node11" href="$eposthread_8h.html" title="Header file includes EposThread class, which implements time consuming processes related to EPOS cont..." alt="" coords="236,80,332,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="401,229,543,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="567,237,639,263"/>
+<area shape="rect" id="node10" title=" " alt="" coords="102,237,159,263"/>
+</map>

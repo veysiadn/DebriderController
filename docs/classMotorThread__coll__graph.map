@@ -1,0 +1,7 @@
+<map id="MotorThread" name="MotorThread">
+<area shape="rect" id="node1" title=" " alt="" coords="28,260,123,287"/>
+<area shape="rect" id="node2" title=" " alt="" coords="25,5,97,32"/>
+<area shape="rect" id="node4" href="$classFootPedal.html" title=" " alt="" coords="20,81,102,108"/>
+<area shape="rect" id="node5" href="$classEposThread.html" title=" " alt="" coords="136,171,226,197"/>
+<area shape="rect" id="node3" href="$classMaxonMotor.html" title=" " alt="" coords="213,81,306,108"/>
+</map>
