@@ -17,7 +17,7 @@ EmergencyWindow::~EmergencyWindow()
 void EmergencyWindow::on_ButtonEmergencyExit_clicked()
 {
 //    EmergencyWindow::close();
-    emit EmergencyExitClicked(0);
+    emit EmergencyExitClicked(1);
 }
 
 void EmergencyWindow::SetEmergencyText()

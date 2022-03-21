@@ -16,33 +16,15 @@ void EposThread::run()
 
 void EposThread::RunInitialization()
 {
-    int waitCnt = 0;
+//    int waitCnt = 0;
     int state = 0;
-    // VysADN check init switch, if it's on warn user.
-    if(digitalRead(INITIALIZATION_SWTICH)==HIGH)
-    {
-        std::cout<<"Waiting for initialization switch to turn off\n";
-        waitCnt++;
-        msleep(1000);
-    }
-
-    // CKim - If relay is still low after 1 sec. Throw error
-    if(digitalRead(INITIALIZATION_SWTICH)==HIGH)
-    {
-        // ERRR : Relay is not closed
-        std::cout<<"ERRR : Turn of initialization switch\n";
-        state = DEBRIDER_STATE_INITIALIZING;
-        emit InitializationComplete(state);
-        return;
-    }
-
     // CKim - First check the relay status, wait for 1 s until watchdog
     // starts pulsing and relay is closed to provide
     // power EPOS and establish CAN connection. If not return with error
     if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW)
     {
         std::cout<<"Waiting for relay\n";
-        waitCnt++;
+//        waitCnt++;
         msleep(1000);   // CKim - wait for 1 sec
     }
 
@@ -55,8 +37,23 @@ void EposThread::RunInitialization()
         emit InitializationComplete(state);
         return;
     }
-    std::cout<<"Relay is closed, starting to establish CAN and serial\n";
-
+    std::cout<<"Relay is closed, checking init switch\n";
+    state=DEBRIDER_STATE_INITIALIZING;
+    while(state==DEBRIDER_STATE_INITIALIZING){
+        if(digitalRead(INITIALIZATION_SWTICH)==HIGH){
+            msleep(500);
+            if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
+                state=DEBRIDER_STATE_EMERGENCY;
+                emit InitializationComplete(state);
+                break;
+            }else {
+                state=DEBRIDER_STATE_INITIALIZING;
+            }
+            emit InitializationComplete(state);
+        }else {
+            state = DEBRIDER_STATE_READY;
+        }
+    }
     // ------------------------------------------------------------ //
     // CKim - CAN Initialization
     // ------------------------------------------------------------ //
@@ -97,13 +94,18 @@ void EposThread::RunInitialization()
     //m_pMotor->EnableVelocityMode();
     //msleep(200);
     while(digitalRead(INITIALIZATION_SWTICH)==LOW && state == DEBRIDER_STATE_READY){
+        if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
+            std::cout << "Relay opened" << std::endl;
+            state=DEBRIDER_STATE_EMERGENCY;
+            emit InitializationComplete(state);
+            break;
+        }
         msleep(500);
         state=DEBRIDER_STATE_READY;
         emit InitializationComplete(state);
     }
     state = DEBRIDER_STATE_ENABLED;
     emit InitializationComplete(state);
-    return;
 }
 
 

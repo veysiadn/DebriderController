@@ -32,7 +32,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_ExitEmergencyClicked(int a)
 {
-    motor_thread_.m_GuiEmergencyMode=a;
     if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
         std::cout << "Emergency button not released\n" << std::endl;
         return;
@@ -41,12 +40,13 @@ void MainWindow::on_ExitEmergencyClicked(int a)
         std::cout << "Initialization Switch not released\n" << std::endl;
         return;
     }
+    std::cout << "Exit Clicked ON Emergency Window\n" << std::endl;
+    motor_thread_.m_GuiEmergencyMode=a;
     //stateChanged(DEBRIDER_STATE_ENABLED);
     this->emergency_window_.hide();
     motor_thread_.ReInitialize();
     delay(500);
     if(emergency_window_.isHidden()) on_CallInitWindow();
-    std::cout << "Exit Clicked ON Emergency Window\n" << std::endl;
 }
 
 void MainWindow::on_ReinitClicked(int state)
@@ -430,6 +430,7 @@ void MainWindow::on_CallEmergencyWindow()
     std::cout << "Emergency window called\n";
     if(!emergency_window_.isVisible()){
         init_window_.hide();
+        this->hide();
         emergency_window_.setWindowTitle("Emergency Window");
         emergency_window_.SetEmergencyText();
     //    emergency_window_.setModal(true);

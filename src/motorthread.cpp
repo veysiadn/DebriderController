@@ -59,7 +59,7 @@ void MotorThread::run()
                 m_Motor.CloseAllDevice();
                 m_Motor.DisableAllDevice();
                 emit UpdateGUI(m_CurrState);
-                std::cout<<"Something is wrong.\n";
+                std::cout<<"State is " << m_CurrState << std::endl;
             }
             m_PrevState = m_CurrState;
             PulseWatchDog();
@@ -79,9 +79,11 @@ void MotorThread::run()
             {
                 m_CurrState = DEBRIDER_STATE_INITIALIZING;  // INITAILIZING = -1 state
                 std::cout<<"Initializing Connections\n";
-                m_FootPedal.start();
+                if(!m_FootPedal.isRunning())  m_FootPedal.start();
+
                 m_EposThread.SetTransition(kInit);
-                m_EposThread.start();
+
+                if(!m_EposThread.isRunning()) m_EposThread.start();
 
             }
             PulseWatchDog();
@@ -271,20 +273,20 @@ void MotorThread::on_InitComplete(int state)
 
     else if (state==DEBRIDER_STATE_EPOS_ERROR)
     {
-        std::cout << "Initialization error\n";
+        std::cout << "Initialization error state EPOS_ERROR\n";
         m_CurrState = DEBRIDER_STATE_EPOS_ERROR;
         emit UpdateGUI(m_CurrState);
     }
     else if (state==DEBRIDER_STATE_EMERGENCY) {
-        std::cout << "Initialization error\n";
+        std::cout << "Initialization error state EMERGENCY\n";
         m_CurrState = DEBRIDER_STATE_EMERGENCY;
         emit UpdateGUI(m_CurrState);
     }else if (state==DEBRIDER_STATE_SPI_ERROR) {
-        std::cout << "Initialization error\n";
+        std::cout << "Initialization error state SPI_ERROR\n";
         m_CurrState = DEBRIDER_STATE_EMERGENCY;
         emit UpdateGUI(m_CurrState);
     }else if (state==DEBRIDER_STATE_INITIALIZING) {
-        std::cout << "Initialization error\n";
+        std::cout << "Initialization error state INITIALIZING\n";
         m_CurrState = DEBRIDER_STATE_INITIALIZING;
         emit UpdateGUI(m_CurrState);
     }
@@ -353,7 +355,7 @@ void MotorThread::ReInitialize()
 //    if(m_FootPedal.isRunning()){
 //        m_FootPedal.SetSPIError(false);
 //    }
-    m_GuiEmergencyMode = 0;
+    m_GuiEmergencyMode = 1;
 }
 
 void MotorThread::on_SPIStateChanged(int state)

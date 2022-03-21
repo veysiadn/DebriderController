@@ -17,12 +17,12 @@ InitializationWindow::~InitializationWindow()
 void InitializationWindow::UpdateInitGUI(int state)
 {
     switch (state) {
-        case DEBRIDER_STATE_INITIALIZING:
-            cur_state = DEBRIDER_STATE_INITIALIZING;
+        case DEBRIDER_STATE_UNINIT:
+            cur_state = DEBRIDER_STATE_UNINIT;
             ui->lbl_handpiece->setText("Waiting...");
             ui->lbl_pedal_con->setText("Waiting...");
             ui->lbl_system_status->setText("Waiting...");
-            ui->lbl_init_switch->setText("If initialization switch is pressed, release it\n and click \"Retry Initialization\" button.");
+            ui->lbl_init_switch->setText("Checking...");
             break;
         case DEBRIDER_STATE_INIT:
             cur_state = DEBRIDER_STATE_INIT;
@@ -45,8 +45,12 @@ void InitializationWindow::UpdateInitGUI(int state)
                 ui->lbl_system_status->setText("Missing Connection");
                 cur_state = DEBRIDER_STATE_SPI_ERROR;
             break;
-        case DEBRIDER_STATE_UNINIT:
-            cur_state=DEBRIDER_STATE_UNINIT ;
+        case DEBRIDER_STATE_INITIALIZING:
+            cur_state=DEBRIDER_STATE_INITIALIZING ;
+            ui->lbl_handpiece->setText("Waiting...");
+            ui->lbl_pedal_con->setText("Waiting...");
+            ui->lbl_system_status->setText("Waiting...");
+            ui->lbl_init_switch->setText("If initialization switch is pressed, release it\n and click \"Retry Initialization\" button.");
             break;
         default:
         ui->lbl_handpiece->setText("...");
