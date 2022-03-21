@@ -429,25 +429,27 @@ void MainWindow::on_CallEmergencyWindow()
     motor_thread_.m_GuiEmergencyMode=1;
     std::cout << "Emergency window called\n";
     if(!emergency_window_.isVisible()){
-        init_window_.hide();
-        this->hide();
-        emergency_window_.setWindowTitle("Emergency Window");
         emergency_window_.SetEmergencyText();
     //    emergency_window_.setModal(true);
         emergency_window_.setWindowState(Qt::WindowFullScreen);
     //    emergency_window_.exec();
         emergency_window_.show();
+//        emergency_window_.setWindowTitle("Emergency Window");
+//        delay(10);
+        if(init_window_.isVisible()) init_window_.hide();
+        if(this->isVisible()) this->hide();
     }
 }
 
 void MainWindow::on_CallInitWindow()
 {
     std::cout << "Init windows called." << std::endl;
-    this->hide();
-    emergency_window_.hide();
-    init_window_.setWindowTitle("Flexdeb Initialization");
     init_window_.setWindowState(Qt::WindowFullScreen);
     init_window_.show();
+    init_window_.setWindowTitle("Flexdeb Initialization");
+    /*delay(10)*/;
+    if(this->isVisible()) this->hide();
+    if(emergency_window_.isVisible()) emergency_window_.hide();
 }
 
 void MainWindow::EnableValve()
