@@ -1,6 +1,6 @@
 <map id="src/footpedal.cpp" name="src/footpedal.cpp">
 <area shape="rect" id="node1" title=" " alt="" coords="189,5,311,32"/>
-<area shape="rect" id="node2" href="$footpedal_8h.html" title="Header file includes footpedal class for opening port and reading data from foot pedal; reads one ana..." alt="" coords="127,80,213,107"/>
+<area shape="rect" id="node2" href="$footpedal_8h.html" title="Header file includes footpedal class for opening port and reading data from foot pedal; reads one ana..." alt="" coords="82,80,213,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,155,84,181"/>
 <area shape="rect" id="node5" href="$m__defines_8h.html" title="Header file includes global definitions, including configuration values, pin mapping,..." alt="" coords="205,155,295,181"/>
 <area shape="rect" id="node6" title=" " alt="" coords="320,155,377,181"/>
