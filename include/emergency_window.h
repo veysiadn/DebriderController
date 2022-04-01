@@ -14,14 +14,14 @@
 #ifndef EMERGENCY_WINDOW_H
 #define EMERGENCY_WINDOW_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include "m_defines.h"
 
 namespace Ui {
-class Emergency_Window;
+class EmergencyWindow;
 }
 
-class EmergencyWindow : public QDialog
+class EmergencyWindow : public QMainWindow
 {
     Q_OBJECT
 
@@ -51,7 +51,7 @@ signals:
     void EmergencyExitClicked(int s);
 
 private:
-    Ui::Emergency_Window *ui;
+    Ui::EmergencyWindow *ui;
     /// Flag for emergency status of the system.
     int emergency_status_;
 };

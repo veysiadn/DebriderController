@@ -46,9 +46,9 @@ HEADERS += \
 
 
 FORMS += \
-        ui/emergency_window.ui \
         ui/mainwindow.ui \
-        ui/initialization_window.ui
+        ui/initialization_window.ui \
+    ui/emergencywindow.ui
 
 RESOURCES += \
     resources.qrc

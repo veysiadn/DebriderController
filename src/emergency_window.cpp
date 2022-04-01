@@ -1,9 +1,9 @@
 #include "include/emergency_window.h"
-#include "ui_emergency_window.h"
+#include "ui_emergencywindow.h"
 
 EmergencyWindow::EmergencyWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Emergency_Window)
+    QMainWindow(parent),
+    ui(new Ui::EmergencyWindow)
 {
     ui->setupUi(this);
     emergency_status_=0;

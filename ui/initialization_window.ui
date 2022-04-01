@@ -23,7 +23,7 @@
    <string notr="true">background-color: rgb(85, 87, 83);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,1,4,1,0">
+   <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,1,4,1">
     <item row="0" column="0">
      <widget class="QLabel" name="lblLogo">
       <property name="sizePolicy">
@@ -43,7 +43,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Logo2.png</pixmap>
+       <pixmap resource="../resources.qrc">:/Logo2.png</pixmap>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -303,7 +303,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

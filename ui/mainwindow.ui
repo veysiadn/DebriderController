@@ -739,7 +739,7 @@ QRadioButton::indicator {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Logo2.png</pixmap>
+       <pixmap resource="../resources.qrc">:/Logo2.png</pixmap>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -826,7 +826,7 @@ QRadioButton::indicator {
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

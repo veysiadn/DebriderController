@@ -43,10 +43,8 @@ void MainWindow::on_ExitEmergencyClicked(int a)
     std::cout << "Exit Clicked ON Emergency Window\n" << std::endl;
     motor_thread_.m_GuiEmergencyMode=a;
     //stateChanged(DEBRIDER_STATE_ENABLED);
-    this->emergency_window_.hide();
     motor_thread_.ReInitialize();
-    delay(500);
-    if(emergency_window_.isHidden()) on_CallInitWindow();
+    on_CallInitWindow();
 }
 
 void MainWindow::on_ReinitClicked(int state)
@@ -123,7 +121,6 @@ void MainWindow::on_StateChanged(int state)
             StopPumpMotor();
             DisableValve();
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
-            this->hide();
             digitalWrite(VDD_RESET,LOW);
             delay(10);
             digitalWrite(VDD_RESET,HIGH);
@@ -430,14 +427,12 @@ void MainWindow::on_CallEmergencyWindow()
     std::cout << "Emergency window called\n";
     if(!emergency_window_.isVisible()){
         emergency_window_.SetEmergencyText();
-    //    emergency_window_.setModal(true);
         emergency_window_.setWindowState(Qt::WindowFullScreen);
-    //    emergency_window_.exec();
         emergency_window_.show();
-//        emergency_window_.setWindowTitle("Emergency Window");
+        emergency_window_.setWindowTitle("Emergency Window");
 //        delay(10);
-        if(init_window_.isVisible()) init_window_.hide();
-        if(this->isVisible()) this->hide();
+        if(init_window_.isVisible()) init_window_.close();
+        if(this->isVisible()) this->close();
     }
 }
 
