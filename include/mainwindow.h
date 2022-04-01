@@ -25,7 +25,7 @@
 
 
 #include <wiringPi.h>
-#include <softPwm.h>
+#include <softTone.h>
 
 namespace Ui {
 class MainWindow;
@@ -192,10 +192,22 @@ private:
       void DisableValve();
 
       /**
+       * @brief Runs buzzer when any pedal input is activated.
+       */
+      void EnableBuzzer();
+
+      /**
        * @brief InitializeIO  Initializes wiringpi library and pin mapping for RPI.
        */
       void InitializeIO();
-
+      /**
+       * @brief Shows default UI, where all target values are zero and mode is CW.
+       */
+      void SetDefaultUI();
+      /**
+       * @brief Shows control UI in enabled state, hides initialization window.
+       */
+      void ShowControlUI();
 private:
       Ui::MainWindow *ui;
 
@@ -209,7 +221,9 @@ private:
       int pump_motor_target_speed_=0;
       /// Used to display speed pump motor velocity.
       int pump_motor_printed_speed_val_=0;
-      /// Flag to describing pump motor running status.
+      /// Flag to describe buzzer running status.
+      bool buzzer_running_status=false;
+      /// Flag to describe pump motor running status.
       bool pump_running_status_=false;
       /// Debrider motor target speed set by user in GUI.
       int debrider_motor_target_speed_;

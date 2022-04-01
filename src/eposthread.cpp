@@ -98,7 +98,7 @@ void EposThread::RunInitialization()
             std::cout << "Relay opened" << std::endl;
             state=DEBRIDER_STATE_EMERGENCY;
             emit InitializationComplete(state);
-            break;
+            return;
         }
         msleep(500);
         state=DEBRIDER_STATE_READY;
