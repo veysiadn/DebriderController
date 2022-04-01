@@ -49,7 +49,8 @@ void MainWindow::on_ExitEmergencyClicked(int a)
 
 void MainWindow::on_ReinitClicked(int state)
 {
-    if(state < DEBRIDER_STATE_INIT){
+    if(state < DEBRIDER_STATE_ENABLED){
+        ResetWatchdogTimerIC();
         motor_thread_.ReInitialize();
     }
 }
@@ -107,10 +108,7 @@ void MainWindow::on_StateChanged(int state)
             StopPumpMotor();
             DisableValve();
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
-            digitalWrite(VDD_RESET,LOW);
-            delay(10);
-            digitalWrite(VDD_RESET,HIGH);
-            delay(10);
+            ResetWatchdogTimerIC();
             on_CallEmergencyWindow();
         break;
 
@@ -142,6 +140,13 @@ void MainWindow::on_StateChanged(int state)
     }
 }
 
+void MainWindow::ResetWatchdogTimerIC()
+{
+    digitalWrite(VDD_RESET,LOW);
+    delay(10);
+    digitalWrite(VDD_RESET,HIGH);
+    delay(10);
+}
 void MainWindow::SetDefaultUI()
 {
     DisableGUI();
@@ -236,6 +241,7 @@ void MainWindow::on_btnDecreaseFlow_clicked()
     if(pump_motor_target_speed_ >= 120)    pump_motor_target_speed_-=40;
     if(pump_running_status_) pwmWrite(SUCTION_MOTOR_PWM,pump_motor_target_speed_);
     pump_motor_printed_speed_val_=int(((pump_motor_target_speed_-120.0)/4.0)+10.0);
+    if(pump_motor_printed_speed_val_ < 0) pump_motor_printed_speed_val_ = 0 ;
     PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
 }
 

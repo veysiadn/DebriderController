@@ -208,6 +208,10 @@ private:
        * @brief Shows control UI in enabled state, hides initialization window.
        */
       void ShowControlUI();
+      /**
+       * @brief ResetWatchdogTimerIC Resets watchdog timer in case of any missing pulse.
+       */
+      void ResetWatchdogTimerIC();
 private:
       Ui::MainWindow *ui;
 

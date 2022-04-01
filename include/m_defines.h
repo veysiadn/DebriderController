@@ -38,7 +38,7 @@
 /// val = map(1,0,3.3,0,1023). here (0-3.3V range mapped to 0-1023, and ADC value of 1V will return 310.)
 ///
 #define ADC_MAX_CHANNEL                  3         /// ADC has 4 analog inputs.
-#define ADC_VALUE_THRESHOLD             980       /// ADC threshold value to move the motor.
+#define ADC_VALUE_THRESHOLD             950       /// ADC threshold value to move the motor.
 
 //************************** PINMAP RASPBERRY PI STARTS ******************************************/
 #define SUCTION_MOTOR_PWM          12       /// CKim   - GPIO12, Physically Pin 32 / For suction pump
