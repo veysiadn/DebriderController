@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debrider_5fmotor_5ftarget_5fspeed_5f_0',['debrider_motor_target_speed_',['../classMainWindow.html#a083944ab39cd4890fb4aebe80773ea47',1,'MainWindow']]]
+  ['cur_5fstate_0',['cur_state',['../classInitializationWindow.html#a04398ece198084cb8fcf5181a2922bff',1,'InitializationWindow']]]
 ];
