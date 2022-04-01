@@ -85,7 +85,7 @@ void MainWindow::on_StateChanged(int state)
             DisableValve();
             ShowPedalButtonStates();
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
-            softPwmWrite(PEDAL_BUZZER,0);
+//            softPwmWrite(PEDAL_BUZZER,0);
             break;
 
         case DEBRIDER_STATE_RUNNING:
@@ -93,7 +93,17 @@ void MainWindow::on_StateChanged(int state)
             MovePumpMotor();
             EnableValve();
             PrintStatus(motor_thread_.m_DebriderInstantSpeed,pump_motor_printed_speed_val_);
-            softPwmWrite(PEDAL_BUZZER,100);
+            digitalWrite(PEDAL_BUZZER,HIGH);
+            delay(1);
+            digitalWrite(PEDAL_BUZZER,LOW);
+            delay(1);
+            digitalWrite(PEDAL_BUZZER,HIGH);
+            delay(1);
+            digitalWrite(PEDAL_BUZZER,LOW);
+            delay(1);
+            digitalWrite(PEDAL_BUZZER,HIGH);
+            delay(1);
+            digitalWrite(PEDAL_BUZZER,LOW);
             break;
 
         case DEBRIDER_STATE_OSC:
@@ -107,7 +117,13 @@ void MainWindow::on_StateChanged(int state)
 
         case DEBRIDER_STATE_CLOSE_BLADE:
             DisableGUI();
-            softPwmWrite(PEDAL_BUZZER,100);
+            softPwmWrite(PEDAL_BUZZER,50);
+            softPwmWrite(PEDAL_BUZZER,40);
+            softPwmWrite(PEDAL_BUZZER,30);
+            softPwmWrite(PEDAL_BUZZER,20);
+            softPwmWrite(PEDAL_BUZZER,10);
+            softPwmWrite(PEDAL_BUZZER,5);
+            softPwmWrite(PEDAL_BUZZER,0);
             PrintStatus(motor_thread_.m_DebriderInstantSpeed,pump_motor_printed_speed_val_);
         break;
 
@@ -479,7 +495,7 @@ void MainWindow::InitializeIO()
     pinMode(WATCHDOG_PIN,OUTPUT);
 
     /// VysAdn wiringpi softpwm init. softPwmCreate(int pin_number,int initial_val,int pwm_range)
-    softPwmCreate(PEDAL_BUZZER,0,100);
+    pinMode(PEDAL_BUZZER,OUTPUT);
 
     /// VysAdn pedal button pin declarations.
     pinMode(FOOT_PEDAL_L_BUTTON,INPUT);
