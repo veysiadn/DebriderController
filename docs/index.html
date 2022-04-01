@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Debrider Controller Software: Main Page</title>
+<title>Debrider Controller Software: Debrider Controller Device Control Software</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,41 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Debrider Controller Software Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Debrider Controller Device Control Software </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md_README"></a>Debrider Controller Software with Qt </p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Considering that you already installed Raspian Buster to your Raspberry Pi.</h2>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Note : It's important that you install Buster version of Raspian not the Bullseye version, because wiringpi, and several other libraries are not available for Bullseye version.</h2>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Before building project ; Make sure that you have an internet connection</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+STEP 1 ;</h2>
+<h4><a class="anchor" id="autotoc_md5"></a>
+Do update &amp; upgrade, than install Qt5 for installing building environment.</h4>
+<div class="fragment"><div class="line">sudo apt-get update</div>
+<div class="line">sudo apt-get upgrade </div>
+<div class="line">sudo apt-get install build-essential qtcreator qt5-default qt5-doc qt5-doc-html qtbase5-doc-html qtbase5-examples libqt5serialport5-dev -y</div>
+<div class="line">sudo apt-get install wiringpi git clang</div>
+<div class="line">sudo ldconfig</div>
+<div class="line">sudo /sbin/ldconfig -v</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+STEP 2 ;</h2>
+<h4><a class="anchor" id="autotoc_md7"></a>
+Download and install EPOS4 command library</h4>
+<div class="fragment"><div class="line">git clone https://github.com/veysiadn/epos-linux-library</div>
+<div class="line">cd epos-linux-library/EPOS-Linux-Library-En</div>
+<div class="line">sudo chmod a+x install.sh</div>
+<div class="line">sudo ./install.sh</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+Step 3 ;</h2>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Start QT Creator and open pro file this repository, configure it based on your system and now you can build it and get the executable.</h3>
+<p >Contact : <a href="#" onclick="location.href='mai'+'lto:'+'vey'+'si'+'.ad'+'in'+'@ki'+'st'+'.re'+'.k'+'r'; return false;">veysi<span class="obfuscator">.nosp@m.</span>.adi<span class="obfuscator">.nosp@m.</span>n@kis<span class="obfuscator">.nosp@m.</span>t.re<span class="obfuscator">.nosp@m.</span>.kr</a> </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
