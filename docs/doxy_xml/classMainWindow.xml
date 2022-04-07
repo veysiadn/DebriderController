@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="classMainWindow" kind="class" language="C++" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMainWindow_1a35466a70ed47252a0191168126a352a5" prot="private" static="no" mutable="no">
+        <type>Ui::MainWindow *</type>
+        <definition>Ui::MainWindow* MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>MainWindow::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="216" column="22" bodyfile="include/mainwindow.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1a08a8f9af8b5aa191f4e361ebc4b14bb5" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString MainWindow::speed_label_</definition>
+        <argsstring></argsstring>
+        <name>speed_label_</name>
+        <qualifiedname>MainWindow::speed_label_</qualifiedname>
+        <briefdescription>
+<para>QString to display speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="219" column="15" bodyfile="include/mainwindow.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1a6fc833d57517f77fd4cd8d4cf2b912ac" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString MainWindow::status_label_</definition>
+        <argsstring></argsstring>
+        <name>status_label_</name>
+        <qualifiedname>MainWindow::status_label_</qualifiedname>
+        <briefdescription>
+<para>QString to display status of debrider. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="222" column="15" bodyfile="include/mainwindow.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1ab1844d6f6c88d93a233c93ef2fd028d8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MainWindow::pump_motor_target_speed_</definition>
+        <argsstring></argsstring>
+        <name>pump_motor_target_speed_</name>
+        <qualifiedname>MainWindow::pump_motor_target_speed_</qualifiedname>
+        <initializer>=0</initializer>
+        <briefdescription>
+<para>Pump motor target velocity value, set by user in GUI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="225" column="11" bodyfile="include/mainwindow.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1a340d9f28f2da0c17e66269e74f9f29fe" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MainWindow::pump_motor_printed_speed_val_</definition>
+        <argsstring></argsstring>
+        <name>pump_motor_printed_speed_val_</name>
+        <qualifiedname>MainWindow::pump_motor_printed_speed_val_</qualifiedname>
+        <initializer>=0</initializer>
+        <briefdescription>
+<para>Used to display speed pump motor velocity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="227" column="11" bodyfile="include/mainwindow.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::buzzer_running_status</definition>
+        <argsstring></argsstring>
+        <name>buzzer_running_status</name>
+        <qualifiedname>MainWindow::buzzer_running_status</qualifiedname>
+        <initializer>=false</initializer>
+        <briefdescription>
+<para>Flag to describe buzzer running status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="229" column="12" bodyfile="include/mainwindow.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1aed0a2b4bffbb6d18f88ee03e18588e0c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::pump_running_status_</definition>
+        <argsstring></argsstring>
+        <name>pump_running_status_</name>
+        <qualifiedname>MainWindow::pump_running_status_</qualifiedname>
+        <initializer>=false</initializer>
+        <briefdescription>
+<para>Flag to describe pump motor running status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="231" column="12" bodyfile="include/mainwindow.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1a083944ab39cd4890fb4aebe80773ea47" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MainWindow::debrider_motor_target_speed_</definition>
+        <argsstring></argsstring>
+        <name>debrider_motor_target_speed_</name>
+        <qualifiedname>MainWindow::debrider_motor_target_speed_</qualifiedname>
+        <briefdescription>
+<para>Debrider motor target speed set by user in GUI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="233" column="11" bodyfile="include/mainwindow.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1aca2977941ed2246dfc014e8420278360" prot="private" static="no" mutable="no">
+        <type><ref refid="classEmergencyWindow" kindref="compound">EmergencyWindow</ref></type>
+        <definition>EmergencyWindow MainWindow::emergency_window_</definition>
+        <argsstring></argsstring>
+        <name>emergency_window_</name>
+        <qualifiedname>MainWindow::emergency_window_</qualifiedname>
+        <briefdescription>
+<para><ref refid="classEmergencyWindow" kindref="compound">EmergencyWindow</ref> instance to call in case of emergency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="235" column="23" bodyfile="include/mainwindow.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1adb76a08907d348622598f180fe4b9b34" prot="private" static="no" mutable="no">
+        <type><ref refid="classMotorThread" kindref="compound">MotorThread</ref></type>
+        <definition>MotorThread MainWindow::motor_thread_</definition>
+        <argsstring></argsstring>
+        <name>motor_thread_</name>
+        <qualifiedname>MainWindow::motor_thread_</qualifiedname>
+        <briefdescription>
+<para>Main motor thread. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="237" column="19" bodyfile="include/mainwindow.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMainWindow_1a5d2956bcdeb387a350218819569ae015" prot="private" static="no" mutable="no">
+        <type><ref refid="classInitializationWindow" kindref="compound">InitializationWindow</ref></type>
+        <definition>InitializationWindow MainWindow::init_window_</definition>
+        <argsstring></argsstring>
+        <name>init_window_</name>
+        <qualifiedname>MainWindow::init_window_</qualifiedname>
+        <briefdescription>
+<para>Initialization window, this window will be shown to user first. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="239" column="28" bodyfile="include/mainwindow.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMainWindow_1a996c5a2b6f77944776856f08ec30858d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(QWidget *parent=nullptr)</argsstring>
+        <name>MainWindow</name>
+        <qualifiedname>MainWindow::MainWindow</qualifiedname>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Initialize wiringpi library and pinmapping.</para>
+<para>CKim - Connect signals and sloths.</para>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="39" column="14" bodyfile="src/mainwindow.cpp" bodystart="4" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <qualifiedname>MainWindow::~MainWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="40" column="5" bodyfile="src/mainwindow.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classMainWindow_1a589401902013fdc570e9649d751fc031" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnDecreaseRPM_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnDecreaseRPM_clicked</name>
+        <qualifiedname>MainWindow::on_btnDecreaseRPM_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnDecreaseRPM_clicked GUI callback to decrease debrider motor RPM value by 1000. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="47" column="10" bodyfile="src/mainwindow.cpp" bodystart="170" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a6cdcedb81963ed38f8566b67cc33697a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnIncreaseRPM_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnIncreaseRPM_clicked</name>
+        <qualifiedname>MainWindow::on_btnIncreaseRPM_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnIncreaseRPM_clicked GUI callback to increase debrider motor RPM value by 1000. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="53" column="10" bodyfile="src/mainwindow.cpp" bodystart="190" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ab6f8e7812a2dfcd8e1dc6ab2c95813f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_radioCW_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_radioCW_toggled</name>
+        <qualifiedname>MainWindow::on_radioCW_toggled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>on_radioCW_toggled GUI callback to change rotation direction of debrider motor to clock-wise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>checked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bool value if checked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="60" column="10" bodyfile="src/mainwindow.cpp" bodystart="212" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a574b22181984a19376ab6bd86a48a93d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_radioCCW_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_radioCCW_toggled</name>
+        <qualifiedname>MainWindow::on_radioCCW_toggled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>on_radioCCW_toggled GUI callback to change rotation direction of debrider motor to counter clock-wise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>checked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bool value if checked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="67" column="10" bodyfile="src/mainwindow.cpp" bodystart="221" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ad74ff92f47e8ebabbfcbf2452819d12d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_radioOSC_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_radioOSC_toggled</name>
+        <qualifiedname>MainWindow::on_radioOSC_toggled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+<para>on_radioOSC_toggled GUI callback to change running mode of debrider motor to oscillation mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>checked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bool value if checked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="74" column="10" bodyfile="src/mainwindow.cpp" bodystart="230" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a438ed0f9488c8dd8ed0ea8fcab3691ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnDecreaseFlow_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnDecreaseFlow_clicked</name>
+        <qualifiedname>MainWindow::on_btnDecreaseFlow_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnDecreaseFlow_clicked GUI callback to decrease suction motor RPM value by ten percent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="80" column="10" bodyfile="src/mainwindow.cpp" bodystart="238" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a41af8ae08b8ee8d4e816fcab47d2aa13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnIncreaseFlow_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnIncreaseFlow_clicked</name>
+        <qualifiedname>MainWindow::on_btnIncreaseFlow_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnIncreaseFlow_clicked GUI callback to increase suction motor velocity value by ten percent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="86" column="10" bodyfile="src/mainwindow.cpp" bodystart="248" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1ae0bf4b19c3dfc7d99ec9bfb324639840" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnIrrigationMove_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnIrrigationMove_clicked</name>
+        <qualifiedname>MainWindow::on_btnIrrigationMove_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnIrrigationMove_clicked GUI callback to move suction motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="91" column="10" bodyfile="src/mainwindow.cpp" bodystart="257" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a54f092d5c0c588c0c2fdfa5601fe6d75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnIrrigationStop_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnIrrigationStop_clicked</name>
+        <qualifiedname>MainWindow::on_btnIrrigationStop_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnIrrigationStop_clicked GUI callback to stop suction motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="96" column="10" bodyfile="src/mainwindow.cpp" bodystart="263" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a2e308e20783cbdbe8a1bb8dc820725df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_btnCloseBlade_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btnCloseBlade_clicked</name>
+        <qualifiedname>MainWindow::on_btnCloseBlade_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btnCloseBlade_clicked GUI callback to close blade of motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="101" column="10" bodyfile="src/mainwindow.cpp" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1af60b4e71a8f34ca70841abec75947492" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_radioMAXRPM_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_radioMAXRPM_clicked</name>
+        <qualifiedname>MainWindow::on_radioMAXRPM_clicked</qualifiedname>
+        <briefdescription>
+<para>on_radioMAXRPM_clicked GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="107" column="10" bodyfile="src/mainwindow.cpp" bodystart="274" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1afcc9301223c1ce654c71c9b9d889aaed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_StateChanged</definition>
+        <argsstring>(int state)</argsstring>
+        <name>on_StateChanged</name>
+        <qualifiedname>MainWindow::on_StateChanged</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>on_StateChanged Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current debrider state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="114" column="10" bodyfile="src/mainwindow.cpp" bodystart="58" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a24107b24ea4bea9e13c1dec28e31e140" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_CallEmergencyWindow</definition>
+        <argsstring>()</argsstring>
+        <name>on_CallEmergencyWindow</name>
+        <qualifiedname>MainWindow::on_CallEmergencyWindow</qualifiedname>
+        <briefdescription>
+<para>on_CallEmergencyWindow Opens emergency windows in case of emergency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="119" column="10" bodyfile="src/mainwindow.cpp" bodystart="408" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a33009b07ad76d5c0793275c0cda3f068" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_ExitEmergencyClicked</definition>
+        <argsstring>(int a)</argsstring>
+        <name>on_ExitEmergencyClicked</name>
+        <qualifiedname>MainWindow::on_ExitEmergencyClicked</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>on_ExitEmergencyClicked Sloth to handle emergency exit button clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>emergency state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="125" column="10" bodyfile="src/mainwindow.cpp" bodystart="33" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a8a034be8b0b26b9c0510d9d095f4b589" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_CallInitWindow</definition>
+        <argsstring>()</argsstring>
+        <name>on_CallInitWindow</name>
+        <qualifiedname>MainWindow::on_CallInitWindow</qualifiedname>
+        <briefdescription>
+<para>on_CallInitWindow Calls initialization window, and closes all other windows. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="130" column="10" bodyfile="src/mainwindow.cpp" bodystart="422" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMainWindow_1a72a1904ae87335a0b049422cf530d539" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_ReinitClicked</definition>
+        <argsstring>(int state)</argsstring>
+        <name>on_ReinitClicked</name>
+        <qualifiedname>MainWindow::on_ReinitClicked</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>on_ReinitClicked Handles signal coming from initialization window when user clicks reinitialize. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current state of debrider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="136" column="10" bodyfile="src/mainwindow.cpp" bodystart="50" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="classMainWindow_1ae6e69202ebecc1b99a7e0c8dbc1f7501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::InitStateChanged</definition>
+        <argsstring>(int state)</argsstring>
+        <name>InitStateChanged</name>
+        <qualifiedname>MainWindow::InitStateChanged</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>InitStateChanged Emitted when initialization state change to notify initialization window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current state of debrider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="143" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classMainWindow_1a297056371a9736608f8f14bfccc7dae5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::PrintStatus</definition>
+        <argsstring>(int dSpeed, int pSpeed)</argsstring>
+        <name>PrintStatus</name>
+        <qualifiedname>MainWindow::PrintStatus</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>dSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pSpeed</declname>
+        </param>
+        <briefdescription>
+<para>PrintStatus Prints the status of debrider, such as debrider velocity and suction motor velocity percentage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Debrider speed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pump motor speed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="151" column="12" bodyfile="src/mainwindow.cpp" bodystart="298" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1ac0521e46c59c0f209e8993156316cdd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::StopPumpMotor</definition>
+        <argsstring>()</argsstring>
+        <name>StopPumpMotor</name>
+        <qualifiedname>MainWindow::StopPumpMotor</qualifiedname>
+        <briefdescription>
+<para>StopPumpMotor Stops pumps motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="156" column="12" bodyfile="src/mainwindow.cpp" bodystart="284" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a6fcbbb4f3ba6d135d2032ad417f39799" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::MovePumpMotor</definition>
+        <argsstring>()</argsstring>
+        <name>MovePumpMotor</name>
+        <qualifiedname>MainWindow::MovePumpMotor</qualifiedname>
+        <briefdescription>
+<para>MovePumpMotor Moves pump motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="161" column="12" bodyfile="src/mainwindow.cpp" bodystart="290" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a6264ec497ce9d864fb07b1bdca7e8778" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::EnableGUI</definition>
+        <argsstring>()</argsstring>
+        <name>EnableGUI</name>
+        <qualifiedname>MainWindow::EnableGUI</qualifiedname>
+        <briefdescription>
+<para>EnableGUI Enables GUI button, meaning that system is ready to accept inputs from user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="166" column="12" bodyfile="src/mainwindow.cpp" bodystart="321" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1ab50efa1e7281151036d23a9d2ddcc6d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::DisableGUI</definition>
+        <argsstring>()</argsstring>
+        <name>DisableGUI</name>
+        <qualifiedname>MainWindow::DisableGUI</qualifiedname>
+        <briefdescription>
+<para>DisableGUI Disables GUI button, meaning that system will not accept inputs from user. GUI is disable only in case of emergency or when debrider motor is running. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="172" column="12" bodyfile="src/mainwindow.cpp" bodystart="338" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1adf70cd7e458457ea1c26e0ea468033b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::ShowPedalButtonStates</definition>
+        <argsstring>()</argsstring>
+        <name>ShowPedalButtonStates</name>
+        <qualifiedname>MainWindow::ShowPedalButtonStates</qualifiedname>
+        <briefdescription>
+<para>ShowPedalButtonStates This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Left button changes preset RPM values. </para>
+</simplesect>
+<simplesect kind="note"><para>Right button changes operation mode CW,CCW,OSC </para>
+</simplesect>
+<simplesect kind="note"><para>Left pedal runs closes blade. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="181" column="12" bodyfile="src/mainwindow.cpp" bodystart="356" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a6b8badf44dbef81cdb1bf35b6bf7013f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::EnableValve</definition>
+        <argsstring>()</argsstring>
+        <name>EnableValve</name>
+        <qualifiedname>MainWindow::EnableValve</qualifiedname>
+        <briefdescription>
+<para>EnableValve Enables solenoid valve output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="187" column="12" bodyfile="src/mainwindow.cpp" bodystart="432" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a59d7744e6b95a8f684b1bf2f8f0786b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::DisableValve</definition>
+        <argsstring>()</argsstring>
+        <name>DisableValve</name>
+        <qualifiedname>MainWindow::DisableValve</qualifiedname>
+        <briefdescription>
+<para>DisableValve Disables solenoid valve output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="192" column="12" bodyfile="src/mainwindow.cpp" bodystart="437" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::EnableBuzzer</definition>
+        <argsstring>()</argsstring>
+        <name>EnableBuzzer</name>
+        <qualifiedname>MainWindow::EnableBuzzer</qualifiedname>
+        <briefdescription>
+<para>Runs buzzer when any pedal input is activated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="197" column="12" bodyfile="src/mainwindow.cpp" bodystart="442" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1ac21dde15d020b8d0233d4b9f49eb5f24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::InitializeIO</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeIO</name>
+        <qualifiedname>MainWindow::InitializeIO</qualifiedname>
+        <briefdescription>
+<para>InitializeIO Initializes wiringpi library and pin mapping for RPI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>VysAdn, instead of WiringPi pin numbering this will use GPIO pin numbering.</para>
+<para>SGN signal, output of watchdog and emergency button.</para>
+<para>Watchdog pin declaration</para>
+<para>VysAdn wiringpi softpwm init. softPwmCreate(int pin_number,int initial_val,int pwm_range)</para>
+<para>VysAdn pedal button pin declarations.</para>
+<para>Watchdog power reset pin declaration.</para>
+<para>VysAdn operating signal, for init window.</para>
+<para>Suction motor output declaration.</para>
+<para>Solenoid valve output declaration.</para>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="202" column="12" bodyfile="src/mainwindow.cpp" bodystart="453" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::SetDefaultUI</definition>
+        <argsstring>()</argsstring>
+        <name>SetDefaultUI</name>
+        <qualifiedname>MainWindow::SetDefaultUI</qualifiedname>
+        <briefdescription>
+<para>Shows default UI, where all target values are zero and mode is CW. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="206" column="12" bodyfile="src/mainwindow.cpp" bodystart="150" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::ShowControlUI</definition>
+        <argsstring>()</argsstring>
+        <name>ShowControlUI</name>
+        <qualifiedname>MainWindow::ShowControlUI</qualifiedname>
+        <briefdescription>
+<para>Shows control UI in enabled state, hides initialization window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="210" column="12" bodyfile="src/mainwindow.cpp" bodystart="162" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classMainWindow_1a455d382eda67ec98926088638c828a8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::ResetWatchdogTimerIC</definition>
+        <argsstring>()</argsstring>
+        <name>ResetWatchdogTimerIC</name>
+        <qualifiedname>MainWindow::ResetWatchdogTimerIC</qualifiedname>
+        <briefdescription>
+<para>ResetWatchdogTimerIC Resets watchdog timer in case of any missing pulse. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="214" column="12" bodyfile="src/mainwindow.cpp" bodystart="143" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MainWindow</label>
+        <link refid="classMainWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>EmergencyWindow</label>
+        <link refid="classEmergencyWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>EposThread</label>
+        <link refid="classEposThread"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_pMotor</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_pPedal</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>FootPedal</label>
+        <link refid="classFootPedal"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>InitializationWindow</label>
+        <link refid="classInitializationWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MainWindow</label>
+        <link refid="classMainWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>emergency_window_</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>motor_thread_</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>init_window_</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>MaxonMotor</label>
+        <link refid="classMaxonMotor"/>
+      </node>
+      <node id="4">
+        <label>MotorThread</label>
+        <link refid="classMotorThread"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_Motor</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_FootPedal</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_EposThread</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+      <node id="5">
+        <label>QThread</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/mainwindow.h" line="34" column="1" bodyfile="include/mainwindow.h" bodystart="35" bodyend="240"/>
+    <listofallmembers>
+      <member refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>buzzer_running_status</name></member>
+      <member refid="classMainWindow_1a083944ab39cd4890fb4aebe80773ea47" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>debrider_motor_target_speed_</name></member>
+      <member refid="classMainWindow_1ab50efa1e7281151036d23a9d2ddcc6d2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>DisableGUI</name></member>
+      <member refid="classMainWindow_1a59d7744e6b95a8f684b1bf2f8f0786b0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>DisableValve</name></member>
+      <member refid="classMainWindow_1aca2977941ed2246dfc014e8420278360" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>emergency_window_</name></member>
+      <member refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>EnableBuzzer</name></member>
+      <member refid="classMainWindow_1a6264ec497ce9d864fb07b1bdca7e8778" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>EnableGUI</name></member>
+      <member refid="classMainWindow_1a6b8badf44dbef81cdb1bf35b6bf7013f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>EnableValve</name></member>
+      <member refid="classMainWindow_1a5d2956bcdeb387a350218819569ae015" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>init_window_</name></member>
+      <member refid="classMainWindow_1ac21dde15d020b8d0233d4b9f49eb5f24" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>InitializeIO</name></member>
+      <member refid="classMainWindow_1ae6e69202ebecc1b99a7e0c8dbc1f7501" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>InitStateChanged</name></member>
+      <member refid="classMainWindow_1a996c5a2b6f77944776856f08ec30858d" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="classMainWindow_1adb76a08907d348622598f180fe4b9b34" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>motor_thread_</name></member>
+      <member refid="classMainWindow_1a6fcbbb4f3ba6d135d2032ad417f39799" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>MovePumpMotor</name></member>
+      <member refid="classMainWindow_1a2e308e20783cbdbe8a1bb8dc820725df" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnCloseBlade_clicked</name></member>
+      <member refid="classMainWindow_1a438ed0f9488c8dd8ed0ea8fcab3691ae" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnDecreaseFlow_clicked</name></member>
+      <member refid="classMainWindow_1a589401902013fdc570e9649d751fc031" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnDecreaseRPM_clicked</name></member>
+      <member refid="classMainWindow_1a41af8ae08b8ee8d4e816fcab47d2aa13" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnIncreaseFlow_clicked</name></member>
+      <member refid="classMainWindow_1a6cdcedb81963ed38f8566b67cc33697a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnIncreaseRPM_clicked</name></member>
+      <member refid="classMainWindow_1ae0bf4b19c3dfc7d99ec9bfb324639840" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnIrrigationMove_clicked</name></member>
+      <member refid="classMainWindow_1a54f092d5c0c588c0c2fdfa5601fe6d75" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_btnIrrigationStop_clicked</name></member>
+      <member refid="classMainWindow_1a24107b24ea4bea9e13c1dec28e31e140" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_CallEmergencyWindow</name></member>
+      <member refid="classMainWindow_1a8a034be8b0b26b9c0510d9d095f4b589" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_CallInitWindow</name></member>
+      <member refid="classMainWindow_1a33009b07ad76d5c0793275c0cda3f068" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_ExitEmergencyClicked</name></member>
+      <member refid="classMainWindow_1a574b22181984a19376ab6bd86a48a93d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_radioCCW_toggled</name></member>
+      <member refid="classMainWindow_1ab6f8e7812a2dfcd8e1dc6ab2c95813f0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_radioCW_toggled</name></member>
+      <member refid="classMainWindow_1af60b4e71a8f34ca70841abec75947492" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_radioMAXRPM_clicked</name></member>
+      <member refid="classMainWindow_1ad74ff92f47e8ebabbfcbf2452819d12d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_radioOSC_toggled</name></member>
+      <member refid="classMainWindow_1a72a1904ae87335a0b049422cf530d539" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_ReinitClicked</name></member>
+      <member refid="classMainWindow_1afcc9301223c1ce654c71c9b9d889aaed" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_StateChanged</name></member>
+      <member refid="classMainWindow_1a297056371a9736608f8f14bfccc7dae5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>PrintStatus</name></member>
+      <member refid="classMainWindow_1a340d9f28f2da0c17e66269e74f9f29fe" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>pump_motor_printed_speed_val_</name></member>
+      <member refid="classMainWindow_1ab1844d6f6c88d93a233c93ef2fd028d8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>pump_motor_target_speed_</name></member>
+      <member refid="classMainWindow_1aed0a2b4bffbb6d18f88ee03e18588e0c" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>pump_running_status_</name></member>
+      <member refid="classMainWindow_1a455d382eda67ec98926088638c828a8f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ResetWatchdogTimerIC</name></member>
+      <member refid="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>SetDefaultUI</name></member>
+      <member refid="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ShowControlUI</name></member>
+      <member refid="classMainWindow_1adf70cd7e458457ea1c26e0ea468033b3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ShowPedalButtonStates</name></member>
+      <member refid="classMainWindow_1a08a8f9af8b5aa191f4e361ebc4b14bb5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>speed_label_</name></member>
+      <member refid="classMainWindow_1a6fc833d57517f77fd4cd8d4cf2b912ac" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>status_label_</name></member>
+      <member refid="classMainWindow_1ac0521e46c59c0f209e8993156316cdd0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>StopPumpMotor</name></member>
+      <member refid="classMainWindow_1a35466a70ed47252a0191168126a352a5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

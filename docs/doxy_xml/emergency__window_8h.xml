@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="emergency__window_8h" kind="file" language="C++">
+    <compoundname>emergency_window.h</compoundname>
+    <includes local="no">QMainWindow</includes>
+    <includes refid="m__defines_8h" local="yes">m_defines.h</includes>
+    <includedby refid="mainwindow_8h" local="yes">include/mainwindow.h</includedby>
+    <includedby refid="emergency__window_8cpp" local="yes">src/emergency_window.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/emergency_window.h</label>
+        <link refid="emergency__window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/emergency_window.h</label>
+        <link refid="emergency__window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/emergency_window.cpp</label>
+        <link refid="emergency__window_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classEmergencyWindow" prot="public">EmergencyWindow</innerclass>
+    <innernamespace refid="namespaceUi">Ui</innernamespace>
+    <briefdescription>
+<para>Header file includes emergency window class which includes emergency messages, in case of any error occurence in the software, such as motor driver error, SPI communication error, watchdog error. Additionally clicking emergency button will wake this window as well. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Last Updated : 2022.03.16 Chunwoo Kim (CKim) &amp; Veysi ADIN (VysAdn) Contact Info : <ulink url="mailto:cwkim@kist.re.kr">cwkim@kist.re.kr</ulink> &amp; <ulink url="mailto:veysi.adin@kist.re.kr">veysi.adin@kist.re.kr</ulink> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EMERGENCY_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EMERGENCY_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMainWindow&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="m__defines_8h" kindref="compound">m_defines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="namespaceUi" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceUi" kindref="compound">Ui</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEmergencyWindow" kindref="compound">EmergencyWindow</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classEmergencyWindow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEmergencyWindow" kindref="compound">EmergencyWindow</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QMainWindow</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1aaa5bccb7da8358a120dd7489c4355eda" kindref="member">EmergencyWindow</ref>(QWidget<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEmergencyWindow_1a40a9b441e133ed1958e1fce7278124a9" kindref="member">~EmergencyWindow</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a8e54ec54e2f9893a38ce051b8627c2e7" kindref="member">SetEmergencyText</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classEmergencyWindow_1ad7f480681cd065f84ad74a3446c0f598" kindref="member">GetEmergencyStatus</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a37b5734886b9a238b6d9660acd2a404e" kindref="member">SetEmergencyStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" kindref="member">on_ButtonEmergencyExit_clicked</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="51" refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" kindref="member">EmergencyExitClicked</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54" refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Ui::EmergencyWindow<sp/>*<ref refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" kindref="member">ui</ref>;</highlight></codeline>
+<codeline lineno="56" refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EMERGENCY_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/emergency_window.h"/>
+  </compounddef>
+</doxygen>

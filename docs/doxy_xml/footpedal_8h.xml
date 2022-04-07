@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="footpedal_8h" kind="file" language="C++">
+    <compoundname>footpedal.h</compoundname>
+    <includes local="no">QThread</includes>
+    <includes local="no">wiringPi.h</includes>
+    <includes refid="m__defines_8h" local="yes">m_defines.h</includes>
+    <includes local="no">time.h</includes>
+    <includedby refid="eposthread_8h" local="yes">include/eposthread.h</includedby>
+    <includedby refid="motorthread_8h" local="yes">include/motorthread.h</includedby>
+    <includedby refid="footpedal_8cpp" local="yes">src/footpedal.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/footpedal.h</label>
+        <link refid="footpedal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+      <node id="5">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>wiringPi.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/footpedal.h</label>
+        <link refid="footpedal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/motorthread.h</label>
+        <link refid="motorthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>src/eposthread.cpp</label>
+        <link refid="eposthread_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/footpedal.cpp</label>
+        <link refid="footpedal_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/motorthread.cpp</label>
+        <link refid="motorthread_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classFootPedal" prot="public">FootPedal</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="footpedal_8h_1ad5b8ae6b426ca3a6e6cd4951f72355bd" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char Int8U</definition>
+        <argsstring></argsstring>
+        <name>Int8U</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="23" column="27" bodyfile="include/footpedal.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file includes footpedal class for opening port and reading data from foot pedal; reads one analog and three digital values from pedal.Uses Soft SPI protocol to communicate with MCP3004 ADC. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Last Updated : 2022.03.16 Chunwoo Kim (CKim) &amp; Veysi ADIN (VysAdn) Contact Info : <ulink url="mailto:cwkim@kist.re.kr">cwkim@kist.re.kr</ulink> &amp; <ulink url="mailto:veysi.adin@kist.re.kr">veysi.adin@kist.re.kr</ulink> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FOOTPEDAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FOOTPEDAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QThread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wiringPi.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="m__defines_8h" kindref="compound">m_defines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>nanosleep</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Int8U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="footpedal_8h_1ad5b8ae6b426ca3a6e6cd4951f72355bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="footpedal_8h_1ad5b8ae6b426ca3a6e6cd4951f72355bd" kindref="member">Int8U</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classFootPedal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classFootPedal" kindref="compound">FootPedal</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QThread</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFootPedal_1a984faf3d9f989adeb132339c377b14a6" kindref="member">FootPedal</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFootPedal_1ae924b102bbeae161b0e72b4c34ad9b73" kindref="member">~FootPedal</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a32a9f52dc834e66bbfc70e7022042669" kindref="member">OpenSPIPort</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a55c10f27d058be0653fdca5e4714e86a" kindref="member">CloseSPIPort</ref>();</highlight></codeline>
+<codeline lineno="45" refid="classFootPedal_1a6708751eb133b1f752a8f62e3f8fb95d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a6708751eb133b1f752a8f62e3f8fb95d" kindref="member">GetSPIError</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1ab5abbbd6d14c121dd9a72b8ca363e5ab" kindref="member">adc_error_flag</ref>;<sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50" refid="classFootPedal_1a44fd654f4b0f63aa7b5e9ac980b75196" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classFootPedal_1a44fd654f4b0f63aa7b5e9ac980b75196" kindref="member">GetLeftPedalValue</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a0c96847934d65cd216fbf665d82ebd3c" kindref="member">L_pedal_value</ref>;<sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1ab628e028331a75d79f6d61fc385072cc" kindref="member">SetSPIError</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a0c755710fc0f7e0c38187282cf3fbae1" kindref="member">ClearSPIPort</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1ad182f6f032c1d6911297a60497b5f73d" kindref="member">run</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classFootPedal_1a2c9f15f034bb04884e2fe34ca0ddd950" kindref="member">ReadSPIAnalog</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pin_channel);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a5fdbc66d79ca379bafe648940799622d" kindref="member">GetCmdOutInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pin_channel,<sp/><ref refid="footpedal_8h_1ad5b8ae6b426ca3a6e6cd4951f72355bd" kindref="member">Int8U</ref>&amp;<sp/>cmd_out,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>cmd_out_bits_count);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a4488869799265b29496823efdd59dfa0" kindref="member">TickClock</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a0e49a2b1353cb7f8ab6cf5ed03753fae" kindref="member">ReadButtons</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classFootPedal_1ab5abbbd6d14c121dd9a72b8ca363e5ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1ab5abbbd6d14c121dd9a72b8ca363e5ab" kindref="member">adc_error_flag</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classFootPedal_1a8007399e4bf4d8c33b7ef9346cbfdf46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a8007399e4bf4d8c33b7ef9346cbfdf46" kindref="member">L_button</ref>,<sp/><ref refid="classFootPedal_1a12e1e676e8539abb0645efba3775752a" kindref="member">prev_L_button</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classFootPedal_1a2d78770890d02109c4de6aee1ba1fccb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1aa87ec502073e066f970f99dbf815b514" kindref="member">R_button</ref>,<sp/><ref refid="classFootPedal_1a2d78770890d02109c4de6aee1ba1fccb" kindref="member">prev_R_button</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classFootPedal_1a0c96847934d65cd216fbf665d82ebd3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a0c96847934d65cd216fbf665d82ebd3c" kindref="member">L_pedal_value</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classFootPedal_1a79fbe461356c2d884d954a6404b77479" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1afd02e14ba1ebfe35eac2d070ca5e5921" kindref="member">R_pedal</ref>,<sp/><ref refid="classFootPedal_1a79fbe461356c2d884d954a6404b77479" kindref="member">prev_R_pedal</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classFootPedal_1a58e5157ee66b6759680b2929fbca6171" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a58e5157ee66b6759680b2929fbca6171" kindref="member">L_pedal</ref>,<sp/><ref refid="classFootPedal_1a4b83325ca16d0aff84c008001eb8cb6d" kindref="member">prev_L_pedal</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classFootPedal_1a564108bcc25a5a70065335bf9f1a83d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a564108bcc25a5a70065335bf9f1a83d1" kindref="member">adc_spi_running</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="116" refid="classFootPedal_1ab65e412e59d4646c51dcfbd56c678deb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1ab65e412e59d4646c51dcfbd56c678deb" kindref="member">RButtonClicked</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classFootPedal_1af8a359cf437785ef51285c3d94d79b76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1af8a359cf437785ef51285c3d94d79b76" kindref="member">LButtonClicked</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classFootPedal_1a278f7803e8f6634d9c9344ff803ba72a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a278f7803e8f6634d9c9344ff803ba72a" kindref="member">RPedalClicked</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classFootPedal_1aa45cd4386f40436501ae63f76665d08e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1aa45cd4386f40436501ae63f76665d08e" kindref="member">LPedalClicked</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>FOOTPEDAL_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/footpedal.h"/>
+  </compounddef>
+</doxygen>

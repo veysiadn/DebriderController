@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="classEmergencyWindow" kind="class" language="C++" prot="public">
+    <compoundname>EmergencyWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="emergency__window_8h" local="no">emergency_window.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" prot="private" static="no" mutable="no">
+        <type>Ui::EmergencyWindow *</type>
+        <definition>Ui::EmergencyWindow* EmergencyWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>EmergencyWindow::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="54" column="25" bodyfile="include/emergency_window.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EmergencyWindow::emergency_status_</definition>
+        <argsstring></argsstring>
+        <name>emergency_status_</name>
+        <qualifiedname>EmergencyWindow::emergency_status_</qualifiedname>
+        <briefdescription>
+<para>Flag for emergency status of the system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="56" column="9" bodyfile="include/emergency_window.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classEmergencyWindow_1aaa5bccb7da8358a120dd7489c4355eda" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EmergencyWindow::EmergencyWindow</definition>
+        <argsstring>(QWidget *parent=nullptr)</argsstring>
+        <name>EmergencyWindow</name>
+        <qualifiedname>EmergencyWindow::EmergencyWindow</qualifiedname>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="29" column="14" bodyfile="src/emergency_window.cpp" bodystart="4" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classEmergencyWindow_1a40a9b441e133ed1958e1fce7278124a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EmergencyWindow::~EmergencyWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~EmergencyWindow</name>
+        <qualifiedname>EmergencyWindow::~EmergencyWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="30" column="5" bodyfile="src/emergency_window.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classEmergencyWindow_1a8e54ec54e2f9893a38ce051b8627c2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmergencyWindow::SetEmergencyText</definition>
+        <argsstring>()</argsstring>
+        <name>SetEmergencyText</name>
+        <qualifiedname>EmergencyWindow::SetEmergencyText</qualifiedname>
+        <briefdescription>
+<para>SetEmergencyText Sets emergency text in Emergency Windows based on current emergency state of debrider. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="35" column="10" bodyfile="src/emergency_window.cpp" bodystart="23" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classEmergencyWindow_1ad7f480681cd065f84ad74a3446c0f598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EmergencyWindow::GetEmergencyStatus</definition>
+        <argsstring>()</argsstring>
+        <name>GetEmergencyStatus</name>
+        <qualifiedname>EmergencyWindow::GetEmergencyStatus</qualifiedname>
+        <briefdescription>
+<para>GetEmergencyStatus Gets emergency status of system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>emergency status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="40" column="10" bodyfile="src/emergency_window.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classEmergencyWindow_1a37b5734886b9a238b6d9660acd2a404e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmergencyWindow::SetEmergencyStatus</definition>
+        <argsstring>(int status)</argsstring>
+        <name>SetEmergencyStatus</name>
+        <qualifiedname>EmergencyWindow::SetEmergencyStatus</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>SetEmergencyStatus Sets emergency status of the system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Emergency status flag. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="45" column="10" bodyfile="src/emergency_window.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmergencyWindow::on_ButtonEmergencyExit_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_ButtonEmergencyExit_clicked</name>
+        <qualifiedname>EmergencyWindow::on_ButtonEmergencyExit_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="48" column="10" bodyfile="src/emergency_window.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmergencyWindow::EmergencyExitClicked</definition>
+        <argsstring>(int s)</argsstring>
+        <name>EmergencyExitClicked</name>
+        <qualifiedname>EmergencyWindow::EmergencyExitClicked</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/emergency_window.h" line="51" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>EmergencyWindow</label>
+        <link refid="classEmergencyWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>EmergencyWindow</label>
+        <link refid="classEmergencyWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/emergency_window.h" line="24" column="1" bodyfile="include/emergency_window.h" bodystart="25" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" prot="private" virt="non-virtual"><scope>EmergencyWindow</scope><name>emergency_status_</name></member>
+      <member refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>EmergencyExitClicked</name></member>
+      <member refid="classEmergencyWindow_1aaa5bccb7da8358a120dd7489c4355eda" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>EmergencyWindow</name></member>
+      <member refid="classEmergencyWindow_1ad7f480681cd065f84ad74a3446c0f598" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>GetEmergencyStatus</name></member>
+      <member refid="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" prot="private" virt="non-virtual"><scope>EmergencyWindow</scope><name>on_ButtonEmergencyExit_clicked</name></member>
+      <member refid="classEmergencyWindow_1a37b5734886b9a238b6d9660acd2a404e" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>SetEmergencyStatus</name></member>
+      <member refid="classEmergencyWindow_1a8e54ec54e2f9893a38ce051b8627c2e7" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>SetEmergencyText</name></member>
+      <member refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" prot="private" virt="non-virtual"><scope>EmergencyWindow</scope><name>ui</name></member>
+      <member refid="classEmergencyWindow_1a40a9b441e133ed1958e1fce7278124a9" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>~EmergencyWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

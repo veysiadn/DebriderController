@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="classFootPedal" kind="class" language="C++" prot="public">
+    <compoundname>FootPedal</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QThread</basecompoundref>
+    <includes refid="footpedal_8h" local="no">footpedal.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFootPedal_1ab5abbbd6d14c121dd9a72b8ca363e5ab" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool FootPedal::adc_error_flag</definition>
+        <argsstring></argsstring>
+        <name>adc_error_flag</name>
+        <qualifiedname>FootPedal::adc_error_flag</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Error flag for SPI communication errors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="93" column="10" bodyfile="include/footpedal.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a8007399e4bf4d8c33b7ef9346cbfdf46" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::L_button</definition>
+        <argsstring></argsstring>
+        <name>L_button</name>
+        <qualifiedname>FootPedal::L_button</qualifiedname>
+        <briefdescription>
+<para>Button parameters, to detect rising edge of buttons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="96" column="9" bodyfile="include/footpedal.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a12e1e676e8539abb0645efba3775752a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::prev_L_button</definition>
+        <argsstring></argsstring>
+        <name>prev_L_button</name>
+        <qualifiedname>FootPedal::prev_L_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="96" column="18" bodyfile="include/footpedal.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1aa87ec502073e066f970f99dbf815b514" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::R_button</definition>
+        <argsstring></argsstring>
+        <name>R_button</name>
+        <qualifiedname>FootPedal::R_button</qualifiedname>
+        <briefdescription>
+<para>Button parameters, to detect rising edge of buttons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="99" column="9" bodyfile="include/footpedal.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a2d78770890d02109c4de6aee1ba1fccb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::prev_R_button</definition>
+        <argsstring></argsstring>
+        <name>prev_R_button</name>
+        <qualifiedname>FootPedal::prev_R_button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="99" column="18" bodyfile="include/footpedal.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a0c96847934d65cd216fbf665d82ebd3c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::L_pedal_value</definition>
+        <argsstring></argsstring>
+        <name>L_pedal_value</name>
+        <qualifiedname>FootPedal::L_pedal_value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Analog value parameter.  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="103" column="9" bodyfile="include/footpedal.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1afd02e14ba1ebfe35eac2d070ca5e5921" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::R_pedal</definition>
+        <argsstring></argsstring>
+        <name>R_pedal</name>
+        <qualifiedname>FootPedal::R_pedal</qualifiedname>
+        <briefdescription>
+<para>Currently this parameter is unused, will be used if the pedal is purely digital. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="106" column="9" bodyfile="include/footpedal.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a79fbe461356c2d884d954a6404b77479" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::prev_R_pedal</definition>
+        <argsstring></argsstring>
+        <name>prev_R_pedal</name>
+        <qualifiedname>FootPedal::prev_R_pedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="106" column="17" bodyfile="include/footpedal.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a58e5157ee66b6759680b2929fbca6171" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::L_pedal</definition>
+        <argsstring></argsstring>
+        <name>L_pedal</name>
+        <qualifiedname>FootPedal::L_pedal</qualifiedname>
+        <briefdescription>
+<para>Button parameters, to detect rising edge of buttons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="109" column="9" bodyfile="include/footpedal.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a4b83325ca16d0aff84c008001eb8cb6d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::prev_L_pedal</definition>
+        <argsstring></argsstring>
+        <name>prev_L_pedal</name>
+        <qualifiedname>FootPedal::prev_L_pedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="109" column="17" bodyfile="include/footpedal.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFootPedal_1a564108bcc25a5a70065335bf9f1a83d1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FootPedal::adc_spi_running</definition>
+        <argsstring></argsstring>
+        <name>adc_spi_running</name>
+        <qualifiedname>FootPedal::adc_spi_running</qualifiedname>
+        <briefdescription>
+<para>Flag for SPI communication state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="112" column="9" bodyfile="include/footpedal.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFootPedal_1a984faf3d9f989adeb132339c377b14a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FootPedal::FootPedal</definition>
+        <argsstring>()</argsstring>
+        <name>FootPedal</name>
+        <qualifiedname>FootPedal::FootPedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="31" column="5" bodyfile="src/footpedal.cpp" bodystart="8" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1ae924b102bbeae161b0e72b4c34ad9b73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FootPedal::~FootPedal</definition>
+        <argsstring>()</argsstring>
+        <name>~FootPedal</name>
+        <qualifiedname>FootPedal::~FootPedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="32" column="5" bodyfile="src/footpedal.cpp" bodystart="152" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a32a9f52dc834e66bbfc70e7022042669" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::OpenSPIPort</definition>
+        <argsstring>()</argsstring>
+        <name>OpenSPIPort</name>
+        <qualifiedname>FootPedal::OpenSPIPort</qualifiedname>
+        <briefdescription>
+<para>OpenSPIPort Opens SPI port, by assigning inputs and outputs of SPI pins.. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="36" column="10" bodyfile="src/footpedal.cpp" bodystart="98" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a55c10f27d058be0653fdca5e4714e86a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::CloseSPIPort</definition>
+        <argsstring>()</argsstring>
+        <name>CloseSPIPort</name>
+        <qualifiedname>FootPedal::CloseSPIPort</qualifiedname>
+        <briefdescription>
+<para>CloseSPIPort Closes SPI port by assigning all pins as INPUTs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="40" column="10" bodyfile="src/footpedal.cpp" bodystart="107" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a6708751eb133b1f752a8f62e3f8fb95d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FootPedal::GetSPIError</definition>
+        <argsstring>()</argsstring>
+        <name>GetSPIError</name>
+        <qualifiedname>FootPedal::GetSPIError</qualifiedname>
+        <briefdescription>
+<para>GetSPIError Gets SPI error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>error flag. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="45" column="10" bodyfile="include/footpedal.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a44fd654f4b0f63aa7b5e9ac980b75196" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int FootPedal::GetLeftPedalValue</definition>
+        <argsstring>()</argsstring>
+        <name>GetLeftPedalValue</name>
+        <qualifiedname>FootPedal::GetLeftPedalValue</qualifiedname>
+        <briefdescription>
+<para>GetLeftPedalValue Gets analog pedal value by reading ADC value via SPI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Analog pedal value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="50" column="10" bodyfile="include/footpedal.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1ab628e028331a75d79f6d61fc385072cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::SetSPIError</definition>
+        <argsstring>(bool s)</argsstring>
+        <name>SetSPIError</name>
+        <qualifiedname>FootPedal::SetSPIError</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>SetSPIError Sets SPI error, in case there is an error in SPI communication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean val true if error exists, false if no error. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="55" column="10" bodyfile="src/footpedal.cpp" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a0c755710fc0f7e0c38187282cf3fbae1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::ClearSPIPort</definition>
+        <argsstring>()</argsstring>
+        <name>ClearSPIPort</name>
+        <qualifiedname>FootPedal::ClearSPIPort</qualifiedname>
+        <briefdescription>
+<para>ClearSPIPort Clears all parameters acquired via SPI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="59" column="10" bodyfile="src/footpedal.cpp" bodystart="120" bodyend="129"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classFootPedal_1ad182f6f032c1d6911297a60497b5f73d" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FootPedal::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>FootPedal::run</qualifiedname>
+        <briefdescription>
+<para>run SPI reading loop implemented here. This is thread entrance point. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="65" column="18" bodyfile="src/footpedal.cpp" bodystart="19" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a2c9f15f034bb04884e2fe34ca0ddd950" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int FootPedal::ReadSPIAnalog</definition>
+        <argsstring>(int pin_channel)</argsstring>
+        <name>ReadSPIAnalog</name>
+        <qualifiedname>FootPedal::ReadSPIAnalog</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pin_channel</declname>
+        </param>
+        <briefdescription>
+<para>ReadSPIAnalog Reads data from spefied pin channel in MCP3004 ADC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin_channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ADC channel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>MCP3004 has 4 channels from 0 to 3. </para>
+</simplesect>
+<simplesect kind="return"><para>Analog value in specified channel. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="72" column="10" bodyfile="src/footpedal.cpp" bodystart="36" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a5fdbc66d79ca379bafe648940799622d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::GetCmdOutInfo</definition>
+        <argsstring>(const int pin_channel, Int8U &amp;cmd_out, int &amp;cmd_out_bits_count)</argsstring>
+        <name>GetCmdOutInfo</name>
+        <qualifiedname>FootPedal::GetCmdOutInfo</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>pin_channel</declname>
+        </param>
+        <param>
+          <type><ref refid="footpedal_8h_1ad5b8ae6b426ca3a6e6cd4951f72355bd" kindref="member">Int8U</ref> &amp;</type>
+          <declname>cmd_out</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>cmd_out_bits_count</declname>
+        </param>
+        <briefdescription>
+<para>GetCmdOutInfo This function is an helper function to read ADC value. It is specific to MCP3004. For more details check MCP3004 datasheet. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin_channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin channel of ADC. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd_out_bits_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of command output bits. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="80" column="10" bodyfile="src/footpedal.cpp" bodystart="136" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a4488869799265b29496823efdd59dfa0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::TickClock</definition>
+        <argsstring>()</argsstring>
+        <name>TickClock</name>
+        <qualifiedname>FootPedal::TickClock</qualifiedname>
+        <briefdescription>
+<para>TickClock Tick clock is to manually send clock signal to SPI CLK pin. Currently period is 2ms (500Hz). (1ms HIGH, 1ms LOW). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="85" column="10" bodyfile="src/footpedal.cpp" bodystart="143" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classFootPedal_1a0e49a2b1353cb7f8ab6cf5ed03753fae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::ReadButtons</definition>
+        <argsstring>()</argsstring>
+        <name>ReadButtons</name>
+        <qualifiedname>FootPedal::ReadButtons</qualifiedname>
+        <briefdescription>
+<para>ReadButtons Reads connected pedal buttons via digitalRead function of wiringPi and emits signal when there&apos;s a change in the pedal value in rising edge. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="90" column="10" bodyfile="src/footpedal.cpp" bodystart="79" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="classFootPedal_1ab65e412e59d4646c51dcfbd56c678deb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::RButtonClicked</definition>
+        <argsstring>()</argsstring>
+        <name>RButtonClicked</name>
+        <qualifiedname>FootPedal::RButtonClicked</qualifiedname>
+        <briefdescription>
+<para>This signal will be emitted when right button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="116" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="classFootPedal_1af8a359cf437785ef51285c3d94d79b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::LButtonClicked</definition>
+        <argsstring>()</argsstring>
+        <name>LButtonClicked</name>
+        <qualifiedname>FootPedal::LButtonClicked</qualifiedname>
+        <briefdescription>
+<para>This signal will be emitted when left button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="119" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="classFootPedal_1a278f7803e8f6634d9c9344ff803ba72a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::RPedalClicked</definition>
+        <argsstring>()</argsstring>
+        <name>RPedalClicked</name>
+        <qualifiedname>FootPedal::RPedalClicked</qualifiedname>
+        <briefdescription>
+<para>This signal will be emitted when right pedal is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="122" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="classFootPedal_1aa45cd4386f40436501ae63f76665d08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FootPedal::LPedalClicked</definition>
+        <argsstring>()</argsstring>
+        <name>LPedalClicked</name>
+        <qualifiedname>FootPedal::LPedalClicked</qualifiedname>
+        <briefdescription>
+<para>This signal will be emitted when left pedal is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/footpedal.h" line="125" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>FootPedal</label>
+        <link refid="classFootPedal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>FootPedal</label>
+        <link refid="classFootPedal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/footpedal.h" line="26" column="1" bodyfile="include/footpedal.h" bodystart="27" bodyend="127"/>
+    <listofallmembers>
+      <member refid="classFootPedal_1ab5abbbd6d14c121dd9a72b8ca363e5ab" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>adc_error_flag</name></member>
+      <member refid="classFootPedal_1a564108bcc25a5a70065335bf9f1a83d1" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>adc_spi_running</name></member>
+      <member refid="classFootPedal_1a0c755710fc0f7e0c38187282cf3fbae1" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>ClearSPIPort</name></member>
+      <member refid="classFootPedal_1a55c10f27d058be0653fdca5e4714e86a" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>CloseSPIPort</name></member>
+      <member refid="classFootPedal_1a984faf3d9f989adeb132339c377b14a6" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>FootPedal</name></member>
+      <member refid="classFootPedal_1a5fdbc66d79ca379bafe648940799622d" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>GetCmdOutInfo</name></member>
+      <member refid="classFootPedal_1a44fd654f4b0f63aa7b5e9ac980b75196" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>GetLeftPedalValue</name></member>
+      <member refid="classFootPedal_1a6708751eb133b1f752a8f62e3f8fb95d" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>GetSPIError</name></member>
+      <member refid="classFootPedal_1a8007399e4bf4d8c33b7ef9346cbfdf46" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>L_button</name></member>
+      <member refid="classFootPedal_1a58e5157ee66b6759680b2929fbca6171" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>L_pedal</name></member>
+      <member refid="classFootPedal_1a0c96847934d65cd216fbf665d82ebd3c" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>L_pedal_value</name></member>
+      <member refid="classFootPedal_1af8a359cf437785ef51285c3d94d79b76" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>LButtonClicked</name></member>
+      <member refid="classFootPedal_1aa45cd4386f40436501ae63f76665d08e" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>LPedalClicked</name></member>
+      <member refid="classFootPedal_1a32a9f52dc834e66bbfc70e7022042669" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>OpenSPIPort</name></member>
+      <member refid="classFootPedal_1a12e1e676e8539abb0645efba3775752a" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>prev_L_button</name></member>
+      <member refid="classFootPedal_1a4b83325ca16d0aff84c008001eb8cb6d" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>prev_L_pedal</name></member>
+      <member refid="classFootPedal_1a2d78770890d02109c4de6aee1ba1fccb" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>prev_R_button</name></member>
+      <member refid="classFootPedal_1a79fbe461356c2d884d954a6404b77479" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>prev_R_pedal</name></member>
+      <member refid="classFootPedal_1aa87ec502073e066f970f99dbf815b514" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>R_button</name></member>
+      <member refid="classFootPedal_1afd02e14ba1ebfe35eac2d070ca5e5921" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>R_pedal</name></member>
+      <member refid="classFootPedal_1ab65e412e59d4646c51dcfbd56c678deb" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>RButtonClicked</name></member>
+      <member refid="classFootPedal_1a0e49a2b1353cb7f8ab6cf5ed03753fae" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>ReadButtons</name></member>
+      <member refid="classFootPedal_1a2c9f15f034bb04884e2fe34ca0ddd950" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>ReadSPIAnalog</name></member>
+      <member refid="classFootPedal_1a278f7803e8f6634d9c9344ff803ba72a" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>RPedalClicked</name></member>
+      <member refid="classFootPedal_1ad182f6f032c1d6911297a60497b5f73d" prot="private" virt="virtual"><scope>FootPedal</scope><name>run</name></member>
+      <member refid="classFootPedal_1ab628e028331a75d79f6d61fc385072cc" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>SetSPIError</name></member>
+      <member refid="classFootPedal_1a4488869799265b29496823efdd59dfa0" prot="private" virt="non-virtual"><scope>FootPedal</scope><name>TickClock</name></member>
+      <member refid="classFootPedal_1ae924b102bbeae161b0e72b4c34ad9b73" prot="public" virt="non-virtual"><scope>FootPedal</scope><name>~FootPedal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

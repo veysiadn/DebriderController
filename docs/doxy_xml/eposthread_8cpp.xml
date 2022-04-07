@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="eposthread_8cpp" kind="file" language="C++">
+    <compoundname>eposthread.cpp</compoundname>
+    <includes refid="eposthread_8h" local="yes">include/eposthread.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>epos4_can.h</label>
+        <link refid="epos4__can_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>footpedal.h</label>
+        <link refid="footpedal_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="1">
+        <label>src/eposthread.cpp</label>
+        <link refid="eposthread_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>EposCmdLib_6.5.1.0/include/Definitions.h</label>
+      </node>
+      <node id="3">
+        <label>QThread</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="10">
+        <label>time.h</label>
+      </node>
+      <node id="7">
+        <label>wiringPi.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eposthread_8h" kindref="compound">include/eposthread.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="classEposThread_1a13b22ba1fadc18ce3b0e4eae99f66d81" kindref="member">EposThread::EposThread</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>QThread<sp/>()</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>m_Transition<sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1:<sp/>from<sp/>uninit<sp/>to<sp/>init<sp/>/<sp/>2:<sp/>to<sp/>close<sp/>blade<sp/>/<sp/>3:<sp/>to<sp/>osc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a183be3542be5b53dfb4d89c5fb7df063" kindref="member">EposThread::run</ref>()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" kindref="member">m_Transition</ref><sp/>==<sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a129c5fd2c640e351170c8ede47250479" kindref="member">kInit</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1a4262e0c79a0f4a6adcc4363a6cc99eee" kindref="member">RunInitialization</ref>();<sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" kindref="member">m_Transition</ref><sp/>==<sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802ac9066432ffb039b61078c925a452687e" kindref="member">kCloseBlade</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1aa754635e61da40b19948aba0ed6642e0" kindref="member">RunCloseBlade</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" kindref="member">m_Transition</ref><sp/>==<sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a3d8ecdec7b8e9218f91d3bef96598199" kindref="member">kRunOscillation</ref>)<sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1a69923110630997056ec19635005468c1" kindref="member">RunOscillation</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a4262e0c79a0f4a6adcc4363a6cc99eee" kindref="member">EposThread::RunInitialization</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>int<sp/>waitCnt<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CKim<sp/>-<sp/>First<sp/>check<sp/>the<sp/>relay<sp/>status,<sp/>wait<sp/>for<sp/>1<sp/>s<sp/>until<sp/>watchdog</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>starts<sp/>pulsing<sp/>and<sp/>relay<sp/>is<sp/>closed<sp/>to<sp/>provide</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>power<sp/>EPOS<sp/>and<sp/>establish<sp/>CAN<sp/>connection.<sp/>If<sp/>not<sp/>return<sp/>with<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(digitalRead(<ref refid="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" kindref="member">EMERGENCY_RELAY_CONTROL</ref>)==LOW)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>relay\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waitCnt++;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msleep(1000);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CKim<sp/>-<sp/>wait<sp/>for<sp/>1<sp/>sec</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CKim<sp/>-<sp/>If<sp/>relay<sp/>is<sp/>still<sp/>low<sp/>after<sp/>1<sp/>sec.<sp/>Throw<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(digitalRead(<ref refid="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" kindref="member">EMERGENCY_RELAY_CONTROL</ref>)==LOW)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERRR<sp/>:<sp/>Relay<sp/>is<sp/>not<sp/>closed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;ERRR<sp/>:<sp/>Relay<sp/>is<sp/>not<sp/>closing\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" kindref="member">DEBRIDER_STATE_EMERGENCY</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Relay<sp/>is<sp/>closed,<sp/>checking<sp/>init<sp/>switch\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>state=<ref refid="m__defines_8h_1a75d10b463a17a52541469e3c1a083374" kindref="member">DEBRIDER_STATE_INITIALIZING</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(state==<ref refid="m__defines_8h_1a75d10b463a17a52541469e3c1a083374" kindref="member">DEBRIDER_STATE_INITIALIZING</ref>){</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(digitalRead(<ref refid="m__defines_8h_1aeb8720f55dd6e7621aba1ae2e6f5073b" kindref="member">INITIALIZATION_SWTICH</ref>)==HIGH){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msleep(500);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(digitalRead(<ref refid="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" kindref="member">EMERGENCY_RELAY_CONTROL</ref>)==LOW){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state=<ref refid="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" kindref="member">DEBRIDER_STATE_EMERGENCY</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state=<ref refid="m__defines_8h_1a75d10b463a17a52541469e3c1a083374" kindref="member">DEBRIDER_STATE_INITIALIZING</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" kindref="member">DEBRIDER_STATE_READY</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CKim<sp/>-<sp/>CAN<sp/>Initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CKim<sp/>-<sp/>Open<sp/>and<sp/>configure<sp/>CAN<sp/>Communication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_pMotor-&gt;CloseAllDevice();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1a273db5d88e244e5db3e1b080f1151b54" kindref="member">OpenCANCommunication</ref>())</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERRR<sp/>:<sp/>CAN<sp/>Port<sp/>was<sp/>not<sp/>opened<sp/>or<sp/>not<sp/>properly<sp/>configured</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Open<sp/>CAN<sp/>communication<sp/>failed.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" kindref="member">DEBRIDER_STATE_EPOS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//msleep(200);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CKim<sp/>-<sp/>Enable<sp/>the<sp/>motor.<sp/>For<sp/>some<sp/>reason<sp/>we<sp/>need<sp/>multiple<sp/>tries<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;3;<sp/>i++)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" kindref="member">EnableMotorController</ref>())</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERRR<sp/>:<sp/>Clear<sp/>fault<sp/>and<sp/>enabling<sp/>motor<sp/>failed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" kindref="member">DEBRIDER_STATE_EPOS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" kindref="member">DEBRIDER_STATE_READY</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msleep(200);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(state==<ref refid="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" kindref="member">DEBRIDER_STATE_EPOS_ERROR</ref>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//m_pMotor-&gt;EnableVelocityMode();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//msleep(200);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(digitalRead(<ref refid="m__defines_8h_1aeb8720f55dd6e7621aba1ae2e6f5073b" kindref="member">INITIALIZATION_SWTICH</ref>)==LOW<sp/>&amp;&amp;<sp/>state<sp/>==<sp/><ref refid="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" kindref="member">DEBRIDER_STATE_READY</ref>){</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(digitalRead(<ref refid="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" kindref="member">EMERGENCY_RELAY_CONTROL</ref>)==LOW){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Relay<sp/>opened&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state=<ref refid="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" kindref="member">DEBRIDER_STATE_EMERGENCY</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msleep(500);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state=<ref refid="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" kindref="member">DEBRIDER_STATE_READY</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="m__defines_8h_1a85996c0db78e7ce21b0319241f4484ab" kindref="member">DEBRIDER_STATE_ENABLED</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(state);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1aa754635e61da40b19948aba0ed6642e0" kindref="member">EposThread::RunCloseBlade</ref>()</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tgtPos;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1a6f31f54f7c80027d6cfe8a38bb4924a6" kindref="member">EnablePositionMode</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" kindref="member">GetCurrentPositionAllDevice</ref>(tgtPos);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>tgtPos<sp/>=<sp/>tgtPos<sp/>+<sp/><ref refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" kindref="member">INC_PER_ROTATION</ref>/12;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1a8307999483d6cfae3ecbce326c4192a6" kindref="member">MovePosition</ref>(tgtPos);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" kindref="member">WaitForMotion</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1aa5673ed3bb8cbe64d164c7124bc00758" kindref="member">CloseBladeComplete</ref>(<ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" kindref="member">EPOSGetError</ref>());</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>EposThread::RunCloseBlade()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">//{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>m_pMotor-&gt;MoveInCloseBladeMode();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>emit<sp/>CloseBladeComplete(m_pMotor-&gt;EPOSGetError());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a69923110630997056ec19635005468c1" kindref="member">EposThread::RunOscillation</ref>()</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a42916f7abaf9816f4af304e7a4aa1f94" kindref="member">m_Abort</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>Oscillation<sp/>Motion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" kindref="member">m_OscSpeed</ref><sp/>&lt;<sp/>0<sp/>)<sp/><ref refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" kindref="member">m_OscSpeed</ref>*=-1;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" kindref="member">EnablePositionModeWithSpeed</ref>(<ref refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" kindref="member">m_OscSpeed</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" kindref="member">SetOscMode</ref>(<ref refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" kindref="member">OSC_MODE_AMP</ref>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>motion<sp/>and<sp/>continue<sp/>until<sp/>m_Abort<sp/>is<sp/>set<sp/>to<sp/>true<sp/>from<sp/>outside</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!<ref refid="classEposThread_1a42916f7abaf9816f4af304e7a4aa1f94" kindref="member">m_Abort</ref>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1aae6f66648157bfb53c6055fefadb5af2" kindref="member">RunOscMode</ref>(dir);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" kindref="member">WaitForMotion</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dir<sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" kindref="member">StopMotion</ref>();<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>oscillate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEposThread_1ae07f935fa8ca208db6423964a6affae5" kindref="member">OscillationComplete</ref>(<ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>-&gt;<ref refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" kindref="member">EPOSGetError</ref>());</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/eposthread.cpp"/>
+  </compounddef>
+</doxygen>

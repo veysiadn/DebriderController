@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Debrider<sp/>Controller<sp/>Device<sp/>Control<sp/>Software</highlight></codeline>
+<codeline><highlight class="normal">Debrider<sp/>Controller<sp/>Software<sp/>with<sp/>Qt</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Considering<sp/>that<sp/>you<sp/>already<sp/>installed<sp/>Raspian<sp/>Buster<sp/>to<sp/>your<sp/>Raspberry<sp/>Pi.</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Note<sp/>:<sp/>It&apos;s<sp/>important<sp/>that<sp/>you<sp/>install<sp/>Buster<sp/>version<sp/>of<sp/>Raspian<sp/>not<sp/>the<sp/>Bullseye<sp/>version,<sp/>because<sp/>wiringpi,<sp/>and<sp/>several<sp/>other<sp/>libraries<sp/>are<sp/>not<sp/>available<sp/>for<sp/>Bullseye<sp/>version.</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Before<sp/>building<sp/>project<sp/>;<sp/>Make<sp/>sure<sp/>that<sp/>you<sp/>have<sp/>an<sp/>internet<sp/>connection</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>STEP<sp/>1<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">#####<sp/>Do<sp/>update<sp/>&amp;<sp/>upgrade,<sp/>than<sp/>install<sp/>Qt5<sp/>for<sp/>installing<sp/>building<sp/>environment.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>update</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>upgrade<sp/></highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>build-essential<sp/>qtcreator<sp/>qt5-default<sp/>qt5-doc<sp/>qt5-doc-html<sp/>qtbase5-doc-html<sp/>qtbase5-examples<sp/>libqt5serialport5-dev<sp/>-y</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>wiringpi<sp/>git<sp/>clang</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>ldconfig</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>/sbin/ldconfig<sp/>-v</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>STEP<sp/>2<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">#####<sp/><sp/>Download<sp/>and<sp/>install<sp/>EPOS4<sp/>command<sp/>library<sp/></highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/veysiadn/epos-linux-library</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>epos-linux-library/EPOS-Linux-Library-En</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>chmod<sp/>a+x<sp/>install.sh</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>./install.sh</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Step<sp/>3<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>Start<sp/>QT<sp/>Creator<sp/>and<sp/>open<sp/>pro<sp/>file<sp/>this<sp/>repository,<sp/>configure<sp/>it<sp/>based<sp/>on<sp/>your<sp/>system<sp/>and<sp/>now<sp/>you<sp/>can<sp/>build<sp/>it<sp/>and<sp/>get<sp/>the<sp/>executable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Contact<sp/>:<sp/>veysi.adin@kist.re.kr</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

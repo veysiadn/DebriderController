@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="emergency__window_8cpp" kind="file" language="C++">
+    <compoundname>emergency_window.cpp</compoundname>
+    <includes refid="emergency__window_8h" local="yes">include/emergency_window.h</includes>
+    <includes local="yes">ui_emergencywindow.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>include/emergency_window.h</label>
+        <link refid="emergency__window_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="1">
+        <label>src/emergency_window.cpp</label>
+        <link refid="emergency__window_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QMainWindow</label>
+      </node>
+      <node id="5">
+        <label>ui_emergencywindow.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="emergency__window_8h" kindref="compound">include/emergency_window.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ui_emergencywindow.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="classEmergencyWindow_1aaa5bccb7da8358a120dd7489c4355eda" kindref="member">EmergencyWindow::EmergencyWindow</ref>(QWidget<sp/>*parent)<sp/>:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>QMainWindow(parent),</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>ui(new<sp/><ref refid="namespaceUi" kindref="compound">Ui</ref>::<ref refid="classEmergencyWindow" kindref="compound">EmergencyWindow</ref>)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>emergency_status_=0;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="classEmergencyWindow_1a40a9b441e133ed1958e1fce7278124a9" kindref="member">EmergencyWindow::~EmergencyWindow</ref>()</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" kindref="member">ui</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" kindref="member">EmergencyWindow::on_ButtonEmergencyExit_clicked</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>EmergencyWindow::close();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" kindref="member">EmergencyExitClicked</ref>(1);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a8e54ec54e2f9893a38ce051b8627c2e7" kindref="member">EmergencyWindow::SetEmergencyText</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>txtEmergency;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref>==<ref refid="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" kindref="member">DEBRIDER_STATE_EMERGENCY</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txtEmergency=(</highlight><highlight class="stringliteral">&quot;<sp/>\n<sp/>\t<sp/>!<sp/>WARNING<sp/>!<sp/>\n<sp/>\n<sp/>!EMERGENCY<sp/>MODE<sp/>ACTIVE!<sp/>\n<sp/>\n<sp/>In<sp/>case<sp/>of<sp/>:<sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>Emergency<sp/>Switch<sp/>or<sp/>Initialization<sp/>Switch<sp/>\n<sp/>is<sp/>pressed\n<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;release<sp/>the<sp/>switches<sp/>and<sp/>click<sp/>\n<sp/>&apos;EXIT&apos;<sp/>to<sp/>restart<sp/>the<sp/>controller&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref>==<ref refid="m__defines_8h_1ab118c9f84eb40748c0d85fc774f9128a" kindref="member">DEBRIDER_STATE_SPI_ERROR</ref>)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txtEmergency=(</highlight><highlight class="stringliteral">&quot;\n<sp/>\t!<sp/>EMERGENCY<sp/>MODE<sp/>ACTIVE<sp/>!<sp/>\n<sp/>\n<sp/>\t<sp/>SPI<sp/>CONNECTION<sp/>ERROR<sp/>\n<sp/>\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;CLICK<sp/>&apos;EXIT&apos;<sp/>TO<sp/>TRY<sp/>TO<sp/>RECONNECT<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref>==<ref refid="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" kindref="member">DEBRIDER_STATE_EPOS_ERROR</ref>)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txtEmergency=(</highlight><highlight class="stringliteral">&quot;\n<sp/>\t!<sp/>EMERGENCY<sp/>MODE<sp/>ACTIVE<sp/>!<sp/>\n<sp/>\n<sp/>\t<sp/>EPOS<sp/>CONNECTION<sp/>ERROR<sp/>\n<sp/>\t<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;CLICK<sp/>&apos;EXIT&apos;<sp/>TO<sp/>TRY<sp/>TO<sp/>RECONNECT&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txtEmergency=(</highlight><highlight class="stringliteral">&quot;<sp/>\n<sp/>!EMERGENCY<sp/>MODE<sp/>ACTIVE!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" kindref="member">ui</ref>-&gt;lblEmergencyTxt-&gt;setText(txtEmergency);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a37b5734886b9a238b6d9660acd2a404e" kindref="member">EmergencyWindow::SetEmergencyStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref><sp/>=<sp/>status;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1ad7f480681cd065f84ad74a3446c0f598" kindref="member">EmergencyWindow::GetEmergencyStatus</ref>()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/><ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref><sp/>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/emergency_window.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,915 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="classMaxonMotor" kind="class" language="C++" prot="public">
+    <compoundname>MaxonMotor</compoundname>
+    <includes refid="epos4__can_8h" local="no">epos4_can.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* MaxonMotor::m_PortName_MCP</definition>
+        <argsstring></argsstring>
+        <name>m_PortName_MCP</name>
+        <qualifiedname>MaxonMotor::m_PortName_MCP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Port name </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="136" column="10" bodyfile="include/epos4_can.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1a231271571af914099f2808b6adf491d0" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* MaxonMotor::m_keyHandle_MCP</definition>
+        <argsstring></argsstring>
+        <name>m_keyHandle_MCP</name>
+        <qualifiedname>MaxonMotor::m_keyHandle_MCP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Handle to the CAN port </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="139" column="10" bodyfile="include/epos4_can.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" prot="private" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short MaxonMotor::m_Node_ID_MCP</definition>
+        <argsstring></argsstring>
+        <name>m_Node_ID_MCP</name>
+        <qualifiedname>MaxonMotor::m_Node_ID_MCP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Node ID </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="142" column="20" bodyfile="include/epos4_can.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int MaxonMotor::ErrorCode</definition>
+        <argsstring></argsstring>
+        <name>ErrorCode</name>
+        <qualifiedname>MaxonMotor::ErrorCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Error code returned from VCS functions </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="145" column="18" bodyfile="include/epos4_can.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char MaxonMotor::m_Mode</definition>
+        <argsstring></argsstring>
+        <name>m_Mode</name>
+        <qualifiedname>MaxonMotor::m_Mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Operating modes and parameters </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="148" column="10" bodyfile="include/epos4_can.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MaxonMotor::m_OscOffset</definition>
+        <argsstring></argsstring>
+        <name>m_OscOffset</name>
+        <qualifiedname>MaxonMotor::m_OscOffset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Oscillation mode offset. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="150" column="9" bodyfile="include/epos4_can.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MaxonMotor::m_OscAmp</definition>
+        <argsstring></argsstring>
+        <name>m_OscAmp</name>
+        <qualifiedname>MaxonMotor::m_OscAmp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Oscillation mode amplitude. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="152" column="9" bodyfile="include/epos4_can.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MaxonMotor::m_errorFlag</definition>
+        <argsstring></argsstring>
+        <name>m_errorFlag</name>
+        <qualifiedname>MaxonMotor::m_errorFlag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>EPOS error flag. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="154" column="9" bodyfile="include/epos4_can.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMaxonMotor_1aa1bf637a4484ce34a9f88e827fbed95d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MaxonMotor::MaxonMotor</definition>
+        <argsstring>()</argsstring>
+        <name>MaxonMotor</name>
+        <qualifiedname>MaxonMotor::MaxonMotor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="24" column="5" bodyfile="src/epos4_can.cpp" bodystart="3" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a273db5d88e244e5db3e1b080f1151b54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MaxonMotor::OpenCANCommunication</definition>
+        <argsstring>()</argsstring>
+        <name>OpenCANCommunication</name>
+        <qualifiedname>MaxonMotor::OpenCANCommunication</qualifiedname>
+        <briefdescription>
+<para>OpenCANCommunication Opens CAN port and configures communication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>CAN port name, node id and baudrate is hard coded for now. </para>
+</simplesect>
+<simplesect kind="return"><para>1 if succesfull otherwise 0. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="31" column="9" bodyfile="src/epos4_can.cpp" bodystart="19" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MaxonMotor::EnableMotorController</definition>
+        <argsstring>()</argsstring>
+        <name>EnableMotorController</name>
+        <qualifiedname>MaxonMotor::EnableMotorController</qualifiedname>
+        <briefdescription>
+<para>EnableMotorController Enables motor controller and clears faults. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>1 if succesfull, otherwise 0. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="37" column="9" bodyfile="src/epos4_can.cpp" bodystart="56" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1aeeddf2f7f4396839027125bf0df4e71e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::ActiviateAllDevice</definition>
+        <argsstring>()</argsstring>
+        <name>ActiviateAllDevice</name>
+        <qualifiedname>MaxonMotor::ActiviateAllDevice</qualifiedname>
+        <briefdescription>
+<para>ActiviateAllDevice Activates connected EPOS driver, with hard coded communication information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="43" column="10" bodyfile="src/epos4_can.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a782ba617ad94197a4dc67ab5fd3231ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::DisableAllDevice</definition>
+        <argsstring>()</argsstring>
+        <name>DisableAllDevice</name>
+        <qualifiedname>MaxonMotor::DisableAllDevice</qualifiedname>
+        <briefdescription>
+<para>DisableAllDevice Puts motor driver in disabled state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="48" column="10" bodyfile="src/epos4_can.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a422972183dd4967a5fba482234e711e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::CloseAllDevice</definition>
+        <argsstring>()</argsstring>
+        <name>CloseAllDevice</name>
+        <qualifiedname>MaxonMotor::CloseAllDevice</qualifiedname>
+        <briefdescription>
+<para>CloseAllDevice Closes connected controller. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="53" column="10" bodyfile="src/epos4_can.cpp" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MaxonMotor::EPOSGetError</definition>
+        <argsstring>()</argsstring>
+        <name>EPOSGetError</name>
+        <qualifiedname>MaxonMotor::EPOSGetError</qualifiedname>
+        <briefdescription>
+<para>EPOSGetError Returns error flag from command library. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Error flag value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="59" column="10" bodyfile="src/epos4_can.cpp" bodystart="456" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::EnablePositionModeWithSpeed</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>EnablePositionModeWithSpeed</name>
+        <qualifiedname>MaxonMotor::EnablePositionModeWithSpeed</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+<para>EnablePositionModeWithSpeed Enables position mode with specific speed value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Velocity value which will be used in position mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="66" column="10" bodyfile="src/epos4_can.cpp" bodystart="480" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::GetCurrentPositionAllDevice</definition>
+        <argsstring>(int &amp;current_position)</argsstring>
+        <name>GetCurrentPositionAllDevice</name>
+        <qualifiedname>MaxonMotor::GetCurrentPositionAllDevice</qualifiedname>
+        <param>
+          <type>int &amp;</type>
+          <declname>current_position</declname>
+        </param>
+        <briefdescription>
+<para>GetCurrentPositionAllDevice Gets current position values of connected motors in terms of encoder increment value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be written the returned position value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="73" column="10" bodyfile="src/epos4_can.cpp" bodystart="410" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1abf8534427dab53522923d966d21f4d9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MaxonMotor::GetCloseBladePosition</definition>
+        <argsstring>()</argsstring>
+        <name>GetCloseBladePosition</name>
+        <qualifiedname>MaxonMotor::GetCloseBladePosition</qualifiedname>
+        <briefdescription>
+<para>GetCloseBladePosition Finds position of motor which will correspond to closed blade position in the debrider. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Close blade position in terms of encoder increment values. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="80" column="10" bodyfile="src/epos4_can.cpp" bodystart="416" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a1dc2e9c7a1309d947cecd4122ca1f235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::EnableVelocityMode</definition>
+        <argsstring>()</argsstring>
+        <name>EnableVelocityMode</name>
+        <qualifiedname>MaxonMotor::EnableVelocityMode</qualifiedname>
+        <briefdescription>
+<para>EnableVelocityMode Enables motor with velocity mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="85" column="10" bodyfile="src/epos4_can.cpp" bodystart="250" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a6f31f54f7c80027d6cfe8a38bb4924a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::EnablePositionMode</definition>
+        <argsstring>()</argsstring>
+        <name>EnablePositionMode</name>
+        <qualifiedname>MaxonMotor::EnablePositionMode</qualifiedname>
+        <briefdescription>
+<para>EnablePositionMode Enables motor with position mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="90" column="10" bodyfile="src/epos4_can.cpp" bodystart="275" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a69c9584463dfc3c6db5f43a68dfd8e12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::MoveVelocity</definition>
+        <argsstring>(const long &amp;target_velocity)</argsstring>
+        <name>MoveVelocity</name>
+        <qualifiedname>MaxonMotor::MoveVelocity</qualifiedname>
+        <param>
+          <type>const long &amp;</type>
+          <declname>target_velocity</declname>
+        </param>
+        <briefdescription>
+<para>MoveVelocity Sends target velocity command to motor,motor moves according to target velocity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target_velocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Velocity value for motor to move. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="97" column="10" bodyfile="src/epos4_can.cpp" bodystart="348" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a8307999483d6cfae3ecbce326c4192a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::MovePosition</definition>
+        <argsstring>(const long &amp;target_pos)</argsstring>
+        <name>MovePosition</name>
+        <qualifiedname>MaxonMotor::MovePosition</qualifiedname>
+        <param>
+          <type>const long &amp;</type>
+          <declname>target_pos</declname>
+        </param>
+        <briefdescription>
+<para>MovePosition Sends target position value to motor, motor moves to target position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired position. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="104" column="10" bodyfile="src/epos4_can.cpp" bodystart="360" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MaxonMotor::GetCurrentVelocity</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentVelocity</name>
+        <qualifiedname>MaxonMotor::GetCurrentVelocity</qualifiedname>
+        <briefdescription>
+<para>GetCurrentVelocity Gets current velocity of motor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current velocity of motor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="110" column="9" bodyfile="src/epos4_can.cpp" bodystart="461" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::SetOscMode</definition>
+        <argsstring>(int Amp)</argsstring>
+        <name>SetOscMode</name>
+        <qualifiedname>MaxonMotor::SetOscMode</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>Amp</declname>
+        </param>
+        <briefdescription>
+<para>SetOscMode Put motor in oscillation mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Amp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="116" column="10" bodyfile="src/epos4_can.cpp" bodystart="304" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1aae6f66648157bfb53c6055fefadb5af2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::RunOscMode</definition>
+        <argsstring>(int dir)</argsstring>
+        <name>RunOscMode</name>
+        <qualifiedname>MaxonMotor::RunOscMode</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>RunOscMode Runs motor in oscillation mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>direction of movement. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>direction will be changing periodically. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="122" column="10" bodyfile="src/epos4_can.cpp" bodystart="317" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::StopMotion</definition>
+        <argsstring>()</argsstring>
+        <name>StopMotion</name>
+        <qualifiedname>MaxonMotor::StopMotion</qualifiedname>
+        <briefdescription>
+<para>StopMotion Stops the motion of motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="127" column="10" bodyfile="src/epos4_can.cpp" bodystart="375" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::WaitForMotion</definition>
+        <argsstring>()</argsstring>
+        <name>WaitForMotion</name>
+        <qualifiedname>MaxonMotor::WaitForMotion</qualifiedname>
+        <briefdescription>
+<para>WaitForMotion Waits for motor to reach target position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="132" column="10" bodyfile="src/epos4_can.cpp" bodystart="385" bodyend="397"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classMaxonMotor_1adf71147e8f294a2db8607b02a0f9b8d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::EnableDevice</definition>
+        <argsstring>(void *keyHandle_, unsigned short Node_ID)</argsstring>
+        <name>EnableDevice</name>
+        <qualifiedname>MaxonMotor::EnableDevice</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>keyHandle_</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>Node_ID</declname>
+        </param>
+        <briefdescription>
+<para>EnableDevice Enables specific node in specific port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyHandle_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opened port handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Node_ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="161" column="10" bodyfile="src/epos4_can.cpp" bodystart="170" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::DisableDevice</definition>
+        <argsstring>(void *keyHandle_, unsigned short Node_ID)</argsstring>
+        <name>DisableDevice</name>
+        <qualifiedname>MaxonMotor::DisableDevice</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>keyHandle_</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>Node_ID</declname>
+        </param>
+        <briefdescription>
+<para>DisableDevice Disable specific node in specific port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyHandle_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opened port handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Node_ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="168" column="10" bodyfile="src/epos4_can.cpp" bodystart="210" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * MaxonMotor::ActivateDevice</definition>
+        <argsstring>(char *PortName, unsigned short Node_ID)</argsstring>
+        <name>ActivateDevice</name>
+        <qualifiedname>MaxonMotor::ActivateDevice</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>PortName</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>Node_ID</declname>
+        </param>
+        <briefdescription>
+<para>ActivateDevice Opens the port with &quot;CAN_mcp251x&quot;, &quot;CANOpen&quot; and &quot;EPOS4&quot; parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>PortName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the port (default &quot;CAN0&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Node_ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier of the specified node (default &quot;1&quot;). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="175" column="10" bodyfile="src/epos4_can.cpp" bodystart="99" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a1d5b26719718330f3d64a1e865a34a09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::CloseDevice</definition>
+        <argsstring>(void *keyHandle_)</argsstring>
+        <name>CloseDevice</name>
+        <qualifiedname>MaxonMotor::CloseDevice</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>keyHandle_</declname>
+        </param>
+        <briefdescription>
+<para>CloseDevice Closes opened ports. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyHandle_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opened port handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="181" column="10" bodyfile="src/epos4_can.cpp" bodystart="158" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a1e0dc25bbe25a570337aecae4c955a99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::Move</definition>
+        <argsstring>(void *keyHandle_, long target_velocity, unsigned short Node_ID)</argsstring>
+        <name>Move</name>
+        <qualifiedname>MaxonMotor::Move</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>keyHandle_</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>target_velocity</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>Node_ID</declname>
+        </param>
+        <briefdescription>
+<para>Move Moves motor with specified target velocity command for specific node in specific port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyHandle_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opened port handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target_velocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target velocity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Node_ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="189" column="10" bodyfile="src/epos4_can.cpp" bodystart="337" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1adf3e9d7eb8b2345593d539c4f461f769" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::MoveToPosition</definition>
+        <argsstring>(void *keyHandle_, long target_position, unsigned short Node_ID)</argsstring>
+        <name>MoveToPosition</name>
+        <qualifiedname>MaxonMotor::MoveToPosition</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>keyHandle_</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>target_position</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>Node_ID</declname>
+        </param>
+        <briefdescription>
+<para>MoveToPosition Sends specific target position command for specific node in specific port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyHandle_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opened port handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Node_ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="197" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1a9a4da1905bd22dede6988a624350a135" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::GetCurrentPosition</definition>
+        <argsstring>(void *keyHandle_, int &amp;current_position, unsigned short Node_ID)</argsstring>
+        <name>GetCurrentPosition</name>
+        <qualifiedname>MaxonMotor::GetCurrentPosition</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>keyHandle_</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>current_position</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>Node_ID</declname>
+        </param>
+        <briefdescription>
+<para>GetCurrentPosition Requests current position from specific node in specific port. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyHandle_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>opened port handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>current_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output parameter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Node_ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="205" column="10" bodyfile="src/epos4_can.cpp" bodystart="399" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1adcd2aa0a36b9050de136341f81445cfa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaxonMotor::MoveInCloseBladeMode</definition>
+        <argsstring>()</argsstring>
+        <name>MoveInCloseBladeMode</name>
+        <qualifiedname>MaxonMotor::MoveInCloseBladeMode</qualifiedname>
+        <briefdescription>
+<para>MoveInCloseBladeMode Moves motor with CLOSE_BLADE_VELOCITY (20RPM),. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function is application specific, It is required to close the blade of debrider with slow movement. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="212" column="10" bodyfile="src/epos4_can.cpp" bodystart="508" bodyend="512"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/epos4_can.h" line="21" column="1" bodyfile="include/epos4_can.h" bodystart="22" bodyend="213"/>
+    <listofallmembers>
+      <member refid="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>ActivateDevice</name></member>
+      <member refid="classMaxonMotor_1aeeddf2f7f4396839027125bf0df4e71e" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>ActiviateAllDevice</name></member>
+      <member refid="classMaxonMotor_1a422972183dd4967a5fba482234e711e5" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>CloseAllDevice</name></member>
+      <member refid="classMaxonMotor_1a1d5b26719718330f3d64a1e865a34a09" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>CloseDevice</name></member>
+      <member refid="classMaxonMotor_1a782ba617ad94197a4dc67ab5fd3231ae" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>DisableAllDevice</name></member>
+      <member refid="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>DisableDevice</name></member>
+      <member refid="classMaxonMotor_1adf71147e8f294a2db8607b02a0f9b8d4" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>EnableDevice</name></member>
+      <member refid="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EnableMotorController</name></member>
+      <member refid="classMaxonMotor_1a6f31f54f7c80027d6cfe8a38bb4924a6" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EnablePositionMode</name></member>
+      <member refid="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EnablePositionModeWithSpeed</name></member>
+      <member refid="classMaxonMotor_1a1dc2e9c7a1309d947cecd4122ca1f235" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EnableVelocityMode</name></member>
+      <member refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EPOSGetError</name></member>
+      <member refid="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>ErrorCode</name></member>
+      <member refid="classMaxonMotor_1abf8534427dab53522923d966d21f4d9e" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCloseBladePosition</name></member>
+      <member refid="classMaxonMotor_1a9a4da1905bd22dede6988a624350a135" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCurrentPosition</name></member>
+      <member refid="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCurrentPositionAllDevice</name></member>
+      <member refid="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCurrentVelocity</name></member>
+      <member refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_errorFlag</name></member>
+      <member refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_keyHandle_MCP</name></member>
+      <member refid="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_Mode</name></member>
+      <member refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_Node_ID_MCP</name></member>
+      <member refid="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_OscAmp</name></member>
+      <member refid="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_OscOffset</name></member>
+      <member refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_PortName_MCP</name></member>
+      <member refid="classMaxonMotor_1aa1bf637a4484ce34a9f88e827fbed95d" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>MaxonMotor</name></member>
+      <member refid="classMaxonMotor_1a1e0dc25bbe25a570337aecae4c955a99" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>Move</name></member>
+      <member refid="classMaxonMotor_1adcd2aa0a36b9050de136341f81445cfa" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>MoveInCloseBladeMode</name></member>
+      <member refid="classMaxonMotor_1a8307999483d6cfae3ecbce326c4192a6" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>MovePosition</name></member>
+      <member refid="classMaxonMotor_1adf3e9d7eb8b2345593d539c4f461f769" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>MoveToPosition</name></member>
+      <member refid="classMaxonMotor_1a69c9584463dfc3c6db5f43a68dfd8e12" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>MoveVelocity</name></member>
+      <member refid="classMaxonMotor_1a273db5d88e244e5db3e1b080f1151b54" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>OpenCANCommunication</name></member>
+      <member refid="classMaxonMotor_1aae6f66648157bfb53c6055fefadb5af2" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>RunOscMode</name></member>
+      <member refid="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>SetOscMode</name></member>
+      <member refid="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>StopMotion</name></member>
+      <member refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>WaitForMotion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

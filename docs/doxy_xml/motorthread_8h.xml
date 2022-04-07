@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="motorthread_8h" kind="file" language="C++">
+    <compoundname>motorthread.h</compoundname>
+    <includes local="no">QThread</includes>
+    <includes local="no">QElapsedTimer</includes>
+    <includes refid="epos4__can_8h" local="yes">epos4_can.h</includes>
+    <includes refid="m__defines_8h" local="yes">m_defines.h</includes>
+    <includes local="yes">wiringPi.h</includes>
+    <includes refid="footpedal_8h" local="yes">footpedal.h</includes>
+    <includes refid="eposthread_8h" local="yes">eposthread.h</includes>
+    <includedby refid="mainwindow_8h" local="yes">include/mainwindow.h</includedby>
+    <includedby refid="motorthread_8cpp" local="no">src/motorthread.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>epos4_can.h</label>
+        <link refid="epos4__can_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>footpedal.h</label>
+        <link refid="footpedal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="1">
+        <label>include/motorthread.h</label>
+        <link refid="motorthread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>EposCmdLib_6.5.1.0/include/Definitions.h</label>
+      </node>
+      <node id="3">
+        <label>QElapsedTimer</label>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="10">
+        <label>time.h</label>
+      </node>
+      <node id="7">
+        <label>wiringPi.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/motorthread.h</label>
+        <link refid="motorthread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/motorthread.cpp</label>
+        <link refid="motorthread_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMotorThread" prot="public">MotorThread</innerclass>
+    <briefdescription>
+<para>Header file includes motorThread class blueprint which is encapsulation of main thread of debrider controller, using QThread. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Last Updated : 2022.03.16 Chunwoo Kim (CKim) &amp; Veysi ADIN (VysAdn) Contact Info : <ulink url="mailto:cwkim@kist.re.kr">cwkim@kist.re.kr</ulink> &amp; <ulink url="mailto:veysi.adin@kist.re.kr">veysi.adin@kist.re.kr</ulink> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MOTORTHREAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MOTORTHREAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QThread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QElapsedTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="epos4__can_8h" kindref="compound">epos4_can.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="m__defines_8h" kindref="compound">m_defines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;wiringPi.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="footpedal_8h" kindref="compound">footpedal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eposthread_8h" kindref="compound">eposthread.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classMotorThread" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMotorThread" kindref="compound">MotorThread</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QThread</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMotorThread_1a1e2baed6d253f9ce6d5ef96c84b06d57" kindref="member">MotorThread</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" kindref="member">run</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1aa332fd0ec1abfbd0840a0410d4536be3" kindref="member">ReInitialize</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classMotorThread_1ae88e7c675f696a7fd04fc4cb3af65896" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1ae88e7c675f696a7fd04fc4cb3af65896" kindref="member">m_DebriderDesiredSpeed</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classMotorThread_1a129ffc33fb4fabf3be7692cbbea73de8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a129ffc33fb4fabf3be7692cbbea73de8" kindref="member">m_DebriderInstantSpeed</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classMotorThread_1a35395e16697ec0c879be2ab3abb0324c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a35395e16697ec0c879be2ab3abb0324c" kindref="member">m_DebriderTargetSpeed</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classMotorThread_1a8b8db3a03d21ce4727f9ddbaa4119256" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a8b8db3a03d21ce4727f9ddbaa4119256" kindref="member">m_Oscillate</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classMotorThread_1a40ca8f49bea37962dc0be3d78d692033" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a40ca8f49bea37962dc0be3d78d692033" kindref="member">m_TargetPos</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classMotorThread_1af80248a74299ddbfb058ad311570c98f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1af80248a74299ddbfb058ad311570c98f" kindref="member">m_Emergency</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classMotorThread_1ad7c2d915038fd14ac3bd2a570b58a0d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1ad7c2d915038fd14ac3bd2a570b58a0d6" kindref="member">m_GuiBtnCloseBlade</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classMotorThread_1af0488f54dbd47d15c365ff746a2dffbb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1af0488f54dbd47d15c365ff746a2dffbb" kindref="member">m_GuiChangePresetRPM</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classMotorThread_1af449179ef93260cd7d5af0db967fe849" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1af449179ef93260cd7d5af0db967fe849" kindref="member">m_GuiBtnChangeDirection</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classMotorThread_1a65e302d8a9a11ce4eca6bd0782a2cee9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a65e302d8a9a11ce4eca6bd0782a2cee9" kindref="member">m_GuiEmergencyMode</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="72" refid="classMotorThread_1ae990b753b6a68893e8f3c8c64d4200e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref><sp/><ref refid="classMotorThread_1ae990b753b6a68893e8f3c8c64d4200e4" kindref="member">m_Motor</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classMotorThread_1a640de212448250a3fc0da6c6751cc09c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFootPedal" kindref="compound">FootPedal</ref><sp/><ref refid="classMotorThread_1a640de212448250a3fc0da6c6751cc09c" kindref="member">m_FootPedal</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classMotorThread_1ade960b57d24a29082a2a675a85fbd5c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QElapsedTimer<sp/><ref refid="classMotorThread_1ade960b57d24a29082a2a675a85fbd5c0" kindref="member">m_WatchdogTimer</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classMotorThread_1a64b2215bd559b5e4efd5d468346a1371" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread" kindref="compound">EposThread</ref><sp/><ref refid="classMotorThread_1a64b2215bd559b5e4efd5d468346a1371" kindref="member">m_EposThread</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classMotorThread_1a9f626a88ac12fbb0505ac4937b211a3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMotorThread_1a9f626a88ac12fbb0505ac4937b211a3c" kindref="member">m_CurrState</ref>,<sp/><ref refid="classMotorThread_1a658bd13dd63fc88bd8a5b37930c4c877" kindref="member">m_PrevState</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classMotorThread_1ae427c8e8df2112cf83af0b2bac00dbe4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMotorThread_1ae427c8e8df2112cf83af0b2bac00dbe4" kindref="member">m_RightPedalClicked</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classMotorThread_1a0b8c30c3107cfc30f1ee21cc7c8bcf39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMotorThread_1a0b8c30c3107cfc30f1ee21cc7c8bcf39" kindref="member">m_LeftPedalClicked</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classMotorThread_1a241f03bca98232f09d1395795cd6c10c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMotorThread_1a241f03bca98232f09d1395795cd6c10c" kindref="member">m_RightButtonClicked</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classMotorThread_1a1ef32265639a9b03d65085982bd9c929" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMotorThread_1a1ef32265639a9b03d65085982bd9c929" kindref="member">m_LeftButtonClicked</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classMotorThread_1a4ed783ee0947a482269276518b202fcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a4ed783ee0947a482269276518b202fcc" kindref="member">m_WatchdogState</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classMotorThread_1a04372fe2e0a1d4a2bae9b1a11fa56566" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a04372fe2e0a1d4a2bae9b1a11fa56566" kindref="member">m_CloseBlade</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classMotorThread_1adaee421e7f5ab68724f49fb4ba8a833f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1adaee421e7f5ab68724f49fb4ba8a833f" kindref="member">m_LeftPedalDown</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classMotorThread_1a27f740f4057d1b9a2128c0e77afb6203" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a27f740f4057d1b9a2128c0e77afb6203" kindref="member">m_LeftPedalDepth</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a5569480ac5dd2a05c28a8b0008671d47" kindref="member">ProcessPedalButtons</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a4dfe595caa3eaf3bf92e07fb1312c2f3" kindref="member">PulseWatchDog</ref>();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a2e648304774e31b30bd4536b8f75eb15" kindref="member">CalculateDesiredVelocity</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>desired_vel,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pedal_depth,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>target_vel);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a2d8e704b48add85c86022e103d1468a0" kindref="member">on_InitComplete</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1ad81a92fafe0cd3fbfc3944625b0d9d4c" kindref="member">on_TransToOscComplete</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errcode);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a4937257506cb3cfc9dbf2184bd0d8a52" kindref="member">on_BladeClosed</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errcode);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a0276cc0d95bf28435c9416edb31c4c60" kindref="member">on_FootPedalLButton</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a429dbd70a7ee33e426e99ee8c4e11332" kindref="member">on_FootPedalRButton</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a624b6187e6bc8a5e6a40d2dbd097f566" kindref="member">on_RightFootPedal</ref>();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1ada54247cc11e73cd36aac5a2d067766a" kindref="member">on_LeftFootPedal</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1a2ba498e321e90ec8ee2be7436d9585dd" kindref="member">on_SPIStateChanged</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="159" refid="classMotorThread_1af18be8fa0afa1ad46f71f41415a0e8f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotorThread_1af18be8fa0afa1ad46f71f41415a0e8f0" kindref="member">UpdateGUI</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MOTORTHREAD_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/motorthread.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Debrider Controller Device Control Software</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="index_1md_README"/>Debrider Controller Software with Qt </para>
+<sect2 id="index_1autotoc_md1">
+<title>Considering that you already installed Raspian Buster to your Raspberry Pi.</title>
+</sect2>
+<sect2 id="index_1autotoc_md2">
+<title>Note : It&apos;s important that you install Buster version of Raspian not the Bullseye version, because wiringpi, and several other libraries are not available for Bullseye version.</title>
+</sect2>
+<sect1 id="index_1autotoc_md3">
+<title>Before building project ; Make sure that you have an internet connection</title>
+<sect2 id="index_1autotoc_md4">
+<title>STEP 1 ;</title>
+<sect4 id="index_1autotoc_md5">
+<title>Do update &amp; upgrade, than install Qt5 for installing building environment.</title>
+<para><programlisting filename=".sh"><codeline><highlight class="normal">sudo<sp/>apt-get<sp/>update</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>upgrade<sp/></highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>build-essential<sp/>qtcreator<sp/>qt5-default<sp/>qt5-doc<sp/>qt5-doc-html<sp/>qtbase5-doc-html<sp/>qtbase5-examples<sp/>libqt5serialport5-dev<sp/>-y</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>wiringpi<sp/>git<sp/>clang</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>ldconfig</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>/sbin/ldconfig<sp/>-v</highlight></codeline>
+</programlisting></para>
+</sect4>
+</sect2>
+<sect2 id="index_1autotoc_md6">
+<title>STEP 2 ;</title>
+<sect4 id="index_1autotoc_md7">
+<title>Download and install EPOS4 command library</title>
+<para><programlisting filename=".sh"><codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/veysiadn/epos-linux-library</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>epos-linux-library/EPOS-Linux-Library-En</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>chmod<sp/>a+x<sp/>install.sh</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>./install.sh</highlight></codeline>
+</programlisting></para>
+</sect4>
+</sect2>
+<sect2 id="index_1autotoc_md8">
+<title>Step 3 ;</title>
+<sect3 id="index_1autotoc_md9">
+<title>Start QT Creator and open pro file this repository, configure it based on your system and now you can build it and get the executable.</title>
+<para>Contact : <ulink url="mailto:veysi.adin@kist.re.kr">veysi.adin@kist.re.kr</ulink> </para>
+</sect3>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

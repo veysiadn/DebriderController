@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="classInitializationWindow" kind="class" language="C++" prot="public">
+    <compoundname>InitializationWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="initialization__window_8h" local="no">initialization_window.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classInitializationWindow_1adc638f82e1d12fdb37b0c11ab82f5f28" prot="private" static="no" mutable="no">
+        <type>Ui::InitializationWindow *</type>
+        <definition>Ui::InitializationWindow* InitializationWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>InitializationWindow::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="58" column="30" bodyfile="include/initialization_window.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classInitializationWindow_1a04398ece198084cb8fcf5181a2922bff" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InitializationWindow::cur_state</definition>
+        <argsstring></argsstring>
+        <name>cur_state</name>
+        <qualifiedname>InitializationWindow::cur_state</qualifiedname>
+        <briefdescription>
+<para>Current state flag of debrider. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="60" column="9" bodyfile="include/initialization_window.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classInitializationWindow_1a7a6a53d0118d26328b8b4ca88102540e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>InitializationWindow::InitializationWindow</definition>
+        <argsstring>(QWidget *parent=nullptr)</argsstring>
+        <name>InitializationWindow</name>
+        <qualifiedname>InitializationWindow::InitializationWindow</qualifiedname>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="30" column="14" bodyfile="src/initialization_window.cpp" bodystart="5" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classInitializationWindow_1aec0f8b3a9b806a5d399d39d9db82ef48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>InitializationWindow::~InitializationWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~InitializationWindow</name>
+        <qualifiedname>InitializationWindow::~InitializationWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="31" column="5" bodyfile="src/initialization_window.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="classInitializationWindow_1a93ba58633739ce031b8087a99bc22ec3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InitializationWindow::UpdateInitGUI</definition>
+        <argsstring>(int state)</argsstring>
+        <name>UpdateInitGUI</name>
+        <qualifiedname>InitializationWindow::UpdateInitGUI</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>UpdateInitGUI Update initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current state of debrider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="40" column="10" bodyfile="src/initialization_window.cpp" bodystart="17" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="slot" id="classInitializationWindow_1a4bfbed496dbe62a62e568dce7973a4b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InitializationWindow::on_btn_reinit_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_btn_reinit_clicked</name>
+        <qualifiedname>InitializationWindow::on_btn_reinit_clicked</qualifiedname>
+        <briefdescription>
+<para>on_btn_reinit_clicked In case user clicks reinitialization, system will try to reinitialize communications with motor and pedal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="47" column="10" bodyfile="src/initialization_window.cpp" bodystart="64" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="classInitializationWindow_1af38e36cd59510f19f0877c0ab090f83e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InitializationWindow::btn_reinit_clicked</definition>
+        <argsstring>(int state)</argsstring>
+        <name>btn_reinit_clicked</name>
+        <qualifiedname>InitializationWindow::btn_reinit_clicked</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>btn_reinit_clicked This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current state of debrider. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/initialization_window.h" line="55" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>InitializationWindow</label>
+        <link refid="classInitializationWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>InitializationWindow</label>
+        <link refid="classInitializationWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/initialization_window.h" line="25" column="1" bodyfile="include/initialization_window.h" bodystart="26" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classInitializationWindow_1af38e36cd59510f19f0877c0ab090f83e" prot="public" virt="non-virtual"><scope>InitializationWindow</scope><name>btn_reinit_clicked</name></member>
+      <member refid="classInitializationWindow_1a04398ece198084cb8fcf5181a2922bff" prot="private" virt="non-virtual"><scope>InitializationWindow</scope><name>cur_state</name></member>
+      <member refid="classInitializationWindow_1a7a6a53d0118d26328b8b4ca88102540e" prot="public" virt="non-virtual"><scope>InitializationWindow</scope><name>InitializationWindow</name></member>
+      <member refid="classInitializationWindow_1a4bfbed496dbe62a62e568dce7973a4b9" prot="public" virt="non-virtual"><scope>InitializationWindow</scope><name>on_btn_reinit_clicked</name></member>
+      <member refid="classInitializationWindow_1adc638f82e1d12fdb37b0c11ab82f5f28" prot="private" virt="non-virtual"><scope>InitializationWindow</scope><name>ui</name></member>
+      <member refid="classInitializationWindow_1a93ba58633739ce031b8087a99bc22ec3" prot="public" virt="non-virtual"><scope>InitializationWindow</scope><name>UpdateInitGUI</name></member>
+      <member refid="classInitializationWindow_1aec0f8b3a9b806a5d399d39d9db82ef48" prot="public" virt="non-virtual"><scope>InitializationWindow</scope><name>~InitializationWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

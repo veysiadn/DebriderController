@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerfile refid="emergency__window_8h">emergency_window.h</innerfile>
+    <innerfile refid="epos4__can_8h">epos4_can.h</innerfile>
+    <innerfile refid="eposthread_8h">eposthread.h</innerfile>
+    <innerfile refid="footpedal_8h">footpedal.h</innerfile>
+    <innerfile refid="initialization__window_8h">initialization_window.h</innerfile>
+    <innerfile refid="m__defines_8h">m_defines.h</innerfile>
+    <innerfile refid="mainwindow_8h">mainwindow.h</innerfile>
+    <innerfile refid="motorthread_8h">motorthread.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/"/>
+  </compounddef>
+</doxygen>

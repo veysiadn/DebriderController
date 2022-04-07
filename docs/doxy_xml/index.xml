@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.3" xml:lang="en-US">
+  <compound refid="classEmergencyWindow" kind="class"><name>EmergencyWindow</name>
+    <member refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" kind="variable"><name>ui</name></member>
+    <member refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kind="variable"><name>emergency_status_</name></member>
+    <member refid="classEmergencyWindow_1aaa5bccb7da8358a120dd7489c4355eda" kind="function"><name>EmergencyWindow</name></member>
+    <member refid="classEmergencyWindow_1a40a9b441e133ed1958e1fce7278124a9" kind="function"><name>~EmergencyWindow</name></member>
+    <member refid="classEmergencyWindow_1a8e54ec54e2f9893a38ce051b8627c2e7" kind="function"><name>SetEmergencyText</name></member>
+    <member refid="classEmergencyWindow_1ad7f480681cd065f84ad74a3446c0f598" kind="function"><name>GetEmergencyStatus</name></member>
+    <member refid="classEmergencyWindow_1a37b5734886b9a238b6d9660acd2a404e" kind="function"><name>SetEmergencyStatus</name></member>
+    <member refid="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" kind="slot"><name>on_ButtonEmergencyExit_clicked</name></member>
+    <member refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" kind="signal"><name>EmergencyExitClicked</name></member>
+  </compound>
+  <compound refid="classEposThread" kind="class"><name>EposThread</name>
+    <member refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kind="variable"><name>m_pMotor</name></member>
+    <member refid="classEposThread_1a4509e5d41ceacbda96f98f097773ae3e" kind="variable"><name>m_pPedal</name></member>
+    <member refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" kind="variable"><name>m_Transition</name></member>
+    <member refid="classEposThread_1a42916f7abaf9816f4af304e7a4aa1f94" kind="variable"><name>m_Abort</name></member>
+    <member refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" kind="variable"><name>m_OscSpeed</name></member>
+    <member refid="classEposThread_1a13b22ba1fadc18ce3b0e4eae99f66d81" kind="function"><name>EposThread</name></member>
+    <member refid="classEposThread_1a24b2ac43ad67a2715c2e8eb12318a745" kind="function"><name>SetMotor</name></member>
+    <member refid="classEposThread_1a3d1e85ae8f3d95a826189f62ea02ae01" kind="function"><name>SetPedal</name></member>
+    <member refid="classEposThread_1a78a50cc02087845e3f167563ee7aee11" kind="function"><name>SetTransition</name></member>
+    <member refid="classEposThread_1a64675fb679d8e9cfc96b1ddc8a49d959" kind="function"><name>Abort</name></member>
+    <member refid="classEposThread_1a5c34779ab0c42cd93c714e9699f1d8e6" kind="function"><name>SetOscillationVelocity</name></member>
+    <member refid="classEposThread_1a183be3542be5b53dfb4d89c5fb7df063" kind="function"><name>run</name></member>
+    <member refid="classEposThread_1a4262e0c79a0f4a6adcc4363a6cc99eee" kind="function"><name>RunInitialization</name></member>
+    <member refid="classEposThread_1aa754635e61da40b19948aba0ed6642e0" kind="function"><name>RunCloseBlade</name></member>
+    <member refid="classEposThread_1a69923110630997056ec19635005468c1" kind="function"><name>RunOscillation</name></member>
+    <member refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kind="signal"><name>InitializationComplete</name></member>
+    <member refid="classEposThread_1aa5673ed3bb8cbe64d164c7124bc00758" kind="signal"><name>CloseBladeComplete</name></member>
+    <member refid="classEposThread_1ae07f935fa8ca208db6423964a6affae5" kind="signal"><name>OscillationComplete</name></member>
+  </compound>
+  <compound refid="classFootPedal" kind="class"><name>FootPedal</name>
+    <member refid="classFootPedal_1ab5abbbd6d14c121dd9a72b8ca363e5ab" kind="variable"><name>adc_error_flag</name></member>
+    <member refid="classFootPedal_1a8007399e4bf4d8c33b7ef9346cbfdf46" kind="variable"><name>L_button</name></member>
+    <member refid="classFootPedal_1a12e1e676e8539abb0645efba3775752a" kind="variable"><name>prev_L_button</name></member>
+    <member refid="classFootPedal_1aa87ec502073e066f970f99dbf815b514" kind="variable"><name>R_button</name></member>
+    <member refid="classFootPedal_1a2d78770890d02109c4de6aee1ba1fccb" kind="variable"><name>prev_R_button</name></member>
+    <member refid="classFootPedal_1a0c96847934d65cd216fbf665d82ebd3c" kind="variable"><name>L_pedal_value</name></member>
+    <member refid="classFootPedal_1afd02e14ba1ebfe35eac2d070ca5e5921" kind="variable"><name>R_pedal</name></member>
+    <member refid="classFootPedal_1a79fbe461356c2d884d954a6404b77479" kind="variable"><name>prev_R_pedal</name></member>
+    <member refid="classFootPedal_1a58e5157ee66b6759680b2929fbca6171" kind="variable"><name>L_pedal</name></member>
+    <member refid="classFootPedal_1a4b83325ca16d0aff84c008001eb8cb6d" kind="variable"><name>prev_L_pedal</name></member>
+    <member refid="classFootPedal_1a564108bcc25a5a70065335bf9f1a83d1" kind="variable"><name>adc_spi_running</name></member>
+    <member refid="classFootPedal_1a984faf3d9f989adeb132339c377b14a6" kind="function"><name>FootPedal</name></member>
+    <member refid="classFootPedal_1ae924b102bbeae161b0e72b4c34ad9b73" kind="function"><name>~FootPedal</name></member>
+    <member refid="classFootPedal_1a32a9f52dc834e66bbfc70e7022042669" kind="function"><name>OpenSPIPort</name></member>
+    <member refid="classFootPedal_1a55c10f27d058be0653fdca5e4714e86a" kind="function"><name>CloseSPIPort</name></member>
+    <member refid="classFootPedal_1a6708751eb133b1f752a8f62e3f8fb95d" kind="function"><name>GetSPIError</name></member>
+    <member refid="classFootPedal_1a44fd654f4b0f63aa7b5e9ac980b75196" kind="function"><name>GetLeftPedalValue</name></member>
+    <member refid="classFootPedal_1ab628e028331a75d79f6d61fc385072cc" kind="function"><name>SetSPIError</name></member>
+    <member refid="classFootPedal_1a0c755710fc0f7e0c38187282cf3fbae1" kind="function"><name>ClearSPIPort</name></member>
+    <member refid="classFootPedal_1ad182f6f032c1d6911297a60497b5f73d" kind="function"><name>run</name></member>
+    <member refid="classFootPedal_1a2c9f15f034bb04884e2fe34ca0ddd950" kind="function"><name>ReadSPIAnalog</name></member>
+    <member refid="classFootPedal_1a5fdbc66d79ca379bafe648940799622d" kind="function"><name>GetCmdOutInfo</name></member>
+    <member refid="classFootPedal_1a4488869799265b29496823efdd59dfa0" kind="function"><name>TickClock</name></member>
+    <member refid="classFootPedal_1a0e49a2b1353cb7f8ab6cf5ed03753fae" kind="function"><name>ReadButtons</name></member>
+    <member refid="classFootPedal_1ab65e412e59d4646c51dcfbd56c678deb" kind="signal"><name>RButtonClicked</name></member>
+    <member refid="classFootPedal_1af8a359cf437785ef51285c3d94d79b76" kind="signal"><name>LButtonClicked</name></member>
+    <member refid="classFootPedal_1a278f7803e8f6634d9c9344ff803ba72a" kind="signal"><name>RPedalClicked</name></member>
+    <member refid="classFootPedal_1aa45cd4386f40436501ae63f76665d08e" kind="signal"><name>LPedalClicked</name></member>
+  </compound>
+  <compound refid="classInitializationWindow" kind="class"><name>InitializationWindow</name>
+    <member refid="classInitializationWindow_1adc638f82e1d12fdb37b0c11ab82f5f28" kind="variable"><name>ui</name></member>
+    <member refid="classInitializationWindow_1a04398ece198084cb8fcf5181a2922bff" kind="variable"><name>cur_state</name></member>
+    <member refid="classInitializationWindow_1a7a6a53d0118d26328b8b4ca88102540e" kind="function"><name>InitializationWindow</name></member>
+    <member refid="classInitializationWindow_1aec0f8b3a9b806a5d399d39d9db82ef48" kind="function"><name>~InitializationWindow</name></member>
+    <member refid="classInitializationWindow_1a93ba58633739ce031b8087a99bc22ec3" kind="slot"><name>UpdateInitGUI</name></member>
+    <member refid="classInitializationWindow_1a4bfbed496dbe62a62e568dce7973a4b9" kind="slot"><name>on_btn_reinit_clicked</name></member>
+    <member refid="classInitializationWindow_1af38e36cd59510f19f0877c0ab090f83e" kind="signal"><name>btn_reinit_clicked</name></member>
+  </compound>
+  <compound refid="classMainWindow" kind="class"><name>MainWindow</name>
+    <member refid="classMainWindow_1a35466a70ed47252a0191168126a352a5" kind="variable"><name>ui</name></member>
+    <member refid="classMainWindow_1a08a8f9af8b5aa191f4e361ebc4b14bb5" kind="variable"><name>speed_label_</name></member>
+    <member refid="classMainWindow_1a6fc833d57517f77fd4cd8d4cf2b912ac" kind="variable"><name>status_label_</name></member>
+    <member refid="classMainWindow_1ab1844d6f6c88d93a233c93ef2fd028d8" kind="variable"><name>pump_motor_target_speed_</name></member>
+    <member refid="classMainWindow_1a340d9f28f2da0c17e66269e74f9f29fe" kind="variable"><name>pump_motor_printed_speed_val_</name></member>
+    <member refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" kind="variable"><name>buzzer_running_status</name></member>
+    <member refid="classMainWindow_1aed0a2b4bffbb6d18f88ee03e18588e0c" kind="variable"><name>pump_running_status_</name></member>
+    <member refid="classMainWindow_1a083944ab39cd4890fb4aebe80773ea47" kind="variable"><name>debrider_motor_target_speed_</name></member>
+    <member refid="classMainWindow_1aca2977941ed2246dfc014e8420278360" kind="variable"><name>emergency_window_</name></member>
+    <member refid="classMainWindow_1adb76a08907d348622598f180fe4b9b34" kind="variable"><name>motor_thread_</name></member>
+    <member refid="classMainWindow_1a5d2956bcdeb387a350218819569ae015" kind="variable"><name>init_window_</name></member>
+    <member refid="classMainWindow_1a996c5a2b6f77944776856f08ec30858d" kind="function"><name>MainWindow</name></member>
+    <member refid="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" kind="function"><name>~MainWindow</name></member>
+    <member refid="classMainWindow_1a589401902013fdc570e9649d751fc031" kind="slot"><name>on_btnDecreaseRPM_clicked</name></member>
+    <member refid="classMainWindow_1a6cdcedb81963ed38f8566b67cc33697a" kind="slot"><name>on_btnIncreaseRPM_clicked</name></member>
+    <member refid="classMainWindow_1ab6f8e7812a2dfcd8e1dc6ab2c95813f0" kind="slot"><name>on_radioCW_toggled</name></member>
+    <member refid="classMainWindow_1a574b22181984a19376ab6bd86a48a93d" kind="slot"><name>on_radioCCW_toggled</name></member>
+    <member refid="classMainWindow_1ad74ff92f47e8ebabbfcbf2452819d12d" kind="slot"><name>on_radioOSC_toggled</name></member>
+    <member refid="classMainWindow_1a438ed0f9488c8dd8ed0ea8fcab3691ae" kind="slot"><name>on_btnDecreaseFlow_clicked</name></member>
+    <member refid="classMainWindow_1a41af8ae08b8ee8d4e816fcab47d2aa13" kind="slot"><name>on_btnIncreaseFlow_clicked</name></member>
+    <member refid="classMainWindow_1ae0bf4b19c3dfc7d99ec9bfb324639840" kind="slot"><name>on_btnIrrigationMove_clicked</name></member>
+    <member refid="classMainWindow_1a54f092d5c0c588c0c2fdfa5601fe6d75" kind="slot"><name>on_btnIrrigationStop_clicked</name></member>
+    <member refid="classMainWindow_1a2e308e20783cbdbe8a1bb8dc820725df" kind="slot"><name>on_btnCloseBlade_clicked</name></member>
+    <member refid="classMainWindow_1af60b4e71a8f34ca70841abec75947492" kind="slot"><name>on_radioMAXRPM_clicked</name></member>
+    <member refid="classMainWindow_1afcc9301223c1ce654c71c9b9d889aaed" kind="slot"><name>on_StateChanged</name></member>
+    <member refid="classMainWindow_1a24107b24ea4bea9e13c1dec28e31e140" kind="slot"><name>on_CallEmergencyWindow</name></member>
+    <member refid="classMainWindow_1a33009b07ad76d5c0793275c0cda3f068" kind="slot"><name>on_ExitEmergencyClicked</name></member>
+    <member refid="classMainWindow_1a8a034be8b0b26b9c0510d9d095f4b589" kind="slot"><name>on_CallInitWindow</name></member>
+    <member refid="classMainWindow_1a72a1904ae87335a0b049422cf530d539" kind="slot"><name>on_ReinitClicked</name></member>
+    <member refid="classMainWindow_1ae6e69202ebecc1b99a7e0c8dbc1f7501" kind="signal"><name>InitStateChanged</name></member>
+    <member refid="classMainWindow_1a297056371a9736608f8f14bfccc7dae5" kind="function"><name>PrintStatus</name></member>
+    <member refid="classMainWindow_1ac0521e46c59c0f209e8993156316cdd0" kind="function"><name>StopPumpMotor</name></member>
+    <member refid="classMainWindow_1a6fcbbb4f3ba6d135d2032ad417f39799" kind="function"><name>MovePumpMotor</name></member>
+    <member refid="classMainWindow_1a6264ec497ce9d864fb07b1bdca7e8778" kind="function"><name>EnableGUI</name></member>
+    <member refid="classMainWindow_1ab50efa1e7281151036d23a9d2ddcc6d2" kind="function"><name>DisableGUI</name></member>
+    <member refid="classMainWindow_1adf70cd7e458457ea1c26e0ea468033b3" kind="function"><name>ShowPedalButtonStates</name></member>
+    <member refid="classMainWindow_1a6b8badf44dbef81cdb1bf35b6bf7013f" kind="function"><name>EnableValve</name></member>
+    <member refid="classMainWindow_1a59d7744e6b95a8f684b1bf2f8f0786b0" kind="function"><name>DisableValve</name></member>
+    <member refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" kind="function"><name>EnableBuzzer</name></member>
+    <member refid="classMainWindow_1ac21dde15d020b8d0233d4b9f49eb5f24" kind="function"><name>InitializeIO</name></member>
+    <member refid="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" kind="function"><name>SetDefaultUI</name></member>
+    <member refid="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" kind="function"><name>ShowControlUI</name></member>
+    <member refid="classMainWindow_1a455d382eda67ec98926088638c828a8f" kind="function"><name>ResetWatchdogTimerIC</name></member>
+  </compound>
+  <compound refid="classMaxonMotor" kind="class"><name>MaxonMotor</name>
+    <member refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" kind="variable"><name>m_PortName_MCP</name></member>
+    <member refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" kind="variable"><name>m_keyHandle_MCP</name></member>
+    <member refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" kind="variable"><name>m_Node_ID_MCP</name></member>
+    <member refid="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" kind="variable"><name>ErrorCode</name></member>
+    <member refid="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" kind="variable"><name>m_Mode</name></member>
+    <member refid="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" kind="variable"><name>m_OscOffset</name></member>
+    <member refid="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" kind="variable"><name>m_OscAmp</name></member>
+    <member refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kind="variable"><name>m_errorFlag</name></member>
+    <member refid="classMaxonMotor_1aa1bf637a4484ce34a9f88e827fbed95d" kind="function"><name>MaxonMotor</name></member>
+    <member refid="classMaxonMotor_1a273db5d88e244e5db3e1b080f1151b54" kind="function"><name>OpenCANCommunication</name></member>
+    <member refid="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" kind="function"><name>EnableMotorController</name></member>
+    <member refid="classMaxonMotor_1aeeddf2f7f4396839027125bf0df4e71e" kind="function"><name>ActiviateAllDevice</name></member>
+    <member refid="classMaxonMotor_1a782ba617ad94197a4dc67ab5fd3231ae" kind="function"><name>DisableAllDevice</name></member>
+    <member refid="classMaxonMotor_1a422972183dd4967a5fba482234e711e5" kind="function"><name>CloseAllDevice</name></member>
+    <member refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" kind="function"><name>EPOSGetError</name></member>
+    <member refid="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" kind="function"><name>EnablePositionModeWithSpeed</name></member>
+    <member refid="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" kind="function"><name>GetCurrentPositionAllDevice</name></member>
+    <member refid="classMaxonMotor_1abf8534427dab53522923d966d21f4d9e" kind="function"><name>GetCloseBladePosition</name></member>
+    <member refid="classMaxonMotor_1a1dc2e9c7a1309d947cecd4122ca1f235" kind="function"><name>EnableVelocityMode</name></member>
+    <member refid="classMaxonMotor_1a6f31f54f7c80027d6cfe8a38bb4924a6" kind="function"><name>EnablePositionMode</name></member>
+    <member refid="classMaxonMotor_1a69c9584463dfc3c6db5f43a68dfd8e12" kind="function"><name>MoveVelocity</name></member>
+    <member refid="classMaxonMotor_1a8307999483d6cfae3ecbce326c4192a6" kind="function"><name>MovePosition</name></member>
+    <member refid="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" kind="function"><name>GetCurrentVelocity</name></member>
+    <member refid="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" kind="function"><name>SetOscMode</name></member>
+    <member refid="classMaxonMotor_1aae6f66648157bfb53c6055fefadb5af2" kind="function"><name>RunOscMode</name></member>
+    <member refid="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" kind="function"><name>StopMotion</name></member>
+    <member refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" kind="function"><name>WaitForMotion</name></member>
+    <member refid="classMaxonMotor_1adf71147e8f294a2db8607b02a0f9b8d4" kind="function"><name>EnableDevice</name></member>
+    <member refid="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" kind="function"><name>DisableDevice</name></member>
+    <member refid="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" kind="function"><name>ActivateDevice</name></member>
+    <member refid="classMaxonMotor_1a1d5b26719718330f3d64a1e865a34a09" kind="function"><name>CloseDevice</name></member>
+    <member refid="classMaxonMotor_1a1e0dc25bbe25a570337aecae4c955a99" kind="function"><name>Move</name></member>
+    <member refid="classMaxonMotor_1adf3e9d7eb8b2345593d539c4f461f769" kind="function"><name>MoveToPosition</name></member>
+    <member refid="classMaxonMotor_1a9a4da1905bd22dede6988a624350a135" kind="function"><name>GetCurrentPosition</name></member>
+    <member refid="classMaxonMotor_1adcd2aa0a36b9050de136341f81445cfa" kind="function"><name>MoveInCloseBladeMode</name></member>
+  </compound>
+  <compound refid="classMotorThread" kind="class"><name>MotorThread</name>
+    <member refid="classMotorThread_1ae88e7c675f696a7fd04fc4cb3af65896" kind="variable"><name>m_DebriderDesiredSpeed</name></member>
+    <member refid="classMotorThread_1a129ffc33fb4fabf3be7692cbbea73de8" kind="variable"><name>m_DebriderInstantSpeed</name></member>
+    <member refid="classMotorThread_1a35395e16697ec0c879be2ab3abb0324c" kind="variable"><name>m_DebriderTargetSpeed</name></member>
+    <member refid="classMotorThread_1a8b8db3a03d21ce4727f9ddbaa4119256" kind="variable"><name>m_Oscillate</name></member>
+    <member refid="classMotorThread_1a40ca8f49bea37962dc0be3d78d692033" kind="variable"><name>m_TargetPos</name></member>
+    <member refid="classMotorThread_1af80248a74299ddbfb058ad311570c98f" kind="variable"><name>m_Emergency</name></member>
+    <member refid="classMotorThread_1ad7c2d915038fd14ac3bd2a570b58a0d6" kind="variable"><name>m_GuiBtnCloseBlade</name></member>
+    <member refid="classMotorThread_1af0488f54dbd47d15c365ff746a2dffbb" kind="variable"><name>m_GuiChangePresetRPM</name></member>
+    <member refid="classMotorThread_1af449179ef93260cd7d5af0db967fe849" kind="variable"><name>m_GuiBtnChangeDirection</name></member>
+    <member refid="classMotorThread_1a65e302d8a9a11ce4eca6bd0782a2cee9" kind="variable"><name>m_GuiEmergencyMode</name></member>
+    <member refid="classMotorThread_1ae990b753b6a68893e8f3c8c64d4200e4" kind="variable"><name>m_Motor</name></member>
+    <member refid="classMotorThread_1a640de212448250a3fc0da6c6751cc09c" kind="variable"><name>m_FootPedal</name></member>
+    <member refid="classMotorThread_1ade960b57d24a29082a2a675a85fbd5c0" kind="variable"><name>m_WatchdogTimer</name></member>
+    <member refid="classMotorThread_1a64b2215bd559b5e4efd5d468346a1371" kind="variable"><name>m_EposThread</name></member>
+    <member refid="classMotorThread_1a9f626a88ac12fbb0505ac4937b211a3c" kind="variable"><name>m_CurrState</name></member>
+    <member refid="classMotorThread_1a658bd13dd63fc88bd8a5b37930c4c877" kind="variable"><name>m_PrevState</name></member>
+    <member refid="classMotorThread_1ae427c8e8df2112cf83af0b2bac00dbe4" kind="variable"><name>m_RightPedalClicked</name></member>
+    <member refid="classMotorThread_1a0b8c30c3107cfc30f1ee21cc7c8bcf39" kind="variable"><name>m_LeftPedalClicked</name></member>
+    <member refid="classMotorThread_1a241f03bca98232f09d1395795cd6c10c" kind="variable"><name>m_RightButtonClicked</name></member>
+    <member refid="classMotorThread_1a1ef32265639a9b03d65085982bd9c929" kind="variable"><name>m_LeftButtonClicked</name></member>
+    <member refid="classMotorThread_1a4ed783ee0947a482269276518b202fcc" kind="variable"><name>m_WatchdogState</name></member>
+    <member refid="classMotorThread_1a04372fe2e0a1d4a2bae9b1a11fa56566" kind="variable"><name>m_CloseBlade</name></member>
+    <member refid="classMotorThread_1adaee421e7f5ab68724f49fb4ba8a833f" kind="variable"><name>m_LeftPedalDown</name></member>
+    <member refid="classMotorThread_1a27f740f4057d1b9a2128c0e77afb6203" kind="variable"><name>m_LeftPedalDepth</name></member>
+    <member refid="classMotorThread_1a1e2baed6d253f9ce6d5ef96c84b06d57" kind="function"><name>MotorThread</name></member>
+    <member refid="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" kind="function"><name>run</name></member>
+    <member refid="classMotorThread_1aa332fd0ec1abfbd0840a0410d4536be3" kind="function"><name>ReInitialize</name></member>
+    <member refid="classMotorThread_1a5569480ac5dd2a05c28a8b0008671d47" kind="function"><name>ProcessPedalButtons</name></member>
+    <member refid="classMotorThread_1a4dfe595caa3eaf3bf92e07fb1312c2f3" kind="function"><name>PulseWatchDog</name></member>
+    <member refid="classMotorThread_1a2e648304774e31b30bd4536b8f75eb15" kind="function"><name>CalculateDesiredVelocity</name></member>
+    <member refid="classMotorThread_1a2d8e704b48add85c86022e103d1468a0" kind="slot"><name>on_InitComplete</name></member>
+    <member refid="classMotorThread_1ad81a92fafe0cd3fbfc3944625b0d9d4c" kind="slot"><name>on_TransToOscComplete</name></member>
+    <member refid="classMotorThread_1a4937257506cb3cfc9dbf2184bd0d8a52" kind="slot"><name>on_BladeClosed</name></member>
+    <member refid="classMotorThread_1a0276cc0d95bf28435c9416edb31c4c60" kind="slot"><name>on_FootPedalLButton</name></member>
+    <member refid="classMotorThread_1a429dbd70a7ee33e426e99ee8c4e11332" kind="slot"><name>on_FootPedalRButton</name></member>
+    <member refid="classMotorThread_1a624b6187e6bc8a5e6a40d2dbd097f566" kind="slot"><name>on_RightFootPedal</name></member>
+    <member refid="classMotorThread_1ada54247cc11e73cd36aac5a2d067766a" kind="slot"><name>on_LeftFootPedal</name></member>
+    <member refid="classMotorThread_1a2ba498e321e90ec8ee2be7436d9585dd" kind="slot"><name>on_SPIStateChanged</name></member>
+    <member refid="classMotorThread_1af18be8fa0afa1ad46f71f41415a0e8f0" kind="signal"><name>UpdateGUI</name></member>
+  </compound>
+  <compound refid="namespaceUi" kind="namespace"><name>Ui</name>
+  </compound>
+  <compound refid="emergency__window_8h" kind="file"><name>emergency_window.h</name>
+  </compound>
+  <compound refid="epos4__can_8h" kind="file"><name>epos4_can.h</name>
+  </compound>
+  <compound refid="eposthread_8h" kind="file"><name>eposthread.h</name>
+  </compound>
+  <compound refid="footpedal_8h" kind="file"><name>footpedal.h</name>
+    <member refid="footpedal_8h_1ad5b8ae6b426ca3a6e6cd4951f72355bd" kind="typedef"><name>Int8U</name></member>
+  </compound>
+  <compound refid="initialization__window_8h" kind="file"><name>initialization_window.h</name>
+  </compound>
+  <compound refid="m__defines_8h" kind="file"><name>m_defines.h</name>
+    <member refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" kind="define"><name>ENCODER_RESOLUTION</name></member>
+    <member refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" kind="define"><name>GEAR_RATIO</name></member>
+    <member refid="m__defines_8h_1a661c6c96ad8978be8657789aae876020" kind="define"><name>CLOSE_BLADE_VELOCITY</name></member>
+    <member refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" kind="define"><name>OSC_MODE_AMP</name></member>
+    <member refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" kind="define"><name>INC_PER_ROTATION</name></member>
+    <member refid="m__defines_8h_1acd21751cadfe75b41534fa2d356d29a3" kind="define"><name>MAX_ANALOG_OUTPUT</name></member>
+    <member refid="m__defines_8h_1a73f015fff1e940e183c941f856e18b30" kind="define"><name>BLDC_MAX_RPM</name></member>
+    <member refid="m__defines_8h_1a95c751d552102fe985d37cb85c2ed8c1" kind="define"><name>CHANGE_RPM_RATE</name></member>
+    <member refid="m__defines_8h_1adf0fa78908ed3c7ddabb09a1a8954b5a" kind="define"><name>PUMP_PWM_RANGE</name></member>
+    <member refid="m__defines_8h_1a4fdcb8df721ab069b17e0ee011a56805" kind="define"><name>MIN_ANALOG_PEDAL_OUTPUT</name></member>
+    <member refid="m__defines_8h_1a114c3d212b07214cd983a904f6a68f28" kind="define"><name>MAX_ANALOG_PEDAL_OUTPUT</name></member>
+    <member refid="m__defines_8h_1aeb553970bb72febda4d8c526be85948a" kind="define"><name>ADC_MAX_OUTPUT</name></member>
+    <member refid="m__defines_8h_1ae3c6be9bad04d182b54c1ae72d83e48a" kind="define"><name>ADC_MIN_OUTPUT</name></member>
+    <member refid="m__defines_8h_1a8c92b681b7da32f7369a401fb0f83f52" kind="define"><name>ADC_MIN_PEDAL_OUTPUT</name></member>
+    <member refid="m__defines_8h_1a635410e5051b314a4f506574568f134f" kind="define"><name>ADC_MAX_CHANNEL</name></member>
+    <member refid="m__defines_8h_1ae8994a9ee666db02fa316518c58e99fc" kind="define"><name>ADC_VALUE_THRESHOLD</name></member>
+    <member refid="m__defines_8h_1ac6afe83454259e4960a90aead164bf08" kind="define"><name>SUCTION_MOTOR_PWM</name></member>
+    <member refid="m__defines_8h_1aa5f2c9c3d7db2650b85ff3f9bd716bf0" kind="define"><name>SOLENOID_VALVE_ENABLE</name></member>
+    <member refid="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" kind="define"><name>EMERGENCY_RELAY_CONTROL</name></member>
+    <member refid="m__defines_8h_1a7dddd4b69fa098648a2a66810d87b606" kind="define"><name>WATCHDOG_PIN</name></member>
+    <member refid="m__defines_8h_1aeb8720f55dd6e7621aba1ae2e6f5073b" kind="define"><name>INITIALIZATION_SWTICH</name></member>
+    <member refid="m__defines_8h_1a252e0064f431c926b1edef45fc1832ed" kind="define"><name>VDD_RESET</name></member>
+    <member refid="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" kind="define"><name>ADC_SPI_CLK</name></member>
+    <member refid="m__defines_8h_1a96a76dd110da21b116979bf74a00fa39" kind="define"><name>ADC_SPI_MISO</name></member>
+    <member refid="m__defines_8h_1a727d4d1ffc3a2d3c5801fa11fced1bb3" kind="define"><name>ADC_SPI_MOSI</name></member>
+    <member refid="m__defines_8h_1a5e02aae054c6e48af95a2e39b0629574" kind="define"><name>ADC_SPI_CS</name></member>
+    <member refid="m__defines_8h_1abe7822ee58b10528a930bb4d8d462be2" kind="define"><name>FOOT_PEDAL_L_BUTTON</name></member>
+    <member refid="m__defines_8h_1a927625fad031353ee699fb3761d4afd4" kind="define"><name>FOOT_PEDAL_R_BUTTON</name></member>
+    <member refid="m__defines_8h_1ad1163ecd4c77dfd9a47ee3efb63b529c" kind="define"><name>FOOT_PEDAL_L_PEDAL_BUTTON</name></member>
+    <member refid="m__defines_8h_1a5690a5a3f09b8ccee58251755c068879" kind="define"><name>FOOT_PEDAL_R_PEDAL_BUTTON</name></member>
+    <member refid="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" kind="define"><name>PEDAL_BUZZER</name></member>
+    <member refid="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" kind="define"><name>DEBRIDER_STATE_EMERGENCY</name></member>
+    <member refid="m__defines_8h_1ab118c9f84eb40748c0d85fc774f9128a" kind="define"><name>DEBRIDER_STATE_SPI_ERROR</name></member>
+    <member refid="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" kind="define"><name>DEBRIDER_STATE_EPOS_ERROR</name></member>
+    <member refid="m__defines_8h_1a5a2bfe44c18d0f115b3daeb1566c5a2b" kind="define"><name>DEBRIDER_STATE_UNINIT</name></member>
+    <member refid="m__defines_8h_1a75d10b463a17a52541469e3c1a083374" kind="define"><name>DEBRIDER_STATE_INITIALIZING</name></member>
+    <member refid="m__defines_8h_1ad7442fb43ecb74af6c981e5b97335c31" kind="define"><name>DEBRIDER_STATE_INIT</name></member>
+    <member refid="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" kind="define"><name>DEBRIDER_STATE_READY</name></member>
+    <member refid="m__defines_8h_1a85996c0db78e7ce21b0319241f4484ab" kind="define"><name>DEBRIDER_STATE_ENABLED</name></member>
+    <member refid="m__defines_8h_1a35592c99e9e69dc06f8ff3283a8af3d8" kind="define"><name>DEBRIDER_STATE_RUNNING</name></member>
+    <member refid="m__defines_8h_1a910492cfd9d0edd5cb11482c6b723657" kind="define"><name>DEBRIDER_STATE_OSC</name></member>
+    <member refid="m__defines_8h_1a5a172da4f057f751a998f18c08274ed2" kind="define"><name>DEBRIDER_STATE_CLOSE_BLADE</name></member>
+    <member refid="m__defines_8h_1a0274b6c2975d33f8c774371e2b9e5a08" kind="define"><name>DEBRIDER_STATE_BLADE_CLOSED</name></member>
+    <member refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802" kind="enum"><name>TransitionTypes</name></member>
+    <member refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a129c5fd2c640e351170c8ede47250479" kind="enumvalue"><name>kInit</name></member>
+    <member refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802ac9066432ffb039b61078c925a452687e" kind="enumvalue"><name>kCloseBlade</name></member>
+    <member refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a3d8ecdec7b8e9218f91d3bef96598199" kind="enumvalue"><name>kRunOscillation</name></member>
+  </compound>
+  <compound refid="mainwindow_8h" kind="file"><name>mainwindow.h</name>
+  </compound>
+  <compound refid="motorthread_8h" kind="file"><name>motorthread.h</name>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="emergency__window_8cpp" kind="file"><name>emergency_window.cpp</name>
+  </compound>
+  <compound refid="epos4__can_8cpp" kind="file"><name>epos4_can.cpp</name>
+  </compound>
+  <compound refid="eposthread_8cpp" kind="file"><name>eposthread.cpp</name>
+  </compound>
+  <compound refid="footpedal_8cpp" kind="file"><name>footpedal.cpp</name>
+  </compound>
+  <compound refid="initialization__window_8cpp" kind="file"><name>initialization_window.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="mainwindow_8cpp" kind="file"><name>mainwindow.cpp</name>
+  </compound>
+  <compound refid="motorthread_8cpp" kind="file"><name>motorthread.cpp</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

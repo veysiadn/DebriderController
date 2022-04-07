@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="m__defines_8h" kind="file" language="C++">
+    <compoundname>m_defines.h</compoundname>
+    <includedby refid="emergency__window_8h" local="yes">include/emergency_window.h</includedby>
+    <includedby refid="epos4__can_8h" local="yes">include/epos4_can.h</includedby>
+    <includedby refid="eposthread_8h" local="yes">include/eposthread.h</includedby>
+    <includedby refid="footpedal_8h" local="yes">include/footpedal.h</includedby>
+    <includedby refid="mainwindow_8h" local="yes">include/mainwindow.h</includedby>
+    <includedby refid="motorthread_8h" local="yes">include/motorthread.h</includedby>
+    <includedby refid="footpedal_8cpp" local="yes">src/footpedal.cpp</includedby>
+    <includedby refid="initialization__window_8cpp" local="yes">src/initialization_window.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/emergency_window.h</label>
+        <link refid="emergency__window_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/epos4_can.h</label>
+        <link refid="epos4__can_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>include/footpedal.h</label>
+        <link refid="footpedal_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/m_defines.h</label>
+        <link refid="m__defines_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/motorthread.h</label>
+        <link refid="motorthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/emergency_window.cpp</label>
+        <link refid="emergency__window_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/epos4_can.cpp</label>
+        <link refid="epos4__can_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/eposthread.cpp</label>
+        <link refid="eposthread_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/footpedal.cpp</label>
+        <link refid="footpedal_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/initialization_window.cpp</label>
+        <link refid="initialization__window_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/motorthread.cpp</label>
+        <link refid="motorthread_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" prot="public" static="no">
+        <name>ENCODER_RESOLUTION</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="15" column="9" bodyfile="include/m_defines.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" prot="public" static="no">
+        <name>GEAR_RATIO</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="16" column="9" bodyfile="include/m_defines.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a661c6c96ad8978be8657789aae876020" prot="public" static="no">
+        <name>CLOSE_BLADE_VELOCITY</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="17" column="9" bodyfile="include/m_defines.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" prot="public" static="no">
+        <name>OSC_MODE_AMP</name>
+        <initializer>15000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="18" column="9" bodyfile="include/m_defines.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1aae638294dae324558d32f20ad29cd501" prot="public" static="no">
+        <name>INC_PER_ROTATION</name>
+        <initializer><ref refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" kindref="member">ENCODER_RESOLUTION</ref>*<ref refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" kindref="member">GEAR_RATIO</ref>*4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="19" column="9" bodyfile="include/m_defines.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1acd21751cadfe75b41534fa2d356d29a3" prot="public" static="no">
+        <name>MAX_ANALOG_OUTPUT</name>
+        <initializer>310</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="22" column="9" bodyfile="include/m_defines.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a73f015fff1e940e183c941f856e18b30" prot="public" static="no">
+        <name>BLDC_MAX_RPM</name>
+        <initializer>12000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="23" column="9" bodyfile="include/m_defines.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a95c751d552102fe985d37cb85c2ed8c1" prot="public" static="no">
+        <name>CHANGE_RPM_RATE</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="24" column="9" bodyfile="include/m_defines.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1adf0fa78908ed3c7ddabb09a1a8954b5a" prot="public" static="no">
+        <name>PUMP_PWM_RANGE</name>
+        <initializer>480</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="25" column="9" bodyfile="include/m_defines.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a4fdcb8df721ab069b17e0ee011a56805" prot="public" static="no">
+        <name>MIN_ANALOG_PEDAL_OUTPUT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="28" column="9" bodyfile="include/m_defines.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a114c3d212b07214cd983a904f6a68f28" prot="public" static="no">
+        <name>MAX_ANALOG_PEDAL_OUTPUT</name>
+        <initializer>3.3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="29" column="9" bodyfile="include/m_defines.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1aeb553970bb72febda4d8c526be85948a" prot="public" static="no">
+        <name>ADC_MAX_OUTPUT</name>
+        <initializer>1023</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="30" column="9" bodyfile="include/m_defines.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1ae3c6be9bad04d182b54c1ae72d83e48a" prot="public" static="no">
+        <name>ADC_MIN_OUTPUT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="31" column="9" bodyfile="include/m_defines.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a8c92b681b7da32f7369a401fb0f83f52" prot="public" static="no">
+        <name>ADC_MIN_PEDAL_OUTPUT</name>
+        <initializer>310</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="33" column="9" bodyfile="include/m_defines.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a635410e5051b314a4f506574568f134f" prot="public" static="no">
+        <name>ADC_MAX_CHANNEL</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>To calculate this value you can use function: long map(long x, long in_min, long in_max, long out_min, long out_max){ return (x-in_min)*(out_max-out_min)/(in_max - in_min) + out_min; } val = map(1,0,3.3,0,1023). here (0-3.3V range mapped to 0-1023, and ADC value of 1V will return 310.) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="40" column="9" bodyfile="include/m_defines.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1ae8994a9ee666db02fa316518c58e99fc" prot="public" static="no">
+        <name>ADC_VALUE_THRESHOLD</name>
+        <initializer>950</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="41" column="9" bodyfile="include/m_defines.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1ac6afe83454259e4960a90aead164bf08" prot="public" static="no">
+        <name>SUCTION_MOTOR_PWM</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="44" column="9" bodyfile="include/m_defines.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1aa5f2c9c3d7db2650b85ff3f9bd716bf0" prot="public" static="no">
+        <name>SOLENOID_VALVE_ENABLE</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="45" column="9" bodyfile="include/m_defines.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" prot="public" static="no">
+        <name>EMERGENCY_RELAY_CONTROL</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="47" column="9" bodyfile="include/m_defines.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a7dddd4b69fa098648a2a66810d87b606" prot="public" static="no">
+        <name>WATCHDOG_PIN</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="48" column="9" bodyfile="include/m_defines.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1aeb8720f55dd6e7621aba1ae2e6f5073b" prot="public" static="no">
+        <name>INITIALIZATION_SWTICH</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="49" column="9" bodyfile="include/m_defines.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a252e0064f431c926b1edef45fc1832ed" prot="public" static="no">
+        <name>VDD_RESET</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="50" column="9" bodyfile="include/m_defines.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" prot="public" static="no">
+        <name>ADC_SPI_CLK</name>
+        <initializer>21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="52" column="9" bodyfile="include/m_defines.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a96a76dd110da21b116979bf74a00fa39" prot="public" static="no">
+        <name>ADC_SPI_MISO</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="53" column="9" bodyfile="include/m_defines.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a727d4d1ffc3a2d3c5801fa11fced1bb3" prot="public" static="no">
+        <name>ADC_SPI_MOSI</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="54" column="9" bodyfile="include/m_defines.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a5e02aae054c6e48af95a2e39b0629574" prot="public" static="no">
+        <name>ADC_SPI_CS</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="55" column="9" bodyfile="include/m_defines.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1abe7822ee58b10528a930bb4d8d462be2" prot="public" static="no">
+        <name>FOOT_PEDAL_L_BUTTON</name>
+        <initializer>22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="57" column="10" bodyfile="include/m_defines.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a927625fad031353ee699fb3761d4afd4" prot="public" static="no">
+        <name>FOOT_PEDAL_R_BUTTON</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="58" column="10" bodyfile="include/m_defines.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1ad1163ecd4c77dfd9a47ee3efb63b529c" prot="public" static="no">
+        <name>FOOT_PEDAL_L_PEDAL_BUTTON</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="59" column="10" bodyfile="include/m_defines.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a5690a5a3f09b8ccee58251755c068879" prot="public" static="no">
+        <name>FOOT_PEDAL_R_PEDAL_BUTTON</name>
+        <initializer>25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="60" column="10" bodyfile="include/m_defines.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" prot="public" static="no">
+        <name>PEDAL_BUZZER</name>
+        <initializer>27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="61" column="10" bodyfile="include/m_defines.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" prot="public" static="no">
+        <name>DEBRIDER_STATE_EMERGENCY</name>
+        <initializer>-5</initializer>
+        <briefdescription>
+<para>DEBRIDER_STATES Starts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="67" column="9" bodyfile="include/m_defines.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1ab118c9f84eb40748c0d85fc774f9128a" prot="public" static="no">
+        <name>DEBRIDER_STATE_SPI_ERROR</name>
+        <initializer>-4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="68" column="9" bodyfile="include/m_defines.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" prot="public" static="no">
+        <name>DEBRIDER_STATE_EPOS_ERROR</name>
+        <initializer>-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="69" column="9" bodyfile="include/m_defines.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a5a2bfe44c18d0f115b3daeb1566c5a2b" prot="public" static="no">
+        <name>DEBRIDER_STATE_UNINIT</name>
+        <initializer>-2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="70" column="9" bodyfile="include/m_defines.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a75d10b463a17a52541469e3c1a083374" prot="public" static="no">
+        <name>DEBRIDER_STATE_INITIALIZING</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="71" column="9" bodyfile="include/m_defines.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1ad7442fb43ecb74af6c981e5b97335c31" prot="public" static="no">
+        <name>DEBRIDER_STATE_INIT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="72" column="9" bodyfile="include/m_defines.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" prot="public" static="no">
+        <name>DEBRIDER_STATE_READY</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="73" column="9" bodyfile="include/m_defines.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a85996c0db78e7ce21b0319241f4484ab" prot="public" static="no">
+        <name>DEBRIDER_STATE_ENABLED</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="75" column="9" bodyfile="include/m_defines.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a35592c99e9e69dc06f8ff3283a8af3d8" prot="public" static="no">
+        <name>DEBRIDER_STATE_RUNNING</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="76" column="9" bodyfile="include/m_defines.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a910492cfd9d0edd5cb11482c6b723657" prot="public" static="no">
+        <name>DEBRIDER_STATE_OSC</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="77" column="9" bodyfile="include/m_defines.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a5a172da4f057f751a998f18c08274ed2" prot="public" static="no">
+        <name>DEBRIDER_STATE_CLOSE_BLADE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="78" column="9" bodyfile="include/m_defines.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a0274b6c2975d33f8c774371e2b9e5a08" prot="public" static="no">
+        <name>DEBRIDER_STATE_BLADE_CLOSED</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="79" column="9" bodyfile="include/m_defines.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TransitionTypes</name>
+        <enumvalue id="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a129c5fd2c640e351170c8ede47250479" prot="public">
+          <name>kInit</name>
+          <initializer>=1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802ac9066432ffb039b61078c925a452687e" prot="public">
+          <name>kCloseBlade</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a3d8ecdec7b8e9218f91d3bef96598199" prot="public">
+          <name>kRunOscillation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Transition types in epos thread. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="82" column="1" bodyfile="include/m_defines.h" bodystart="82" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file includes global definitions, including configuration values, pin mapping, states and maximum/minumum values. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Last Updated : 2022.03.16 Chunwoo Kim (CKim) &amp; Veysi ADIN (VysAdn) Contact Info : <ulink url="mailto:cwkim@kist.re.kr">cwkim@kist.re.kr</ulink> &amp; <ulink url="mailto:veysi.adin@kist.re.kr">veysi.adin@kist.re.kr</ulink> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>M_DEFINES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>M_DEFINES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENCODER_RESOLUTION<sp/><sp/>1024<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GEAR_RATIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="m__defines_8h_1a661c6c96ad8978be8657789aae876020" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CLOSE_BLADE_VELOCITY<sp/>100<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSC_MODE_AMP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_PER_ROTATION<sp/><sp/><sp/><sp/>ENCODER_RESOLUTION*GEAR_RATIO*4<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="m__defines_8h_1acd21751cadfe75b41534fa2d356d29a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ANALOG_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>310<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="m__defines_8h_1a73f015fff1e940e183c941f856e18b30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLDC_MAX_RPM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12000<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="m__defines_8h_1a95c751d552102fe985d37cb85c2ed8c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHANGE_RPM_RATE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1000<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="m__defines_8h_1adf0fa78908ed3c7ddabb09a1a8954b5a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PUMP_PWM_RANGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>480<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="m__defines_8h_1a4fdcb8df721ab069b17e0ee011a56805" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN_ANALOG_PEDAL_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="m__defines_8h_1a114c3d212b07214cd983a904f6a68f28" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ANALOG_PEDAL_OUTPUT<sp/><sp/><sp/><sp/><sp/>3.3<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="m__defines_8h_1aeb553970bb72febda4d8c526be85948a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_MAX_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1023<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="m__defines_8h_1ae3c6be9bad04d182b54c1ae72d83e48a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_MIN_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="m__defines_8h_1a8c92b681b7da32f7369a401fb0f83f52" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_MIN_PEDAL_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>310<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="m__defines_8h_1a635410e5051b314a4f506574568f134f" refkind="member"><highlight class="preprocessor">#define<sp/>ADC_MAX_CHANNEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="m__defines_8h_1ae8994a9ee666db02fa316518c58e99fc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_VALUE_THRESHOLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>950<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//**************************<sp/>PINMAP<sp/>RASPBERRY<sp/>PI<sp/>STARTS<sp/>******************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="m__defines_8h_1ac6afe83454259e4960a90aead164bf08" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SUCTION_MOTOR_PWM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="m__defines_8h_1aa5f2c9c3d7db2650b85ff3f9bd716bf0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOLENOID_VALVE_ENABLE<sp/><sp/><sp/><sp/><sp/><sp/>13<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="m__defines_8h_1a7c92a1dbab1c8fa9edd8ade9b86e7e8c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EMERGENCY_RELAY_CONTROL<sp/><sp/><sp/><sp/><sp/>4<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="m__defines_8h_1a7dddd4b69fa098648a2a66810d87b606" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WATCHDOG_PIN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>17<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="m__defines_8h_1aeb8720f55dd6e7621aba1ae2e6f5073b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INITIALIZATION_SWTICH<sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="m__defines_8h_1a252e0064f431c926b1edef45fc1832ed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VDD_RESET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//VysAdn<sp/>Soft<sp/>SPI<sp/>Pins<sp/>definitions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_SPI_CLK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>21<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="m__defines_8h_1a96a76dd110da21b116979bf74a00fa39" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_SPI_MISO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>19<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="m__defines_8h_1a727d4d1ffc3a2d3c5801fa11fced1bb3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_SPI_MOSI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="m__defines_8h_1a5e02aae054c6e48af95a2e39b0629574" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_SPI_CS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="m__defines_8h_1abe7822ee58b10528a930bb4d8d462be2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>FOOT_PEDAL_L_BUTTON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>22<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="m__defines_8h_1a927625fad031353ee699fb3761d4afd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>FOOT_PEDAL_R_BUTTON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>23<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="m__defines_8h_1ad1163ecd4c77dfd9a47ee3efb63b529c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>FOOT_PEDAL_L_PEDAL_BUTTON<sp/><sp/>24<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="m__defines_8h_1a5690a5a3f09b8ccee58251755c068879" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>FOOT_PEDAL_R_PEDAL_BUTTON<sp/><sp/>25<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>PEDAL_BUZZER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>27<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//**************************<sp/>PINMAP<sp/>RASPBERRY<sp/>PI<sp/>ENDS<sp/>******************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//**************************<sp/>DEBRIDER<sp/>STATES<sp/>STARTS<sp/>******************************************/</highlight></codeline>
+<codeline lineno="67" refid="m__defines_8h_1a8f20f6ee38a5bc7f5f041ba44c227ee5" refkind="member"><highlight class="comment"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_EMERGENCY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="m__defines_8h_1ab118c9f84eb40748c0d85fc774f9128a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_SPI_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="m__defines_8h_1a495593a95f3e1b8c7f961ad81752b206" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_EPOS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="m__defines_8h_1a5a2bfe44c18d0f115b3daeb1566c5a2b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_UNINIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="m__defines_8h_1a75d10b463a17a52541469e3c1a083374" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_INITIALIZING<sp/><sp/><sp/><sp/><sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="m__defines_8h_1ad7442fb43ecb74af6c981e5b97335c31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="m__defines_8h_1a45e01107d9b9d1fd2bea7364250dfe83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_READY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="m__defines_8h_1a85996c0db78e7ce21b0319241f4484ab" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_ENABLED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="m__defines_8h_1a35592c99e9e69dc06f8ff3283a8af3d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_RUNNING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="m__defines_8h_1a910492cfd9d0edd5cb11482c6b723657" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_OSC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="m__defines_8h_1a5a172da4f057f751a998f18c08274ed2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_CLOSE_BLADE<sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="m__defines_8h_1a0274b6c2975d33f8c774371e2b9e5a08" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBRIDER_STATE_BLADE_CLOSED<sp/><sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//**************************<sp/>DEBRIDER<sp/>STATES<sp/>ENDS<sp/>******************************************/</highlight></codeline>
+<codeline lineno="82" refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802" refkind="member"><highlight class="comment"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802" kindref="member">TransitionTypes</ref>{</highlight></codeline>
+<codeline lineno="83" refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a129c5fd2c640e351170c8ede47250479" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a129c5fd2c640e351170c8ede47250479" kindref="member">kInit</ref>=1,</highlight></codeline>
+<codeline lineno="84" refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802ac9066432ffb039b61078c925a452687e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802ac9066432ffb039b61078c925a452687e" kindref="member">kCloseBlade</ref>,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a3d8ecdec7b8e9218f91d3bef96598199" kindref="member">kRunOscillation</ref></highlight></codeline>
+<codeline lineno="86" refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802a3d8ecdec7b8e9218f91d3bef96598199" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>TRUE<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>FALSE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>M_DEFINES_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/m_defines.h"/>
+  </compounddef>
+</doxygen>

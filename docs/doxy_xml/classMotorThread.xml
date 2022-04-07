@@ -1,0 +1,810 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="classMotorThread" kind="class" language="C++" prot="public">
+    <compoundname>MotorThread</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QThread</basecompoundref>
+    <includes refid="motorthread_8h" local="no">motorthread.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classMotorThread_1ae88e7c675f696a7fd04fc4cb3af65896" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_DebriderDesiredSpeed</definition>
+        <argsstring></argsstring>
+        <name>m_DebriderDesiredSpeed</name>
+        <qualifiedname>MotorThread::m_DebriderDesiredSpeed</qualifiedname>
+        <briefdescription>
+<para>Value describes target velocity value to send to motor after calculating based on analog pedal input. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="41" column="9" bodyfile="include/motorthread.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a129ffc33fb4fabf3be7692cbbea73de8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_DebriderInstantSpeed</definition>
+        <argsstring></argsstring>
+        <name>m_DebriderInstantSpeed</name>
+        <qualifiedname>MotorThread::m_DebriderInstantSpeed</qualifiedname>
+        <briefdescription>
+<para>Value describes current velocity of debirder motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="44" column="9" bodyfile="include/motorthread.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a35395e16697ec0c879be2ab3abb0324c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_DebriderTargetSpeed</definition>
+        <argsstring></argsstring>
+        <name>m_DebriderTargetSpeed</name>
+        <qualifiedname>MotorThread::m_DebriderTargetSpeed</qualifiedname>
+        <briefdescription>
+<para>Value describes target velocity value set by user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="47" column="9" bodyfile="include/motorthread.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a8b8db3a03d21ce4727f9ddbaa4119256" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_Oscillate</definition>
+        <argsstring></argsstring>
+        <name>m_Oscillate</name>
+        <qualifiedname>MotorThread::m_Oscillate</qualifiedname>
+        <briefdescription>
+<para>Oscillation mode activation/deactivation flag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="50" column="9" bodyfile="include/motorthread.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a40ca8f49bea37962dc0be3d78d692033" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_TargetPos</definition>
+        <argsstring></argsstring>
+        <name>m_TargetPos</name>
+        <qualifiedname>MotorThread::m_TargetPos</qualifiedname>
+        <briefdescription>
+<para>Target position to move motor to desired position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="53" column="9" bodyfile="include/motorthread.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1af80248a74299ddbfb058ad311570c98f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_Emergency</definition>
+        <argsstring></argsstring>
+        <name>m_Emergency</name>
+        <qualifiedname>MotorThread::m_Emergency</qualifiedname>
+        <briefdescription>
+<para>Emergency mode activation/deactivation flag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="56" column="9" bodyfile="include/motorthread.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1ad7c2d915038fd14ac3bd2a570b58a0d6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_GuiBtnCloseBlade</definition>
+        <argsstring></argsstring>
+        <name>m_GuiBtnCloseBlade</name>
+        <qualifiedname>MotorThread::m_GuiBtnCloseBlade</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Flag representing Close blade button pressed in GUI. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="59" column="9" bodyfile="include/motorthread.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1af0488f54dbd47d15c365ff746a2dffbb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_GuiChangePresetRPM</definition>
+        <argsstring></argsstring>
+        <name>m_GuiChangePresetRPM</name>
+        <qualifiedname>MotorThread::m_GuiChangePresetRPM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Flag representing left button clicked in pedal to notify GUI. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="62" column="9" bodyfile="include/motorthread.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1af449179ef93260cd7d5af0db967fe849" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_GuiBtnChangeDirection</definition>
+        <argsstring></argsstring>
+        <name>m_GuiBtnChangeDirection</name>
+        <qualifiedname>MotorThread::m_GuiBtnChangeDirection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Flag representing right button clicked in pedal to notify GUI. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="65" column="9" bodyfile="include/motorthread.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a65e302d8a9a11ce4eca6bd0782a2cee9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_GuiEmergencyMode</definition>
+        <argsstring></argsstring>
+        <name>m_GuiEmergencyMode</name>
+        <qualifiedname>MotorThread::m_GuiEmergencyMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Flag indicating notification of the emergency to GUI. 1 if notified. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="68" column="9" bodyfile="include/motorthread.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classMotorThread_1ae990b753b6a68893e8f3c8c64d4200e4" prot="private" static="no" mutable="no">
+        <type><ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref></type>
+        <definition>MaxonMotor MotorThread::m_Motor</definition>
+        <argsstring></argsstring>
+        <name>m_Motor</name>
+        <qualifiedname>MotorThread::m_Motor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Motor class instance to access interface for controlling motor motion. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="72" column="16" bodyfile="include/motorthread.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a640de212448250a3fc0da6c6751cc09c" prot="private" static="no" mutable="no">
+        <type><ref refid="classFootPedal" kindref="compound">FootPedal</ref></type>
+        <definition>FootPedal MotorThread::m_FootPedal</definition>
+        <argsstring></argsstring>
+        <name>m_FootPedal</name>
+        <qualifiedname>MotorThread::m_FootPedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>SPI Communication class to get button and analog pedal data from foot pedal. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="75" column="15" bodyfile="include/motorthread.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1ade960b57d24a29082a2a675a85fbd5c0" prot="private" static="no" mutable="no">
+        <type>QElapsedTimer</type>
+        <definition>QElapsedTimer MotorThread::m_WatchdogTimer</definition>
+        <argsstring></argsstring>
+        <name>m_WatchdogTimer</name>
+        <qualifiedname>MotorThread::m_WatchdogTimer</qualifiedname>
+        <briefdescription>
+<para>Timer class for pulsing watchdog in specific interval. Current interval is 5ms. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="78" column="19" bodyfile="include/motorthread.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a64b2215bd559b5e4efd5d468346a1371" prot="private" static="no" mutable="no">
+        <type><ref refid="classEposThread" kindref="compound">EposThread</ref></type>
+        <definition>EposThread MotorThread::m_EposThread</definition>
+        <argsstring></argsstring>
+        <name>m_EposThread</name>
+        <qualifiedname>MotorThread::m_EposThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Thread class for doing time consuming jobs to not miss watchdog pulse. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="81" column="16" bodyfile="include/motorthread.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a9f626a88ac12fbb0505ac4937b211a3c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_CurrState</definition>
+        <argsstring></argsstring>
+        <name>m_CurrState</name>
+        <qualifiedname>MotorThread::m_CurrState</qualifiedname>
+        <briefdescription>
+<para>Values representing current and previous state of debrider. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="84" column="10" bodyfile="include/motorthread.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a658bd13dd63fc88bd8a5b37930c4c877" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_PrevState</definition>
+        <argsstring></argsstring>
+        <name>m_PrevState</name>
+        <qualifiedname>MotorThread::m_PrevState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="84" column="22" bodyfile="include/motorthread.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1ae427c8e8df2112cf83af0b2bac00dbe4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_RightPedalClicked</definition>
+        <argsstring></argsstring>
+        <name>m_RightPedalClicked</name>
+        <qualifiedname>MotorThread::m_RightPedalClicked</qualifiedname>
+        <briefdescription>
+<para>Flag set by foot pedal class when right pedal is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="87" column="10" bodyfile="include/motorthread.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a0b8c30c3107cfc30f1ee21cc7c8bcf39" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_LeftPedalClicked</definition>
+        <argsstring></argsstring>
+        <name>m_LeftPedalClicked</name>
+        <qualifiedname>MotorThread::m_LeftPedalClicked</qualifiedname>
+        <briefdescription>
+<para>Flag set by foot pedal class when left pedal is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="90" column="10" bodyfile="include/motorthread.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a241f03bca98232f09d1395795cd6c10c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_RightButtonClicked</definition>
+        <argsstring></argsstring>
+        <name>m_RightButtonClicked</name>
+        <qualifiedname>MotorThread::m_RightButtonClicked</qualifiedname>
+        <briefdescription>
+<para>Flag set by foot pedal class when right button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="93" column="10" bodyfile="include/motorthread.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a1ef32265639a9b03d65085982bd9c929" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_LeftButtonClicked</definition>
+        <argsstring></argsstring>
+        <name>m_LeftButtonClicked</name>
+        <qualifiedname>MotorThread::m_LeftButtonClicked</qualifiedname>
+        <briefdescription>
+<para>Flag set by foot pedal class when left button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="96" column="10" bodyfile="include/motorthread.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a4ed783ee0947a482269276518b202fcc" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MotorThread::m_WatchdogState</definition>
+        <argsstring></argsstring>
+        <name>m_WatchdogState</name>
+        <qualifiedname>MotorThread::m_WatchdogState</qualifiedname>
+        <briefdescription>
+<para>Flag representing HIGH or LOW state of watchdog. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="99" column="10" bodyfile="include/motorthread.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a04372fe2e0a1d4a2bae9b1a11fa56566" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_CloseBlade</definition>
+        <argsstring></argsstring>
+        <name>m_CloseBlade</name>
+        <qualifiedname>MotorThread::m_CloseBlade</qualifiedname>
+        <briefdescription>
+<para>Flag representing close blade function call required or not. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="102" column="9" bodyfile="include/motorthread.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1adaee421e7f5ab68724f49fb4ba8a833f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_LeftPedalDown</definition>
+        <argsstring></argsstring>
+        <name>m_LeftPedalDown</name>
+        <qualifiedname>MotorThread::m_LeftPedalDown</qualifiedname>
+        <briefdescription>
+<para>Flag representing if user pressed analog pedal or not. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="105" column="9" bodyfile="include/motorthread.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMotorThread_1a27f740f4057d1b9a2128c0e77afb6203" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MotorThread::m_LeftPedalDepth</definition>
+        <argsstring></argsstring>
+        <name>m_LeftPedalDepth</name>
+        <qualifiedname>MotorThread::m_LeftPedalDepth</qualifiedname>
+        <briefdescription>
+<para>Value representing analog pedal value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="108" column="9" bodyfile="include/motorthread.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMotorThread_1a1e2baed6d253f9ce6d5ef96c84b06d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MotorThread::MotorThread</definition>
+        <argsstring>()</argsstring>
+        <name>MotorThread</name>
+        <qualifiedname>MotorThread::MotorThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="30" column="5" bodyfile="src/motorthread.cpp" bodystart="3" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MotorThread::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>MotorThread::run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Control loop is implemented in <ref refid="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" kindref="member">run()</ref> function </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="34" column="18" bodyfile="src/motorthread.cpp" bodystart="36" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classMotorThread_1aa332fd0ec1abfbd0840a0410d4536be3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::ReInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>ReInitialize</name>
+        <qualifiedname>MotorThread::ReInitialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="36" column="10" bodyfile="src/motorthread.cpp" bodystart="350" bodyend="359"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classMotorThread_1a5569480ac5dd2a05c28a8b0008671d47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::ProcessPedalButtons</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessPedalButtons</name>
+        <qualifiedname>MotorThread::ProcessPedalButtons</qualifiedname>
+        <briefdescription>
+<para>ProcessPedalButtons Notifies GUI in case of change in pedal buttons. Uptades all flags related to pedal buttons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="116" column="10" bodyfile="src/motorthread.cpp" bodystart="367" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="classMotorThread_1a4dfe595caa3eaf3bf92e07fb1312c2f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::PulseWatchDog</definition>
+        <argsstring>()</argsstring>
+        <name>PulseWatchDog</name>
+        <qualifiedname>MotorThread::PulseWatchDog</qualifiedname>
+        <briefdescription>
+<para>PulseWatchDog Pulses watchdog output with 5ms period. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="121" column="10" bodyfile="src/motorthread.cpp" bodystart="404" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="classMotorThread_1a2e648304774e31b30bd4536b8f75eb15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::CalculateDesiredVelocity</definition>
+        <argsstring>(int &amp;desired_vel, int pedal_depth, int target_vel)</argsstring>
+        <name>CalculateDesiredVelocity</name>
+        <qualifiedname>MotorThread::CalculateDesiredVelocity</qualifiedname>
+        <param>
+          <type>int &amp;</type>
+          <declname>desired_vel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pedal_depth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>target_vel</declname>
+        </param>
+        <briefdescription>
+<para>CalculateDesiredVelocity Calculates desired velocity based on target velocity and analog pedal value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_vel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pedal_depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>analog pedal value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target_vel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>target velocity set by user. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="129" column="10" bodyfile="src/motorthread.cpp" bodystart="425" bodyend="430"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classMotorThread_1a2d8e704b48add85c86022e103d1468a0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_InitComplete</definition>
+        <argsstring>(int state)</argsstring>
+        <name>on_InitComplete</name>
+        <qualifiedname>MotorThread::on_InitComplete</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from EPOS thread. Called when initialization is complete. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="134" column="10" bodyfile="src/motorthread.cpp" bodystart="260" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1ad81a92fafe0cd3fbfc3944625b0d9d4c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_TransToOscComplete</definition>
+        <argsstring>(int errcode)</argsstring>
+        <name>on_TransToOscComplete</name>
+        <qualifiedname>MotorThread::on_TransToOscComplete</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>errcode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from EPOS thread. Called when oscillation mode is complete. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="137" column="10" bodyfile="src/motorthread.cpp" bodystart="295" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1a4937257506cb3cfc9dbf2184bd0d8a52" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_BladeClosed</definition>
+        <argsstring>(int errcode)</argsstring>
+        <name>on_BladeClosed</name>
+        <qualifiedname>MotorThread::on_BladeClosed</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>errcode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from EPOS thread. Called when blade close function is complete. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="140" column="10" bodyfile="src/motorthread.cpp" bodystart="313" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1a0276cc0d95bf28435c9416edb31c4c60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_FootPedalLButton</definition>
+        <argsstring>()</argsstring>
+        <name>on_FootPedalLButton</name>
+        <qualifiedname>MotorThread::on_FootPedalLButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from foot pedal. Called when left button is clicked in pedal. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="143" column="10" bodyfile="src/motorthread.cpp" bodystart="329" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1a429dbd70a7ee33e426e99ee8c4e11332" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_FootPedalRButton</definition>
+        <argsstring>()</argsstring>
+        <name>on_FootPedalRButton</name>
+        <qualifiedname>MotorThread::on_FootPedalRButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from foot pedal. Called when right button is clicked in pedal. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="146" column="10" bodyfile="src/motorthread.cpp" bodystart="336" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1a624b6187e6bc8a5e6a40d2dbd097f566" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_RightFootPedal</definition>
+        <argsstring>()</argsstring>
+        <name>on_RightFootPedal</name>
+        <qualifiedname>MotorThread::on_RightFootPedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from foot pedal. Called when right pedal is clicked in pedal. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="149" column="10" bodyfile="src/motorthread.cpp" bodystart="343" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1ada54247cc11e73cd36aac5a2d067766a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_LeftFootPedal</definition>
+        <argsstring>()</argsstring>
+        <name>on_LeftFootPedal</name>
+        <qualifiedname>MotorThread::on_LeftFootPedal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from foot pedal. Called when left pedal is pressed in pedal. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="152" column="10" bodyfile="src/motorthread.cpp" bodystart="432" bodyend="437"/>
+      </memberdef>
+      <memberdef kind="slot" id="classMotorThread_1a2ba498e321e90ec8ee2be7436d9585dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::on_SPIStateChanged</definition>
+        <argsstring>(int state)</argsstring>
+        <name>on_SPIStateChanged</name>
+        <qualifiedname>MotorThread::on_SPIStateChanged</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Callback from foot pedal. Called when SPI communication state changed. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="155" column="10" bodyfile="src/motorthread.cpp" bodystart="361" bodyend="365"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="classMotorThread_1af18be8fa0afa1ad46f71f41415a0e8f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MotorThread::UpdateGUI</definition>
+        <argsstring>(int state)</argsstring>
+        <name>UpdateGUI</name>
+        <qualifiedname>MotorThread::UpdateGUI</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>This signal is emitted to notify window for GUI update. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/motorthread.h" line="159" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MotorThread</label>
+        <link refid="classMotorThread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>EposThread</label>
+        <link refid="classEposThread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_pMotor</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_pPedal</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>FootPedal</label>
+        <link refid="classFootPedal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MaxonMotor</label>
+        <link refid="classMaxonMotor"/>
+      </node>
+      <node id="1">
+        <label>MotorThread</label>
+        <link refid="classMotorThread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_Motor</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_FootPedal</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_EposThread</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/motorthread.h" line="24" column="1" bodyfile="include/motorthread.h" bodystart="25" bodyend="160"/>
+    <listofallmembers>
+      <member refid="classMotorThread_1a2e648304774e31b30bd4536b8f75eb15" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>CalculateDesiredVelocity</name></member>
+      <member refid="classMotorThread_1a04372fe2e0a1d4a2bae9b1a11fa56566" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_CloseBlade</name></member>
+      <member refid="classMotorThread_1a9f626a88ac12fbb0505ac4937b211a3c" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_CurrState</name></member>
+      <member refid="classMotorThread_1ae88e7c675f696a7fd04fc4cb3af65896" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_DebriderDesiredSpeed</name></member>
+      <member refid="classMotorThread_1a129ffc33fb4fabf3be7692cbbea73de8" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_DebriderInstantSpeed</name></member>
+      <member refid="classMotorThread_1a35395e16697ec0c879be2ab3abb0324c" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_DebriderTargetSpeed</name></member>
+      <member refid="classMotorThread_1af80248a74299ddbfb058ad311570c98f" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_Emergency</name></member>
+      <member refid="classMotorThread_1a64b2215bd559b5e4efd5d468346a1371" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_EposThread</name></member>
+      <member refid="classMotorThread_1a640de212448250a3fc0da6c6751cc09c" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_FootPedal</name></member>
+      <member refid="classMotorThread_1af449179ef93260cd7d5af0db967fe849" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_GuiBtnChangeDirection</name></member>
+      <member refid="classMotorThread_1ad7c2d915038fd14ac3bd2a570b58a0d6" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_GuiBtnCloseBlade</name></member>
+      <member refid="classMotorThread_1af0488f54dbd47d15c365ff746a2dffbb" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_GuiChangePresetRPM</name></member>
+      <member refid="classMotorThread_1a65e302d8a9a11ce4eca6bd0782a2cee9" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_GuiEmergencyMode</name></member>
+      <member refid="classMotorThread_1a1ef32265639a9b03d65085982bd9c929" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_LeftButtonClicked</name></member>
+      <member refid="classMotorThread_1a0b8c30c3107cfc30f1ee21cc7c8bcf39" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_LeftPedalClicked</name></member>
+      <member refid="classMotorThread_1a27f740f4057d1b9a2128c0e77afb6203" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_LeftPedalDepth</name></member>
+      <member refid="classMotorThread_1adaee421e7f5ab68724f49fb4ba8a833f" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_LeftPedalDown</name></member>
+      <member refid="classMotorThread_1ae990b753b6a68893e8f3c8c64d4200e4" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_Motor</name></member>
+      <member refid="classMotorThread_1a8b8db3a03d21ce4727f9ddbaa4119256" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_Oscillate</name></member>
+      <member refid="classMotorThread_1a658bd13dd63fc88bd8a5b37930c4c877" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_PrevState</name></member>
+      <member refid="classMotorThread_1a241f03bca98232f09d1395795cd6c10c" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_RightButtonClicked</name></member>
+      <member refid="classMotorThread_1ae427c8e8df2112cf83af0b2bac00dbe4" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_RightPedalClicked</name></member>
+      <member refid="classMotorThread_1a40ca8f49bea37962dc0be3d78d692033" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>m_TargetPos</name></member>
+      <member refid="classMotorThread_1a4ed783ee0947a482269276518b202fcc" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_WatchdogState</name></member>
+      <member refid="classMotorThread_1ade960b57d24a29082a2a675a85fbd5c0" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>m_WatchdogTimer</name></member>
+      <member refid="classMotorThread_1a1e2baed6d253f9ce6d5ef96c84b06d57" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>MotorThread</name></member>
+      <member refid="classMotorThread_1a4937257506cb3cfc9dbf2184bd0d8a52" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_BladeClosed</name></member>
+      <member refid="classMotorThread_1a0276cc0d95bf28435c9416edb31c4c60" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_FootPedalLButton</name></member>
+      <member refid="classMotorThread_1a429dbd70a7ee33e426e99ee8c4e11332" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_FootPedalRButton</name></member>
+      <member refid="classMotorThread_1a2d8e704b48add85c86022e103d1468a0" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_InitComplete</name></member>
+      <member refid="classMotorThread_1ada54247cc11e73cd36aac5a2d067766a" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_LeftFootPedal</name></member>
+      <member refid="classMotorThread_1a624b6187e6bc8a5e6a40d2dbd097f566" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_RightFootPedal</name></member>
+      <member refid="classMotorThread_1a2ba498e321e90ec8ee2be7436d9585dd" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_SPIStateChanged</name></member>
+      <member refid="classMotorThread_1ad81a92fafe0cd3fbfc3944625b0d9d4c" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>on_TransToOscComplete</name></member>
+      <member refid="classMotorThread_1a5569480ac5dd2a05c28a8b0008671d47" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>ProcessPedalButtons</name></member>
+      <member refid="classMotorThread_1a4dfe595caa3eaf3bf92e07fb1312c2f3" prot="private" virt="non-virtual"><scope>MotorThread</scope><name>PulseWatchDog</name></member>
+      <member refid="classMotorThread_1aa332fd0ec1abfbd0840a0410d4536be3" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>ReInitialize</name></member>
+      <member refid="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" prot="public" virt="virtual"><scope>MotorThread</scope><name>run</name></member>
+      <member refid="classMotorThread_1af18be8fa0afa1ad46f71f41415a0e8f0" prot="public" virt="non-virtual"><scope>MotorThread</scope><name>UpdateGUI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

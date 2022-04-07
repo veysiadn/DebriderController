@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="eposthread_8h" kind="file" language="C++">
+    <compoundname>eposthread.h</compoundname>
+    <includes local="no">QThread</includes>
+    <includes refid="epos4__can_8h" local="yes">epos4_can.h</includes>
+    <includes refid="footpedal_8h" local="yes">footpedal.h</includes>
+    <includes refid="m__defines_8h" local="yes">m_defines.h</includes>
+    <includes local="yes">wiringPi.h</includes>
+    <includedby refid="mainwindow_8h" local="yes">include/mainwindow.h</includedby>
+    <includedby refid="motorthread_8h" local="yes">include/motorthread.h</includedby>
+    <includedby refid="eposthread_8cpp" local="yes">src/eposthread.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>epos4_can.h</label>
+        <link refid="epos4__can_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>footpedal.h</label>
+        <link refid="footpedal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="4">
+        <label>EposCmdLib_6.5.1.0/include/Definitions.h</label>
+      </node>
+      <node id="2">
+        <label>QThread</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>time.h</label>
+      </node>
+      <node id="6">
+        <label>wiringPi.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/motorthread.h</label>
+        <link refid="motorthread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/eposthread.cpp</label>
+        <link refid="eposthread_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/motorthread.cpp</label>
+        <link refid="motorthread_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classEposThread" prot="public">EposThread</innerclass>
+    <briefdescription>
+<para>Header file includes <ref refid="classEposThread" kindref="compound">EposThread</ref> class, which implements time consuming processes related to EPOS controller, such as initialization process and waiting for position command to complete, in seperate thread using QThread. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Last Updated : 2022.03.16 Chunwoo Kim (CKim) &amp; Veysi ADIN (VysAdn) Contact Info : <ulink url="mailto:cwkim@kist.re.kr">cwkim@kist.re.kr</ulink> &amp; <ulink url="mailto:veysi.adin@kist.re.kr">veysi.adin@kist.re.kr</ulink> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EPOSTHREAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPOSTHREAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QThread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="epos4__can_8h" kindref="compound">epos4_can.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="footpedal_8h" kindref="compound">footpedal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="m__defines_8h" kindref="compound">m_defines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;wiringPi.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classEposThread" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classEposThread" kindref="compound">EposThread</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QThread</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classEposThread_1a13b22ba1fadc18ce3b0e4eae99f66d81" kindref="member">EposThread</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classEposThread_1a24b2ac43ad67a2715c2e8eb12318a745" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a24b2ac43ad67a2715c2e8eb12318a745" kindref="member">SetMotor</ref>(<ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref>*<sp/>p)<sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref><sp/>=<sp/>p;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classEposThread_1a3d1e85ae8f3d95a826189f62ea02ae01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a3d1e85ae8f3d95a826189f62ea02ae01" kindref="member">SetPedal</ref>(<ref refid="classFootPedal" kindref="compound">FootPedal</ref>*<sp/>p)<sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1a4509e5d41ceacbda96f98f097773ae3e" kindref="member">m_pPedal</ref><sp/>=<sp/>p;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classEposThread_1a78a50cc02087845e3f167563ee7aee11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a78a50cc02087845e3f167563ee7aee11" kindref="member">SetTransition</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type)<sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" kindref="member">m_Transition</ref><sp/>=<sp/>type;<sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classEposThread_1a64675fb679d8e9cfc96b1ddc8a49d959" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a64675fb679d8e9cfc96b1ddc8a49d959" kindref="member">Abort</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1a42916f7abaf9816f4af304e7a4aa1f94" kindref="member">m_Abort</ref><sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classEposThread_1a5c34779ab0c42cd93c714e9699f1d8e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a5c34779ab0c42cd93c714e9699f1d8e6" kindref="member">SetOscillationVelocity</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s)<sp/><sp/><sp/>{<sp/><sp/><sp/><ref refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" kindref="member">m_OscSpeed</ref>=s;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67" refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref>*<sp/><ref refid="classEposThread_1a1514b68939b5b1dacd8b14046d8afa04" kindref="member">m_pMotor</ref>;</highlight></codeline>
+<codeline lineno="69" refid="classEposThread_1a4509e5d41ceacbda96f98f097773ae3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classFootPedal" kindref="compound">FootPedal</ref>*<sp/><ref refid="classEposThread_1a4509e5d41ceacbda96f98f097773ae3e" kindref="member">m_pPedal</ref>;</highlight></codeline>
+<codeline lineno="71" refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a9bd3e9d354d6dae778e0b14ae5fd132c" kindref="member">m_Transition</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1:<sp/>from<sp/>uninit<sp/>to<sp/>init<sp/>/<sp/>2:<sp/>to<sp/>close<sp/>blade<sp/>/<sp/>3:<sp/>to<sp/>osc</highlight></codeline>
+<codeline lineno="73" refid="classEposThread_1a42916f7abaf9816f4af304e7a4aa1f94" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a42916f7abaf9816f4af304e7a4aa1f94" kindref="member">m_Abort</ref>;</highlight></codeline>
+<codeline lineno="75" refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1aa4f210e6dd702956edb6bf3edec743c6" kindref="member">m_OscSpeed</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a183be3542be5b53dfb4d89c5fb7df063" kindref="member">run</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a4262e0c79a0f4a6adcc4363a6cc99eee" kindref="member">RunInitialization</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1aa754635e61da40b19948aba0ed6642e0" kindref="member">RunCloseBlade</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1a69923110630997056ec19635005468c1" kindref="member">RunOscillation</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="104" refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1abdd18c775c9831cfd108420190e76da5" kindref="member">InitializationComplete</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errcode);</highlight></codeline>
+<codeline lineno="109" refid="classEposThread_1aa5673ed3bb8cbe64d164c7124bc00758" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1aa5673ed3bb8cbe64d164c7124bc00758" kindref="member">CloseBladeComplete</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errcode);</highlight></codeline>
+<codeline lineno="114" refid="classEposThread_1ae07f935fa8ca208db6423964a6affae5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEposThread_1ae07f935fa8ca208db6423964a6affae5" kindref="member">OscillationComplete</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errcode);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EPOSTHREAD_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/eposthread.h"/>
+  </compounddef>
+</doxygen>

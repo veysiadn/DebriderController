@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="epos4__can_8h" kind="file" language="C++">
+    <compoundname>epos4_can.h</compoundname>
+    <includes local="no">EposCmdLib_6.5.1.0/include/Definitions.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">wiringPi.h</includes>
+    <includes refid="m__defines_8h" local="yes">m_defines.h</includes>
+    <includedby refid="eposthread_8h" local="yes">include/eposthread.h</includedby>
+    <includedby refid="mainwindow_8h" local="yes">include/mainwindow.h</includedby>
+    <includedby refid="motorthread_8h" local="yes">include/motorthread.h</includedby>
+    <includedby refid="epos4__can_8cpp" local="yes">src/epos4_can.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/epos4_can.h</label>
+        <link refid="epos4__can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>m_defines.h</label>
+        <link refid="m__defines_8h"/>
+      </node>
+      <node id="2">
+        <label>EposCmdLib_6.5.1.0/include/Definitions.h</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>wiringPi.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/epos4_can.h</label>
+        <link refid="epos4__can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/eposthread.h</label>
+        <link refid="eposthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/motorthread.h</label>
+        <link refid="motorthread_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/epos4_can.cpp</label>
+        <link refid="epos4__can_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/eposthread.cpp</label>
+        <link refid="eposthread_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/motorthread.cpp</label>
+        <link refid="motorthread_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMaxonMotor" prot="public">MaxonMotor</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EPOS4_CAN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPOS4_CAN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;EposCmdLib_6.5.1.0/include/Definitions.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wiringPi.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="m__defines_8h" kindref="compound">m_defines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classMaxonMotor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMaxonMotor_1aa1bf637a4484ce34a9f88e827fbed95d" kindref="member">MaxonMotor</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a273db5d88e244e5db3e1b080f1151b54" kindref="member">OpenCANCommunication</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" kindref="member">EnableMotorController</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1aeeddf2f7f4396839027125bf0df4e71e" kindref="member">ActiviateAllDevice</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a782ba617ad94197a4dc67ab5fd3231ae" kindref="member">DisableAllDevice</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a422972183dd4967a5fba482234e711e5" kindref="member">CloseAllDevice</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" kindref="member">EPOSGetError</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" kindref="member">EnablePositionModeWithSpeed</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" kindref="member">GetCurrentPositionAllDevice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>current_position);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classMaxonMotor_1abf8534427dab53522923d966d21f4d9e" kindref="member">GetCloseBladePosition</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a1dc2e9c7a1309d947cecd4122ca1f235" kindref="member">EnableVelocityMode</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a6f31f54f7c80027d6cfe8a38bb4924a6" kindref="member">EnablePositionMode</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a69c9584463dfc3c6db5f43a68dfd8e12" kindref="member">MoveVelocity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>target_velocity);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a8307999483d6cfae3ecbce326c4192a6" kindref="member">MovePosition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>target_pos);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" kindref="member">GetCurrentVelocity</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" kindref="member">SetOscMode</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Amp);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1aae6f66648157bfb53c6055fefadb5af2" kindref="member">RunOscMode</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" kindref="member">StopMotion</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" kindref="member">WaitForMotion</ref>();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="136" refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" kindref="member">m_PortName_MCP</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" kindref="member">m_keyHandle_MCP</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" kindref="member">m_Node_ID_MCP</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" kindref="member">ErrorCode</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" kindref="member">m_Mode</ref>;</highlight></codeline>
+<codeline lineno="150" refid="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" kindref="member">m_OscOffset</ref>;</highlight></codeline>
+<codeline lineno="152" refid="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" kindref="member">m_OscAmp</ref>;</highlight></codeline>
+<codeline lineno="154" refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kindref="member">m_errorFlag</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1adf71147e8f294a2db8607b02a0f9b8d4" kindref="member">EnableDevice</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>keyHandle_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Node_ID);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" kindref="member">DisableDevice</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>keyHandle_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Node_ID);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" kindref="member">ActivateDevice</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>PortName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Node_ID);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a1d5b26719718330f3d64a1e865a34a09" kindref="member">CloseDevice</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>keyHandle_);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a1e0dc25bbe25a570337aecae4c955a99" kindref="member">Move</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>keyHandle_,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>target_velocity,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Node_ID);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="classMaxonMotor_1adf3e9d7eb8b2345593d539c4f461f769" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1adf3e9d7eb8b2345593d539c4f461f769" kindref="member">MoveToPosition</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>keyHandle_,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>target_position,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Node_ID);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a9a4da1905bd22dede6988a624350a135" kindref="member">GetCurrentPosition</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*keyHandle_,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>current_position,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>Node_ID);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1adcd2aa0a36b9050de136341f81445cfa" kindref="member">MoveInCloseBladeMode</ref>();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EPOS4_CAN_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/epos4_can.h"/>
+  </compounddef>
+</doxygen>
