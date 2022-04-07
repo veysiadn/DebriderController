@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cur_5fstate_0',['cur_state',['../classInitializationWindow.html#a04398ece198084cb8fcf5181a2922bff',1,'InitializationWindow']]]
+  ['buzzer_5frunning_5fstatus_0',['buzzer_running_status',['../classMainWindow.html#a51e0342d55d2036086c0bc6c688c9fd7',1,'MainWindow']]]
 ];

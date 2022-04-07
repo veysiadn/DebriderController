@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['speed_5flabel_5f_0',['speed_label_',['../classMainWindow.html#a08a8f9af8b5aa191f4e361ebc4b14bb5',1,'MainWindow']]],
-  ['status_5flabel_5f_1',['status_label_',['../classMainWindow.html#a6fc833d57517f77fd4cd8d4cf2b912ac',1,'MainWindow']]]
+  ['r_5fbutton_0',['R_button',['../classFootPedal.html#aa87ec502073e066f970f99dbf815b514',1,'FootPedal']]],
+  ['r_5fpedal_1',['R_pedal',['../classFootPedal.html#afd02e14ba1ebfe35eac2d070ca5e5921',1,'FootPedal']]]
 ];
