@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="32" column="5" bodyfile="src/footpedal.cpp" bodystart="152" bodyend="163"/>
+        <location file="include/footpedal.h" line="32" column="5" bodyfile="src/footpedal.cpp" bodystart="159" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="classFootPedal_1a32a9f52dc834e66bbfc70e7022042669" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="36" column="10" bodyfile="src/footpedal.cpp" bodystart="98" bodyend="105"/>
+        <location file="include/footpedal.h" line="36" column="10" bodyfile="src/footpedal.cpp" bodystart="105" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="classFootPedal_1a55c10f27d058be0653fdca5e4714e86a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="40" column="10" bodyfile="src/footpedal.cpp" bodystart="107" bodyend="118"/>
+        <location file="include/footpedal.h" line="40" column="10" bodyfile="src/footpedal.cpp" bodystart="114" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classFootPedal_1a6708751eb133b1f752a8f62e3f8fb95d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -290,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="55" column="10" bodyfile="src/footpedal.cpp" bodystart="131" bodyend="134"/>
+        <location file="include/footpedal.h" line="55" column="10" bodyfile="src/footpedal.cpp" bodystart="138" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="classFootPedal_1a0c755710fc0f7e0c38187282cf3fbae1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -305,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="59" column="10" bodyfile="src/footpedal.cpp" bodystart="120" bodyend="129"/>
+        <location file="include/footpedal.h" line="59" column="10" bodyfile="src/footpedal.cpp" bodystart="127" bodyend="136"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -408,7 +408,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="80" column="10" bodyfile="src/footpedal.cpp" bodystart="136" bodyend="141"/>
+        <location file="include/footpedal.h" line="80" column="10" bodyfile="src/footpedal.cpp" bodystart="143" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classFootPedal_1a4488869799265b29496823efdd59dfa0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -423,7 +423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="85" column="10" bodyfile="src/footpedal.cpp" bodystart="143" bodyend="150"/>
+        <location file="include/footpedal.h" line="85" column="10" bodyfile="src/footpedal.cpp" bodystart="150" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="classFootPedal_1a0e49a2b1353cb7f8ab6cf5ed03753fae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -438,7 +438,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/footpedal.h" line="90" column="10" bodyfile="src/footpedal.cpp" bodystart="79" bodyend="96"/>
+        <location file="include/footpedal.h" line="90" column="10" bodyfile="src/footpedal.cpp" bodystart="79" bodyend="103"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">

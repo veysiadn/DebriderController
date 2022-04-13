@@ -17,6 +17,7 @@ var classMaxonMotor =
     [ "GetCurrentPosition", "classMaxonMotor.html#a9a4da1905bd22dede6988a624350a135", null ],
     [ "GetCurrentPositionAllDevice", "classMaxonMotor.html#ac160487d18cd7e393186af3e1a387fc8", null ],
     [ "GetCurrentVelocity", "classMaxonMotor.html#a3c08c4be5ecba4752a2ff9550c771573", null ],
+    [ "GetMovementState", "classMaxonMotor.html#ac5959fbd331e3910d181967b488e522f", null ],
     [ "Move", "classMaxonMotor.html#a1e0dc25bbe25a570337aecae4c955a99", null ],
     [ "MoveInCloseBladeMode", "classMaxonMotor.html#adcd2aa0a36b9050de136341f81445cfa", null ],
     [ "MovePosition", "classMaxonMotor.html#a8307999483d6cfae3ecbce326c4192a6", null ],

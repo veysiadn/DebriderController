@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/initialization_window.h" line="40" column="10" bodyfile="src/initialization_window.cpp" bodystart="17" bodyend="62"/>
+        <location file="include/initialization_window.h" line="40" column="10" bodyfile="src/initialization_window.cpp" bodystart="17" bodyend="64"/>
       </memberdef>
       <memberdef kind="slot" id="classInitializationWindow_1a4bfbed496dbe62a62e568dce7973a4b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/initialization_window.h" line="47" column="10" bodyfile="src/initialization_window.cpp" bodystart="64" bodyend="71"/>
+        <location file="include/initialization_window.h" line="47" column="10" bodyfile="src/initialization_window.cpp" bodystart="66" bodyend="73"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">

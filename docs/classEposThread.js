@@ -3,6 +3,7 @@ var classEposThread =
     [ "EposThread", "classEposThread.html#a13b22ba1fadc18ce3b0e4eae99f66d81", null ],
     [ "Abort", "classEposThread.html#a64675fb679d8e9cfc96b1ddc8a49d959", null ],
     [ "CloseBladeComplete", "classEposThread.html#aa5673ed3bb8cbe64d164c7124bc00758", null ],
+    [ "GetWaitingForMotionInfo", "classEposThread.html#a64b9e267d07407cc66c7acdc40cbafab", null ],
     [ "InitializationComplete", "classEposThread.html#abdd18c775c9831cfd108420190e76da5", null ],
     [ "OscillationComplete", "classEposThread.html#ae07f935fa8ca208db6423964a6affae5", null ],
     [ "run", "classEposThread.html#a183be3542be5b53dfb4d89c5fb7df063", null ],
@@ -17,5 +18,6 @@ var classEposThread =
     [ "m_OscSpeed", "classEposThread.html#aa4f210e6dd702956edb6bf3edec743c6", null ],
     [ "m_pMotor", "classEposThread.html#a1514b68939b5b1dacd8b14046d8afa04", null ],
     [ "m_pPedal", "classEposThread.html#a4509e5d41ceacbda96f98f097773ae3e", null ],
-    [ "m_Transition", "classEposThread.html#a9bd3e9d354d6dae778e0b14ae5fd132c", null ]
+    [ "m_Transition", "classEposThread.html#a9bd3e9d354d6dae778e0b14ae5fd132c", null ],
+    [ "waiting_for_motion_", "classEposThread.html#a2302c3a4da0506326d2e8ba461f2ce44", null ]
 ];

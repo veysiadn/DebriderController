@@ -138,6 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c34779ab0c42cd93c714e9699f1d8e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEposThread.html#a5c34779ab0c42cd93c714e9699f1d8e6">SetOscillationVelocity</a> (int s)</td></tr>
 <tr class="memdesc:a5c34779ab0c42cd93c714e9699f1d8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets oscillation mode velocity.  <a href="classEposThread.html#a5c34779ab0c42cd93c714e9699f1d8e6">More...</a><br /></td></tr>
 <tr class="separator:a5c34779ab0c42cd93c714e9699f1d8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b9e267d07407cc66c7acdc40cbafab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEposThread.html#a64b9e267d07407cc66c7acdc40cbafab">GetWaitingForMotionInfo</a> ()</td></tr>
+<tr class="memdesc:a64b9e267d07407cc66c7acdc40cbafab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets waiting for motion flag.  <a href="classEposThread.html#a64b9e267d07407cc66c7acdc40cbafab">More...</a><br /></td></tr>
+<tr class="separator:a64b9e267d07407cc66c7acdc40cbafab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -171,6 +174,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa4f210e6dd702956edb6bf3edec743c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEposThread.html#aa4f210e6dd702956edb6bf3edec743c6">m_OscSpeed</a></td></tr>
 <tr class="memdesc:aa4f210e6dd702956edb6bf3edec743c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oscillation speed value.  <a href="classEposThread.html#aa4f210e6dd702956edb6bf3edec743c6">More...</a><br /></td></tr>
 <tr class="separator:aa4f210e6dd702956edb6bf3edec743c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2302c3a4da0506326d2e8ba461f2ce44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEposThread.html#a2302c3a4da0506326d2e8ba461f2ce44">waiting_for_motion_</a> = false</td></tr>
+<tr class="separator:a2302c3a4da0506326d2e8ba461f2ce44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a13b22ba1fadc18ce3b0e4eae99f66d81" name="a13b22ba1fadc18ce3b0e4eae99f66d81"></a>
@@ -249,6 +254,34 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a64b9e267d07407cc66c7acdc40cbafab" name="a64b9e267d07407cc66c7acdc40cbafab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b9e267d07407cc66c7acdc40cbafab">&#9670;&nbsp;</a></span>GetWaitingForMotionInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EposThread::GetWaitingForMotionInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets waiting for motion flag. </p>
+<dl class="section return"><dt>Returns</dt><dd>flag describing waiting for motion action. </dd></dl>
 
 </div>
 </div>
@@ -684,6 +717,28 @@ Private Attributes</h2></td></tr>
 
 <p>Transition flag. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="m__defines_8h.html#a7780e8c3e872d84d1262aa6907097802" title="Transition types in epos thread.">TransitionTypes</a> enum. </dd></dl>
+
+</div>
+</div>
+<a id="a2302c3a4da0506326d2e8ba461f2ce44" name="a2302c3a4da0506326d2e8ba461f2ce44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2302c3a4da0506326d2e8ba461f2ce44">&#9670;&nbsp;</a></span>waiting_for_motion_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EposThread::waiting_for_motion_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

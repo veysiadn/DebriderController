@@ -8,5 +8,7 @@ var searchData=
   ['getcurrentvelocity_5',['GetCurrentVelocity',['../classMaxonMotor.html#a3c08c4be5ecba4752a2ff9550c771573',1,'MaxonMotor']]],
   ['getemergencystatus_6',['GetEmergencyStatus',['../classEmergencyWindow.html#ad7f480681cd065f84ad74a3446c0f598',1,'EmergencyWindow']]],
   ['getleftpedalvalue_7',['GetLeftPedalValue',['../classFootPedal.html#a44fd654f4b0f63aa7b5e9ac980b75196',1,'FootPedal']]],
-  ['getspierror_8',['GetSPIError',['../classFootPedal.html#a6708751eb133b1f752a8f62e3f8fb95d',1,'FootPedal']]]
+  ['getmovementstate_8',['GetMovementState',['../classMaxonMotor.html#ac5959fbd331e3910d181967b488e522f',1,'MaxonMotor']]],
+  ['getspierror_9',['GetSPIError',['../classFootPedal.html#a6708751eb133b1f752a8f62e3f8fb95d',1,'FootPedal']]],
+  ['getwaitingformotioninfo_10',['GetWaitingForMotionInfo',['../classEposThread.html#a64b9e267d07407cc66c7acdc40cbafab',1,'EposThread']]]
 ];
