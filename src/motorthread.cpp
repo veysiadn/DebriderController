@@ -73,6 +73,7 @@ void MotorThread::run()
         if(m_CurrState < DEBRIDER_STATE_INIT)   // INIT = 0 state
         {
             m_PrevState = m_CurrState;
+            PulseWatchDog();
             // CKim - If not initialized start initializing in separate thread
             // If the initializing thread exits without error, slot will update the state
             if(m_CurrState == DEBRIDER_STATE_UNINIT)   // UNINIT = -2 state
@@ -81,9 +82,10 @@ void MotorThread::run()
                 std::cout<<"Initializing Connections\n";
                 if(!m_FootPedal.isRunning())  m_FootPedal.start();
 
+                if(!m_EposThread.isRunning()) m_EposThread.start();
+
                 m_EposThread.SetTransition(kInit);
 
-                if(!m_EposThread.isRunning()) m_EposThread.start();
 
             }
             PulseWatchDog();
@@ -114,17 +116,19 @@ void MotorThread::run()
         }
 
         // 2. Check EPOS and SPI communication state
-        if(m_FootPedal.GetSPIError() || !m_FootPedal.isRunning())
+        if(  (m_CurrState>=DEBRIDER_STATE_ENABLED) &&
+             (m_FootPedal.GetSPIError() || !m_FootPedal.isRunning())  )
         {
             // ###SPI_ERROR ACTIONS###
-            m_CurrState=DEBRIDER_STATE_SPI_ERROR;
-            m_FootPedal.SetSPIError(true);
+            m_CurrState=DEBRIDER_STATE_EMERGENCY;
             emit UpdateGUI(m_CurrState);
             std::cout << "SPI CONNECTION ERROR " << std::endl;
             continue;
         }
-        // ###EPOS_ERROR ACTIONS###
-        if(m_Motor.EPOSGetError())
+        // ### EPOS_ERROR ACTIONS ###
+        if(m_CurrState >= DEBRIDER_STATE_ENABLED
+                && m_CurrState <= DEBRIDER_STATE_RUNNING
+                && m_Motor.EPOSGetError())
         {
             m_CurrState=DEBRIDER_STATE_EMERGENCY;
             emit UpdateGUI(m_CurrState);
@@ -166,12 +170,15 @@ void MotorThread::run()
             {
                 m_CurrState = DEBRIDER_STATE_OSC;
                 m_EposThread.SetTransition(kRunOscillation);
+                PulseWatchDog();
                 m_EposThread.SetOscillationVelocity(m_DebriderTargetSpeed*GEAR_RATIO);
                 m_EposThread.start();
+                PulseWatchDog();
             }
             else
             {
                 m_CurrState = DEBRIDER_STATE_RUNNING;
+                PulseWatchDog();
                 m_Motor.EnableVelocityMode();
             }
             emit UpdateGUI(m_CurrState);
@@ -187,6 +194,7 @@ void MotorThread::run()
             //std::cout<<"State transition from enabled to close\n";
             m_CurrState = DEBRIDER_STATE_CLOSE_BLADE;
             m_CloseBlade = 0;
+            PulseWatchDog();
             m_EposThread.SetTransition(kCloseBlade);
             m_EposThread.start();
 
@@ -232,10 +240,12 @@ void MotorThread::run()
 
             if(m_PrevState == DEBRIDER_STATE_OSC)
             {
+                PulseWatchDog();
                 m_EposThread.Abort();
+                if(m_EposThread.GetWaitingForMotionInfo()) continue ;
                 m_CurrState = DEBRIDER_STATE_ENABLED;
                // std::cout << "Returning to Enabled from oscillation\n";
-                emit UpdateGUI(m_CurrState);
+                emit UpdateGUI(DEBRIDER_STATE_ENABLED);
             }
         }
 
@@ -283,7 +293,7 @@ void MotorThread::on_InitComplete(int state)
         emit UpdateGUI(m_CurrState);
     }else if (state==DEBRIDER_STATE_SPI_ERROR) {
         std::cout << "Initialization error state SPI_ERROR\n";
-        m_CurrState = DEBRIDER_STATE_EMERGENCY;
+        m_CurrState = DEBRIDER_STATE_SPI_ERROR;
         emit UpdateGUI(m_CurrState);
     }else if (state==DEBRIDER_STATE_INITIALIZING) {
         std::cout << "Initialization error state INITIALIZING\n";

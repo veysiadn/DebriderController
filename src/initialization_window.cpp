@@ -36,13 +36,15 @@ void InitializationWindow::UpdateInitGUI(int state)
             break;
         case DEBRIDER_STATE_EPOS_ERROR:
              ui->lbl_handpiece->setText("Not Connected");
-             ui->lbl_system_status->setText("Missing Connection");
+             ui->lbl_system_status->setText("Handpiece not connected.");
+             ui->lbl_init_switch->setText("Check handpiece connection.");
              cur_state = DEBRIDER_STATE_EPOS_ERROR;
             break;
 
         case DEBRIDER_STATE_SPI_ERROR:
-                ui->lbl_pedal_con->setText("Not Connected");
-                ui->lbl_system_status->setText("Missing Connection");
+                ui->lbl_pedal_con->setText("Not Connected.");
+                ui->lbl_system_status->setText("Pedal not connected.");
+                ui->lbl_init_switch->setText("Check pedal connection.");
                 cur_state = DEBRIDER_STATE_SPI_ERROR;
             break;
         case DEBRIDER_STATE_INITIALIZING:

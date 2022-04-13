@@ -90,6 +90,13 @@ void FootPedal::ReadButtons()
       R_button = digitalRead(FOOT_PEDAL_R_BUTTON);
     if(R_button !=  prev_R_button && R_button > 0)  emit(RButtonClicked());
 
+        R_pedal = digitalRead(FOOT_PEDAL_R_PEDAL_BUTTON);
+    if(R_pedal == LOW){
+        adc_error_flag = true ;
+    }else {
+        adc_error_flag = false ;
+    }
+
     prev_L_pedal  = L_pedal;
     prev_L_button = L_button;
     prev_R_button = R_button ;

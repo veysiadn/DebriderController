@@ -131,6 +131,12 @@ public:
      */
     void WaitForMotion();
 
+    /**
+     * @brief Checks whether target is reached or not.
+     * @return 1 if drive reached the target, otherwise 0.
+     */
+    int GetMovementState();
+
 private:
     ///   Port name
     char* m_PortName_MCP;

@@ -46,12 +46,13 @@ void MainWindow::on_ExitEmergencyClicked(int a)
     motor_thread_.m_GuiEmergencyMode=a;
     //stateChanged(DEBRIDER_STATE_ENABLED);
     motor_thread_.ReInitialize();
+    emit InitStateChanged(DEBRIDER_STATE_UNINIT);
     on_CallInitWindow();
 }
 
 void MainWindow::on_ReinitClicked(int state)
 {
-    if(state < DEBRIDER_STATE_ENABLED){
+    if(state < DEBRIDER_STATE_INIT){
         ResetWatchdogTimerIC();
         motor_thread_.ReInitialize();
     }

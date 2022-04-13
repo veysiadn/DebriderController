@@ -385,9 +385,9 @@ void MaxonMotor::StopMotion()
 void MaxonMotor::WaitForMotion()
 {
     unsigned int error_code = 0;
-
+    unsigned int time_out_ms = 1000;
     // in ms
-    if(!VCS_WaitForTargetReached(m_keyHandle_MCP, m_Node_ID_MCP,1000,&error_code))
+    if(!VCS_WaitForTargetReached(m_keyHandle_MCP, m_Node_ID_MCP,time_out_ms,&error_code))
     {
 
         std::cout << "Waiting Failed!, error_code = " << error_code << std::endl;
@@ -396,6 +396,18 @@ void MaxonMotor::WaitForMotion()
 
 }
 
+int MaxonMotor::GetMovementState()
+{
+    unsigned int error_code = 0;
+    int target_reached = 0;
+    if(VCS_GetMovementState(m_keyHandle_MCP,m_Node_ID_MCP,&target_reached,&error_code))
+        return 0;
+    if(!target_reached)
+        return  0;
+
+    return 1;
+
+}
 void MaxonMotor::GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID)
 {
     unsigned int error_code = 0;
@@ -455,17 +467,19 @@ int MaxonMotor::GetCloseBladePosition()
 // VysADN Error Flag Function  
 int MaxonMotor::EPOSGetError()
 {
-    unsigned int error_code = 0;
-    int IsFault = FALSE;
+//    unsigned int error_code = 0;
+//    int IsFault = FALSE;
     if(m_errorFlag > 0){
         return m_errorFlag ;
-    }else{
+    }
+    return m_errorFlag ;
+    /*else{
         VCS_GetFaultState(m_keyHandle_MCP, m_Node_ID_MCP, &IsFault, &error_code);
         if(IsFault){
             m_errorFlag = 1;
          }
            return m_errorFlag;
-    }
+    }*/
 }
 
 int MaxonMotor::GetCurrentVelocity()

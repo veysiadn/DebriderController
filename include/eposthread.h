@@ -61,7 +61,11 @@ public:
      * @param s velocity value to use in oscillation mode.
      */
     void SetOscillationVelocity(int s)   {   m_OscSpeed=s;      }
-
+    /**
+     * @brief Gets waiting for motion flag.
+     * @return flag describing waiting for motion action.
+     */
+    bool GetWaitingForMotionInfo() {return waiting_for_motion_; }
 private:
     /// MaxonMotor class instance to access created variables and member functions in Motor thread.
     MaxonMotor* m_pMotor;
@@ -73,6 +77,7 @@ private:
     int m_Abort;
     /// Oscillation speed value.
     int m_OscSpeed;
+    bool waiting_for_motion_ = false;
 
 
 private:
