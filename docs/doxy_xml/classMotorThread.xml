@@ -410,12 +410,9 @@
         <name>run</name>
         <qualifiedname>MotorThread::run</qualifiedname>
         <briefdescription>
+<para>Control loop is implemented in <ref refid="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" kindref="member">run()</ref> function. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Control loop is implemented in <ref refid="classMotorThread_1aa84732efa78a1149e07c1c3061c2b672" kindref="member">run()</ref> function </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -444,7 +441,7 @@
         <name>ProcessPedalButtons</name>
         <qualifiedname>MotorThread::ProcessPedalButtons</qualifiedname>
         <briefdescription>
-<para>ProcessPedalButtons Notifies GUI in case of change in pedal buttons. Uptades all flags related to pedal buttons. </para>
+<para>Notifies GUI in case of change in pedal buttons. Uptades all flags related to pedal buttons. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -459,7 +456,7 @@
         <name>PulseWatchDog</name>
         <qualifiedname>MotorThread::PulseWatchDog</qualifiedname>
         <briefdescription>
-<para>PulseWatchDog Pulses watchdog output with 5ms period. </para>
+<para>Pulses watchdog output with 5ms period. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -486,7 +483,7 @@
           <declname>target_vel</declname>
         </param>
         <briefdescription>
-<para>CalculateDesiredVelocity Calculates desired velocity based on target velocity and analog pedal value. </para>
+<para>Calculates desired velocity based on target velocity and analog pedal value. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>

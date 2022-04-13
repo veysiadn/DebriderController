@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="216" column="22" bodyfile="include/mainwindow.h" bodystart="216" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="221" column="22" bodyfile="include/mainwindow.h" bodystart="221" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1a08a8f9af8b5aa191f4e361ebc4b14bb5" prot="private" static="no" mutable="no">
         <type>QString</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="219" column="15" bodyfile="include/mainwindow.h" bodystart="219" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="224" column="15" bodyfile="include/mainwindow.h" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1a6fc833d57517f77fd4cd8d4cf2b912ac" prot="private" static="no" mutable="no">
         <type>QString</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="222" column="15" bodyfile="include/mainwindow.h" bodystart="222" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="227" column="15" bodyfile="include/mainwindow.h" bodystart="227" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1ab1844d6f6c88d93a233c93ef2fd028d8" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="225" column="11" bodyfile="include/mainwindow.h" bodystart="225" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="230" column="11" bodyfile="include/mainwindow.h" bodystart="230" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1a340d9f28f2da0c17e66269e74f9f29fe" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -79,23 +79,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="227" column="11" bodyfile="include/mainwindow.h" bodystart="227" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="232" column="11" bodyfile="include/mainwindow.h" bodystart="232" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool MainWindow::buzzer_running_status</definition>
+      <memberdef kind="variable" id="classMainWindow_1a6575cd0cc1dc2a9cc018e6d619e7526d" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread MainWindow::buzzer_thread_</definition>
         <argsstring></argsstring>
-        <name>buzzer_running_status</name>
-        <qualifiedname>MainWindow::buzzer_running_status</qualifiedname>
-        <initializer>=false</initializer>
+        <name>buzzer_thread_</name>
+        <qualifiedname>MainWindow::buzzer_thread_</qualifiedname>
         <briefdescription>
-<para>Flag to describe buzzer running status. </para>
+<para>Buzzer thread. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="229" column="12" bodyfile="include/mainwindow.h" bodystart="229" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="236" column="19" bodyfile="include/mainwindow.h" bodystart="236" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1aed0a2b4bffbb6d18f88ee03e18588e0c" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -111,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="231" column="12" bodyfile="include/mainwindow.h" bodystart="231" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="238" column="12" bodyfile="include/mainwindow.h" bodystart="238" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1a083944ab39cd4890fb4aebe80773ea47" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -126,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="233" column="11" bodyfile="include/mainwindow.h" bodystart="233" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="240" column="11" bodyfile="include/mainwindow.h" bodystart="240" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1aca2977941ed2246dfc014e8420278360" prot="private" static="no" mutable="no">
         <type><ref refid="classEmergencyWindow" kindref="compound">EmergencyWindow</ref></type>
@@ -141,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="235" column="23" bodyfile="include/mainwindow.h" bodystart="235" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="242" column="23" bodyfile="include/mainwindow.h" bodystart="242" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1adb76a08907d348622598f180fe4b9b34" prot="private" static="no" mutable="no">
         <type><ref refid="classMotorThread" kindref="compound">MotorThread</ref></type>
@@ -156,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="237" column="19" bodyfile="include/mainwindow.h" bodystart="237" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="244" column="19" bodyfile="include/mainwindow.h" bodystart="244" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMainWindow_1a5d2956bcdeb387a350218819569ae015" prot="private" static="no" mutable="no">
         <type><ref refid="classInitializationWindow" kindref="compound">InitializationWindow</ref></type>
@@ -171,7 +170,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="239" column="28" bodyfile="include/mainwindow.h" bodystart="239" bodyend="-1"/>
+        <location file="include/mainwindow.h" line="246" column="28" bodyfile="include/mainwindow.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::buzzer_running_status</definition>
+        <argsstring></argsstring>
+        <name>buzzer_running_status</name>
+        <qualifiedname>MainWindow::buzzer_running_status</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Flag to describe buzzer running status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="234" column="19" bodyfile="include/mainwindow.h" bodystart="234" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -194,7 +211,7 @@
 <para>Initialize wiringpi library and pinmapping.</para>
 <para>CKim - Connect signals and sloths.</para>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="39" column="14" bodyfile="src/mainwindow.cpp" bodystart="4" bodyend="25"/>
+        <location file="include/mainwindow.h" line="39" column="14" bodyfile="src/mainwindow.cpp" bodystart="6" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -208,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="40" column="5" bodyfile="src/mainwindow.cpp" bodystart="27" bodyend="31"/>
+        <location file="include/mainwindow.h" line="40" column="5" bodyfile="src/mainwindow.cpp" bodystart="29" bodyend="33"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -219,13 +236,13 @@
         <name>on_btnDecreaseRPM_clicked</name>
         <qualifiedname>MainWindow::on_btnDecreaseRPM_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnDecreaseRPM_clicked GUI callback to decrease debrider motor RPM value by 1000. </para>
+<para>GUI callback to decrease debrider motor RPM value by 1000. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="47" column="10" bodyfile="src/mainwindow.cpp" bodystart="170" bodyend="188"/>
+        <location file="include/mainwindow.h" line="47" column="10" bodyfile="src/mainwindow.cpp" bodystart="172" bodyend="190"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a6cdcedb81963ed38f8566b67cc33697a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -234,13 +251,13 @@
         <name>on_btnIncreaseRPM_clicked</name>
         <qualifiedname>MainWindow::on_btnIncreaseRPM_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnIncreaseRPM_clicked GUI callback to increase debrider motor RPM value by 1000. </para>
+<para>GUI callback to increase debrider motor RPM value by 1000. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="53" column="10" bodyfile="src/mainwindow.cpp" bodystart="190" bodyend="210"/>
+        <location file="include/mainwindow.h" line="53" column="10" bodyfile="src/mainwindow.cpp" bodystart="192" bodyend="212"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1ab6f8e7812a2dfcd8e1dc6ab2c95813f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -253,7 +270,7 @@
           <declname>checked</declname>
         </param>
         <briefdescription>
-<para>on_radioCW_toggled GUI callback to change rotation direction of debrider motor to clock-wise. </para>
+<para>GUI callback to change rotation direction of debrider motor to clock-wise. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -269,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="60" column="10" bodyfile="src/mainwindow.cpp" bodystart="212" bodyend="219"/>
+        <location file="include/mainwindow.h" line="60" column="10" bodyfile="src/mainwindow.cpp" bodystart="214" bodyend="221"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a574b22181984a19376ab6bd86a48a93d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -282,7 +299,7 @@
           <declname>checked</declname>
         </param>
         <briefdescription>
-<para>on_radioCCW_toggled GUI callback to change rotation direction of debrider motor to counter clock-wise. </para>
+<para>GUI callback to change rotation direction of debrider motor to counter clock-wise. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -298,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="67" column="10" bodyfile="src/mainwindow.cpp" bodystart="221" bodyend="228"/>
+        <location file="include/mainwindow.h" line="67" column="10" bodyfile="src/mainwindow.cpp" bodystart="223" bodyend="230"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1ad74ff92f47e8ebabbfcbf2452819d12d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -311,7 +328,7 @@
           <declname>checked</declname>
         </param>
         <briefdescription>
-<para>on_radioOSC_toggled GUI callback to change running mode of debrider motor to oscillation mode. </para>
+<para>GUI callback to change running mode of debrider motor to oscillation mode. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -327,7 +344,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="74" column="10" bodyfile="src/mainwindow.cpp" bodystart="230" bodyend="236"/>
+        <location file="include/mainwindow.h" line="74" column="10" bodyfile="src/mainwindow.cpp" bodystart="232" bodyend="238"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a438ed0f9488c8dd8ed0ea8fcab3691ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -336,13 +353,13 @@
         <name>on_btnDecreaseFlow_clicked</name>
         <qualifiedname>MainWindow::on_btnDecreaseFlow_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnDecreaseFlow_clicked GUI callback to decrease suction motor RPM value by ten percent. </para>
+<para>GUI callback to decrease suction motor RPM value by ten percent. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="80" column="10" bodyfile="src/mainwindow.cpp" bodystart="238" bodyend="246"/>
+        <location file="include/mainwindow.h" line="80" column="10" bodyfile="src/mainwindow.cpp" bodystart="240" bodyend="248"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a41af8ae08b8ee8d4e816fcab47d2aa13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -351,13 +368,13 @@
         <name>on_btnIncreaseFlow_clicked</name>
         <qualifiedname>MainWindow::on_btnIncreaseFlow_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnIncreaseFlow_clicked GUI callback to increase suction motor velocity value by ten percent. </para>
+<para>GUI callback to increase suction motor velocity value by ten percent. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="86" column="10" bodyfile="src/mainwindow.cpp" bodystart="248" bodyend="255"/>
+        <location file="include/mainwindow.h" line="86" column="10" bodyfile="src/mainwindow.cpp" bodystart="250" bodyend="257"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1ae0bf4b19c3dfc7d99ec9bfb324639840" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -366,13 +383,13 @@
         <name>on_btnIrrigationMove_clicked</name>
         <qualifiedname>MainWindow::on_btnIrrigationMove_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnIrrigationMove_clicked GUI callback to move suction motor. </para>
+<para>GUI callback to move suction motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="91" column="10" bodyfile="src/mainwindow.cpp" bodystart="257" bodyend="261"/>
+        <location file="include/mainwindow.h" line="91" column="10" bodyfile="src/mainwindow.cpp" bodystart="259" bodyend="263"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a54f092d5c0c588c0c2fdfa5601fe6d75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -381,13 +398,13 @@
         <name>on_btnIrrigationStop_clicked</name>
         <qualifiedname>MainWindow::on_btnIrrigationStop_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnIrrigationStop_clicked GUI callback to stop suction motor. </para>
+<para>GUI callback to stop suction motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="96" column="10" bodyfile="src/mainwindow.cpp" bodystart="263" bodyend="267"/>
+        <location file="include/mainwindow.h" line="96" column="10" bodyfile="src/mainwindow.cpp" bodystart="265" bodyend="269"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a2e308e20783cbdbe8a1bb8dc820725df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -396,13 +413,13 @@
         <name>on_btnCloseBlade_clicked</name>
         <qualifiedname>MainWindow::on_btnCloseBlade_clicked</qualifiedname>
         <briefdescription>
-<para>on_btnCloseBlade_clicked GUI callback to close blade of motor. </para>
+<para>GUI callback to close blade of motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="101" column="10" bodyfile="src/mainwindow.cpp" bodystart="269" bodyend="272"/>
+        <location file="include/mainwindow.h" line="101" column="10" bodyfile="src/mainwindow.cpp" bodystart="271" bodyend="274"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1af60b4e71a8f34ca70841abec75947492" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -411,13 +428,13 @@
         <name>on_radioMAXRPM_clicked</name>
         <qualifiedname>MainWindow::on_radioMAXRPM_clicked</qualifiedname>
         <briefdescription>
-<para>on_radioMAXRPM_clicked GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000. </para>
+<para>GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="107" column="10" bodyfile="src/mainwindow.cpp" bodystart="274" bodyend="282"/>
+        <location file="include/mainwindow.h" line="107" column="10" bodyfile="src/mainwindow.cpp" bodystart="276" bodyend="284"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1afcc9301223c1ce654c71c9b9d889aaed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -430,7 +447,7 @@
           <declname>state</declname>
         </param>
         <briefdescription>
-<para>on_StateChanged Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state. </para>
+<para>Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -446,7 +463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="114" column="10" bodyfile="src/mainwindow.cpp" bodystart="58" bodyend="141"/>
+        <location file="include/mainwindow.h" line="114" column="10" bodyfile="src/mainwindow.cpp" bodystart="60" bodyend="143"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a24107b24ea4bea9e13c1dec28e31e140" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -455,13 +472,13 @@
         <name>on_CallEmergencyWindow</name>
         <qualifiedname>MainWindow::on_CallEmergencyWindow</qualifiedname>
         <briefdescription>
-<para>on_CallEmergencyWindow Opens emergency windows in case of emergency. </para>
+<para>Opens emergency windows in case of emergency. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="119" column="10" bodyfile="src/mainwindow.cpp" bodystart="408" bodyend="420"/>
+        <location file="include/mainwindow.h" line="119" column="10" bodyfile="src/mainwindow.cpp" bodystart="410" bodyend="422"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a33009b07ad76d5c0793275c0cda3f068" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -474,7 +491,7 @@
           <declname>a</declname>
         </param>
         <briefdescription>
-<para>on_ExitEmergencyClicked Sloth to handle emergency exit button clicked. </para>
+<para>Sloth to handle emergency exit button clicked. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -490,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="125" column="10" bodyfile="src/mainwindow.cpp" bodystart="33" bodyend="48"/>
+        <location file="include/mainwindow.h" line="125" column="10" bodyfile="src/mainwindow.cpp" bodystart="35" bodyend="50"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a8a034be8b0b26b9c0510d9d095f4b589" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -499,13 +516,13 @@
         <name>on_CallInitWindow</name>
         <qualifiedname>MainWindow::on_CallInitWindow</qualifiedname>
         <briefdescription>
-<para>on_CallInitWindow Calls initialization window, and closes all other windows. </para>
+<para>Calls initialization window, and closes all other windows. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="130" column="10" bodyfile="src/mainwindow.cpp" bodystart="422" bodyend="430"/>
+        <location file="include/mainwindow.h" line="130" column="10" bodyfile="src/mainwindow.cpp" bodystart="424" bodyend="432"/>
       </memberdef>
       <memberdef kind="slot" id="classMainWindow_1a72a1904ae87335a0b049422cf530d539" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -518,7 +535,7 @@
           <declname>state</declname>
         </param>
         <briefdescription>
-<para>on_ReinitClicked Handles signal coming from initialization window when user clicks reinitialize. </para>
+<para>Handles signal coming from initialization window when user clicks reinitialize. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -534,7 +551,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="136" column="10" bodyfile="src/mainwindow.cpp" bodystart="50" bodyend="56"/>
+        <location file="include/mainwindow.h" line="136" column="10" bodyfile="src/mainwindow.cpp" bodystart="52" bodyend="58"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">
@@ -549,7 +566,7 @@
           <declname>state</declname>
         </param>
         <briefdescription>
-<para>InitStateChanged Emitted when initialization state change to notify initialization window. </para>
+<para>Emitted when initialization state change to notify initialization window. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -584,7 +601,7 @@
           <declname>pSpeed</declname>
         </param>
         <briefdescription>
-<para>PrintStatus Prints the status of debrider, such as debrider velocity and suction motor velocity percentage. </para>
+<para>Prints the status of debrider, such as debrider velocity and suction motor velocity percentage. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -608,7 +625,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="151" column="12" bodyfile="src/mainwindow.cpp" bodystart="298" bodyend="319"/>
+        <location file="include/mainwindow.h" line="151" column="12" bodyfile="src/mainwindow.cpp" bodystart="300" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1ac0521e46c59c0f209e8993156316cdd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -617,13 +634,13 @@
         <name>StopPumpMotor</name>
         <qualifiedname>MainWindow::StopPumpMotor</qualifiedname>
         <briefdescription>
-<para>StopPumpMotor Stops pumps motor. </para>
+<para>Stops pumps motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="156" column="12" bodyfile="src/mainwindow.cpp" bodystart="284" bodyend="288"/>
+        <location file="include/mainwindow.h" line="156" column="12" bodyfile="src/mainwindow.cpp" bodystart="286" bodyend="290"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1a6fcbbb4f3ba6d135d2032ad417f39799" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -632,13 +649,13 @@
         <name>MovePumpMotor</name>
         <qualifiedname>MainWindow::MovePumpMotor</qualifiedname>
         <briefdescription>
-<para>MovePumpMotor Moves pump motor. </para>
+<para>Moves pump motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="161" column="12" bodyfile="src/mainwindow.cpp" bodystart="290" bodyend="296"/>
+        <location file="include/mainwindow.h" line="161" column="12" bodyfile="src/mainwindow.cpp" bodystart="292" bodyend="298"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1a6264ec497ce9d864fb07b1bdca7e8778" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -647,13 +664,13 @@
         <name>EnableGUI</name>
         <qualifiedname>MainWindow::EnableGUI</qualifiedname>
         <briefdescription>
-<para>EnableGUI Enables GUI button, meaning that system is ready to accept inputs from user. </para>
+<para>Enables GUI button, meaning that system is ready to accept inputs from user. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="166" column="12" bodyfile="src/mainwindow.cpp" bodystart="321" bodyend="336"/>
+        <location file="include/mainwindow.h" line="166" column="12" bodyfile="src/mainwindow.cpp" bodystart="323" bodyend="338"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1ab50efa1e7281151036d23a9d2ddcc6d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -662,13 +679,13 @@
         <name>DisableGUI</name>
         <qualifiedname>MainWindow::DisableGUI</qualifiedname>
         <briefdescription>
-<para>DisableGUI Disables GUI button, meaning that system will not accept inputs from user. GUI is disable only in case of emergency or when debrider motor is running. </para>
+<para>Disables GUI button, meaning that system will not accept inputs from user. GUI is disabled in case of emergency or when debrider motor is running. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="172" column="12" bodyfile="src/mainwindow.cpp" bodystart="338" bodyend="353"/>
+        <location file="include/mainwindow.h" line="172" column="12" bodyfile="src/mainwindow.cpp" bodystart="340" bodyend="355"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1adf70cd7e458457ea1c26e0ea468033b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -677,7 +694,7 @@
         <name>ShowPedalButtonStates</name>
         <qualifiedname>MainWindow::ShowPedalButtonStates</qualifiedname>
         <briefdescription>
-<para>ShowPedalButtonStates This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will. </para>
+<para>This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will change preset RPM value, change operation mode or run close blade action. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="note"><para>Left button changes preset RPM values. </para>
@@ -690,7 +707,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="181" column="12" bodyfile="src/mainwindow.cpp" bodystart="356" bodyend="405"/>
+        <location file="include/mainwindow.h" line="182" column="12" bodyfile="src/mainwindow.cpp" bodystart="358" bodyend="407"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1a6b8badf44dbef81cdb1bf35b6bf7013f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -699,13 +716,13 @@
         <name>EnableValve</name>
         <qualifiedname>MainWindow::EnableValve</qualifiedname>
         <briefdescription>
-<para>EnableValve Enables solenoid valve output. </para>
+<para>Enables solenoid valve output. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="187" column="12" bodyfile="src/mainwindow.cpp" bodystart="432" bodyend="435"/>
+        <location file="include/mainwindow.h" line="187" column="12" bodyfile="src/mainwindow.cpp" bodystart="434" bodyend="437"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1a59d7744e6b95a8f684b1bf2f8f0786b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -714,28 +731,28 @@
         <name>DisableValve</name>
         <qualifiedname>MainWindow::DisableValve</qualifiedname>
         <briefdescription>
-<para>DisableValve Disables solenoid valve output. </para>
+<para>Disables solenoid valve output. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="192" column="12" bodyfile="src/mainwindow.cpp" bodystart="437" bodyend="440"/>
+        <location file="include/mainwindow.h" line="192" column="12" bodyfile="src/mainwindow.cpp" bodystart="439" bodyend="442"/>
       </memberdef>
-      <memberdef kind="function" id="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classMainWindow_1a2bbabe6c3cc17c41ea2721d1c37dd5db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void MainWindow::EnableBuzzer</definition>
+        <definition>void MainWindow::RunBuzzer</definition>
         <argsstring>()</argsstring>
-        <name>EnableBuzzer</name>
-        <qualifiedname>MainWindow::EnableBuzzer</qualifiedname>
+        <name>RunBuzzer</name>
+        <qualifiedname>MainWindow::RunBuzzer</qualifiedname>
         <briefdescription>
-<para>Runs buzzer when any pedal input is activated. </para>
+<para>Creates and executes a thread for running buzzer. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="197" column="12" bodyfile="src/mainwindow.cpp" bodystart="442" bodyend="451"/>
+        <location file="include/mainwindow.h" line="202" column="12" bodyfile="src/mainwindow.cpp" bodystart="455" bodyend="459"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1ac21dde15d020b8d0233d4b9f49eb5f24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -744,7 +761,7 @@
         <name>InitializeIO</name>
         <qualifiedname>MainWindow::InitializeIO</qualifiedname>
         <briefdescription>
-<para>InitializeIO Initializes wiringpi library and pin mapping for RPI. </para>
+<para>Initializes wiringpi library and pin mapping for RPI. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -759,7 +776,7 @@
 <para>Suction motor output declaration.</para>
 <para>Solenoid valve output declaration.</para>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="202" column="12" bodyfile="src/mainwindow.cpp" bodystart="453" bodyend="507"/>
+        <location file="include/mainwindow.h" line="207" column="12" bodyfile="src/mainwindow.cpp" bodystart="462" bodyend="516"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -774,7 +791,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="206" column="12" bodyfile="src/mainwindow.cpp" bodystart="150" bodyend="160"/>
+        <location file="include/mainwindow.h" line="211" column="12" bodyfile="src/mainwindow.cpp" bodystart="152" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -789,7 +806,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="210" column="12" bodyfile="src/mainwindow.cpp" bodystart="162" bodyend="169"/>
+        <location file="include/mainwindow.h" line="215" column="12" bodyfile="src/mainwindow.cpp" bodystart="164" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="classMainWindow_1a455d382eda67ec98926088638c828a8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -798,13 +815,30 @@
         <name>ResetWatchdogTimerIC</name>
         <qualifiedname>MainWindow::ResetWatchdogTimerIC</qualifiedname>
         <briefdescription>
-<para>ResetWatchdogTimerIC Resets watchdog timer in case of any missing pulse. </para>
+<para>Resets watchdog timer in case of any missing pulse. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/mainwindow.h" line="214" column="12" bodyfile="src/mainwindow.cpp" bodystart="143" bodyend="149"/>
+        <location file="include/mainwindow.h" line="219" column="12" bodyfile="src/mainwindow.cpp" bodystart="145" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::EnableBuzzer</definition>
+        <argsstring>()</argsstring>
+        <name>EnableBuzzer</name>
+        <qualifiedname>MainWindow::EnableBuzzer</qualifiedname>
+        <briefdescription>
+<para>Runs buzzer when any pedal input is activated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/mainwindow.h" line="197" column="19" bodyfile="src/mainwindow.cpp" bodystart="444" bodyend="453"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -894,9 +928,10 @@
         <label>QThread</label>
       </node>
     </collaborationgraph>
-    <location file="include/mainwindow.h" line="34" column="1" bodyfile="include/mainwindow.h" bodystart="35" bodyend="240"/>
+    <location file="include/mainwindow.h" line="34" column="1" bodyfile="include/mainwindow.h" bodystart="35" bodyend="247"/>
     <listofallmembers>
       <member refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>buzzer_running_status</name></member>
+      <member refid="classMainWindow_1a6575cd0cc1dc2a9cc018e6d619e7526d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>buzzer_thread_</name></member>
       <member refid="classMainWindow_1a083944ab39cd4890fb4aebe80773ea47" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>debrider_motor_target_speed_</name></member>
       <member refid="classMainWindow_1ab50efa1e7281151036d23a9d2ddcc6d2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>DisableGUI</name></member>
       <member refid="classMainWindow_1a59d7744e6b95a8f684b1bf2f8f0786b0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>DisableValve</name></member>
@@ -931,6 +966,7 @@
       <member refid="classMainWindow_1ab1844d6f6c88d93a233c93ef2fd028d8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>pump_motor_target_speed_</name></member>
       <member refid="classMainWindow_1aed0a2b4bffbb6d18f88ee03e18588e0c" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>pump_running_status_</name></member>
       <member refid="classMainWindow_1a455d382eda67ec98926088638c828a8f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ResetWatchdogTimerIC</name></member>
+      <member refid="classMainWindow_1a2bbabe6c3cc17c41ea2721d1c37dd5db" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>RunBuzzer</name></member>
       <member refid="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>SetDefaultUI</name></member>
       <member refid="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ShowControlUI</name></member>
       <member refid="classMainWindow_1adf70cd7e458457ea1c26e0ea468033b3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ShowPedalButtonStates</name></member>

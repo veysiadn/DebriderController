@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/emergency_window.h" line="54" column="25" bodyfile="include/emergency_window.h" bodystart="54" bodyend="-1"/>
+        <location file="include/emergency_window.h" line="61" column="25" bodyfile="include/emergency_window.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/emergency_window.h" line="56" column="9" bodyfile="include/emergency_window.h" bodystart="56" bodyend="-1"/>
+        <location file="include/emergency_window.h" line="63" column="9" bodyfile="include/emergency_window.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -76,7 +76,7 @@
         <name>SetEmergencyText</name>
         <qualifiedname>EmergencyWindow::SetEmergencyText</qualifiedname>
         <briefdescription>
-<para>SetEmergencyText Sets emergency text in Emergency Windows based on current emergency state of debrider. </para>
+<para>Sets emergency text in Emergency Windows based on current emergency state of debrider. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -91,7 +91,7 @@
         <name>GetEmergencyStatus</name>
         <qualifiedname>EmergencyWindow::GetEmergencyStatus</qualifiedname>
         <briefdescription>
-<para>GetEmergencyStatus Gets emergency status of system. </para>
+<para>Gets emergency status of system. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>emergency status. </para>
@@ -113,7 +113,7 @@
           <declname>status</declname>
         </param>
         <briefdescription>
-<para>SetEmergencyStatus Sets emergency status of the system. </para>
+<para>Sets emergency status of the system. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -140,12 +140,13 @@
         <name>on_ButtonEmergencyExit_clicked</name>
         <qualifiedname>EmergencyWindow::on_ButtonEmergencyExit_clicked</qualifiedname>
         <briefdescription>
+<para>Gui emergency exit button clicked function callback. It will emit EmergencyExitClicked signal to notify <ref refid="classMainWindow" kindref="compound">MainWindow</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/emergency_window.h" line="48" column="10" bodyfile="src/emergency_window.cpp" bodystart="17" bodyend="21"/>
+        <location file="include/emergency_window.h" line="51" column="10" bodyfile="src/emergency_window.cpp" bodystart="17" bodyend="21"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">
@@ -160,12 +161,23 @@
           <declname>s</declname>
         </param>
         <briefdescription>
+<para>Signal will be emitted to notify <ref refid="classMainWindow" kindref="compound">MainWindow</ref>, that emergency exit clicked. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>emergency state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/emergency_window.h" line="51" column="10"/>
+        <location file="include/emergency_window.h" line="58" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -194,7 +206,7 @@
         <label>QMainWindow</label>
       </node>
     </collaborationgraph>
-    <location file="include/emergency_window.h" line="24" column="1" bodyfile="include/emergency_window.h" bodystart="25" bodyend="57"/>
+    <location file="include/emergency_window.h" line="24" column="1" bodyfile="include/emergency_window.h" bodystart="25" bodyend="64"/>
     <listofallmembers>
       <member refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" prot="private" virt="non-virtual"><scope>EmergencyWindow</scope><name>emergency_status_</name></member>
       <member refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" prot="public" virt="non-virtual"><scope>EmergencyWindow</scope><name>EmergencyExitClicked</name></member>

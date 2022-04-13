@@ -110,7 +110,7 @@
           <declname>p</declname>
         </param>
         <briefdescription>
-<para>SetMotor Sets motor to access created variables and member functions of <ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref> class instance. </para>
+<para>Sets motor to access created variables and member functions of <ref refid="classMaxonMotor" kindref="compound">MaxonMotor</ref> class instance. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -139,7 +139,7 @@
           <declname>p</declname>
         </param>
         <briefdescription>
-<para>SetPedal Sets foot pedal to access created variable and member functions of the <ref refid="classFootPedal" kindref="compound">FootPedal</ref> class instance. </para>
+<para>Sets foot pedal to access created variable and member functions of the <ref refid="classFootPedal" kindref="compound">FootPedal</ref> class instance. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -168,7 +168,7 @@
           <declname>type</declname>
         </param>
         <briefdescription>
-<para>SetTransition Sets the transition type. </para>
+<para>Sets the transition type. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="m__defines_8h_1a7780e8c3e872d84d1262aa6907097802" kindref="member">TransitionTypes</ref> enum ; type 1 : init , type 2 : close blade , type 3 : oscillation. </para>
@@ -214,7 +214,7 @@
           <declname>s</declname>
         </param>
         <briefdescription>
-<para>SetOscillationVelocity Sets oscillation mode velocity. </para>
+<para>Sets oscillation mode velocity. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -241,7 +241,7 @@
         <name>run</name>
         <qualifiedname>EposThread::run</qualifiedname>
         <briefdescription>
-<para>run Control loop implemented here.Thread entrance function. </para>
+<para>Control loop implemented here.Thread entrance function. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -256,7 +256,7 @@
         <name>RunInitialization</name>
         <qualifiedname>EposThread::RunInitialization</qualifiedname>
         <briefdescription>
-<para>RunInitialization Runs initialization procedure includes ; Opening CAN port, enabling drives and waiting for operation switch. </para>
+<para>Runs initialization procedure includes ; Opening CAN port, enabling drives and waiting for operation switch. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -271,7 +271,7 @@
         <name>RunCloseBlade</name>
         <qualifiedname>EposThread::RunCloseBlade</qualifiedname>
         <briefdescription>
-<para>RunCloseBlade Runs close blade mode, currently close blade mode moves motor 30 degre per click of pedal. </para>
+<para>Runs close blade mode, currently close blade mode moves motor 30 degre per click of pedal. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -286,7 +286,7 @@
         <name>RunOscillation</name>
         <qualifiedname>EposThread::RunOscillation</qualifiedname>
         <briefdescription>
-<para>RunOscillation Runs motor in oscillation mode, with setted velocity. </para>
+<para>Runs motor in oscillation mode, with desired velocity. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -307,7 +307,7 @@
           <declname>errcode</declname>
         </param>
         <briefdescription>
-<para>InitializationComplete This signal is emitted to notify the result of the initialization. </para>
+<para>This signal is emitted to notify the result of the initialization. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -323,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/eposthread.h" line="104" column="10"/>
+        <location file="include/eposthread.h" line="103" column="10"/>
       </memberdef>
       <memberdef kind="signal" id="classEposThread_1aa5673ed3bb8cbe64d164c7124bc00758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -336,7 +336,7 @@
           <declname>errcode</declname>
         </param>
         <briefdescription>
-<para>CloseBladeComplete This signal is emitted to notify the result of close blade mode. </para>
+<para>This signal is emitted to notify the result of close blade mode. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/eposthread.h" line="109" column="10"/>
+        <location file="include/eposthread.h" line="108" column="10"/>
       </memberdef>
       <memberdef kind="signal" id="classEposThread_1ae07f935fa8ca208db6423964a6affae5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -365,7 +365,7 @@
           <declname>errcode</declname>
         </param>
         <briefdescription>
-<para>OscillationComplete This signal is emitted to notify the result of oscillation mode. </para>
+<para>This signal is emitted to notify the result of oscillation mode. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -381,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/eposthread.h" line="114" column="10"/>
+        <location file="include/eposthread.h" line="113" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -426,7 +426,7 @@
         <label>QThread</label>
       </node>
     </collaborationgraph>
-    <location file="include/eposthread.h" line="25" column="1" bodyfile="include/eposthread.h" bodystart="26" bodyend="115"/>
+    <location file="include/eposthread.h" line="25" column="1" bodyfile="include/eposthread.h" bodystart="26" bodyend="114"/>
     <listofallmembers>
       <member refid="classEposThread_1a64675fb679d8e9cfc96b1ddc8a49d959" prot="public" virt="non-virtual"><scope>EposThread</scope><name>Abort</name></member>
       <member refid="classEposThread_1aa5673ed3bb8cbe64d164c7124bc00758" prot="public" virt="non-virtual"><scope>EposThread</scope><name>CloseBladeComplete</name></member>

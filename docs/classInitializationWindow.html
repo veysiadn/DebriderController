@@ -110,16 +110,16 @@ Collaboration diagram for InitializationWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a93ba58633739ce031b8087a99bc22ec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInitializationWindow.html#a93ba58633739ce031b8087a99bc22ec3">UpdateInitGUI</a> (int state)</td></tr>
-<tr class="memdesc:a93ba58633739ce031b8087a99bc22ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">UpdateInitGUI Update initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not.  <a href="classInitializationWindow.html#a93ba58633739ce031b8087a99bc22ec3">More...</a><br /></td></tr>
+<tr class="memdesc:a93ba58633739ce031b8087a99bc22ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not.  <a href="classInitializationWindow.html#a93ba58633739ce031b8087a99bc22ec3">More...</a><br /></td></tr>
 <tr class="separator:a93ba58633739ce031b8087a99bc22ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bfbed496dbe62a62e568dce7973a4b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInitializationWindow.html#a4bfbed496dbe62a62e568dce7973a4b9">on_btn_reinit_clicked</a> ()</td></tr>
-<tr class="memdesc:a4bfbed496dbe62a62e568dce7973a4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btn_reinit_clicked In case user clicks reinitialization, system will try to reinitialize communications with motor and pedal.  <a href="classInitializationWindow.html#a4bfbed496dbe62a62e568dce7973a4b9">More...</a><br /></td></tr>
+<tr class="memdesc:a4bfbed496dbe62a62e568dce7973a4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">In case user clicks reinitialization button, system will try to reinitialize communications with motor and pedal.  <a href="classInitializationWindow.html#a4bfbed496dbe62a62e568dce7973a4b9">More...</a><br /></td></tr>
 <tr class="separator:a4bfbed496dbe62a62e568dce7973a4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:af38e36cd59510f19f0877c0ab090f83e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInitializationWindow.html#af38e36cd59510f19f0877c0ab090f83e">btn_reinit_clicked</a> (int state)</td></tr>
-<tr class="memdesc:af38e36cd59510f19f0877c0ab090f83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">btn_reinit_clicked This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization.  <a href="classInitializationWindow.html#af38e36cd59510f19f0877c0ab090f83e">More...</a><br /></td></tr>
+<tr class="memdesc:af38e36cd59510f19f0877c0ab090f83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization.  <a href="classInitializationWindow.html#af38e36cd59510f19f0877c0ab090f83e">More...</a><br /></td></tr>
 <tr class="separator:af38e36cd59510f19f0877c0ab090f83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -206,7 +206,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>btn_reinit_clicked This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization. </p>
+<p>This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>Current state of debrider. </td></tr>
@@ -239,7 +239,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btn_reinit_clicked In case user clicks reinitialization, system will try to reinitialize communications with motor and pedal. </p>
+<p>In case user clicks reinitialization button, system will try to reinitialize communications with motor and pedal. </p>
 
 </div>
 </div>
@@ -267,7 +267,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>UpdateInitGUI Update initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not. </p>
+<p>Updates initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>Current state of debrider. </td></tr>

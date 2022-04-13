@@ -82,7 +82,7 @@
           <declname>state</declname>
         </param>
         <briefdescription>
-<para>UpdateInitGUI Update initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not. </para>
+<para>Updates initialization window based on current state. It gives feedback to user about system state, e.g. system ready, handpiece is connected or not pedal is connected or not. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -107,7 +107,7 @@
         <name>on_btn_reinit_clicked</name>
         <qualifiedname>InitializationWindow::on_btn_reinit_clicked</qualifiedname>
         <briefdescription>
-<para>on_btn_reinit_clicked In case user clicks reinitialization, system will try to reinitialize communications with motor and pedal. </para>
+<para>In case user clicks reinitialization button, system will try to reinitialize communications with motor and pedal. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -128,7 +128,7 @@
           <declname>state</declname>
         </param>
         <briefdescription>
-<para>btn_reinit_clicked This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization. </para>
+<para>This signal is emitted when user clicks reinitialization button to notify other threads about reinitialization. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>

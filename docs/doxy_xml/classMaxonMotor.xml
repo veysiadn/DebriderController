@@ -11,12 +11,9 @@
         <name>m_PortName_MCP</name>
         <qualifiedname>MaxonMotor::m_PortName_MCP</qualifiedname>
         <briefdescription>
+<para>Port name. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Port name </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -29,12 +26,9 @@
         <name>m_keyHandle_MCP</name>
         <qualifiedname>MaxonMotor::m_keyHandle_MCP</qualifiedname>
         <briefdescription>
+<para>Handle to the CAN port. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Handle to the CAN port </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -47,12 +41,9 @@
         <name>m_Node_ID_MCP</name>
         <qualifiedname>MaxonMotor::m_Node_ID_MCP</qualifiedname>
         <briefdescription>
+<para>Node ID. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Node ID </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -65,12 +56,9 @@
         <name>ErrorCode</name>
         <qualifiedname>MaxonMotor::ErrorCode</qualifiedname>
         <briefdescription>
+<para>Error code returned from VCS functions. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Error code returned from VCS functions </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -83,12 +71,9 @@
         <name>m_Mode</name>
         <qualifiedname>MaxonMotor::m_Mode</qualifiedname>
         <briefdescription>
+<para>Operating modes and parameters. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Operating modes and parameters </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -101,12 +86,9 @@
         <name>m_OscOffset</name>
         <qualifiedname>MaxonMotor::m_OscOffset</qualifiedname>
         <briefdescription>
+<para>Oscillation mode offset. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Oscillation mode offset. </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -119,12 +101,9 @@
         <name>m_OscAmp</name>
         <qualifiedname>MaxonMotor::m_OscAmp</qualifiedname>
         <briefdescription>
+<para>Oscillation mode amplitude. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>Oscillation mode amplitude. </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -137,12 +116,9 @@
         <name>m_errorFlag</name>
         <qualifiedname>MaxonMotor::m_errorFlag</qualifiedname>
         <briefdescription>
+<para>EPOS error flag. </para>
         </briefdescription>
         <detaileddescription>
-<para><itemizedlist>
-<listitem><para>EPOS error flag. </para>
-</listitem></itemizedlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -171,12 +147,12 @@
         <name>OpenCANCommunication</name>
         <qualifiedname>MaxonMotor::OpenCANCommunication</qualifiedname>
         <briefdescription>
-<para>OpenCANCommunication Opens CAN port and configures communication. </para>
+<para>Opens CAN port and configures communication. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="note"><para>CAN port name, node id and baudrate is hard coded for now. </para>
 </simplesect>
-<simplesect kind="return"><para>1 if succesfull otherwise 0. </para>
+<simplesect kind="return"><para>1 if succesful otherwise 0. </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -191,10 +167,10 @@
         <name>EnableMotorController</name>
         <qualifiedname>MaxonMotor::EnableMotorController</qualifiedname>
         <briefdescription>
-<para>EnableMotorController Enables motor controller and clears faults. </para>
+<para>Enables motor controller and clears faults. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>1 if succesfull, otherwise 0. </para>
+<para><simplesect kind="return"><para>1 if succesful, otherwise 0. </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -209,7 +185,7 @@
         <name>ActiviateAllDevice</name>
         <qualifiedname>MaxonMotor::ActiviateAllDevice</qualifiedname>
         <briefdescription>
-<para>ActiviateAllDevice Activates connected EPOS driver, with hard coded communication information. </para>
+<para>Activates connected EPOS driver, with hard coded communication parameters such as node id, baudrate and CAN port name. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -224,7 +200,7 @@
         <name>DisableAllDevice</name>
         <qualifiedname>MaxonMotor::DisableAllDevice</qualifiedname>
         <briefdescription>
-<para>DisableAllDevice Puts motor driver in disabled state. </para>
+<para>Puts motor driver in disabled state. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -239,7 +215,7 @@
         <name>CloseAllDevice</name>
         <qualifiedname>MaxonMotor::CloseAllDevice</qualifiedname>
         <briefdescription>
-<para>CloseAllDevice Closes connected controller. </para>
+<para>Closes connected controller. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -254,7 +230,7 @@
         <name>EPOSGetError</name>
         <qualifiedname>MaxonMotor::EPOSGetError</qualifiedname>
         <briefdescription>
-<para>EPOSGetError Returns error flag from command library. </para>
+<para>Returns error flag from command library. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>Error flag value. </para>
@@ -263,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="59" column="10" bodyfile="src/epos4_can.cpp" bodystart="456" bodyend="459"/>
+        <location file="include/epos4_can.h" line="59" column="10" bodyfile="src/epos4_can.cpp" bodystart="456" bodyend="469"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -276,7 +252,7 @@
           <declname>speed</declname>
         </param>
         <briefdescription>
-<para>EnablePositionModeWithSpeed Enables position mode with specific speed value. </para>
+<para>Enables position mode with specific speed value. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -292,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="66" column="10" bodyfile="src/epos4_can.cpp" bodystart="480" bodyend="507"/>
+        <location file="include/epos4_can.h" line="66" column="10" bodyfile="src/epos4_can.cpp" bodystart="490" bodyend="517"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -305,7 +281,7 @@
           <declname>current_position</declname>
         </param>
         <briefdescription>
-<para>GetCurrentPositionAllDevice Gets current position values of connected motors in terms of encoder increment value. </para>
+<para>Gets current position values of connected motors in terms of encoder increment value. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -313,7 +289,7 @@
 <parametername>current_position</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Value to be written the returned position value. </para>
+<para>returned position value. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -330,7 +306,7 @@
         <name>GetCloseBladePosition</name>
         <qualifiedname>MaxonMotor::GetCloseBladePosition</qualifiedname>
         <briefdescription>
-<para>GetCloseBladePosition Finds position of motor which will correspond to closed blade position in the debrider. </para>
+<para>Finds position of motor which will correspond to closed blade position in the debrider. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>Close blade position in terms of encoder increment values. </para>
@@ -348,7 +324,7 @@
         <name>EnableVelocityMode</name>
         <qualifiedname>MaxonMotor::EnableVelocityMode</qualifiedname>
         <briefdescription>
-<para>EnableVelocityMode Enables motor with velocity mode. </para>
+<para>Enables motor with velocity mode. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -363,7 +339,7 @@
         <name>EnablePositionMode</name>
         <qualifiedname>MaxonMotor::EnablePositionMode</qualifiedname>
         <briefdescription>
-<para>EnablePositionMode Enables motor with position mode. </para>
+<para>Enables motor with position mode. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -382,7 +358,7 @@
           <declname>target_velocity</declname>
         </param>
         <briefdescription>
-<para>MoveVelocity Sends target velocity command to motor,motor moves according to target velocity. </para>
+<para>Sends target velocity command to motor,motor moves according to target velocity. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -390,7 +366,7 @@
 <parametername>target_velocity</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Velocity value for motor to move. </para>
+<para>Desired velocity. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -411,7 +387,7 @@
           <declname>target_pos</declname>
         </param>
         <briefdescription>
-<para>MovePosition Sends target position value to motor, motor moves to target position. </para>
+<para>Sends target position value to motor, motor moves to target position. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -436,7 +412,7 @@
         <name>GetCurrentVelocity</name>
         <qualifiedname>MaxonMotor::GetCurrentVelocity</qualifiedname>
         <briefdescription>
-<para>GetCurrentVelocity Gets current velocity of motor. </para>
+<para>Gets current velocity of motor. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>Current velocity of motor. </para>
@@ -445,7 +421,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="110" column="9" bodyfile="src/epos4_can.cpp" bodystart="461" bodyend="478"/>
+        <location file="include/epos4_can.h" line="110" column="9" bodyfile="src/epos4_can.cpp" bodystart="471" bodyend="488"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -458,7 +434,7 @@
           <declname>Amp</declname>
         </param>
         <briefdescription>
-<para>SetOscMode Put motor in oscillation mode. </para>
+<para>Put motor in oscillation mode. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -487,7 +463,7 @@
           <declname>dir</declname>
         </param>
         <briefdescription>
-<para>RunOscMode Runs motor in oscillation mode. </para>
+<para>Runs motor in oscillation mode. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -514,7 +490,7 @@
         <name>StopMotion</name>
         <qualifiedname>MaxonMotor::StopMotion</qualifiedname>
         <briefdescription>
-<para>StopMotion Stops the motion of motor. </para>
+<para>Stops the motion of motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -529,7 +505,7 @@
         <name>WaitForMotion</name>
         <qualifiedname>MaxonMotor::WaitForMotion</qualifiedname>
         <briefdescription>
-<para>WaitForMotion Waits for motor to reach target position. </para>
+<para>Waits for motor to reach target position. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -554,7 +530,7 @@
           <declname>Node_ID</declname>
         </param>
         <briefdescription>
-<para>EnableDevice Enables specific node in specific port. </para>
+<para>Enables specific node in specific port. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -595,7 +571,7 @@
           <declname>Node_ID</declname>
         </param>
         <briefdescription>
-<para>DisableDevice Disable specific node in specific port. </para>
+<para>Disable specific node in specific port. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -636,7 +612,7 @@
           <declname>Node_ID</declname>
         </param>
         <briefdescription>
-<para>ActivateDevice Opens the port with &quot;CAN_mcp251x&quot;, &quot;CANOpen&quot; and &quot;EPOS4&quot; parameters. </para>
+<para>Opens the port with &quot;CAN_mcp251x&quot;, &quot;CANOpen&quot; and &quot;EPOS4&quot; parameters. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -673,7 +649,7 @@
           <declname>keyHandle_</declname>
         </param>
         <briefdescription>
-<para>CloseDevice Closes opened ports. </para>
+<para>Closes opened ports. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -710,7 +686,7 @@
           <declname>Node_ID</declname>
         </param>
         <briefdescription>
-<para>Move Moves motor with specified target velocity command for specific node in specific port. </para>
+<para>Moves motor with specified target velocity command for specified node in specified port. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -726,7 +702,7 @@
 <parametername>target_velocity</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>target velocity. </para>
+<para>desired velocity. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -763,7 +739,7 @@
           <declname>Node_ID</declname>
         </param>
         <briefdescription>
-<para>MoveToPosition Sends specific target position command for specific node in specific port. </para>
+<para>Sends specific target position command for specified node in specified port. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -816,7 +792,7 @@
           <declname>Node_ID</declname>
         </param>
         <briefdescription>
-<para>GetCurrentPosition Requests current position from specific node in specific port. </para>
+<para>Requests current position from specified node in specified port. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -857,16 +833,16 @@
         <name>MoveInCloseBladeMode</name>
         <qualifiedname>MaxonMotor::MoveInCloseBladeMode</qualifiedname>
         <briefdescription>
-<para>MoveInCloseBladeMode Moves motor with CLOSE_BLADE_VELOCITY (20RPM),. </para>
+<para>Moves motor with CLOSE_BLADE_VELOCITY (20RPM),. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>This function is application specific, It is required to close the blade of debrider with slow movement. </para>
+<para><simplesect kind="note"><para>This function is application specific. It is required to close the blade of debrider with slow movement. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="212" column="10" bodyfile="src/epos4_can.cpp" bodystart="508" bodyend="512"/>
+        <location file="include/epos4_can.h" line="212" column="10" bodyfile="src/epos4_can.cpp" bodystart="518" bodyend="522"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

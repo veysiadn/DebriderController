@@ -76,12 +76,13 @@
     <member refid="classMainWindow_1a6fc833d57517f77fd4cd8d4cf2b912ac" kind="variable"><name>status_label_</name></member>
     <member refid="classMainWindow_1ab1844d6f6c88d93a233c93ef2fd028d8" kind="variable"><name>pump_motor_target_speed_</name></member>
     <member refid="classMainWindow_1a340d9f28f2da0c17e66269e74f9f29fe" kind="variable"><name>pump_motor_printed_speed_val_</name></member>
-    <member refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" kind="variable"><name>buzzer_running_status</name></member>
+    <member refid="classMainWindow_1a6575cd0cc1dc2a9cc018e6d619e7526d" kind="variable"><name>buzzer_thread_</name></member>
     <member refid="classMainWindow_1aed0a2b4bffbb6d18f88ee03e18588e0c" kind="variable"><name>pump_running_status_</name></member>
     <member refid="classMainWindow_1a083944ab39cd4890fb4aebe80773ea47" kind="variable"><name>debrider_motor_target_speed_</name></member>
     <member refid="classMainWindow_1aca2977941ed2246dfc014e8420278360" kind="variable"><name>emergency_window_</name></member>
     <member refid="classMainWindow_1adb76a08907d348622598f180fe4b9b34" kind="variable"><name>motor_thread_</name></member>
     <member refid="classMainWindow_1a5d2956bcdeb387a350218819569ae015" kind="variable"><name>init_window_</name></member>
+    <member refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" kind="variable"><name>buzzer_running_status</name></member>
     <member refid="classMainWindow_1a996c5a2b6f77944776856f08ec30858d" kind="function"><name>MainWindow</name></member>
     <member refid="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" kind="function"><name>~MainWindow</name></member>
     <member refid="classMainWindow_1a589401902013fdc570e9649d751fc031" kind="slot"><name>on_btnDecreaseRPM_clicked</name></member>
@@ -109,11 +110,12 @@
     <member refid="classMainWindow_1adf70cd7e458457ea1c26e0ea468033b3" kind="function"><name>ShowPedalButtonStates</name></member>
     <member refid="classMainWindow_1a6b8badf44dbef81cdb1bf35b6bf7013f" kind="function"><name>EnableValve</name></member>
     <member refid="classMainWindow_1a59d7744e6b95a8f684b1bf2f8f0786b0" kind="function"><name>DisableValve</name></member>
-    <member refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" kind="function"><name>EnableBuzzer</name></member>
+    <member refid="classMainWindow_1a2bbabe6c3cc17c41ea2721d1c37dd5db" kind="function"><name>RunBuzzer</name></member>
     <member refid="classMainWindow_1ac21dde15d020b8d0233d4b9f49eb5f24" kind="function"><name>InitializeIO</name></member>
     <member refid="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" kind="function"><name>SetDefaultUI</name></member>
     <member refid="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" kind="function"><name>ShowControlUI</name></member>
     <member refid="classMainWindow_1a455d382eda67ec98926088638c828a8f" kind="function"><name>ResetWatchdogTimerIC</name></member>
+    <member refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" kind="function"><name>EnableBuzzer</name></member>
   </compound>
   <compound refid="classMaxonMotor" kind="class"><name>MaxonMotor</name>
     <member refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" kind="variable"><name>m_PortName_MCP</name></member>

@@ -90,7 +90,9 @@ $(document).ready(function(){initNavTree('classMainWindow.html',''); initResizab
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classMainWindow-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MainWindow Class Reference</div></div>
 </div><!--header-->
@@ -111,7 +113,7 @@ Collaboration diagram for MainWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:ae6e69202ebecc1b99a7e0c8dbc1f7501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae6e69202ebecc1b99a7e0c8dbc1f7501">InitStateChanged</a> (int state)</td></tr>
-<tr class="memdesc:ae6e69202ebecc1b99a7e0c8dbc1f7501"><td class="mdescLeft">&#160;</td><td class="mdescRight">InitStateChanged Emitted when initialization state change to notify initialization window.  <a href="classMainWindow.html#ae6e69202ebecc1b99a7e0c8dbc1f7501">More...</a><br /></td></tr>
+<tr class="memdesc:ae6e69202ebecc1b99a7e0c8dbc1f7501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when initialization state change to notify initialization window.  <a href="classMainWindow.html#ae6e69202ebecc1b99a7e0c8dbc1f7501">More...</a><br /></td></tr>
 <tr class="separator:ae6e69202ebecc1b99a7e0c8dbc1f7501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -124,85 +126,85 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:a589401902013fdc570e9649d751fc031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a589401902013fdc570e9649d751fc031">on_btnDecreaseRPM_clicked</a> ()</td></tr>
-<tr class="memdesc:a589401902013fdc570e9649d751fc031"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnDecreaseRPM_clicked GUI callback to decrease debrider motor RPM value by 1000.  <a href="classMainWindow.html#a589401902013fdc570e9649d751fc031">More...</a><br /></td></tr>
+<tr class="memdesc:a589401902013fdc570e9649d751fc031"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to decrease debrider motor RPM value by 1000.  <a href="classMainWindow.html#a589401902013fdc570e9649d751fc031">More...</a><br /></td></tr>
 <tr class="separator:a589401902013fdc570e9649d751fc031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cdcedb81963ed38f8566b67cc33697a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6cdcedb81963ed38f8566b67cc33697a">on_btnIncreaseRPM_clicked</a> ()</td></tr>
-<tr class="memdesc:a6cdcedb81963ed38f8566b67cc33697a"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnIncreaseRPM_clicked GUI callback to increase debrider motor RPM value by 1000.  <a href="classMainWindow.html#a6cdcedb81963ed38f8566b67cc33697a">More...</a><br /></td></tr>
+<tr class="memdesc:a6cdcedb81963ed38f8566b67cc33697a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to increase debrider motor RPM value by 1000.  <a href="classMainWindow.html#a6cdcedb81963ed38f8566b67cc33697a">More...</a><br /></td></tr>
 <tr class="separator:a6cdcedb81963ed38f8566b67cc33697a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6f8e7812a2dfcd8e1dc6ab2c95813f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab6f8e7812a2dfcd8e1dc6ab2c95813f0">on_radioCW_toggled</a> (bool checked)</td></tr>
-<tr class="memdesc:ab6f8e7812a2dfcd8e1dc6ab2c95813f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_radioCW_toggled GUI callback to change rotation direction of debrider motor to clock-wise.  <a href="classMainWindow.html#ab6f8e7812a2dfcd8e1dc6ab2c95813f0">More...</a><br /></td></tr>
+<tr class="memdesc:ab6f8e7812a2dfcd8e1dc6ab2c95813f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to change rotation direction of debrider motor to clock-wise.  <a href="classMainWindow.html#ab6f8e7812a2dfcd8e1dc6ab2c95813f0">More...</a><br /></td></tr>
 <tr class="separator:ab6f8e7812a2dfcd8e1dc6ab2c95813f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a574b22181984a19376ab6bd86a48a93d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a574b22181984a19376ab6bd86a48a93d">on_radioCCW_toggled</a> (bool checked)</td></tr>
-<tr class="memdesc:a574b22181984a19376ab6bd86a48a93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_radioCCW_toggled GUI callback to change rotation direction of debrider motor to counter clock-wise.  <a href="classMainWindow.html#a574b22181984a19376ab6bd86a48a93d">More...</a><br /></td></tr>
+<tr class="memdesc:a574b22181984a19376ab6bd86a48a93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to change rotation direction of debrider motor to counter clock-wise.  <a href="classMainWindow.html#a574b22181984a19376ab6bd86a48a93d">More...</a><br /></td></tr>
 <tr class="separator:a574b22181984a19376ab6bd86a48a93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad74ff92f47e8ebabbfcbf2452819d12d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ad74ff92f47e8ebabbfcbf2452819d12d">on_radioOSC_toggled</a> (bool checked)</td></tr>
-<tr class="memdesc:ad74ff92f47e8ebabbfcbf2452819d12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_radioOSC_toggled GUI callback to change running mode of debrider motor to oscillation mode.  <a href="classMainWindow.html#ad74ff92f47e8ebabbfcbf2452819d12d">More...</a><br /></td></tr>
+<tr class="memdesc:ad74ff92f47e8ebabbfcbf2452819d12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to change running mode of debrider motor to oscillation mode.  <a href="classMainWindow.html#ad74ff92f47e8ebabbfcbf2452819d12d">More...</a><br /></td></tr>
 <tr class="separator:ad74ff92f47e8ebabbfcbf2452819d12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a438ed0f9488c8dd8ed0ea8fcab3691ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a438ed0f9488c8dd8ed0ea8fcab3691ae">on_btnDecreaseFlow_clicked</a> ()</td></tr>
-<tr class="memdesc:a438ed0f9488c8dd8ed0ea8fcab3691ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnDecreaseFlow_clicked GUI callback to decrease suction motor RPM value by ten percent.  <a href="classMainWindow.html#a438ed0f9488c8dd8ed0ea8fcab3691ae">More...</a><br /></td></tr>
+<tr class="memdesc:a438ed0f9488c8dd8ed0ea8fcab3691ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to decrease suction motor RPM value by ten percent.  <a href="classMainWindow.html#a438ed0f9488c8dd8ed0ea8fcab3691ae">More...</a><br /></td></tr>
 <tr class="separator:a438ed0f9488c8dd8ed0ea8fcab3691ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41af8ae08b8ee8d4e816fcab47d2aa13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a41af8ae08b8ee8d4e816fcab47d2aa13">on_btnIncreaseFlow_clicked</a> ()</td></tr>
-<tr class="memdesc:a41af8ae08b8ee8d4e816fcab47d2aa13"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnIncreaseFlow_clicked GUI callback to increase suction motor velocity value by ten percent.  <a href="classMainWindow.html#a41af8ae08b8ee8d4e816fcab47d2aa13">More...</a><br /></td></tr>
+<tr class="memdesc:a41af8ae08b8ee8d4e816fcab47d2aa13"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to increase suction motor velocity value by ten percent.  <a href="classMainWindow.html#a41af8ae08b8ee8d4e816fcab47d2aa13">More...</a><br /></td></tr>
 <tr class="separator:a41af8ae08b8ee8d4e816fcab47d2aa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0bf4b19c3dfc7d99ec9bfb324639840"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae0bf4b19c3dfc7d99ec9bfb324639840">on_btnIrrigationMove_clicked</a> ()</td></tr>
-<tr class="memdesc:ae0bf4b19c3dfc7d99ec9bfb324639840"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnIrrigationMove_clicked GUI callback to move suction motor.  <a href="classMainWindow.html#ae0bf4b19c3dfc7d99ec9bfb324639840">More...</a><br /></td></tr>
+<tr class="memdesc:ae0bf4b19c3dfc7d99ec9bfb324639840"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to move suction motor.  <a href="classMainWindow.html#ae0bf4b19c3dfc7d99ec9bfb324639840">More...</a><br /></td></tr>
 <tr class="separator:ae0bf4b19c3dfc7d99ec9bfb324639840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54f092d5c0c588c0c2fdfa5601fe6d75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a54f092d5c0c588c0c2fdfa5601fe6d75">on_btnIrrigationStop_clicked</a> ()</td></tr>
-<tr class="memdesc:a54f092d5c0c588c0c2fdfa5601fe6d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnIrrigationStop_clicked GUI callback to stop suction motor.  <a href="classMainWindow.html#a54f092d5c0c588c0c2fdfa5601fe6d75">More...</a><br /></td></tr>
+<tr class="memdesc:a54f092d5c0c588c0c2fdfa5601fe6d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to stop suction motor.  <a href="classMainWindow.html#a54f092d5c0c588c0c2fdfa5601fe6d75">More...</a><br /></td></tr>
 <tr class="separator:a54f092d5c0c588c0c2fdfa5601fe6d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e308e20783cbdbe8a1bb8dc820725df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2e308e20783cbdbe8a1bb8dc820725df">on_btnCloseBlade_clicked</a> ()</td></tr>
-<tr class="memdesc:a2e308e20783cbdbe8a1bb8dc820725df"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_btnCloseBlade_clicked GUI callback to close blade of motor.  <a href="classMainWindow.html#a2e308e20783cbdbe8a1bb8dc820725df">More...</a><br /></td></tr>
+<tr class="memdesc:a2e308e20783cbdbe8a1bb8dc820725df"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to close blade of motor.  <a href="classMainWindow.html#a2e308e20783cbdbe8a1bb8dc820725df">More...</a><br /></td></tr>
 <tr class="separator:a2e308e20783cbdbe8a1bb8dc820725df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af60b4e71a8f34ca70841abec75947492"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#af60b4e71a8f34ca70841abec75947492">on_radioMAXRPM_clicked</a> ()</td></tr>
-<tr class="memdesc:af60b4e71a8f34ca70841abec75947492"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_radioMAXRPM_clicked GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000.  <a href="classMainWindow.html#af60b4e71a8f34ca70841abec75947492">More...</a><br /></td></tr>
+<tr class="memdesc:af60b4e71a8f34ca70841abec75947492"><td class="mdescLeft">&#160;</td><td class="mdescRight">GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000.  <a href="classMainWindow.html#af60b4e71a8f34ca70841abec75947492">More...</a><br /></td></tr>
 <tr class="separator:af60b4e71a8f34ca70841abec75947492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcc9301223c1ce654c71c9b9d889aaed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#afcc9301223c1ce654c71c9b9d889aaed">on_StateChanged</a> (int state)</td></tr>
-<tr class="memdesc:afcc9301223c1ce654c71c9b9d889aaed"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_StateChanged Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state.  <a href="classMainWindow.html#afcc9301223c1ce654c71c9b9d889aaed">More...</a><br /></td></tr>
+<tr class="memdesc:afcc9301223c1ce654c71c9b9d889aaed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state.  <a href="classMainWindow.html#afcc9301223c1ce654c71c9b9d889aaed">More...</a><br /></td></tr>
 <tr class="separator:afcc9301223c1ce654c71c9b9d889aaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24107b24ea4bea9e13c1dec28e31e140"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a24107b24ea4bea9e13c1dec28e31e140">on_CallEmergencyWindow</a> ()</td></tr>
-<tr class="memdesc:a24107b24ea4bea9e13c1dec28e31e140"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_CallEmergencyWindow Opens emergency windows in case of emergency.  <a href="classMainWindow.html#a24107b24ea4bea9e13c1dec28e31e140">More...</a><br /></td></tr>
+<tr class="memdesc:a24107b24ea4bea9e13c1dec28e31e140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens emergency windows in case of emergency.  <a href="classMainWindow.html#a24107b24ea4bea9e13c1dec28e31e140">More...</a><br /></td></tr>
 <tr class="separator:a24107b24ea4bea9e13c1dec28e31e140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33009b07ad76d5c0793275c0cda3f068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a33009b07ad76d5c0793275c0cda3f068">on_ExitEmergencyClicked</a> (int a)</td></tr>
-<tr class="memdesc:a33009b07ad76d5c0793275c0cda3f068"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_ExitEmergencyClicked Sloth to handle emergency exit button clicked.  <a href="classMainWindow.html#a33009b07ad76d5c0793275c0cda3f068">More...</a><br /></td></tr>
+<tr class="memdesc:a33009b07ad76d5c0793275c0cda3f068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sloth to handle emergency exit button clicked.  <a href="classMainWindow.html#a33009b07ad76d5c0793275c0cda3f068">More...</a><br /></td></tr>
 <tr class="separator:a33009b07ad76d5c0793275c0cda3f068"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a034be8b0b26b9c0510d9d095f4b589"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a8a034be8b0b26b9c0510d9d095f4b589">on_CallInitWindow</a> ()</td></tr>
-<tr class="memdesc:a8a034be8b0b26b9c0510d9d095f4b589"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_CallInitWindow Calls initialization window, and closes all other windows.  <a href="classMainWindow.html#a8a034be8b0b26b9c0510d9d095f4b589">More...</a><br /></td></tr>
+<tr class="memdesc:a8a034be8b0b26b9c0510d9d095f4b589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls initialization window, and closes all other windows.  <a href="classMainWindow.html#a8a034be8b0b26b9c0510d9d095f4b589">More...</a><br /></td></tr>
 <tr class="separator:a8a034be8b0b26b9c0510d9d095f4b589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a1904ae87335a0b049422cf530d539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a72a1904ae87335a0b049422cf530d539">on_ReinitClicked</a> (int state)</td></tr>
-<tr class="memdesc:a72a1904ae87335a0b049422cf530d539"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_ReinitClicked Handles signal coming from initialization window when user clicks reinitialize.  <a href="classMainWindow.html#a72a1904ae87335a0b049422cf530d539">More...</a><br /></td></tr>
+<tr class="memdesc:a72a1904ae87335a0b049422cf530d539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles signal coming from initialization window when user clicks reinitialize.  <a href="classMainWindow.html#a72a1904ae87335a0b049422cf530d539">More...</a><br /></td></tr>
 <tr class="separator:a72a1904ae87335a0b049422cf530d539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a297056371a9736608f8f14bfccc7dae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a297056371a9736608f8f14bfccc7dae5">PrintStatus</a> (int dSpeed, int pSpeed)</td></tr>
-<tr class="memdesc:a297056371a9736608f8f14bfccc7dae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">PrintStatus Prints the status of debrider, such as debrider velocity and suction motor velocity percentage.  <a href="classMainWindow.html#a297056371a9736608f8f14bfccc7dae5">More...</a><br /></td></tr>
+<tr class="memdesc:a297056371a9736608f8f14bfccc7dae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the status of debrider, such as debrider velocity and suction motor velocity percentage.  <a href="classMainWindow.html#a297056371a9736608f8f14bfccc7dae5">More...</a><br /></td></tr>
 <tr class="separator:a297056371a9736608f8f14bfccc7dae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0521e46c59c0f209e8993156316cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ac0521e46c59c0f209e8993156316cdd0">StopPumpMotor</a> ()</td></tr>
-<tr class="memdesc:ac0521e46c59c0f209e8993156316cdd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">StopPumpMotor Stops pumps motor.  <a href="classMainWindow.html#ac0521e46c59c0f209e8993156316cdd0">More...</a><br /></td></tr>
+<tr class="memdesc:ac0521e46c59c0f209e8993156316cdd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops pumps motor.  <a href="classMainWindow.html#ac0521e46c59c0f209e8993156316cdd0">More...</a><br /></td></tr>
 <tr class="separator:ac0521e46c59c0f209e8993156316cdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fcbbb4f3ba6d135d2032ad417f39799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6fcbbb4f3ba6d135d2032ad417f39799">MovePumpMotor</a> ()</td></tr>
-<tr class="memdesc:a6fcbbb4f3ba6d135d2032ad417f39799"><td class="mdescLeft">&#160;</td><td class="mdescRight">MovePumpMotor Moves pump motor.  <a href="classMainWindow.html#a6fcbbb4f3ba6d135d2032ad417f39799">More...</a><br /></td></tr>
+<tr class="memdesc:a6fcbbb4f3ba6d135d2032ad417f39799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves pump motor.  <a href="classMainWindow.html#a6fcbbb4f3ba6d135d2032ad417f39799">More...</a><br /></td></tr>
 <tr class="separator:a6fcbbb4f3ba6d135d2032ad417f39799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6264ec497ce9d864fb07b1bdca7e8778"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6264ec497ce9d864fb07b1bdca7e8778">EnableGUI</a> ()</td></tr>
-<tr class="memdesc:a6264ec497ce9d864fb07b1bdca7e8778"><td class="mdescLeft">&#160;</td><td class="mdescRight">EnableGUI Enables GUI button, meaning that system is ready to accept inputs from user.  <a href="classMainWindow.html#a6264ec497ce9d864fb07b1bdca7e8778">More...</a><br /></td></tr>
+<tr class="memdesc:a6264ec497ce9d864fb07b1bdca7e8778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables GUI button, meaning that system is ready to accept inputs from user.  <a href="classMainWindow.html#a6264ec497ce9d864fb07b1bdca7e8778">More...</a><br /></td></tr>
 <tr class="separator:a6264ec497ce9d864fb07b1bdca7e8778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50efa1e7281151036d23a9d2ddcc6d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab50efa1e7281151036d23a9d2ddcc6d2">DisableGUI</a> ()</td></tr>
-<tr class="memdesc:ab50efa1e7281151036d23a9d2ddcc6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">DisableGUI Disables GUI button, meaning that system will not accept inputs from user. GUI is disable only in case of emergency or when debrider motor is running.  <a href="classMainWindow.html#ab50efa1e7281151036d23a9d2ddcc6d2">More...</a><br /></td></tr>
+<tr class="memdesc:ab50efa1e7281151036d23a9d2ddcc6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables GUI button, meaning that system will not accept inputs from user. GUI is disabled in case of emergency or when debrider motor is running.  <a href="classMainWindow.html#ab50efa1e7281151036d23a9d2ddcc6d2">More...</a><br /></td></tr>
 <tr class="separator:ab50efa1e7281151036d23a9d2ddcc6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf70cd7e458457ea1c26e0ea468033b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#adf70cd7e458457ea1c26e0ea468033b3">ShowPedalButtonStates</a> ()</td></tr>
-<tr class="memdesc:adf70cd7e458457ea1c26e0ea468033b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ShowPedalButtonStates This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will.  <a href="classMainWindow.html#adf70cd7e458457ea1c26e0ea468033b3">More...</a><br /></td></tr>
+<tr class="memdesc:adf70cd7e458457ea1c26e0ea468033b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will change preset RPM value, change operation mode or run close blade action.  <a href="classMainWindow.html#adf70cd7e458457ea1c26e0ea468033b3">More...</a><br /></td></tr>
 <tr class="separator:adf70cd7e458457ea1c26e0ea468033b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b8badf44dbef81cdb1bf35b6bf7013f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6b8badf44dbef81cdb1bf35b6bf7013f">EnableValve</a> ()</td></tr>
-<tr class="memdesc:a6b8badf44dbef81cdb1bf35b6bf7013f"><td class="mdescLeft">&#160;</td><td class="mdescRight">EnableValve Enables solenoid valve output.  <a href="classMainWindow.html#a6b8badf44dbef81cdb1bf35b6bf7013f">More...</a><br /></td></tr>
+<tr class="memdesc:a6b8badf44dbef81cdb1bf35b6bf7013f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables solenoid valve output.  <a href="classMainWindow.html#a6b8badf44dbef81cdb1bf35b6bf7013f">More...</a><br /></td></tr>
 <tr class="separator:a6b8badf44dbef81cdb1bf35b6bf7013f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59d7744e6b95a8f684b1bf2f8f0786b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a59d7744e6b95a8f684b1bf2f8f0786b0">DisableValve</a> ()</td></tr>
-<tr class="memdesc:a59d7744e6b95a8f684b1bf2f8f0786b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">DisableValve Disables solenoid valve output.  <a href="classMainWindow.html#a59d7744e6b95a8f684b1bf2f8f0786b0">More...</a><br /></td></tr>
+<tr class="memdesc:a59d7744e6b95a8f684b1bf2f8f0786b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables solenoid valve output.  <a href="classMainWindow.html#a59d7744e6b95a8f684b1bf2f8f0786b0">More...</a><br /></td></tr>
 <tr class="separator:a59d7744e6b95a8f684b1bf2f8f0786b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f811a480874280630ac7cae5ccffcf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2f811a480874280630ac7cae5ccffcf4">EnableBuzzer</a> ()</td></tr>
-<tr class="memdesc:a2f811a480874280630ac7cae5ccffcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs buzzer when any pedal input is activated.  <a href="classMainWindow.html#a2f811a480874280630ac7cae5ccffcf4">More...</a><br /></td></tr>
-<tr class="separator:a2f811a480874280630ac7cae5ccffcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bbabe6c3cc17c41ea2721d1c37dd5db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2bbabe6c3cc17c41ea2721d1c37dd5db">RunBuzzer</a> ()</td></tr>
+<tr class="memdesc:a2bbabe6c3cc17c41ea2721d1c37dd5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and executes a thread for running buzzer.  <a href="classMainWindow.html#a2bbabe6c3cc17c41ea2721d1c37dd5db">More...</a><br /></td></tr>
+<tr class="separator:a2bbabe6c3cc17c41ea2721d1c37dd5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac21dde15d020b8d0233d4b9f49eb5f24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ac21dde15d020b8d0233d4b9f49eb5f24">InitializeIO</a> ()</td></tr>
-<tr class="memdesc:ac21dde15d020b8d0233d4b9f49eb5f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">InitializeIO Initializes wiringpi library and pin mapping for RPI.  <a href="classMainWindow.html#ac21dde15d020b8d0233d4b9f49eb5f24">More...</a><br /></td></tr>
+<tr class="memdesc:ac21dde15d020b8d0233d4b9f49eb5f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes wiringpi library and pin mapping for RPI.  <a href="classMainWindow.html#ac21dde15d020b8d0233d4b9f49eb5f24">More...</a><br /></td></tr>
 <tr class="separator:ac21dde15d020b8d0233d4b9f49eb5f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1ff3f227df13718fc3f18363726e201"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ad1ff3f227df13718fc3f18363726e201">SetDefaultUI</a> ()</td></tr>
 <tr class="memdesc:ad1ff3f227df13718fc3f18363726e201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows default UI, where all target values are zero and mode is CW.  <a href="classMainWindow.html#ad1ff3f227df13718fc3f18363726e201">More...</a><br /></td></tr>
@@ -211,8 +213,14 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a375306103fc52b3045f7ae119bc1c982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows control UI in enabled state, hides initialization window.  <a href="classMainWindow.html#a375306103fc52b3045f7ae119bc1c982">More...</a><br /></td></tr>
 <tr class="separator:a375306103fc52b3045f7ae119bc1c982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455d382eda67ec98926088638c828a8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a455d382eda67ec98926088638c828a8f">ResetWatchdogTimerIC</a> ()</td></tr>
-<tr class="memdesc:a455d382eda67ec98926088638c828a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ResetWatchdogTimerIC Resets watchdog timer in case of any missing pulse.  <a href="classMainWindow.html#a455d382eda67ec98926088638c828a8f">More...</a><br /></td></tr>
+<tr class="memdesc:a455d382eda67ec98926088638c828a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets watchdog timer in case of any missing pulse.  <a href="classMainWindow.html#a455d382eda67ec98926088638c828a8f">More...</a><br /></td></tr>
 <tr class="separator:a455d382eda67ec98926088638c828a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a2f811a480874280630ac7cae5ccffcf4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2f811a480874280630ac7cae5ccffcf4">EnableBuzzer</a> ()</td></tr>
+<tr class="memdesc:a2f811a480874280630ac7cae5ccffcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs buzzer when any pedal input is activated.  <a href="classMainWindow.html#a2f811a480874280630ac7cae5ccffcf4">More...</a><br /></td></tr>
+<tr class="separator:a2f811a480874280630ac7cae5ccffcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -230,9 +238,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a340d9f28f2da0c17e66269e74f9f29fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a340d9f28f2da0c17e66269e74f9f29fe">pump_motor_printed_speed_val_</a> =0</td></tr>
 <tr class="memdesc:a340d9f28f2da0c17e66269e74f9f29fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to display speed pump motor velocity.  <a href="classMainWindow.html#a340d9f28f2da0c17e66269e74f9f29fe">More...</a><br /></td></tr>
 <tr class="separator:a340d9f28f2da0c17e66269e74f9f29fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51e0342d55d2036086c0bc6c688c9fd7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a51e0342d55d2036086c0bc6c688c9fd7">buzzer_running_status</a> =false</td></tr>
-<tr class="memdesc:a51e0342d55d2036086c0bc6c688c9fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to describe buzzer running status.  <a href="classMainWindow.html#a51e0342d55d2036086c0bc6c688c9fd7">More...</a><br /></td></tr>
-<tr class="separator:a51e0342d55d2036086c0bc6c688c9fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6575cd0cc1dc2a9cc018e6d619e7526d"><td class="memItemLeft" align="right" valign="top">std::thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6575cd0cc1dc2a9cc018e6d619e7526d">buzzer_thread_</a></td></tr>
+<tr class="memdesc:a6575cd0cc1dc2a9cc018e6d619e7526d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buzzer thread.  <a href="classMainWindow.html#a6575cd0cc1dc2a9cc018e6d619e7526d">More...</a><br /></td></tr>
+<tr class="separator:a6575cd0cc1dc2a9cc018e6d619e7526d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed0a2b4bffbb6d18f88ee03e18588e0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aed0a2b4bffbb6d18f88ee03e18588e0c">pump_running_status_</a> =false</td></tr>
 <tr class="memdesc:aed0a2b4bffbb6d18f88ee03e18588e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to describe pump motor running status.  <a href="classMainWindow.html#aed0a2b4bffbb6d18f88ee03e18588e0c">More...</a><br /></td></tr>
 <tr class="separator:aed0a2b4bffbb6d18f88ee03e18588e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,6 +256,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a5d2956bcdeb387a350218819569ae015"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInitializationWindow.html">InitializationWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a5d2956bcdeb387a350218819569ae015">init_window_</a></td></tr>
 <tr class="memdesc:a5d2956bcdeb387a350218819569ae015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization window, this window will be shown to user first.  <a href="classMainWindow.html#a5d2956bcdeb387a350218819569ae015">More...</a><br /></td></tr>
 <tr class="separator:a5d2956bcdeb387a350218819569ae015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a51e0342d55d2036086c0bc6c688c9fd7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a51e0342d55d2036086c0bc6c688c9fd7">buzzer_running_status</a> = false</td></tr>
+<tr class="memdesc:a51e0342d55d2036086c0bc6c688c9fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to describe buzzer running status.  <a href="classMainWindow.html#a51e0342d55d2036086c0bc6c688c9fd7">More...</a><br /></td></tr>
+<tr class="separator:a51e0342d55d2036086c0bc6c688c9fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
@@ -319,7 +333,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>DisableGUI Disables GUI button, meaning that system will not accept inputs from user. GUI is disable only in case of emergency or when debrider motor is running. </p>
+<p>Disables GUI button, meaning that system will not accept inputs from user. GUI is disabled in case of emergency or when debrider motor is running. </p>
 
 </div>
 </div>
@@ -346,7 +360,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>DisableValve Disables solenoid valve output. </p>
+<p>Disables solenoid valve output. </p>
 
 </div>
 </div>
@@ -368,7 +382,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -400,7 +414,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>EnableGUI Enables GUI button, meaning that system is ready to accept inputs from user. </p>
+<p>Enables GUI button, meaning that system is ready to accept inputs from user. </p>
 
 </div>
 </div>
@@ -427,7 +441,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>EnableValve Enables solenoid valve output. </p>
+<p>Enables solenoid valve output. </p>
 
 </div>
 </div>
@@ -454,7 +468,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>InitializeIO Initializes wiringpi library and pin mapping for RPI. </p>
+<p>Initializes wiringpi library and pin mapping for RPI. </p>
 <p >VysAdn, instead of WiringPi pin numbering this will use GPIO pin numbering.</p>
 <p >SGN signal, output of watchdog and emergency button.</p>
 <p >Watchdog pin declaration</p>
@@ -491,7 +505,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>InitStateChanged Emitted when initialization state change to notify initialization window. </p>
+<p>Emitted when initialization state change to notify initialization window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>Current state of debrider. </td></tr>
@@ -524,7 +538,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>MovePumpMotor Moves pump motor. </p>
+<p>Moves pump motor. </p>
 
 </div>
 </div>
@@ -551,7 +565,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnCloseBlade_clicked GUI callback to close blade of motor. </p>
+<p>GUI callback to close blade of motor. </p>
 
 </div>
 </div>
@@ -578,7 +592,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnDecreaseFlow_clicked GUI callback to decrease suction motor RPM value by ten percent. </p>
+<p>GUI callback to decrease suction motor RPM value by ten percent. </p>
 
 </div>
 </div>
@@ -605,7 +619,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnDecreaseRPM_clicked GUI callback to decrease debrider motor RPM value by 1000. </p>
+<p>GUI callback to decrease debrider motor RPM value by 1000. </p>
 
 </div>
 </div>
@@ -632,7 +646,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnIncreaseFlow_clicked GUI callback to increase suction motor velocity value by ten percent. </p>
+<p>GUI callback to increase suction motor velocity value by ten percent. </p>
 
 </div>
 </div>
@@ -659,7 +673,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnIncreaseRPM_clicked GUI callback to increase debrider motor RPM value by 1000. </p>
+<p>GUI callback to increase debrider motor RPM value by 1000. </p>
 
 </div>
 </div>
@@ -686,7 +700,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnIrrigationMove_clicked GUI callback to move suction motor. </p>
+<p>GUI callback to move suction motor. </p>
 
 </div>
 </div>
@@ -713,7 +727,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_btnIrrigationStop_clicked GUI callback to stop suction motor. </p>
+<p>GUI callback to stop suction motor. </p>
 
 </div>
 </div>
@@ -740,7 +754,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_CallEmergencyWindow Opens emergency windows in case of emergency. </p>
+<p>Opens emergency windows in case of emergency. </p>
 
 </div>
 </div>
@@ -767,7 +781,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_CallInitWindow Calls initialization window, and closes all other windows. </p>
+<p>Calls initialization window, and closes all other windows. </p>
 
 </div>
 </div>
@@ -795,7 +809,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_ExitEmergencyClicked Sloth to handle emergency exit button clicked. </p>
+<p>Sloth to handle emergency exit button clicked. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>emergency state. </td></tr>
@@ -829,7 +843,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_radioCCW_toggled GUI callback to change rotation direction of debrider motor to counter clock-wise. </p>
+<p>GUI callback to change rotation direction of debrider motor to counter clock-wise. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">checked</td><td>bool value if checked. </td></tr>
@@ -863,7 +877,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_radioCW_toggled GUI callback to change rotation direction of debrider motor to clock-wise. </p>
+<p>GUI callback to change rotation direction of debrider motor to clock-wise. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">checked</td><td>bool value if checked. </td></tr>
@@ -896,7 +910,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_radioMAXRPM_clicked GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000. </p>
+<p>GUI callback to select maximum RPM value for debrider motor. Currently max RPM value is 12000. </p>
 
 </div>
 </div>
@@ -924,7 +938,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_radioOSC_toggled GUI callback to change running mode of debrider motor to oscillation mode. </p>
+<p>GUI callback to change running mode of debrider motor to oscillation mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">checked</td><td>bool value if checked. </td></tr>
@@ -958,7 +972,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_ReinitClicked Handles signal coming from initialization window when user clicks reinitialize. </p>
+<p>Handles signal coming from initialization window when user clicks reinitialize. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>Current state of debrider. </td></tr>
@@ -992,7 +1006,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>on_StateChanged Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state. </p>
+<p>Sloth for handling UpdateGUI() signal from other threads. Updates GUI based on state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>Current debrider state. </td></tr>
@@ -1036,7 +1050,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>PrintStatus Prints the status of debrider, such as debrider velocity and suction motor velocity percentage. </p>
+<p>Prints the status of debrider, such as debrider velocity and suction motor velocity percentage. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dSpeed</td><td>Debrider speed. </td></tr>
@@ -1070,7 +1084,34 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ResetWatchdogTimerIC Resets watchdog timer in case of any missing pulse. </p>
+<p>Resets watchdog timer in case of any missing pulse. </p>
+
+</div>
+</div>
+<a id="a2bbabe6c3cc17c41ea2721d1c37dd5db" name="a2bbabe6c3cc17c41ea2721d1c37dd5db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbabe6c3cc17c41ea2721d1c37dd5db">&#9670;&nbsp;</a></span>RunBuzzer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::RunBuzzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates and executes a thread for running buzzer. </p>
 
 </div>
 </div>
@@ -1151,7 +1192,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ShowPedalButtonStates This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will. </p>
+<p>This function shows changes in GUI when user clicks pedal buttons. Each pedal button has a function, based on pedal button inputs, this function will change preset RPM value, change operation mode or run close blade action. </p>
 <dl class="section note"><dt>Note</dt><dd>Left button changes preset RPM values. </dd>
 <dd>
 Right button changes operation mode CW,CCW,OSC </dd>
@@ -1183,7 +1224,7 @@ Left pedal runs closes blade. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>StopPumpMotor Stops pumps motor. </p>
+<p>Stops pumps motor. </p>
 
 </div>
 </div>
@@ -1198,7 +1239,31 @@ Left pedal runs closes blade. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool MainWindow::buzzer_running_status =false</td>
+          <td class="memname">bool MainWindow::buzzer_running_status = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag to describe buzzer running status. </p>
+
+</div>
+</div>
+<a id="a6575cd0cc1dc2a9cc018e6d619e7526d" name="a6575cd0cc1dc2a9cc018e6d619e7526d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6575cd0cc1dc2a9cc018e6d619e7526d">&#9670;&nbsp;</a></span>buzzer_thread_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::thread MainWindow::buzzer_thread_</td>
         </tr>
       </table>
   </td>
@@ -1208,7 +1273,7 @@ Left pedal runs closes blade. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Flag to describe buzzer running status. </p>
+<p>Buzzer thread. </p>
 
 </div>
 </div>

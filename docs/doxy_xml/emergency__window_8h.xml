@@ -85,17 +85,17 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a37b5734886b9a238b6d9660acd2a404e" kindref="member">SetEmergencyStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" kindref="member">on_ButtonEmergencyExit_clicked</ref>();</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal">signals:</highlight></codeline>
-<codeline lineno="51" refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" kindref="member">EmergencyExitClicked</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a8a88833b5c2728b15cc33e93761bc0f8" kindref="member">on_ButtonEmergencyExit_clicked</ref>();</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="54" refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Ui::EmergencyWindow<sp/>*<ref refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" kindref="member">ui</ref>;</highlight></codeline>
-<codeline lineno="56" refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref>;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EMERGENCY_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="58" refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1ae427bd781efebf3a55b34001364eb511" kindref="member">EmergencyExitClicked</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61" refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Ui::EmergencyWindow<sp/>*<ref refid="classEmergencyWindow_1ac58c97f2ece082d5bc0f5e7b07e95a1a" kindref="member">ui</ref>;</highlight></codeline>
+<codeline lineno="63" refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classEmergencyWindow_1a4465ff8a2569abae6412a56b92142770" kindref="member">emergency_status_</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EMERGENCY_WINDOW_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="include/emergency_window.h"/>
   </compounddef>

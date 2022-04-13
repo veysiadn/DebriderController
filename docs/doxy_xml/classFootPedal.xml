@@ -204,7 +204,7 @@
         <name>OpenSPIPort</name>
         <qualifiedname>FootPedal::OpenSPIPort</qualifiedname>
         <briefdescription>
-<para>OpenSPIPort Opens SPI port, by assigning inputs and outputs of SPI pins.. </para>
+<para>Opens SPI port, by assigning inputs and outputs of SPI pins.. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -219,7 +219,7 @@
         <name>CloseSPIPort</name>
         <qualifiedname>FootPedal::CloseSPIPort</qualifiedname>
         <briefdescription>
-<para>CloseSPIPort Closes SPI port by assigning all pins as INPUTs. </para>
+<para>Closes SPI port by assigning all pins as INPUTs. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -234,7 +234,7 @@
         <name>GetSPIError</name>
         <qualifiedname>FootPedal::GetSPIError</qualifiedname>
         <briefdescription>
-<para>GetSPIError Gets SPI error. </para>
+<para>Gets SPI error. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>error flag. </para>
@@ -252,7 +252,7 @@
         <name>GetLeftPedalValue</name>
         <qualifiedname>FootPedal::GetLeftPedalValue</qualifiedname>
         <briefdescription>
-<para>GetLeftPedalValue Gets analog pedal value by reading ADC value via SPI. </para>
+<para>Gets analog pedal value by reading ADC value via SPI. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>Analog pedal value. </para>
@@ -274,7 +274,7 @@
           <declname>s</declname>
         </param>
         <briefdescription>
-<para>SetSPIError Sets SPI error, in case there is an error in SPI communication. </para>
+<para>Sets SPI error, in case there is an error in SPI communication. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -299,7 +299,7 @@
         <name>ClearSPIPort</name>
         <qualifiedname>FootPedal::ClearSPIPort</qualifiedname>
         <briefdescription>
-<para>ClearSPIPort Clears all parameters acquired via SPI. </para>
+<para>Clears all parameters acquired via SPI. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -335,7 +335,7 @@
           <declname>pin_channel</declname>
         </param>
         <briefdescription>
-<para>ReadSPIAnalog Reads data from spefied pin channel in MCP3004 ADC. </para>
+<para>Reads data from spefied pin channel in MCP3004 ADC. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -376,7 +376,7 @@
           <declname>cmd_out_bits_count</declname>
         </param>
         <briefdescription>
-<para>GetCmdOutInfo This function is an helper function to read ADC value. It is specific to MCP3004. For more details check MCP3004 datasheet. </para>
+<para>This function is an helper function to read ADC value. It is specific to MCP3004. For more details check MCP3004 datasheet. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -417,7 +417,7 @@
         <name>TickClock</name>
         <qualifiedname>FootPedal::TickClock</qualifiedname>
         <briefdescription>
-<para>TickClock Tick clock is to manually send clock signal to SPI CLK pin. Currently period is 2ms (500Hz). (1ms HIGH, 1ms LOW). </para>
+<para>Tick clock is to manually send clock signal to SPI CLK pin. Currently period is 2ms (500Hz). (1ms HIGH, 1ms LOW). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -432,7 +432,7 @@
         <name>ReadButtons</name>
         <qualifiedname>FootPedal::ReadButtons</qualifiedname>
         <briefdescription>
-<para>ReadButtons Reads connected pedal buttons via digitalRead function of wiringPi and emits signal when there&apos;s a change in the pedal value in rising edge. </para>
+<para>Reads connected pedal buttons via digitalRead function of wiringPi and emits signal when there&apos;s a change in the pedal value in rising edge. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
