@@ -29,25 +29,32 @@ public:
     explicit EmergencyWindow(QWidget *parent = nullptr);
     ~EmergencyWindow();
     /**
-     * @brief SetEmergencyText Sets emergency text in Emergency Windows based on
+     * @brief Sets emergency text in Emergency Windows based on
      * current emergency state of debrider.
      */
     void SetEmergencyText();
     /**
-     * @brief GetEmergencyStatus Gets emergency status of system.
+     * @brief Gets emergency status of system.
      * @return emergency status.
      */
     int  GetEmergencyStatus();
     /**
-     * @brief SetEmergencyStatus Sets emergency status of the system.
+     * @brief Sets emergency status of the system.
      * @param status Emergency status flag.
      */
     void SetEmergencyStatus(int status);
 
 private slots:
+    /**
+     * @brief Gui emergency exit button clicked function callback. It will emit EmergencyExitClicked signal to notify MainWindow.
+     */
     void on_ButtonEmergencyExit_clicked();
 
 signals:
+    /**
+     * @brief Signal will be emitted to notify MainWindow, that emergency exit clicked.
+     * @param s emergency state.
+     */
     void EmergencyExitClicked(int s);
 
 private:

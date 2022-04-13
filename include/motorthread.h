@@ -30,7 +30,7 @@ public:
     MotorThread();
 
 
-    /// - Control loop is implemented in run() function
+    ///  Control loop is implemented in run() function
     virtual void run();
 
     void ReInitialize();
@@ -110,18 +110,18 @@ private:
 private:
 
     /**
-     * @brief ProcessPedalButtons Notifies GUI in case of change in pedal buttons. Uptades all flags
+     * @brief Notifies GUI in case of change in pedal buttons. Uptades all flags
      * related to pedal buttons.
      */
     void ProcessPedalButtons();
 
     /**
-     * @brief PulseWatchDog Pulses watchdog output with 5ms period.
+     * @brief Pulses watchdog output with 5ms period.
      */
     void PulseWatchDog();
 
     /**
-     * @brief CalculateDesiredVelocity Calculates desired velocity based on target velocity and analog pedal value.
+     * @brief Calculates desired velocity based on target velocity and analog pedal value.
      * @param desired_vel output value.
      * @param pedal_depth analog pedal value.
      * @param target_vel target velocity set by user.

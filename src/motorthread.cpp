@@ -126,7 +126,7 @@ void MotorThread::run()
         // ###EPOS_ERROR ACTIONS###
         if(m_Motor.EPOSGetError())
         {
-            m_CurrState=DEBRIDER_STATE_EPOS_ERROR;
+            m_CurrState=DEBRIDER_STATE_EMERGENCY;
             emit UpdateGUI(m_CurrState);
             std::cout << "EPOS CONNECTION ERROR " << std::endl;
             continue;   //break;

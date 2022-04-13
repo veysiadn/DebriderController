@@ -31,30 +31,30 @@ public:
     FootPedal();
     ~FootPedal();
     /**
-     * @brief OpenSPIPort Opens SPI port, by assigning inputs and outputs of SPI pins..
+     * @brief Opens SPI port, by assigning inputs and outputs of SPI pins..
      */
     void OpenSPIPort();
     /**
-     * @brief CloseSPIPort Closes SPI port by assigning all pins as INPUTs.
+     * @brief Closes SPI port by assigning all pins as INPUTs.
      */
     void CloseSPIPort();
     /**
-     * @brief GetSPIError Gets SPI error.
+     * @brief Gets SPI error.
      * @return error flag.
      */
     bool GetSPIError()                      {   return adc_error_flag;    }
     /**
-     * @brief GetLeftPedalValue Gets analog pedal value by reading ADC value via SPI.
+     * @brief Gets analog pedal value by reading ADC value via SPI.
      * @return Analog pedal value.
      */
     int  GetLeftPedalValue()                {   return L_pedal_value;     }
     /**
-     * @brief SetSPIError Sets SPI error, in case there is an error in SPI communication
+     * @brief Sets SPI error, in case there is an error in SPI communication
      * @param s boolean val true if error exists, false if no error.
      */
     void SetSPIError(bool s);
     /**
-     * @brief ClearSPIPort Clears all parameters acquired via SPI.
+     * @brief Clears all parameters acquired via SPI.
      */
     void ClearSPIPort();
 
@@ -64,14 +64,14 @@ private:
      */
     virtual void run();
     /**
-     * @brief ReadSPIAnalog Reads data from spefied pin channel in MCP3004 ADC.
+     * @brief Reads data from spefied pin channel in MCP3004 ADC.
      * @param pin_channel ADC channel
      * @note MCP3004 has 4 channels from 0 to 3.
      * @return Analog value in specified channel.
      */
     int  ReadSPIAnalog(int pin_channel);
     /**
-     * @brief GetCmdOutInfo This function is an helper function to read ADC value.
+     * @brief This function is an helper function to read ADC value.
      * It is specific to MCP3004. For more details check MCP3004 datasheet.
      * @param pin_channel pin channel of ADC.
      * @param cmd_out Command output
@@ -79,12 +79,12 @@ private:
      */
     void GetCmdOutInfo(const int pin_channel, Int8U& cmd_out, int& cmd_out_bits_count);
     /**
-     * @brief TickClock Tick clock is to manually send clock signal to SPI CLK pin.
+     * @brief Tick clock is to manually send clock signal to SPI CLK pin.
      * Currently period is 2ms (500Hz). (1ms HIGH, 1ms LOW).
      */
     void TickClock();
     /**
-     * @brief ReadButtons Reads connected pedal buttons via digitalRead function of wiringPi
+     * @brief Reads connected pedal buttons via digitalRead function of wiringPi
      * and emits signal when there's a change in the pedal value in rising edge.
      */
     void ReadButtons();

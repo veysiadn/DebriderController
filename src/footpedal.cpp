@@ -18,7 +18,7 @@ FootPedal::FootPedal()
 
 void FootPedal::run()
 {
-    int left_pedal_val = 0;
+    int left_pedal_val;
     adc_spi_running=1;
     while(true)
     {

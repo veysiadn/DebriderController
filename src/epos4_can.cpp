@@ -1,4 +1,4 @@
-#include "include/epos4_can.h"
+﻿#include "include/epos4_can.h"
 
 MaxonMotor::MaxonMotor()
 {
@@ -455,7 +455,17 @@ int MaxonMotor::GetCloseBladePosition()
 // VysADN Error Flag Function  
 int MaxonMotor::EPOSGetError()
 {
-    return m_errorFlag ;
+    unsigned int error_code = 0;
+    int IsFault = FALSE;
+    if(m_errorFlag > 0){
+        return m_errorFlag ;
+    }else{
+        VCS_GetFaultState(m_keyHandle_MCP, m_Node_ID_MCP, &IsFault, &error_code);
+        if(IsFault){
+            m_errorFlag = 1;
+         }
+           return m_errorFlag;
+    }
 }
 
 int MaxonMotor::GetCurrentVelocity()

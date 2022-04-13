@@ -24,172 +24,172 @@ public:
     MaxonMotor();
 
     /**
-     * @brief OpenCANCommunication Opens CAN port and configures communication.
+     * @brief Opens CAN port and configures communication.
      * @note CAN port name, node id and baudrate is hard coded for now.
-     * @return 1 if succesfull otherwise 0.
+     * @return 1 if succesful otherwise 0.
      */
     int OpenCANCommunication();
 
     /**
-     * @brief EnableMotorController Enables motor controller and clears faults.
-     * @return 1 if succesfull, otherwise 0.
+     * @brief Enables motor controller and clears faults.
+     * @return 1 if succesful, otherwise 0.
      */
     int EnableMotorController();
 
     /**
-     * @brief ActiviateAllDevice Activates connected EPOS driver, with hard coded
-     * communication information.
+     * @brief Activates connected EPOS driver, with hard coded
+     * communication parameters such as node id, baudrate and CAN port name.
      */
     void ActiviateAllDevice();
 
     /**
-     * @brief DisableAllDevice Puts motor driver in disabled state.
+     * @brief Puts motor driver in disabled state.
      */
     void DisableAllDevice();
 
     /**
-     * @brief CloseAllDevice Closes connected controller.
+     * @brief Closes connected controller.
      */
     void CloseAllDevice();
 
     /**
-     * @brief EPOSGetError Returns error flag from command library.
+     * @brief Returns error flag from command library.
      * @return Error flag value.
      */
     int  EPOSGetError();
 
     /**
-     * @brief EnablePositionModeWithSpeed Enables position mode with specific
+     * @brief Enables position mode with specific
      * speed value
      * @param speed Velocity value which will be used in position mode.
      */
     void EnablePositionModeWithSpeed(int speed);
 
     /**
-     * @brief GetCurrentPositionAllDevice Gets current position values of connected motors
+     * @brief Gets current position values of connected motors
      * in terms of encoder increment value.
-     * @param current_position Value to be written the returned position value.
+     * @param current_position returned position value.
      */
     void GetCurrentPositionAllDevice(int& current_position);
 
     /**
-     * @brief GetCloseBladePosition Finds position of motor which will correspond to closed
+     * @brief Finds position of motor which will correspond to closed
      * blade position in the debrider.
      * @return Close blade position in terms of encoder increment values.
      */
     int  GetCloseBladePosition();
 
     /**
-     * @brief EnableVelocityMode Enables motor with velocity mode.
+     * @brief Enables motor with velocity mode.
      */
     void EnableVelocityMode();
 
     /**
-     * @brief EnablePositionMode Enables motor with position mode.
+     * @brief Enables motor with position mode.
      */
     void EnablePositionMode();
 
     /**
-     * @brief MoveVelocity Sends target velocity command to motor,motor moves according to
+     * @brief Sends target velocity command to motor,motor moves according to
      * target velocity.
-     * @param target_velocity Velocity value for motor to move.
+     * @param target_velocity Desired velocity.
      */
     void MoveVelocity(const long& target_velocity);
 
     /**
-     * @brief MovePosition Sends target position value to motor, motor moves
+     * @brief Sends target position value to motor, motor moves
      * to target position.
      * @param target_pos Desired position.
      */
     void MovePosition(const long& target_pos);
 
     /**
-     * @brief GetCurrentVelocity Gets current velocity of motor.
+     * @brief Gets current velocity of motor.
      * @return Current velocity of motor.
      */
     int GetCurrentVelocity();
 
     /**
-     * @brief SetOscMode Put motor in oscillation mode.
+     * @brief Put motor in oscillation mode.
      * @param Amp
      */
     void SetOscMode(int Amp);
 
     /**
-     * @brief RunOscMode Runs motor in oscillation mode.
+     * @brief Runs motor in oscillation mode.
      * @param dir direction of movement. @note direction will be changing periodically.
      */
     void RunOscMode(int dir);
 
     /**
-     * @brief StopMotion Stops the motion of motor.
+     * @brief Stops the motion of motor.
      */
     void StopMotion();
 
     /**
-     * @brief WaitForMotion Waits for motor to reach target position.
+     * @brief Waits for motor to reach target position.
      */
     void WaitForMotion();
 
 private:
-    ///  - Port name
+    ///   Port name
     char* m_PortName_MCP;
 
-    ///  - Handle to the CAN port
+    ///   Handle to the CAN port
     void* m_keyHandle_MCP;
 
-    ///  - Node ID
+    ///   Node ID
     unsigned short m_Node_ID_MCP;
 
-    ///  - Error code returned from VCS functions
+    ///   Error code returned from VCS functions
     unsigned int ErrorCode;
 
-    /// - Operating modes and parameters
+    ///  Operating modes and parameters
     char m_Mode;
-    /// - Oscillation mode offset.
+    ///  Oscillation mode offset.
     int m_OscOffset;
-    /// - Oscillation mode amplitude.
+    ///  Oscillation mode amplitude.
     int m_OscAmp;
-    /// - EPOS error flag.
+    ///  EPOS error flag.
     int m_errorFlag;
 
     /**
-     * @brief EnableDevice Enables specific node in specific port.
+     * @brief Enables specific node in specific port.
      * @param keyHandle_ opened port handle.
      * @param Node_ID node identifier.
      */
     void EnableDevice(void* keyHandle_, unsigned short Node_ID);
 
     /**
-     * @brief DisableDevice Disable specific node in specific port.
+     * @brief Disable specific node in specific port.
      * @param keyHandle_ opened port handle.
      * @param Node_ID node identifier.
      */
     void DisableDevice(void* keyHandle_, unsigned short Node_ID);
 
     /**
-     * @brief ActivateDevice Opens the port with "CAN_mcp251x", "CANOpen" and "EPOS4" parameters.
+     * @brief Opens the port with "CAN_mcp251x", "CANOpen" and "EPOS4" parameters.
      * @param PortName Name of the port (default "CAN0").
      * @param Node_ID Identifier of the specified node (default "1").
      * */
     void* ActivateDevice(char* PortName, unsigned short Node_ID);
 
     /**
-     * @brief CloseDevice Closes opened ports.
+     * @brief Closes opened ports.
      * @param keyHandle_ Opened port handle.
      */
     void CloseDevice(void* keyHandle_);
 
     /**
-     * @brief Move Moves motor with specified target velocity command for specific node in specific port.
+     * @brief Moves motor with specified target velocity command for specified node in specified port.
      * @param keyHandle_ opened port handle.
-     * @param target_velocity target velocity.
+     * @param target_velocity desired velocity.
      * @param Node_ID Node identifier.
      */
     void Move(void* keyHandle_, long target_velocity, unsigned short Node_ID);
 
     /**
-     * @brief MoveToPosition Sends specific target position command for specific node in specific port.
+     * @brief Sends specific target position command for specified node in specified port.
      * @param keyHandle_ opened port handle.
      * @param target_position target position.
      * @param Node_ID Node identifier.
@@ -197,7 +197,7 @@ private:
     void MoveToPosition(void* keyHandle_, long target_position, unsigned short Node_ID);
 
     /**
-     * @brief GetCurrentPosition Requests current position from specific node in specific port.
+     * @brief Requests current position from specified node in specified port.
      * @param keyHandle_ opened port handle.
      * @param current_position output parameter.
      * @param Node_ID Node identifier.
@@ -205,8 +205,8 @@ private:
     void GetCurrentPosition(void *keyHandle_, int& current_position, unsigned short Node_ID);
 
     /**
-     * @brief MoveInCloseBladeMode Moves motor with CLOSE_BLADE_VELOCITY (20RPM),
-     * @note This function is application specific, It is required to close the blade
+     * @brief Moves motor with CLOSE_BLADE_VELOCITY (20RPM),
+     * @note This function is application specific. It is required to close the blade
      * of debrider with slow movement.
      */
     void MoveInCloseBladeMode();

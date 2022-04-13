@@ -23,7 +23,7 @@
 #include "eposthread.h"
 #include "initialization_window.h"
 
-
+#include <thread>
 #include <wiringPi.h>
 #include <softTone.h>
 
@@ -41,163 +41,168 @@ public:
 
 private slots:
     /**
-     * @brief on_btnDecreaseRPM_clicked GUI callback to decrease debrider motor
+     * @brief GUI callback to decrease debrider motor
      * RPM value by 1000.
      */
     void on_btnDecreaseRPM_clicked();
 
     /**
-     * @brief on_btnIncreaseRPM_clicked GUI callback to increase debrider motor
+     * @brief GUI callback to increase debrider motor
      * RPM value by 1000.
      */
     void on_btnIncreaseRPM_clicked();
 
     /**
-     * @brief on_radioCW_toggled GUI callback to change rotation direction of
+     * @brief GUI callback to change rotation direction of
      * debrider motor to clock-wise.
      * @param checked bool value if checked.
      */
     void on_radioCW_toggled(bool checked);
 
     /**
-     * @brief on_radioCCW_toggled GUI callback to change rotation direction of
+     * @brief GUI callback to change rotation direction of
      * debrider motor to counter clock-wise.
      * @param checked bool value if checked.
      */
     void on_radioCCW_toggled(bool checked);
 
     /**
-     * @brief on_radioOSC_toggled GUI callback to change running mode of
+     * @brief GUI callback to change running mode of
      * debrider motor to oscillation mode.
      * @param checked bool value if checked.
      */
     void on_radioOSC_toggled(bool checked);
 
     /**
-     * @brief on_btnDecreaseFlow_clicked GUI callback to decrease suction motor
+     * @brief GUI callback to decrease suction motor
      * RPM value by ten percent.
      */
     void on_btnDecreaseFlow_clicked();
 
     /**
-     * @brief on_btnIncreaseFlow_clicked GUI callback to increase suction motor
+     * @brief GUI callback to increase suction motor
      * velocity value by ten percent.
      */
     void on_btnIncreaseFlow_clicked();
 
     /**
-     * @brief on_btnIrrigationMove_clicked GUI callback to move suction motor.
+     * @brief GUI callback to move suction motor.
      */
     void on_btnIrrigationMove_clicked();
 
     /**
-     * @brief on_btnIrrigationStop_clicked GUI callback to stop suction motor.
+     * @brief GUI callback to stop suction motor.
      */
     void on_btnIrrigationStop_clicked();
     
     /**
-     * @brief on_btnCloseBlade_clicked GUI callback to close blade of motor.
+     * @brief GUI callback to close blade of motor.
      */
     void on_btnCloseBlade_clicked();
 
     /**
-     * @brief on_radioMAXRPM_clicked GUI callback to select maximum RPM value
+     * @brief GUI callback to select maximum RPM value
      * for debrider motor. Currently max RPM value is 12000.
      */
     void on_radioMAXRPM_clicked();
 
     /**
-     * @brief on_StateChanged Sloth for handling UpdateGUI() signal from other threads.
+     * @brief Sloth for handling UpdateGUI() signal from other threads.
      * Updates GUI based on state.
      * @param state Current debrider state.
      */
     void on_StateChanged(int state);
 
     /**
-     * @brief on_CallEmergencyWindow Opens emergency windows in case of emergency.
+     * @brief Opens emergency windows in case of emergency.
      */
     void on_CallEmergencyWindow();
 
     /**
-     * @brief on_ExitEmergencyClicked Sloth to handle emergency exit button clicked.
+     * @brief Sloth to handle emergency exit button clicked.
      * @param a emergency state.
      */
     void on_ExitEmergencyClicked(int a);
 
     /**
-     * @brief on_CallInitWindow Calls initialization window, and closes all other windows.
+     * @brief Calls initialization window, and closes all other windows.
      */
     void on_CallInitWindow();
 
     /**
-     * @brief on_ReinitClicked Handles signal coming from initialization window when user clicks reinitialize.
+     * @brief Handles signal coming from initialization window when user clicks reinitialize.
      * @param state Current state of debrider.
      */
     void on_ReinitClicked(int state);
 
 signals:
     /**
-     * @brief InitStateChanged Emitted when initialization state change to notify initialization window.
+     * @brief Emitted when initialization state change to notify initialization window.
      * @param state Current state of debrider.
      */
     void InitStateChanged(int state);
 
 private:
       /**
-       * @brief PrintStatus Prints the status of debrider, such as debrider velocity and suction motor velocity percentage.
+       * @brief Prints the status of debrider, such as debrider velocity and suction motor velocity percentage.
        * @param dSpeed Debrider speed.
        * @param pSpeed Pump motor speed.
        */
       void PrintStatus(int dSpeed, int pSpeed);
 
       /**
-       * @brief StopPumpMotor Stops pumps motor.
+       * @brief Stops pumps motor.
        */
       void StopPumpMotor();
 
       /**
-       * @brief MovePumpMotor Moves pump motor.
+       * @brief Moves pump motor.
        */
       void MovePumpMotor();
 
       /**
-       * @brief EnableGUI Enables GUI button, meaning that system is ready to accept inputs from user.
+       * @brief Enables GUI button, meaning that system is ready to accept inputs from user.
        */
       void EnableGUI();
 
       /**
-       * @brief DisableGUI Disables GUI button, meaning that system will not accept inputs from user.
-       * GUI is disable only in case of emergency or when debrider motor is running.
+       * @brief Disables GUI button, meaning that system will not accept inputs from user.
+       * GUI is disabled in case of emergency or when debrider motor is running.
        */
       void DisableGUI();
 
       /**
-       * @brief ShowPedalButtonStates This function shows changes in GUI when user clicks pedal buttons.
+       * @brief This function shows changes in GUI when user clicks pedal buttons.
        * Each pedal button has a function, based on pedal button inputs, this function will
-       * @note Left button  changes preset RPM values.
+       * change preset RPM value, change operation mode or run close blade action.
+       * @note Left button changes preset RPM values.
        * @note Right button changes operation mode CW,CCW,OSC
-       * @note Left pedal   runs closes blade.
+       * @note Left pedal runs closes blade.
        */
       void ShowPedalButtonStates();
 
-      // VysAdn Valve On/Off
       /**
-       * @brief EnableValve Enables solenoid valve output.
+       * @brief Enables solenoid valve output.
        */
       void EnableValve();
 
       /**
-       * @brief DisableValve Disables solenoid valve output.
+       * @brief Disables solenoid valve output.
        */
       void DisableValve();
 
       /**
        * @brief Runs buzzer when any pedal input is activated.
        */
-      void EnableBuzzer();
+      static void EnableBuzzer();
 
       /**
-       * @brief InitializeIO  Initializes wiringpi library and pin mapping for RPI.
+       * @brief Creates and executes a thread for running buzzer.
+       */
+      void RunBuzzer();
+
+      /**
+       * @brief  Initializes wiringpi library and pin mapping for RPI.
        */
       void InitializeIO();
       /**
@@ -209,7 +214,7 @@ private:
        */
       void ShowControlUI();
       /**
-       * @brief ResetWatchdogTimerIC Resets watchdog timer in case of any missing pulse.
+       * @brief Resets watchdog timer in case of any missing pulse.
        */
       void ResetWatchdogTimerIC();
 private:
@@ -226,7 +231,9 @@ private:
       /// Used to display speed pump motor velocity.
       int pump_motor_printed_speed_val_=0;
       /// Flag to describe buzzer running status.
-      bool buzzer_running_status=false;
+      static bool buzzer_running_status;
+      /// Buzzer thread.
+      std::thread buzzer_thread_ ;
       /// Flag to describe pump motor running status.
       bool pump_running_status_=false;
       /// Debrider motor target speed set by user in GUI.

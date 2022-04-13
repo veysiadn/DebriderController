@@ -31,21 +31,21 @@ public:
     EposThread();
 
     /**
-     * @brief SetMotor Sets motor to access created variables and
+     * @brief Sets motor to access created variables and
      * member functions of MaxonMotor class instance.
      * @param p MaxonMotor instance
      */
     void SetMotor(MaxonMotor* p)    {   m_pMotor = p;           }
 
     /**
-     * @brief SetPedal Sets foot pedal to access created variable and member
+     * @brief Sets foot pedal to access created variable and member
      * functions of the FootPedal class instance.
      * @param p FootPedal class instance.
      */
     void SetPedal(FootPedal* p)     {   m_pPedal = p;           }
 
     /**
-     * @brief SetTransition Sets the transition type
+     * @brief Sets the transition type
      * \see TransitionTypes enum ;   type 1 : init , type 2 : close blade , type 3 : oscillation.
      * @param type selected type.
      */
@@ -57,10 +57,10 @@ public:
     void Abort()                    {   m_Abort = 1;            }
 
     /**
-     * @brief SetOscillationVelocity Sets oscillation mode velocity.
+     * @brief Sets oscillation mode velocity.
      * @param s velocity value to use in oscillation mode.
      */
-    void SetOscillationVelocity(int s)   {   m_OscSpeed=s;           }
+    void SetOscillationVelocity(int s)   {   m_OscSpeed=s;      }
 
 private:
     /// MaxonMotor class instance to access created variables and member functions in Motor thread.
@@ -77,38 +77,37 @@ private:
 
 private:
     /**
-     * @brief run Control loop implemented here.Thread entrance function.
+     * @brief Control loop implemented here.Thread entrance function.
      */
     virtual void run();
     /**
-     * @brief RunInitialization Runs initialization procedure includes ;
+     * @brief Runs initialization procedure includes ;
      * Opening CAN port, enabling drives and waiting for operation switch.
      */
     void RunInitialization();
     /**
-     * @brief RunCloseBlade Runs close blade mode, currently close blade mode
+     * @brief Runs close blade mode, currently close blade mode
      * moves motor 30 degre per click of pedal.
      */
     void RunCloseBlade();
     /**
-     * @brief RunOscillation Runs motor in oscillation mode, with setted velocity.
+     * @brief Runs motor in oscillation mode, with desired velocity.
      */
     void RunOscillation();
 
 signals:
     /**
-     * @brief InitializationComplete This signal is emitted to notify the result of the initialization
-
+     * @brief This signal is emitted to notify the result of the initialization
      * @param errcode Error parameter to share in case of error in initialization.
      */
     void InitializationComplete(int errcode);
     /**
-     * @brief CloseBladeComplete This signal is emitted to notify the result of close blade mode.
+     * @brief This signal is emitted to notify the result of close blade mode.
      * @param errcode Error parameter to share in case of error in initialization.
      */
     void CloseBladeComplete(int errcode);
     /**
-     * @brief OscillationComplete This signal is emitted to notify the result of oscillation mode.
+     * @brief This signal is emitted to notify the result of oscillation mode.
      * @param errcode Error parameter to share in case of error in initialization.
      */
     void OscillationComplete(int errcode);

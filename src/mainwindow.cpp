@@ -1,6 +1,8 @@
 #include "include/mainwindow.h"
 #include "ui_mainwindow.h"
 
+bool MainWindow::buzzer_running_status = false;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -84,22 +86,22 @@ void MainWindow::on_StateChanged(int state)
             MovePumpMotor();
             EnableValve();
             PrintStatus(motor_thread_.m_DebriderInstantSpeed,pump_motor_printed_speed_val_);
-            EnableBuzzer();
+            RunBuzzer();
             break;
 
         case DEBRIDER_STATE_OSC:
             DisableGUI();
             MovePumpMotor();
             EnableValve();
-            EnableBuzzer();
-            status_label_.sprintf(" Debrider Motor in Oscillation MODE \n"
-                                "Pump Motor Running : %% %d ",pump_motor_printed_speed_val_);
+            RunBuzzer();
+            status_label_ = QString(" Debrider Motor in Oscillation MODE \n"
+                                    "Pump Motor Running : % %1").arg(pump_motor_printed_speed_val_);
             ui->lblStatusMsg->setText(status_label_);
             break;
 
         case DEBRIDER_STATE_CLOSE_BLADE:
             DisableGUI();
-            EnableBuzzer();
+            RunBuzzer();
             PrintStatus(motor_thread_.m_DebriderInstantSpeed,pump_motor_printed_speed_val_);
         break;
 
@@ -297,23 +299,23 @@ void MainWindow::MovePumpMotor()
 
 void MainWindow::PrintStatus(int dSpeed, int pSpeed)
 {
-    speed_label_.sprintf(" %d ", debrider_motor_target_speed_);
+    speed_label_ = " " + QString::number(debrider_motor_target_speed_) + " ";
     ui->p_BLDCspeedInfo->setText(speed_label_);
-    speed_label_.sprintf(" %d ",pSpeed);
+    speed_label_ = " " + QString::number(pSpeed) + " ";
     ui->p_MotorSpeedInfo->setText(speed_label_);
     if(pump_running_status_==false)
-    status_label_.sprintf(" Debrider Motor Set :  %d RPM \n Pump Motor Set : %% %d  ",dSpeed,pSpeed);
+    status_label_ = QString(" Debrider Motor Set :  %1 RPM \n Pump Motor Set : % %2  ").arg(dSpeed).arg(pSpeed);
     else
-    status_label_.sprintf(" Debrider Motor Set:  %d RPM \n Pump Motor Running at : %% %d  ",dSpeed,pSpeed);
+    status_label_ = QString(" Debrider Motor Set:  %1 RPM \n Pump Motor Running at : % %2  ").arg(dSpeed).arg(pSpeed);
     if(motor_thread_.m_DebriderInstantSpeed < 20 && pump_running_status_==true)
     {
-        status_label_.sprintf(" Debrider Motor Running at CW MODE at :  %d RPM \n "
-                            "Pump Motor Running at : %% %d  ",motor_thread_.m_DebriderInstantSpeed*(-1),pSpeed);
+        status_label_= QString(" Debrider Motor Running at CW MODE at :  %1 RPM \n "
+                            "Pump Motor Running at : % %2  ").arg(motor_thread_.m_DebriderInstantSpeed*(-1)).arg(pSpeed);
     }
     else if(motor_thread_.m_DebriderInstantSpeed > 20 && pump_running_status_==true)
     {
-        status_label_.sprintf(" Debrider Motor Running at CCW MODE at :  %d RPM \n "
-                            "Pump Motor Running at : %% %d  ",motor_thread_.m_DebriderInstantSpeed,pSpeed);
+        status_label_ = QString(" Debrider Motor Running at CCW MODE at :  %1 RPM \n "
+                            "Pump Motor Running at : % %2  ").arg(motor_thread_.m_DebriderInstantSpeed).arg(pSpeed);
     }
     ui->lblStatusMsg->setText(status_label_);
 }
@@ -358,7 +360,7 @@ void MainWindow::ShowPedalButtonStates()
     // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
     int debriderMotorSetSpeed=debrider_motor_target_speed_;
     if(motor_thread_.m_GuiChangePresetRPM){
-        EnableBuzzer();
+        RunBuzzer();
         if((debrider_motor_target_speed_ < 1000)  || debrider_motor_target_speed_==BLDC_MAX_RPM) debriderMotorSetSpeed=1000;
         if((debrider_motor_target_speed_ >= 1000) && debrider_motor_target_speed_ < 3000) debriderMotorSetSpeed=3000;
         if((debrider_motor_target_speed_ >= 3000) && debrider_motor_target_speed_ < 5000) debriderMotorSetSpeed=5000;
@@ -382,7 +384,7 @@ void MainWindow::ShowPedalButtonStates()
     // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS START   #########
     if(motor_thread_.m_GuiBtnChangeDirection)
     {
-        EnableBuzzer();
+        RunBuzzer();
         if(ui->radioCW->isChecked())
         {
             ui->radioCCW->setChecked(true);
@@ -449,6 +451,13 @@ void MainWindow::EnableBuzzer()
     }
 
 }
+
+void MainWindow::RunBuzzer()
+{
+    buzzer_thread_ = std::thread(EnableBuzzer);
+    buzzer_thread_.join();
+}
+
 
 void MainWindow::InitializeIO()
 {

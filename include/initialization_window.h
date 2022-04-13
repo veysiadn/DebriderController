@@ -32,7 +32,7 @@ public:
 
 public slots:
     /**
-     * @brief UpdateInitGUI Update initialization window based on current state.
+     * @brief Updates initialization window based on current state.
      * It gives feedback to user about system state, e.g. system ready, handpiece is connected or not
      * pedal is connected or not.
      * @param state Current state of debrider.
@@ -41,14 +41,14 @@ public slots:
 
 public slots:
     /**
-     * @brief on_btn_reinit_clicked In case user clicks reinitialization, system will try to reinitialize
+     * @brief In case user clicks reinitialization button, system will try to reinitialize
      * communications with motor and pedal.
      */
     void on_btn_reinit_clicked();
 
 signals:
     /**
-     * @brief btn_reinit_clicked This signal is emitted when user clicks reinitialization button to notify
+     * @brief This signal is emitted when user clicks reinitialization button to notify
      * other threads about reinitialization.
      * @param state Current state of debrider.
      */
