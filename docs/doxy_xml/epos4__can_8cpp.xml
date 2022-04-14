@@ -510,19 +510,19 @@
 <codeline lineno="467"><highlight class="normal"></highlight><highlight class="comment">//<sp/>VysADN<sp/>Error<sp/>Flag<sp/>Function<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="468"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" kindref="member">MaxonMotor::EPOSGetError</ref>()</highlight></codeline>
 <codeline lineno="469"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>unsigned<sp/>int<sp/>error_code<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="471"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>int<sp/>IsFault<sp/>=<sp/>FALSE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error_code<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IsFault<sp/>=<sp/>FALSE;</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kindref="member">m_errorFlag</ref><sp/>&gt;<sp/>0){</highlight></codeline>
 <codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kindref="member">m_errorFlag</ref><sp/>;</highlight></codeline>
 <codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kindref="member">m_errorFlag</ref><sp/>;</highlight></codeline>
-<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*else{</highlight></codeline>
-<codeline lineno="477"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VCS_GetFaultState(m_keyHandle_MCP,<sp/>m_Node_ID_MCP,<sp/>&amp;IsFault,<sp/>&amp;error_code);</highlight></codeline>
-<codeline lineno="478"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(IsFault){</highlight></codeline>
-<codeline lineno="479"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_errorFlag<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="480"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="481"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>m_errorFlag;</highlight></codeline>
-<codeline lineno="482"><highlight class="comment"><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VCS_GetFaultState(<ref refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" kindref="member">m_keyHandle_MCP</ref>,<sp/><ref refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" kindref="member">m_Node_ID_MCP</ref>,<sp/>&amp;IsFault,<sp/>&amp;error_code);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IsFault){</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kindref="member">m_errorFlag</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kindref="member">m_errorFlag</ref>;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>return<sp/>m_errorFlag<sp/>;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="483"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="484"><highlight class="normal"></highlight></codeline>
 <codeline lineno="485"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" kindref="member">MaxonMotor::GetCurrentVelocity</ref>()</highlight></codeline>
