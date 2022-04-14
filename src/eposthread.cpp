@@ -110,7 +110,19 @@ void EposThread::RunInitialization()
                 emit InitializationComplete(state);
                 return;
             }
-            msleep(500);
+            if(digitalRead(FOOT_PEDAL_R_PEDAL_BUTTON)==LOW){
+                std::cout << "Foot pedal Removed." << std::endl;
+                state=DEBRIDER_STATE_SPI_ERROR;
+                emit InitializationComplete(state);
+                return;
+            }
+            if(m_pMotor->EPOSGetError()){
+                std::cout << "Motor error occured." << std::endl;
+                state=DEBRIDER_STATE_EPOS_ERROR;
+                emit InitializationComplete(state);
+                return;
+            }
+            msleep(100);
             state=DEBRIDER_STATE_READY;
             emit InitializationComplete(state);
         }
@@ -151,9 +163,10 @@ void EposThread::RunOscillation()
         m_pMotor->RunOscMode(dir);
         waiting_for_motion_ = true;
         m_pMotor->WaitForMotion();
-        waiting_for_motion_ = false;
+        if(m_pMotor->EPOSGetError()) emit OscillationComplete(1);
         dir *= -1;
     }
     m_pMotor->StopMotion();   // Stop oscillate
     emit OscillationComplete(m_pMotor->EPOSGetError());
+    waiting_for_motion_ = false;
 }
