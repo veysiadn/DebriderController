@@ -416,7 +416,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="34" column="18" bodyfile="src/motorthread.cpp" bodystart="36" bodyend="267"/>
+        <location file="include/motorthread.h" line="34" column="18" bodyfile="src/motorthread.cpp" bodystart="36" bodyend="269"/>
       </memberdef>
       <memberdef kind="function" id="classMotorThread_1aa332fd0ec1abfbd0840a0410d4536be3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -430,7 +430,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="36" column="10" bodyfile="src/motorthread.cpp" bodystart="360" bodyend="369"/>
+        <location file="include/motorthread.h" line="36" column="10" bodyfile="src/motorthread.cpp" bodystart="362" bodyend="371"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -447,7 +447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="116" column="10" bodyfile="src/motorthread.cpp" bodystart="377" bodyend="412"/>
+        <location file="include/motorthread.h" line="116" column="10" bodyfile="src/motorthread.cpp" bodystart="379" bodyend="414"/>
       </memberdef>
       <memberdef kind="function" id="classMotorThread_1a4dfe595caa3eaf3bf92e07fb1312c2f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -462,7 +462,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="121" column="10" bodyfile="src/motorthread.cpp" bodystart="414" bodyend="433"/>
+        <location file="include/motorthread.h" line="121" column="10" bodyfile="src/motorthread.cpp" bodystart="416" bodyend="435"/>
       </memberdef>
       <memberdef kind="function" id="classMotorThread_1a2e648304774e31b30bd4536b8f75eb15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -515,7 +515,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="129" column="10" bodyfile="src/motorthread.cpp" bodystart="435" bodyend="440"/>
+        <location file="include/motorthread.h" line="129" column="10" bodyfile="src/motorthread.cpp" bodystart="437" bodyend="442"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -539,7 +539,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="134" column="10" bodyfile="src/motorthread.cpp" bodystart="270" bodyend="303"/>
+        <location file="include/motorthread.h" line="134" column="10" bodyfile="src/motorthread.cpp" bodystart="272" bodyend="305"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1ad81a92fafe0cd3fbfc3944625b0d9d4c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -561,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="137" column="10" bodyfile="src/motorthread.cpp" bodystart="305" bodyend="320"/>
+        <location file="include/motorthread.h" line="137" column="10" bodyfile="src/motorthread.cpp" bodystart="307" bodyend="322"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1a4937257506cb3cfc9dbf2184bd0d8a52" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -583,7 +583,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="140" column="10" bodyfile="src/motorthread.cpp" bodystart="323" bodyend="337"/>
+        <location file="include/motorthread.h" line="140" column="10" bodyfile="src/motorthread.cpp" bodystart="325" bodyend="339"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1a0276cc0d95bf28435c9416edb31c4c60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -601,7 +601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="143" column="10" bodyfile="src/motorthread.cpp" bodystart="339" bodyend="344"/>
+        <location file="include/motorthread.h" line="143" column="10" bodyfile="src/motorthread.cpp" bodystart="341" bodyend="346"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1a429dbd70a7ee33e426e99ee8c4e11332" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -619,7 +619,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="146" column="10" bodyfile="src/motorthread.cpp" bodystart="346" bodyend="351"/>
+        <location file="include/motorthread.h" line="146" column="10" bodyfile="src/motorthread.cpp" bodystart="348" bodyend="353"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1a624b6187e6bc8a5e6a40d2dbd097f566" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -637,7 +637,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="149" column="10" bodyfile="src/motorthread.cpp" bodystart="353" bodyend="358"/>
+        <location file="include/motorthread.h" line="149" column="10" bodyfile="src/motorthread.cpp" bodystart="355" bodyend="360"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1ada54247cc11e73cd36aac5a2d067766a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -655,7 +655,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="152" column="10" bodyfile="src/motorthread.cpp" bodystart="442" bodyend="447"/>
+        <location file="include/motorthread.h" line="152" column="10" bodyfile="src/motorthread.cpp" bodystart="444" bodyend="449"/>
       </memberdef>
       <memberdef kind="slot" id="classMotorThread_1a2ba498e321e90ec8ee2be7436d9585dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -677,7 +677,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/motorthread.h" line="155" column="10" bodyfile="src/motorthread.cpp" bodystart="371" bodyend="375"/>
+        <location file="include/motorthread.h" line="155" column="10" bodyfile="src/motorthread.cpp" bodystart="373" bodyend="377"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">

@@ -16,5 +16,6 @@ var searchData=
   ['status_5flabel_5f_13',['status_label_',['../classMainWindow.html#a6fc833d57517f77fd4cd8d4cf2b912ac',1,'MainWindow']]],
   ['stopmotion_14',['StopMotion',['../classMaxonMotor.html#a7cf4e535dca4e5a4905cc45269f8b729',1,'MaxonMotor']]],
   ['stoppumpmotor_15',['StopPumpMotor',['../classMainWindow.html#ac0521e46c59c0f209e8993156316cdd0',1,'MainWindow']]],
-  ['suction_5fmotor_5fpwm_16',['SUCTION_MOTOR_PWM',['../m__defines_8h.html#ac6afe83454259e4960a90aead164bf08',1,'m_defines.h']]]
+  ['stopvelocity_16',['StopVelocity',['../classMaxonMotor.html#a8cf63964c1455ce3e673cc4c866fff3d',1,'MaxonMotor']]],
+  ['suction_5fmotor_5fpwm_17',['SUCTION_MOTOR_PWM',['../m__defines_8h.html#ac6afe83454259e4960a90aead164bf08',1,'m_defines.h']]]
 ];

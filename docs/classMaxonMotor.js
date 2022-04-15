@@ -27,6 +27,7 @@ var classMaxonMotor =
     [ "RunOscMode", "classMaxonMotor.html#aae6f66648157bfb53c6055fefadb5af2", null ],
     [ "SetOscMode", "classMaxonMotor.html#a2c64e90ea555f4cc4a81f322d3b41ea0", null ],
     [ "StopMotion", "classMaxonMotor.html#a7cf4e535dca4e5a4905cc45269f8b729", null ],
+    [ "StopVelocity", "classMaxonMotor.html#a8cf63964c1455ce3e673cc4c866fff3d", null ],
     [ "WaitForMotion", "classMaxonMotor.html#abf93a3159bb892cd12dcb6d56eb72521", null ],
     [ "ErrorCode", "classMaxonMotor.html#ad569a1ab13d9b5e453df1aab2494cbab", null ],
     [ "m_errorFlag", "classMaxonMotor.html#a791e72c1498df7a7d59331f14e1f00bc", null ],

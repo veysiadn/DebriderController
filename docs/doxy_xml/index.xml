@@ -148,6 +148,7 @@
     <member refid="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" kind="function"><name>StopMotion</name></member>
     <member refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" kind="function"><name>WaitForMotion</name></member>
     <member refid="classMaxonMotor_1ac5959fbd331e3910d181967b488e522f" kind="function"><name>GetMovementState</name></member>
+    <member refid="classMaxonMotor_1a8cf63964c1455ce3e673cc4c866fff3d" kind="function"><name>StopVelocity</name></member>
     <member refid="classMaxonMotor_1adf71147e8f294a2db8607b02a0f9b8d4" kind="function"><name>EnableDevice</name></member>
     <member refid="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" kind="function"><name>DisableDevice</name></member>
     <member refid="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" kind="function"><name>ActivateDevice</name></member>

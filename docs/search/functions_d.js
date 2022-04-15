@@ -12,5 +12,6 @@ var searchData=
   ['showcontrolui_9',['ShowControlUI',['../classMainWindow.html#a375306103fc52b3045f7ae119bc1c982',1,'MainWindow']]],
   ['showpedalbuttonstates_10',['ShowPedalButtonStates',['../classMainWindow.html#adf70cd7e458457ea1c26e0ea468033b3',1,'MainWindow']]],
   ['stopmotion_11',['StopMotion',['../classMaxonMotor.html#a7cf4e535dca4e5a4905cc45269f8b729',1,'MaxonMotor']]],
-  ['stoppumpmotor_12',['StopPumpMotor',['../classMainWindow.html#ac0521e46c59c0f209e8993156316cdd0',1,'MainWindow']]]
+  ['stoppumpmotor_12',['StopPumpMotor',['../classMainWindow.html#ac0521e46c59c0f209e8993156316cdd0',1,'MainWindow']]],
+  ['stopvelocity_13',['StopVelocity',['../classMaxonMotor.html#a8cf63964c1455ce3e673cc4c866fff3d',1,'MaxonMotor']]]
 ];

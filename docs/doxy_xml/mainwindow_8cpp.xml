@@ -599,10 +599,10 @@
 <codeline lineno="445"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" kindref="member">MainWindow::EnableBuzzer</ref>()</highlight></codeline>
 <codeline lineno="446"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" kindref="member">buzzer_running_status</ref>){</highlight></codeline>
-<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>softToneWrite(<ref refid="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" kindref="member">PEDAL_BUZZER</ref>,1000);</highlight></codeline>
-<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
-<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>softToneWrite(<ref refid="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" kindref="member">PEDAL_BUZZER</ref>,0);</highlight></codeline>
-<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" kindref="member">buzzer_running_status</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classMainWindow_1a51e0342d55d2036086c0bc6c688c9fd7" kindref="member">buzzer_running_status</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>softToneWrite(<ref refid="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" kindref="member">PEDAL_BUZZER</ref>,1000);</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>softToneWrite(<ref refid="m__defines_8h_1a396cfcfeb51bc5d3b7a7f73a12fe92b6" kindref="member">PEDAL_BUZZER</ref>,0);</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"></highlight></codeline>
 <codeline lineno="454"><highlight class="normal">}</highlight></codeline>
@@ -610,7 +610,7 @@
 <codeline lineno="456"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMainWindow_1a2bbabe6c3cc17c41ea2721d1c37dd5db" kindref="member">MainWindow::RunBuzzer</ref>()</highlight></codeline>
 <codeline lineno="457"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMainWindow_1a6575cd0cc1dc2a9cc018e6d619e7526d" kindref="member">buzzer_thread_</ref><sp/>=<sp/>std::thread(<ref refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" kindref="member">EnableBuzzer</ref>);</highlight></codeline>
-<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMainWindow_1a6575cd0cc1dc2a9cc018e6d619e7526d" kindref="member">buzzer_thread_</ref>.join();</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classMainWindow_1a6575cd0cc1dc2a9cc018e6d619e7526d" kindref="member">buzzer_thread_</ref>.detach();</highlight></codeline>
 <codeline lineno="460"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="461"><highlight class="normal"></highlight></codeline>
 <codeline lineno="462"><highlight class="normal"></highlight></codeline>

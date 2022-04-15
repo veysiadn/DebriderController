@@ -208,10 +208,10 @@
 <codeline lineno="150"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a4488869799265b29496823efdd59dfa0" kindref="member">FootPedal::TickClock</ref>()</highlight></codeline>
 <codeline lineno="151"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(<ref refid="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" kindref="member">ADC_SPI_CLK</ref>,<sp/>HIGH);</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>nanosleep((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>timespec<sp/>[]){{0,1000}},</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>usleep(100);</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(<ref refid="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" kindref="member">ADC_SPI_CLK</ref>,<sp/>LOW);</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>nanosleep((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>timespec<sp/>[]){{0,1000}},</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>nanosleep((const<sp/>struct<sp/>timespec<sp/>[]){{0,500}},nullptr);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>usleep(100);</highlight></codeline>
 <codeline lineno="157"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><ref refid="classFootPedal_1ae924b102bbeae161b0e72b4c34ad9b73" kindref="member">FootPedal::~FootPedal</ref>()</highlight></codeline>
