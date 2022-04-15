@@ -52,13 +52,12 @@ void MotorThread::run()
         if(m_CurrState < DEBRIDER_STATE_UNINIT)   // UNINIT = -2 state
         {
             // CKim - Except for when emergency occured and Emergency Window needs to be raised
-            if(m_CurrState <= DEBRIDER_STATE_EPOS_ERROR  && m_GuiEmergencyMode == 0)
+            if(m_CurrState <= DEBRIDER_STATE_EPOS_ERROR  && (m_GuiEmergencyMode==0))
             {
                 m_EposThread.Abort();
                 m_GuiEmergencyMode = 1;
                 // CKim - Close EPOS
                 m_Motor.CloseAllDevice();
-                m_Motor.DisableAllDevice();
                 emit UpdateGUI(m_CurrState);
                 std::cout<<"State is " << m_CurrState << std::endl;
             }
@@ -110,7 +109,6 @@ void MotorThread::run()
             m_EposThread.Abort();
             // CKim - Close EPOS
             m_Motor.CloseAllDevice();
-            m_Motor.DisableAllDevice();
             m_GuiEmergencyMode = 1;
             emit UpdateGUI(m_CurrState);
             continue;
@@ -298,7 +296,7 @@ void MotorThread::on_InitComplete(int state)
         m_CurrState = DEBRIDER_STATE_SPI_ERROR;
         emit UpdateGUI(m_CurrState);
     }else if (state==DEBRIDER_STATE_INITIALIZING) {
-        std::cout << "Initialization error state INITIALIZING\n";
+//        std::cout << "Initialization error state INITIALIZING\n";
         m_CurrState = DEBRIDER_STATE_INITIALIZING;
         emit UpdateGUI(m_CurrState);
     }
@@ -315,10 +313,14 @@ void MotorThread::on_TransToOscComplete(int errcode)
     }
     else
     {
-        std::cout << "Failed to start oscillation mode\n";
+        std::cout << "Error occured in oscillation mode\n";
         m_CurrState = DEBRIDER_STATE_EMERGENCY;
-        emit UpdateGUI(m_CurrState);
+        m_Oscillate = 0;
+        if(m_PrevState!=DEBRIDER_STATE_EMERGENCY)
+            emit UpdateGUI(m_CurrState);
+        m_GuiEmergencyMode = 1;
     }
+    m_PrevState = m_CurrState ;
 }
 
 

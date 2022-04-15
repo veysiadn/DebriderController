@@ -141,19 +141,24 @@ public:
      * @brief Stops the motor motion in velocity mode.
      */
     void StopVelocity();
+    /**
+     * @brief Function to check whether EPOS is opened or closed.
+     * @return true if EPOS is opened, false if it is closed.
+     */
+    bool IsOpen();
 
 private:
     ///   Port name
     char* m_PortName_MCP;
 
     ///   Handle to the CAN port
-    void* m_keyHandle_MCP;
+    void* m_KeyHandle_MCP;
 
     ///   Node ID
     unsigned short m_Node_ID_MCP;
 
     ///   Error code returned from VCS functions
-    unsigned int ErrorCode;
+    unsigned int m_ErrorCode;
 
     ///  Operating modes and parameters
     char m_Mode;
@@ -162,8 +167,9 @@ private:
     ///  Oscillation mode amplitude.
     int m_OscAmp;
     ///  EPOS error flag.
-    int m_errorFlag;
-
+    int m_ErrorFlag;
+    /// Flag describing opened/clsoed status of EPOS.
+    bool m_openFlag=false;
     /**
      * @brief Enables specific node in specific port.
      * @param keyHandle_ opened port handle.

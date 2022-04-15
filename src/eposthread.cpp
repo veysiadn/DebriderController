@@ -16,7 +16,24 @@ void EposThread::run()
 
 void EposThread::RunInitialization()
 {
+
     int state = DEBRIDER_STATE_INIT;
+
+    if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW)
+    {
+        std::cout<<"Waiting for relay\n";
+        msleep(1000);   // CKim - wait for 1 sec
+    }
+
+    // CKim - If relay is still low after 1 sec. Throw error
+    if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW)
+    {
+        // ERRR : Relay is not closed
+        std::cout<<"ERRR : Relay is not closing\n";
+        state = DEBRIDER_STATE_EMERGENCY;
+        emit InitializationComplete(state);
+        return;
+    }
     // ------------------------------------------------------------ //
     // CKim - CAN Initialization
     // ------------------------------------------------------------ //
@@ -162,8 +179,12 @@ void EposThread::RunOscillation()
     {
         m_pMotor->RunOscMode(dir);
         waiting_for_motion_ = true;
-        m_pMotor->WaitForMotion();
-        if(m_pMotor->EPOSGetError()) emit OscillationComplete(1);
+//        m_pMotor->WaitForMotion();
+        if(m_pMotor->EPOSGetError())
+        {
+            emit OscillationComplete(1);
+            break;
+        }
         dir *= -1;
     }
     m_pMotor->StopMotion();   // Stop oscillate

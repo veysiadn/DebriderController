@@ -114,11 +114,6 @@ private slots:
     void on_StateChanged(int state);
 
     /**
-     * @brief Opens emergency windows in case of emergency.
-     */
-    void on_CallEmergencyWindow();
-
-    /**
      * @brief Sloth to handle emergency exit button clicked.
      * @param a emergency state.
      */
@@ -217,6 +212,12 @@ private:
        * @brief Resets watchdog timer in case of any missing pulse.
        */
       void ResetWatchdogTimerIC();
+
+      /**
+       * @brief Opens emergency windows in case of emergency.
+       */
+      void CallEmergencyWindow();
+
 private:
       Ui::MainWindow *ui;
 

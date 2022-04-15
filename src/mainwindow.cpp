@@ -111,8 +111,8 @@ void MainWindow::on_StateChanged(int state)
             StopPumpMotor();
             DisableValve();
             PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+            CallEmergencyWindow();
             ResetWatchdogTimerIC();
-            on_CallEmergencyWindow();
         break;
 
         case DEBRIDER_STATE_SPI_ERROR:
@@ -160,6 +160,7 @@ void MainWindow::SetDefaultUI()
     debrider_motor_target_speed_=0;
     pump_motor_target_speed_=0;
     pump_motor_printed_speed_val_=0;
+    motor_thread_.m_Oscillate = 0;
 }
 
 void MainWindow::ShowControlUI()
@@ -408,7 +409,7 @@ void MainWindow::ShowPedalButtonStates()
 }
 // #########  HARDWARE CHANGE DIRECTION BUTTON CLICKED SETTINGS FINISH   #########
 
-void MainWindow::on_CallEmergencyWindow()
+void MainWindow::CallEmergencyWindow()
 {
     motor_thread_.m_GuiEmergencyMode=1;
     std::cout << "Emergency window called\n";
