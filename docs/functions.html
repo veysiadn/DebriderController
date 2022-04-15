@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>CalculateDesiredVelocity()&#160;:&#160;<a class="el" href="classMotorThread.html#a2e648304774e31b30bd4536b8f75eb15">MotorThread</a></li>
+<li>CallEmergencyWindow()&#160;:&#160;<a class="el" href="classMainWindow.html#a1280e494411b62ad4001b38d55827f80">MainWindow</a></li>
 <li>ClearSPIPort()&#160;:&#160;<a class="el" href="classFootPedal.html#a0c755710fc0f7e0c38187282cf3fbae1">FootPedal</a></li>
 <li>CloseAllDevice()&#160;:&#160;<a class="el" href="classMaxonMotor.html#a422972183dd4967a5fba482234e711e5">MaxonMotor</a></li>
 <li>CloseBladeComplete()&#160;:&#160;<a class="el" href="classEposThread.html#aa5673ed3bb8cbe64d164c7124bc00758">EposThread</a></li>
@@ -138,7 +139,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>EnableVelocityMode()&#160;:&#160;<a class="el" href="classMaxonMotor.html#a1dc2e9c7a1309d947cecd4122ca1f235">MaxonMotor</a></li>
 <li>EPOSGetError()&#160;:&#160;<a class="el" href="classMaxonMotor.html#ae9238a6c6b644d47b9dcd85f3ee9db7d">MaxonMotor</a></li>
 <li>EposThread()&#160;:&#160;<a class="el" href="classEposThread.html#a13b22ba1fadc18ce3b0e4eae99f66d81">EposThread</a></li>
-<li>ErrorCode&#160;:&#160;<a class="el" href="classMaxonMotor.html#ad569a1ab13d9b5e453df1aab2494cbab">MaxonMotor</a></li>
 </ul>
 
 
@@ -167,6 +167,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>InitializationWindow()&#160;:&#160;<a class="el" href="classInitializationWindow.html#a7a6a53d0118d26328b8b4ca88102540e">InitializationWindow</a></li>
 <li>InitializeIO()&#160;:&#160;<a class="el" href="classMainWindow.html#ac21dde15d020b8d0233d4b9f49eb5f24">MainWindow</a></li>
 <li>InitStateChanged()&#160;:&#160;<a class="el" href="classMainWindow.html#ae6e69202ebecc1b99a7e0c8dbc1f7501">MainWindow</a></li>
+<li>IsOpen()&#160;:&#160;<a class="el" href="classMaxonMotor.html#ab1b0d30a80a8cfe990eac57c4d5dd620">MaxonMotor</a></li>
 </ul>
 
 
@@ -188,13 +189,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>m_DebriderTargetSpeed&#160;:&#160;<a class="el" href="classMotorThread.html#a35395e16697ec0c879be2ab3abb0324c">MotorThread</a></li>
 <li>m_Emergency&#160;:&#160;<a class="el" href="classMotorThread.html#af80248a74299ddbfb058ad311570c98f">MotorThread</a></li>
 <li>m_EposThread&#160;:&#160;<a class="el" href="classMotorThread.html#a64b2215bd559b5e4efd5d468346a1371">MotorThread</a></li>
-<li>m_errorFlag&#160;:&#160;<a class="el" href="classMaxonMotor.html#a791e72c1498df7a7d59331f14e1f00bc">MaxonMotor</a></li>
+<li>m_ErrorCode&#160;:&#160;<a class="el" href="classMaxonMotor.html#aad582e12d809a974a079d315fecc331c">MaxonMotor</a></li>
+<li>m_ErrorFlag&#160;:&#160;<a class="el" href="classMaxonMotor.html#a93444ce7d5c59a9ab3512a4518210c06">MaxonMotor</a></li>
 <li>m_FootPedal&#160;:&#160;<a class="el" href="classMotorThread.html#a640de212448250a3fc0da6c6751cc09c">MotorThread</a></li>
 <li>m_GuiBtnChangeDirection&#160;:&#160;<a class="el" href="classMotorThread.html#af449179ef93260cd7d5af0db967fe849">MotorThread</a></li>
 <li>m_GuiBtnCloseBlade&#160;:&#160;<a class="el" href="classMotorThread.html#ad7c2d915038fd14ac3bd2a570b58a0d6">MotorThread</a></li>
 <li>m_GuiChangePresetRPM&#160;:&#160;<a class="el" href="classMotorThread.html#af0488f54dbd47d15c365ff746a2dffbb">MotorThread</a></li>
 <li>m_GuiEmergencyMode&#160;:&#160;<a class="el" href="classMotorThread.html#a65e302d8a9a11ce4eca6bd0782a2cee9">MotorThread</a></li>
-<li>m_keyHandle_MCP&#160;:&#160;<a class="el" href="classMaxonMotor.html#a231271571af914099f2808b6adf491d0">MaxonMotor</a></li>
+<li>m_KeyHandle_MCP&#160;:&#160;<a class="el" href="classMaxonMotor.html#a03c467974b1c272f5705054d7ded70d6">MaxonMotor</a></li>
 <li>m_LeftButtonClicked&#160;:&#160;<a class="el" href="classMotorThread.html#a1ef32265639a9b03d65085982bd9c929">MotorThread</a></li>
 <li>m_LeftPedalClicked&#160;:&#160;<a class="el" href="classMotorThread.html#a0b8c30c3107cfc30f1ee21cc7c8bcf39">MotorThread</a></li>
 <li>m_LeftPedalDepth&#160;:&#160;<a class="el" href="classMotorThread.html#a27f740f4057d1b9a2128c0e77afb6203">MotorThread</a></li>
@@ -202,6 +204,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>m_Mode&#160;:&#160;<a class="el" href="classMaxonMotor.html#a0803dce8f5d14604c2c0dd86cfc14564">MaxonMotor</a></li>
 <li>m_Motor&#160;:&#160;<a class="el" href="classMotorThread.html#ae990b753b6a68893e8f3c8c64d4200e4">MotorThread</a></li>
 <li>m_Node_ID_MCP&#160;:&#160;<a class="el" href="classMaxonMotor.html#aa20b207ce7a147abe26f42a562f08598">MaxonMotor</a></li>
+<li>m_openFlag&#160;:&#160;<a class="el" href="classMaxonMotor.html#a51be00009d63ead1d5ab6c60d5843978">MaxonMotor</a></li>
 <li>m_OscAmp&#160;:&#160;<a class="el" href="classMaxonMotor.html#a7e66657a66ba4f7a3dfa90c94d43a062">MaxonMotor</a></li>
 <li>m_Oscillate&#160;:&#160;<a class="el" href="classMotorThread.html#a8b8db3a03d21ce4727f9ddbaa4119256">MotorThread</a></li>
 <li>m_OscOffset&#160;:&#160;<a class="el" href="classMaxonMotor.html#ace4f2f836b0ea29e4312d21d42a360fc">MaxonMotor</a></li>
@@ -240,7 +243,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>on_btnIrrigationMove_clicked()&#160;:&#160;<a class="el" href="classMainWindow.html#ae0bf4b19c3dfc7d99ec9bfb324639840">MainWindow</a></li>
 <li>on_btnIrrigationStop_clicked()&#160;:&#160;<a class="el" href="classMainWindow.html#a54f092d5c0c588c0c2fdfa5601fe6d75">MainWindow</a></li>
 <li>on_ButtonEmergencyExit_clicked()&#160;:&#160;<a class="el" href="classEmergencyWindow.html#a8a88833b5c2728b15cc33e93761bc0f8">EmergencyWindow</a></li>
-<li>on_CallEmergencyWindow()&#160;:&#160;<a class="el" href="classMainWindow.html#a24107b24ea4bea9e13c1dec28e31e140">MainWindow</a></li>
 <li>on_CallInitWindow()&#160;:&#160;<a class="el" href="classMainWindow.html#a8a034be8b0b26b9c0510d9d095f4b589">MainWindow</a></li>
 <li>on_ExitEmergencyClicked()&#160;:&#160;<a class="el" href="classMainWindow.html#a33009b07ad76d5c0793275c0cda3f068">MainWindow</a></li>
 <li>on_FootPedalLButton()&#160;:&#160;<a class="el" href="classMotorThread.html#a0276cc0d95bf28435c9416edb31c4c60">MotorThread</a></li>

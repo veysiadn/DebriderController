@@ -17,14 +17,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="147" column="10" bodyfile="include/epos4_can.h" bodystart="147" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="152" column="10" bodyfile="include/epos4_can.h" bodystart="152" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classMaxonMotor_1a231271571af914099f2808b6adf491d0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classMaxonMotor_1a03c467974b1c272f5705054d7ded70d6" prot="private" static="no" mutable="no">
         <type>void *</type>
-        <definition>void* MaxonMotor::m_keyHandle_MCP</definition>
+        <definition>void* MaxonMotor::m_KeyHandle_MCP</definition>
         <argsstring></argsstring>
-        <name>m_keyHandle_MCP</name>
-        <qualifiedname>MaxonMotor::m_keyHandle_MCP</qualifiedname>
+        <name>m_KeyHandle_MCP</name>
+        <qualifiedname>MaxonMotor::m_KeyHandle_MCP</qualifiedname>
         <briefdescription>
 <para>Handle to the CAN port. </para>
         </briefdescription>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="150" column="10" bodyfile="include/epos4_can.h" bodystart="150" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="155" column="10" bodyfile="include/epos4_can.h" bodystart="155" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" prot="private" static="no" mutable="no">
         <type>unsigned short</type>
@@ -47,14 +47,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="153" column="20" bodyfile="include/epos4_can.h" bodystart="153" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="158" column="20" bodyfile="include/epos4_can.h" bodystart="158" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classMaxonMotor_1aad582e12d809a974a079d315fecc331c" prot="private" static="no" mutable="no">
         <type>unsigned int</type>
-        <definition>unsigned int MaxonMotor::ErrorCode</definition>
+        <definition>unsigned int MaxonMotor::m_ErrorCode</definition>
         <argsstring></argsstring>
-        <name>ErrorCode</name>
-        <qualifiedname>MaxonMotor::ErrorCode</qualifiedname>
+        <name>m_ErrorCode</name>
+        <qualifiedname>MaxonMotor::m_ErrorCode</qualifiedname>
         <briefdescription>
 <para>Error code returned from VCS functions. </para>
         </briefdescription>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="156" column="18" bodyfile="include/epos4_can.h" bodystart="156" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="161" column="18" bodyfile="include/epos4_can.h" bodystart="161" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" prot="private" static="no" mutable="no">
         <type>char</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="159" column="10" bodyfile="include/epos4_can.h" bodystart="159" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="164" column="10" bodyfile="include/epos4_can.h" bodystart="164" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="161" column="9" bodyfile="include/epos4_can.h" bodystart="161" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="166" column="9" bodyfile="include/epos4_can.h" bodystart="166" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -107,14 +107,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="163" column="9" bodyfile="include/epos4_can.h" bodystart="163" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="168" column="9" bodyfile="include/epos4_can.h" bodystart="168" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classMaxonMotor_1a93444ce7d5c59a9ab3512a4518210c06" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int MaxonMotor::m_errorFlag</definition>
+        <definition>int MaxonMotor::m_ErrorFlag</definition>
         <argsstring></argsstring>
-        <name>m_errorFlag</name>
-        <qualifiedname>MaxonMotor::m_errorFlag</qualifiedname>
+        <name>m_ErrorFlag</name>
+        <qualifiedname>MaxonMotor::m_ErrorFlag</qualifiedname>
         <briefdescription>
 <para>EPOS error flag. </para>
         </briefdescription>
@@ -122,7 +122,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="165" column="9" bodyfile="include/epos4_can.h" bodystart="165" bodyend="-1"/>
+        <location file="include/epos4_can.h" line="170" column="9" bodyfile="include/epos4_can.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classMaxonMotor_1a51be00009d63ead1d5ab6c60d5843978" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MaxonMotor::m_openFlag</definition>
+        <argsstring></argsstring>
+        <name>m_openFlag</name>
+        <qualifiedname>MaxonMotor::m_openFlag</qualifiedname>
+        <initializer>=false</initializer>
+        <briefdescription>
+<para>Flag describing opened/clsoed status of EPOS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="172" column="10" bodyfile="include/epos4_can.h" bodystart="172" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -158,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="31" column="9" bodyfile="src/epos4_can.cpp" bodystart="19" bodyend="54"/>
+        <location file="include/epos4_can.h" line="31" column="9" bodyfile="src/epos4_can.cpp" bodystart="19" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -176,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="37" column="9" bodyfile="src/epos4_can.cpp" bodystart="56" bodyend="97"/>
+        <location file="include/epos4_can.h" line="37" column="9" bodyfile="src/epos4_can.cpp" bodystart="57" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1aeeddf2f7f4396839027125bf0df4e71e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="43" column="10" bodyfile="src/epos4_can.cpp" bodystart="143" bodyend="146"/>
+        <location file="include/epos4_can.h" line="43" column="10" bodyfile="src/epos4_can.cpp" bodystart="144" bodyend="147"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a782ba617ad94197a4dc67ab5fd3231ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -206,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="48" column="10" bodyfile="src/epos4_can.cpp" bodystart="148" bodyend="151"/>
+        <location file="include/epos4_can.h" line="48" column="10" bodyfile="src/epos4_can.cpp" bodystart="149" bodyend="152"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a422972183dd4967a5fba482234e711e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -221,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="53" column="10" bodyfile="src/epos4_can.cpp" bodystart="153" bodyend="156"/>
+        <location file="include/epos4_can.h" line="53" column="10" bodyfile="src/epos4_can.cpp" bodystart="154" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -239,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="59" column="10" bodyfile="src/epos4_can.cpp" bodystart="477" bodyend="492"/>
+        <location file="include/epos4_can.h" line="59" column="10" bodyfile="src/epos4_can.cpp" bodystart="482" bodyend="497"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -268,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="66" column="10" bodyfile="src/epos4_can.cpp" bodystart="513" bodyend="540"/>
+        <location file="include/epos4_can.h" line="66" column="10" bodyfile="src/epos4_can.cpp" bodystart="518" bodyend="545"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -297,7 +313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="73" column="10" bodyfile="src/epos4_can.cpp" bodystart="431" bodyend="434"/>
+        <location file="include/epos4_can.h" line="73" column="10" bodyfile="src/epos4_can.cpp" bodystart="436" bodyend="439"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1abf8534427dab53522923d966d21f4d9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -315,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="80" column="10" bodyfile="src/epos4_can.cpp" bodystart="437" bodyend="472"/>
+        <location file="include/epos4_can.h" line="80" column="10" bodyfile="src/epos4_can.cpp" bodystart="442" bodyend="477"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a1dc2e9c7a1309d947cecd4122ca1f235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -330,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="85" column="10" bodyfile="src/epos4_can.cpp" bodystart="250" bodyend="273"/>
+        <location file="include/epos4_can.h" line="85" column="10" bodyfile="src/epos4_can.cpp" bodystart="255" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a6f31f54f7c80027d6cfe8a38bb4924a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -345,7 +361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="90" column="10" bodyfile="src/epos4_can.cpp" bodystart="275" bodyend="302"/>
+        <location file="include/epos4_can.h" line="90" column="10" bodyfile="src/epos4_can.cpp" bodystart="280" bodyend="307"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a69c9584463dfc3c6db5f43a68dfd8e12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -374,7 +390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="97" column="10" bodyfile="src/epos4_can.cpp" bodystart="348" bodyend="358"/>
+        <location file="include/epos4_can.h" line="97" column="10" bodyfile="src/epos4_can.cpp" bodystart="353" bodyend="363"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a8307999483d6cfae3ecbce326c4192a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -403,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="104" column="10" bodyfile="src/epos4_can.cpp" bodystart="360" bodyend="373"/>
+        <location file="include/epos4_can.h" line="104" column="10" bodyfile="src/epos4_can.cpp" bodystart="365" bodyend="378"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -421,7 +437,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="110" column="9" bodyfile="src/epos4_can.cpp" bodystart="494" bodyend="511"/>
+        <location file="include/epos4_can.h" line="110" column="9" bodyfile="src/epos4_can.cpp" bodystart="499" bodyend="516"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a2c64e90ea555f4cc4a81f322d3b41ea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -450,7 +466,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="116" column="10" bodyfile="src/epos4_can.cpp" bodystart="304" bodyend="315"/>
+        <location file="include/epos4_can.h" line="116" column="10" bodyfile="src/epos4_can.cpp" bodystart="309" bodyend="320"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1aae6f66648157bfb53c6055fefadb5af2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -481,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="122" column="10" bodyfile="src/epos4_can.cpp" bodystart="317" bodyend="335"/>
+        <location file="include/epos4_can.h" line="122" column="10" bodyfile="src/epos4_can.cpp" bodystart="322" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a7cf4e535dca4e5a4905cc45269f8b729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -496,7 +512,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="127" column="10" bodyfile="src/epos4_can.cpp" bodystart="375" bodyend="383"/>
+        <location file="include/epos4_can.h" line="127" column="10" bodyfile="src/epos4_can.cpp" bodystart="380" bodyend="388"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -511,7 +527,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="132" column="10" bodyfile="src/epos4_can.cpp" bodystart="394" bodyend="406"/>
+        <location file="include/epos4_can.h" line="132" column="10" bodyfile="src/epos4_can.cpp" bodystart="399" bodyend="411"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1ac5959fbd331e3910d181967b488e522f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -529,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="138" column="9" bodyfile="src/epos4_can.cpp" bodystart="408" bodyend="419"/>
+        <location file="include/epos4_can.h" line="138" column="9" bodyfile="src/epos4_can.cpp" bodystart="413" bodyend="424"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a8cf63964c1455ce3e673cc4c866fff3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -544,7 +560,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="143" column="10" bodyfile="src/epos4_can.cpp" bodystart="384" bodyend="392"/>
+        <location file="include/epos4_can.h" line="143" column="10" bodyfile="src/epos4_can.cpp" bodystart="389" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="classMaxonMotor_1ab1b0d30a80a8cfe990eac57c4d5dd620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MaxonMotor::IsOpen</definition>
+        <argsstring>()</argsstring>
+        <name>IsOpen</name>
+        <qualifiedname>MaxonMotor::IsOpen</qualifiedname>
+        <briefdescription>
+<para>Function to check whether EPOS is opened or closed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if EPOS is opened, false if it is closed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/epos4_can.h" line="148" column="10" bodyfile="src/epos4_can.cpp" bodystart="159" bodyend="162"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -587,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="172" column="10" bodyfile="src/epos4_can.cpp" bodystart="170" bodyend="208"/>
+        <location file="include/epos4_can.h" line="178" column="10" bodyfile="src/epos4_can.cpp" bodystart="175" bodyend="213"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -628,7 +662,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="179" column="10" bodyfile="src/epos4_can.cpp" bodystart="210" bodyend="248"/>
+        <location file="include/epos4_can.h" line="185" column="10" bodyfile="src/epos4_can.cpp" bodystart="215" bodyend="253"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -669,7 +703,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="186" column="10" bodyfile="src/epos4_can.cpp" bodystart="99" bodyend="141"/>
+        <location file="include/epos4_can.h" line="192" column="10" bodyfile="src/epos4_can.cpp" bodystart="100" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a1d5b26719718330f3d64a1e865a34a09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -698,7 +732,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="192" column="10" bodyfile="src/epos4_can.cpp" bodystart="158" bodyend="168"/>
+        <location file="include/epos4_can.h" line="198" column="10" bodyfile="src/epos4_can.cpp" bodystart="163" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a1e0dc25bbe25a570337aecae4c955a99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -751,7 +785,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="200" column="10" bodyfile="src/epos4_can.cpp" bodystart="337" bodyend="346"/>
+        <location file="include/epos4_can.h" line="206" column="10" bodyfile="src/epos4_can.cpp" bodystart="342" bodyend="351"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1adf3e9d7eb8b2345593d539c4f461f769" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -804,7 +838,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="208" column="10"/>
+        <location file="include/epos4_can.h" line="214" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1a9a4da1905bd22dede6988a624350a135" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -857,7 +891,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="216" column="10" bodyfile="src/epos4_can.cpp" bodystart="420" bodyend="429"/>
+        <location file="include/epos4_can.h" line="222" column="10" bodyfile="src/epos4_can.cpp" bodystart="425" bodyend="434"/>
       </memberdef>
       <memberdef kind="function" id="classMaxonMotor_1adcd2aa0a36b9050de136341f81445cfa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -875,14 +909,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/epos4_can.h" line="223" column="10" bodyfile="src/epos4_can.cpp" bodystart="541" bodyend="545"/>
+        <location file="include/epos4_can.h" line="229" column="10" bodyfile="src/epos4_can.cpp" bodystart="546" bodyend="550"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/epos4_can.h" line="21" column="1" bodyfile="include/epos4_can.h" bodystart="22" bodyend="224"/>
+    <location file="include/epos4_can.h" line="21" column="1" bodyfile="include/epos4_can.h" bodystart="22" bodyend="230"/>
     <listofallmembers>
       <member refid="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>ActivateDevice</name></member>
       <member refid="classMaxonMotor_1aeeddf2f7f4396839027125bf0df4e71e" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>ActiviateAllDevice</name></member>
@@ -896,16 +930,18 @@
       <member refid="classMaxonMotor_1a572b0524c62637d84ccab2b5f784b7a1" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EnablePositionModeWithSpeed</name></member>
       <member refid="classMaxonMotor_1a1dc2e9c7a1309d947cecd4122ca1f235" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EnableVelocityMode</name></member>
       <member refid="classMaxonMotor_1ae9238a6c6b644d47b9dcd85f3ee9db7d" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>EPOSGetError</name></member>
-      <member refid="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>ErrorCode</name></member>
       <member refid="classMaxonMotor_1abf8534427dab53522923d966d21f4d9e" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCloseBladePosition</name></member>
       <member refid="classMaxonMotor_1a9a4da1905bd22dede6988a624350a135" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCurrentPosition</name></member>
       <member refid="classMaxonMotor_1ac160487d18cd7e393186af3e1a387fc8" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCurrentPositionAllDevice</name></member>
       <member refid="classMaxonMotor_1a3c08c4be5ecba4752a2ff9550c771573" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetCurrentVelocity</name></member>
       <member refid="classMaxonMotor_1ac5959fbd331e3910d181967b488e522f" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>GetMovementState</name></member>
-      <member refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_errorFlag</name></member>
-      <member refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_keyHandle_MCP</name></member>
+      <member refid="classMaxonMotor_1ab1b0d30a80a8cfe990eac57c4d5dd620" prot="public" virt="non-virtual"><scope>MaxonMotor</scope><name>IsOpen</name></member>
+      <member refid="classMaxonMotor_1aad582e12d809a974a079d315fecc331c" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_ErrorCode</name></member>
+      <member refid="classMaxonMotor_1a93444ce7d5c59a9ab3512a4518210c06" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_ErrorFlag</name></member>
+      <member refid="classMaxonMotor_1a03c467974b1c272f5705054d7ded70d6" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_KeyHandle_MCP</name></member>
       <member refid="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_Mode</name></member>
       <member refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_Node_ID_MCP</name></member>
+      <member refid="classMaxonMotor_1a51be00009d63ead1d5ab6c60d5843978" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_openFlag</name></member>
       <member refid="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_OscAmp</name></member>
       <member refid="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_OscOffset</name></member>
       <member refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" prot="private" virt="non-virtual"><scope>MaxonMotor</scope><name>m_PortName_MCP</name></member>

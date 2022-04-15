@@ -99,7 +99,6 @@
     <member refid="classMainWindow_1a2e308e20783cbdbe8a1bb8dc820725df" kind="slot"><name>on_btnCloseBlade_clicked</name></member>
     <member refid="classMainWindow_1af60b4e71a8f34ca70841abec75947492" kind="slot"><name>on_radioMAXRPM_clicked</name></member>
     <member refid="classMainWindow_1afcc9301223c1ce654c71c9b9d889aaed" kind="slot"><name>on_StateChanged</name></member>
-    <member refid="classMainWindow_1a24107b24ea4bea9e13c1dec28e31e140" kind="slot"><name>on_CallEmergencyWindow</name></member>
     <member refid="classMainWindow_1a33009b07ad76d5c0793275c0cda3f068" kind="slot"><name>on_ExitEmergencyClicked</name></member>
     <member refid="classMainWindow_1a8a034be8b0b26b9c0510d9d095f4b589" kind="slot"><name>on_CallInitWindow</name></member>
     <member refid="classMainWindow_1a72a1904ae87335a0b049422cf530d539" kind="slot"><name>on_ReinitClicked</name></member>
@@ -117,17 +116,19 @@
     <member refid="classMainWindow_1ad1ff3f227df13718fc3f18363726e201" kind="function"><name>SetDefaultUI</name></member>
     <member refid="classMainWindow_1a375306103fc52b3045f7ae119bc1c982" kind="function"><name>ShowControlUI</name></member>
     <member refid="classMainWindow_1a455d382eda67ec98926088638c828a8f" kind="function"><name>ResetWatchdogTimerIC</name></member>
+    <member refid="classMainWindow_1a1280e494411b62ad4001b38d55827f80" kind="function"><name>CallEmergencyWindow</name></member>
     <member refid="classMainWindow_1a2f811a480874280630ac7cae5ccffcf4" kind="function"><name>EnableBuzzer</name></member>
   </compound>
   <compound refid="classMaxonMotor" kind="class"><name>MaxonMotor</name>
     <member refid="classMaxonMotor_1a71dd96e6542f84ad84030a432d1f5b87" kind="variable"><name>m_PortName_MCP</name></member>
-    <member refid="classMaxonMotor_1a231271571af914099f2808b6adf491d0" kind="variable"><name>m_keyHandle_MCP</name></member>
+    <member refid="classMaxonMotor_1a03c467974b1c272f5705054d7ded70d6" kind="variable"><name>m_KeyHandle_MCP</name></member>
     <member refid="classMaxonMotor_1aa20b207ce7a147abe26f42a562f08598" kind="variable"><name>m_Node_ID_MCP</name></member>
-    <member refid="classMaxonMotor_1ad569a1ab13d9b5e453df1aab2494cbab" kind="variable"><name>ErrorCode</name></member>
+    <member refid="classMaxonMotor_1aad582e12d809a974a079d315fecc331c" kind="variable"><name>m_ErrorCode</name></member>
     <member refid="classMaxonMotor_1a0803dce8f5d14604c2c0dd86cfc14564" kind="variable"><name>m_Mode</name></member>
     <member refid="classMaxonMotor_1ace4f2f836b0ea29e4312d21d42a360fc" kind="variable"><name>m_OscOffset</name></member>
     <member refid="classMaxonMotor_1a7e66657a66ba4f7a3dfa90c94d43a062" kind="variable"><name>m_OscAmp</name></member>
-    <member refid="classMaxonMotor_1a791e72c1498df7a7d59331f14e1f00bc" kind="variable"><name>m_errorFlag</name></member>
+    <member refid="classMaxonMotor_1a93444ce7d5c59a9ab3512a4518210c06" kind="variable"><name>m_ErrorFlag</name></member>
+    <member refid="classMaxonMotor_1a51be00009d63ead1d5ab6c60d5843978" kind="variable"><name>m_openFlag</name></member>
     <member refid="classMaxonMotor_1aa1bf637a4484ce34a9f88e827fbed95d" kind="function"><name>MaxonMotor</name></member>
     <member refid="classMaxonMotor_1a273db5d88e244e5db3e1b080f1151b54" kind="function"><name>OpenCANCommunication</name></member>
     <member refid="classMaxonMotor_1ac13866b606db92995933c91ef8bced75" kind="function"><name>EnableMotorController</name></member>
@@ -149,6 +150,7 @@
     <member refid="classMaxonMotor_1abf93a3159bb892cd12dcb6d56eb72521" kind="function"><name>WaitForMotion</name></member>
     <member refid="classMaxonMotor_1ac5959fbd331e3910d181967b488e522f" kind="function"><name>GetMovementState</name></member>
     <member refid="classMaxonMotor_1a8cf63964c1455ce3e673cc4c866fff3d" kind="function"><name>StopVelocity</name></member>
+    <member refid="classMaxonMotor_1ab1b0d30a80a8cfe990eac57c4d5dd620" kind="function"><name>IsOpen</name></member>
     <member refid="classMaxonMotor_1adf71147e8f294a2db8607b02a0f9b8d4" kind="function"><name>EnableDevice</name></member>
     <member refid="classMaxonMotor_1a04cc7d9d609dad90e61ee973296de8cd" kind="function"><name>DisableDevice</name></member>
     <member refid="classMaxonMotor_1a7c5ad1a40f6f95dc9c5f0a04d6a64943" kind="function"><name>ActivateDevice</name></member>

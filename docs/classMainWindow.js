@@ -2,6 +2,7 @@ var classMainWindow =
 [
     [ "MainWindow", "classMainWindow.html#a996c5a2b6f77944776856f08ec30858d", null ],
     [ "~MainWindow", "classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7", null ],
+    [ "CallEmergencyWindow", "classMainWindow.html#a1280e494411b62ad4001b38d55827f80", null ],
     [ "DisableGUI", "classMainWindow.html#ab50efa1e7281151036d23a9d2ddcc6d2", null ],
     [ "DisableValve", "classMainWindow.html#a59d7744e6b95a8f684b1bf2f8f0786b0", null ],
     [ "EnableBuzzer", "classMainWindow.html#a2f811a480874280630ac7cae5ccffcf4", null ],
@@ -17,7 +18,6 @@ var classMainWindow =
     [ "on_btnIncreaseRPM_clicked", "classMainWindow.html#a6cdcedb81963ed38f8566b67cc33697a", null ],
     [ "on_btnIrrigationMove_clicked", "classMainWindow.html#ae0bf4b19c3dfc7d99ec9bfb324639840", null ],
     [ "on_btnIrrigationStop_clicked", "classMainWindow.html#a54f092d5c0c588c0c2fdfa5601fe6d75", null ],
-    [ "on_CallEmergencyWindow", "classMainWindow.html#a24107b24ea4bea9e13c1dec28e31e140", null ],
     [ "on_CallInitWindow", "classMainWindow.html#a8a034be8b0b26b9c0510d9d095f4b589", null ],
     [ "on_ExitEmergencyClicked", "classMainWindow.html#a33009b07ad76d5c0793275c0cda3f068", null ],
     [ "on_radioCCW_toggled", "classMainWindow.html#a574b22181984a19376ab6bd86a48a93d", null ],

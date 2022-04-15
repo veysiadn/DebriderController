@@ -21,6 +21,5 @@ var searchData=
   ['eposgeterror_18',['EPOSGetError',['../classMaxonMotor.html#ae9238a6c6b644d47b9dcd85f3ee9db7d',1,'MaxonMotor']]],
   ['eposthread_19',['EposThread',['../classEposThread.html#a13b22ba1fadc18ce3b0e4eae99f66d81',1,'EposThread::EposThread()'],['../classEposThread.html',1,'EposThread']]],
   ['eposthread_2ecpp_20',['eposthread.cpp',['../eposthread_8cpp.html',1,'']]],
-  ['eposthread_2eh_21',['eposthread.h',['../eposthread_8h.html',1,'']]],
-  ['errorcode_22',['ErrorCode',['../classMaxonMotor.html#ad569a1ab13d9b5e453df1aab2494cbab',1,'MaxonMotor']]]
+  ['eposthread_2eh_21',['eposthread.h',['../eposthread_8h.html',1,'']]]
 ];

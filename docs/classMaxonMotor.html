@@ -160,6 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8cf63964c1455ce3e673cc4c866fff3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a8cf63964c1455ce3e673cc4c866fff3d">StopVelocity</a> ()</td></tr>
 <tr class="memdesc:a8cf63964c1455ce3e673cc4c866fff3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the motor motion in velocity mode.  <a href="classMaxonMotor.html#a8cf63964c1455ce3e673cc4c866fff3d">More...</a><br /></td></tr>
 <tr class="separator:a8cf63964c1455ce3e673cc4c866fff3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b0d30a80a8cfe990eac57c4d5dd620"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#ab1b0d30a80a8cfe990eac57c4d5dd620">IsOpen</a> ()</td></tr>
+<tr class="memdesc:ab1b0d30a80a8cfe990eac57c4d5dd620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check whether EPOS is opened or closed.  <a href="classMaxonMotor.html#ab1b0d30a80a8cfe990eac57c4d5dd620">More...</a><br /></td></tr>
+<tr class="separator:ab1b0d30a80a8cfe990eac57c4d5dd620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -193,15 +196,15 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a71dd96e6542f84ad84030a432d1f5b87"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a71dd96e6542f84ad84030a432d1f5b87">m_PortName_MCP</a></td></tr>
 <tr class="memdesc:a71dd96e6542f84ad84030a432d1f5b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port name.  <a href="classMaxonMotor.html#a71dd96e6542f84ad84030a432d1f5b87">More...</a><br /></td></tr>
 <tr class="separator:a71dd96e6542f84ad84030a432d1f5b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a231271571af914099f2808b6adf491d0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a231271571af914099f2808b6adf491d0">m_keyHandle_MCP</a></td></tr>
-<tr class="memdesc:a231271571af914099f2808b6adf491d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle to the CAN port.  <a href="classMaxonMotor.html#a231271571af914099f2808b6adf491d0">More...</a><br /></td></tr>
-<tr class="separator:a231271571af914099f2808b6adf491d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c467974b1c272f5705054d7ded70d6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a03c467974b1c272f5705054d7ded70d6">m_KeyHandle_MCP</a></td></tr>
+<tr class="memdesc:a03c467974b1c272f5705054d7ded70d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle to the CAN port.  <a href="classMaxonMotor.html#a03c467974b1c272f5705054d7ded70d6">More...</a><br /></td></tr>
+<tr class="separator:a03c467974b1c272f5705054d7ded70d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa20b207ce7a147abe26f42a562f08598"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#aa20b207ce7a147abe26f42a562f08598">m_Node_ID_MCP</a></td></tr>
 <tr class="memdesc:aa20b207ce7a147abe26f42a562f08598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node ID.  <a href="classMaxonMotor.html#aa20b207ce7a147abe26f42a562f08598">More...</a><br /></td></tr>
 <tr class="separator:aa20b207ce7a147abe26f42a562f08598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad569a1ab13d9b5e453df1aab2494cbab"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#ad569a1ab13d9b5e453df1aab2494cbab">ErrorCode</a></td></tr>
-<tr class="memdesc:ad569a1ab13d9b5e453df1aab2494cbab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code returned from VCS functions.  <a href="classMaxonMotor.html#ad569a1ab13d9b5e453df1aab2494cbab">More...</a><br /></td></tr>
-<tr class="separator:ad569a1ab13d9b5e453df1aab2494cbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad582e12d809a974a079d315fecc331c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#aad582e12d809a974a079d315fecc331c">m_ErrorCode</a></td></tr>
+<tr class="memdesc:aad582e12d809a974a079d315fecc331c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code returned from VCS functions.  <a href="classMaxonMotor.html#aad582e12d809a974a079d315fecc331c">More...</a><br /></td></tr>
+<tr class="separator:aad582e12d809a974a079d315fecc331c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0803dce8f5d14604c2c0dd86cfc14564"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a0803dce8f5d14604c2c0dd86cfc14564">m_Mode</a></td></tr>
 <tr class="memdesc:a0803dce8f5d14604c2c0dd86cfc14564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operating modes and parameters.  <a href="classMaxonMotor.html#a0803dce8f5d14604c2c0dd86cfc14564">More...</a><br /></td></tr>
 <tr class="separator:a0803dce8f5d14604c2c0dd86cfc14564"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,9 +214,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7e66657a66ba4f7a3dfa90c94d43a062"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a7e66657a66ba4f7a3dfa90c94d43a062">m_OscAmp</a></td></tr>
 <tr class="memdesc:a7e66657a66ba4f7a3dfa90c94d43a062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oscillation mode amplitude.  <a href="classMaxonMotor.html#a7e66657a66ba4f7a3dfa90c94d43a062">More...</a><br /></td></tr>
 <tr class="separator:a7e66657a66ba4f7a3dfa90c94d43a062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a791e72c1498df7a7d59331f14e1f00bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a791e72c1498df7a7d59331f14e1f00bc">m_errorFlag</a></td></tr>
-<tr class="memdesc:a791e72c1498df7a7d59331f14e1f00bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">EPOS error flag.  <a href="classMaxonMotor.html#a791e72c1498df7a7d59331f14e1f00bc">More...</a><br /></td></tr>
-<tr class="separator:a791e72c1498df7a7d59331f14e1f00bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93444ce7d5c59a9ab3512a4518210c06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a93444ce7d5c59a9ab3512a4518210c06">m_ErrorFlag</a></td></tr>
+<tr class="memdesc:a93444ce7d5c59a9ab3512a4518210c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">EPOS error flag.  <a href="classMaxonMotor.html#a93444ce7d5c59a9ab3512a4518210c06">More...</a><br /></td></tr>
+<tr class="separator:a93444ce7d5c59a9ab3512a4518210c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51be00009d63ead1d5ab6c60d5843978"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaxonMotor.html#a51be00009d63ead1d5ab6c60d5843978">m_openFlag</a> =false</td></tr>
+<tr class="memdesc:a51be00009d63ead1d5ab6c60d5843978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag describing opened/clsoed status of EPOS.  <a href="classMaxonMotor.html#a51be00009d63ead1d5ab6c60d5843978">More...</a><br /></td></tr>
+<tr class="separator:a51be00009d63ead1d5ab6c60d5843978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa1bf637a4484ce34a9f88e827fbed95d" name="aa1bf637a4484ce34a9f88e827fbed95d"></a>
@@ -702,6 +708,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab1b0d30a80a8cfe990eac57c4d5dd620" name="ab1b0d30a80a8cfe990eac57c4d5dd620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b0d30a80a8cfe990eac57c4d5dd620">&#9670;&nbsp;</a></span>IsOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MaxonMotor::IsOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to check whether EPOS is opened or closed. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if EPOS is opened, false if it is closed. </dd></dl>
+
+</div>
+</div>
 <a id="a1e0dc25bbe25a570337aecae4c955a99" name="a1e0dc25bbe25a570337aecae4c955a99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e0dc25bbe25a570337aecae4c955a99">&#9670;&nbsp;</a></span>Move()</h2>
 
@@ -1018,8 +1044,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad569a1ab13d9b5e453df1aab2494cbab" name="ad569a1ab13d9b5e453df1aab2494cbab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad569a1ab13d9b5e453df1aab2494cbab">&#9670;&nbsp;</a></span>ErrorCode</h2>
+<a id="aad582e12d809a974a079d315fecc331c" name="aad582e12d809a974a079d315fecc331c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad582e12d809a974a079d315fecc331c">&#9670;&nbsp;</a></span>m_ErrorCode</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1028,7 +1054,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int MaxonMotor::ErrorCode</td>
+          <td class="memname">unsigned int MaxonMotor::m_ErrorCode</td>
         </tr>
       </table>
   </td>
@@ -1042,8 +1068,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a791e72c1498df7a7d59331f14e1f00bc" name="a791e72c1498df7a7d59331f14e1f00bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a791e72c1498df7a7d59331f14e1f00bc">&#9670;&nbsp;</a></span>m_errorFlag</h2>
+<a id="a93444ce7d5c59a9ab3512a4518210c06" name="a93444ce7d5c59a9ab3512a4518210c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93444ce7d5c59a9ab3512a4518210c06">&#9670;&nbsp;</a></span>m_ErrorFlag</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1052,7 +1078,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int MaxonMotor::m_errorFlag</td>
+          <td class="memname">int MaxonMotor::m_ErrorFlag</td>
         </tr>
       </table>
   </td>
@@ -1066,8 +1092,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a231271571af914099f2808b6adf491d0" name="a231271571af914099f2808b6adf491d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a231271571af914099f2808b6adf491d0">&#9670;&nbsp;</a></span>m_keyHandle_MCP</h2>
+<a id="a03c467974b1c272f5705054d7ded70d6" name="a03c467974b1c272f5705054d7ded70d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c467974b1c272f5705054d7ded70d6">&#9670;&nbsp;</a></span>m_KeyHandle_MCP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1076,7 +1102,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void* MaxonMotor::m_keyHandle_MCP</td>
+          <td class="memname">void* MaxonMotor::m_KeyHandle_MCP</td>
         </tr>
       </table>
   </td>
@@ -1135,6 +1161,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Node ID. </p>
+
+</div>
+</div>
+<a id="a51be00009d63ead1d5ab6c60d5843978" name="a51be00009d63ead1d5ab6c60d5843978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51be00009d63ead1d5ab6c60d5843978">&#9670;&nbsp;</a></span>m_openFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MaxonMotor::m_openFlag =false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag describing opened/clsoed status of EPOS. </p>
 
 </div>
 </div>

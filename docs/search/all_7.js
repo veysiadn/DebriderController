@@ -9,5 +9,6 @@ var searchData=
   ['initializationwindow_6',['InitializationWindow',['../classInitializationWindow.html',1,'InitializationWindow'],['../classInitializationWindow.html#a7a6a53d0118d26328b8b4ca88102540e',1,'InitializationWindow::InitializationWindow()']]],
   ['initializeio_7',['InitializeIO',['../classMainWindow.html#ac21dde15d020b8d0233d4b9f49eb5f24',1,'MainWindow']]],
   ['initstatechanged_8',['InitStateChanged',['../classMainWindow.html#ae6e69202ebecc1b99a7e0c8dbc1f7501',1,'MainWindow']]],
-  ['int8u_9',['Int8U',['../footpedal_8h.html#ad5b8ae6b426ca3a6e6cd4951f72355bd',1,'footpedal.h']]]
+  ['int8u_9',['Int8U',['../footpedal_8h.html#ad5b8ae6b426ca3a6e6cd4951f72355bd',1,'footpedal.h']]],
+  ['isopen_10',['IsOpen',['../classMaxonMotor.html#ab1b0d30a80a8cfe990eac57c4d5dd620',1,'MaxonMotor']]]
 ];
