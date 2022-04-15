@@ -150,10 +150,10 @@ void FootPedal::GetCmdOutInfo(const int pin_channel, Int8U &cmd_out, int &cmd_ou
 void FootPedal::TickClock()
 {
     digitalWrite(ADC_SPI_CLK, HIGH);
-    nanosleep((const struct timespec []){{0,1000}},nullptr);
+    usleep(100);
     digitalWrite(ADC_SPI_CLK, LOW);
-    nanosleep((const struct timespec []){{0,1000}},nullptr);
-
+//    nanosleep((const struct timespec []){{0,500}},nullptr);
+    usleep(100);
 }
 
 FootPedal::~FootPedal()

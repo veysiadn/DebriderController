@@ -48,6 +48,7 @@ void MotorThread::run()
         // ------------------------------------------------------------------ //
         // CKim - If the state is in bad state (communication error or emergency) (-5, -4, -3)
         // Pulse the watchdog and return
+        PulseWatchDog();
         if(m_CurrState < DEBRIDER_STATE_UNINIT)   // UNINIT = -2 state
         {
             // CKim - Except for when emergency occured and Emergency Window needs to be raised
@@ -141,7 +142,7 @@ void MotorThread::run()
         // CKim - Process pedal inputs (R/L Button and R Pedal) that were updated from slots
         // This updates GUI which in turn change motion paramteters
         ProcessPedalButtons();
-
+        PulseWatchDog();
         // CKim - Read and process left pedal input.
         m_LeftPedalDepth = m_FootPedal.GetLeftPedalValue();
 
@@ -166,6 +167,7 @@ void MotorThread::run()
         if(m_PrevState == DEBRIDER_STATE_ENABLED && m_LeftPedalDown == 1)
         {
            // std::cout<<"State transition from enabled to run/osc\n";
+            PulseWatchDog();
             if(m_Oscillate)
             {
                 m_CurrState = DEBRIDER_STATE_OSC;

@@ -122,7 +122,7 @@ public:
     void RunOscMode(int dir);
 
     /**
-     * @brief Stops the motion of motor.
+     * @brief Stops the motor motion in position mode.
      */
     void StopMotion();
 
@@ -136,6 +136,11 @@ public:
      * @return 1 if drive reached the target, otherwise 0.
      */
     int GetMovementState();
+
+    /**
+     * @brief Stops the motor motion in velocity mode.
+     */
+    void StopVelocity();
 
 private:
     ///   Port name

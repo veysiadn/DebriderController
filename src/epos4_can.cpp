@@ -32,7 +32,7 @@ int MaxonMotor::OpenCANCommunication()
     // CKim - Handle is NULL if failed to open device
     if( m_keyHandle_MCP == nullptr )
     {
-        std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
+        std::cout<<"Open Device Failure, error_code = "<< std::hex << error_code << std::endl;
         m_errorFlag = 1;
         return 0;
     }
@@ -45,7 +45,7 @@ int MaxonMotor::OpenCANCommunication()
     // CKim - Configure CAN commuication (baudrates and etc...)
     if(!VCS_SetProtocolStackSettings(m_keyHandle_MCP, baudrate_, timeout_, &error_code) )
     {
-        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << error_code << std::endl;
+        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
         CloseDevice(m_keyHandle_MCP);
         return 0;
@@ -64,7 +64,7 @@ int MaxonMotor::EnableMotorController()
     {
         if( IsFault && !VCS_ClearFault(m_keyHandle_MCP, m_Node_ID_MCP, &error_code) )
         {
-            std::cout << "Clear Fault Failed!, error_code = " << error_code << std::endl;
+            std::cout << "Clear Fault Failed!, error_code = " << std::hex << error_code << std::endl;
             m_errorFlag = 1;
             return 0;
         }
@@ -76,7 +76,7 @@ int MaxonMotor::EnableMotorController()
         {
             if (!IsEnabled && !VCS_SetEnableState(m_keyHandle_MCP, m_Node_ID_MCP, &error_code))
             {
-                std::cout << "Set Enable State Failed!, error_code = " << error_code << std::endl;
+                std::cout << "Set Enable State Failed!, error_code = " << std::hex << error_code << std::endl;
                 m_errorFlag = 1;
                 return 0;
             }
@@ -89,7 +89,7 @@ int MaxonMotor::EnableMotorController()
     }
     else
     {
-        std::cout << "Get fault state failed!, error_code =" << error_code << std::endl;
+        std::cout << "Get fault state failed!, error_code =" << std::hex << error_code << std::endl;
         m_errorFlag = 1;
         return 0;
     }
@@ -113,7 +113,7 @@ void* MaxonMotor::ActivateDevice(char *PortName, unsigned short Node_ID)
     // OpenDevice 실패
     if( keyHandle_ == nullptr )
     {
-        std::cout<<"Open Device Failure, error_code = "<< error_code << std::endl;
+        std::cout<<"Open Device Failure, error_code = "<< std::hex << error_code << std::endl;
         m_errorFlag = 1;
         exit(0);
     }
@@ -127,7 +127,7 @@ void* MaxonMotor::ActivateDevice(char *PortName, unsigned short Node_ID)
     // 지정한 Protocol 설정
     if(!VCS_SetProtocolStackSettings(keyHandle_, baudrate_, timeout_, &error_code) )
     {
-        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << error_code << std::endl;
+        std::cout<<"Set Protocol Stack Settings Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
         CloseDevice(keyHandle_);
         exit(0);
@@ -178,7 +178,7 @@ void MaxonMotor::EnableDevice(void *keyHandle_, unsigned short Node_ID)
     {
         if( IsFault && !VCS_ClearFault(keyHandle_, Node_ID, &error_code) )
         {
-            std::cout << "Clear Fault Failed!, error_code = " << error_code << std::endl;
+            std::cout << "Clear Fault Failed!, error_code = " << std::hex << error_code << std::endl;
             m_errorFlag = 1;
             return;
         }
@@ -190,7 +190,7 @@ void MaxonMotor::EnableDevice(void *keyHandle_, unsigned short Node_ID)
         {
             if (!IsEnabled && !VCS_SetEnableState(keyHandle_, Node_ID, &error_code)) 
             {
-                std::cout << "Set Enable State Failed!, error_code = " << error_code << std::endl;
+                std::cout << "Set Enable State Failed!, error_code = " << std::hex << error_code << std::endl;
                 m_errorFlag = 1;
             }
             else
@@ -202,7 +202,7 @@ void MaxonMotor::EnableDevice(void *keyHandle_, unsigned short Node_ID)
     }
     else
     {
-        std::cout << "Get fault state failed!, error_code =" << error_code << std::endl;
+        std::cout << "Get fault state failed!, error_code =" << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -216,7 +216,7 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
     {
         if( IsFault && !VCS_ClearFault(keyHandle_, Node_ID, &error_code) )
         {
-            std::cout << "Clear Fault Failed!, error_code = "<< error_code << std::endl;
+            std::cout << "Clear Fault Failed!, error_code = "<< std::hex << error_code << std::endl;
             m_errorFlag = 1;
             return;
         }
@@ -227,7 +227,7 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
         {
             if (IsEnabled && !VCS_SetDisableState(keyHandle_, Node_ID, &error_code))
             {
-                std::cout << "Set Disable state failed!, error_code = " << error_code << std::endl;
+                std::cout << "Set Disable state failed!, error_code = " << std::hex << error_code << std::endl;
                 m_errorFlag = 1;
             }
 
@@ -241,7 +241,7 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
     }
     else
     {
-        std::cout<<"Get Fault State Failed!, error_code=" << error_code << std::endl;
+        std::cout<<"Get Fault State Failed!, error_code=" << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 
@@ -267,7 +267,7 @@ void MaxonMotor::EnableVelocityMode()
 
     if (!VCS_SetVelocityProfile(m_keyHandle_MCP, m_Node_ID_MCP, ProfileAcceleration, ProfileDeceleration, &error_code))
     {
-        std::cout << "VCS_SetVelocityProfile Failed!, error_code = " << error_code << std::endl;
+        std::cout << "VCS_SetVelocityProfile Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -296,7 +296,7 @@ void MaxonMotor::EnablePositionMode()
     // 설정한 위치값으로 이동시켜주는 VCS 함수
     if (!VCS_SetPositionProfile(m_keyHandle_MCP, m_Node_ID_MCP, ProfileVelocity,
         ProfileAcceleration, ProfileDeceleration, &error_code)) {
-        std::cout << "VCS_SetPositionProfile Failed!, error_code = " << error_code << std::endl;
+        std::cout << "VCS_SetPositionProfile Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -309,7 +309,7 @@ void MaxonMotor::SetOscMode(int Amp)
 
     if (!VCS_GetPositionIs(m_keyHandle_MCP, m_Node_ID_MCP, &m_OscOffset, &error_code))
     {
-        std::cout << " Error while getting current position , error_code = " << error_code << std::endl;
+        std::cout << " Error while getting current position , error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -329,7 +329,7 @@ void MaxonMotor::RunOscMode(int dir)
 
     if (!VCS_MoveToPosition(m_keyHandle_MCP, m_Node_ID_MCP, tgtPos, Absolute,Immediately, &error_code))
     {
-        std::cout << "Move To Position Failed!, error_code = " << error_code << std::endl;
+        std::cout << "Move To Position Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -340,7 +340,7 @@ void MaxonMotor::Move(void *keyHandle_, long target_velocity, unsigned short Nod
 
     if(!VCS_MoveWithVelocity(keyHandle_, Node_ID, target_velocity, &error_code))
     {
-        std::cout << "Move With Velocity failed!, error_code = " << error_code << std::endl;
+        std::cout << "Move With Velocity failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -352,7 +352,7 @@ void MaxonMotor::MoveVelocity(const long& target_velocity)
     unsigned int error_code = 0;
     if (!VCS_MoveWithVelocity(m_keyHandle_MCP, m_Node_ID_MCP, target_velocity, &error_code)) 
     {
-        std::cout << "Move With Velocity failed!, error_code = " << error_code << std::endl;
+        std::cout << "Move With Velocity failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -367,7 +367,7 @@ void MaxonMotor::MovePosition(const long& target_pos)
 
     if (!VCS_MoveToPosition(m_keyHandle_MCP, m_Node_ID_MCP, target_pos, Absolute, Immediately, &error_code))
     {
-        std::cout << "Move To Position Failed!, error_code = " << error_code << std::endl;
+        std::cout << "Move To Position Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -377,8 +377,17 @@ void MaxonMotor::StopMotion()
     unsigned int error_code = 0;
     if(!VCS_HaltPositionMovement(m_keyHandle_MCP, m_Node_ID_MCP, &error_code))
     {
-        std::cout << "StopMotion Failed!, error_code = " << error_code << std::endl;
+        std::cout << "StopMotion Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
+    }
+}
+void MaxonMotor::StopVelocity()
+{
+    unsigned int error_code = 0 ;
+    if(!VCS_HaltVelocityMovement(m_keyHandle_MCP,m_Node_ID_MCP,&error_code))
+    {
+        std::cout << "Stop velocity failed, error_code = " << std::hex << error_code << std::endl;
+        m_errorFlag = 1 ;
     }
 }
 
@@ -390,7 +399,7 @@ void MaxonMotor::WaitForMotion()
     if(!VCS_WaitForTargetReached(m_keyHandle_MCP, m_Node_ID_MCP,time_out_ms,&error_code))
     {
 
-        std::cout << "Waiting Failed!, error_code = " << error_code << std::endl;
+        std::cout << "Waiting Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 
@@ -414,7 +423,7 @@ void MaxonMotor::GetCurrentPosition(void *keyHandle_, int& current_position, uns
 
     if(!VCS_GetPositionIs(keyHandle_, Node_ID, &current_position, &error_code))
     {
-        std::cout << " Error while getting current position , error_code = "<< error_code << std::endl;
+        std::cout << " Error while getting current position , error_code = "<< std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }
@@ -433,7 +442,7 @@ int MaxonMotor::GetCloseBladePosition()
     
     if (!VCS_GetPositionIs(m_keyHandle_MCP, m_Node_ID_MCP, &Current_Pos, &error_code))
     {
-        std::cout << " Error while getting current position , error_code = " << error_code << std::endl;
+        std::cout << " Error while getting current position , error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
         new_Pos = ( Current_Pos % INC_PER_ROTATION);
@@ -525,7 +534,7 @@ void MaxonMotor::EnablePositionModeWithSpeed(int speed)
     // 설정한 위치값으로 이동시켜주는 VCS 함수
     if (!VCS_SetPositionProfile(m_keyHandle_MCP, m_Node_ID_MCP, ProfileVelocity,
         ProfileAcceleration, ProfileDeceleration, &error_code)) {
-        std::cout << "VCS_SetPositionProfile Failed!, error_code = " << error_code << std::endl;
+        std::cout << "VCS_SetPositionProfile Failed!, error_code = " << std::hex << error_code << std::endl;
         m_errorFlag = 1;
     }
 }

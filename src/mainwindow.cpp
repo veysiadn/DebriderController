@@ -445,10 +445,10 @@ void MainWindow::DisableValve()
 void MainWindow::EnableBuzzer()
 {
     if(!buzzer_running_status){
+        buzzer_running_status = true;
         softToneWrite(PEDAL_BUZZER,1000);
         delay(200);
         softToneWrite(PEDAL_BUZZER,0);
-        buzzer_running_status = true;
     }
 
 }
@@ -456,7 +456,7 @@ void MainWindow::EnableBuzzer()
 void MainWindow::RunBuzzer()
 {
     buzzer_thread_ = std::thread(EnableBuzzer);
-    buzzer_thread_.join();
+    buzzer_thread_.detach();
 }
 
 
