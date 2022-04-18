@@ -8,7 +8,7 @@
     </detaileddescription>
     <programlisting>
 <codeline><highlight class="normal">#<sp/>Debrider<sp/>Controller<sp/>Device<sp/>Control<sp/>Software</highlight></codeline>
-<codeline><highlight class="normal">Debrider<sp/>Controller<sp/>Software<sp/>with<sp/>Qt</highlight></codeline>
+<codeline><highlight class="normal">Micro-Debrider<sp/>Controller<sp/>Software<sp/>with<sp/>Qt</highlight></codeline>
 <codeline><highlight class="normal">###<sp/>Considering<sp/>that<sp/>you<sp/>already<sp/>installed<sp/>Raspian<sp/>Buster<sp/>to<sp/>your<sp/>Raspberry<sp/>Pi.</highlight></codeline>
 <codeline><highlight class="normal">###<sp/>Note<sp/>:<sp/>It&apos;s<sp/>important<sp/>that<sp/>you<sp/>install<sp/>Buster<sp/>version<sp/>of<sp/>Raspian<sp/>not<sp/>the<sp/>Bullseye<sp/>version,<sp/>because<sp/>wiringpi,<sp/>and<sp/>several<sp/>other<sp/>libraries<sp/>are<sp/>not<sp/>available<sp/>for<sp/>Bullseye<sp/>version.</highlight></codeline>
 <codeline><highlight class="normal">##<sp/>Before<sp/>building<sp/>project<sp/>;<sp/>Make<sp/>sure<sp/>that<sp/>you<sp/>have<sp/>an<sp/>internet<sp/>connection</highlight></codeline>
