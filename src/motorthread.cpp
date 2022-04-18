@@ -243,7 +243,6 @@ void MotorThread::run()
                 PulseWatchDog();
                 m_EposThread.Abort();
                 if(m_EposThread.GetWaitingForMotionInfo()) continue ;
-                m_CurrState = DEBRIDER_STATE_ENABLED;
                // std::cout << "Returning to Enabled from oscillation\n";
                 emit UpdateGUI(DEBRIDER_STATE_ENABLED);
             }

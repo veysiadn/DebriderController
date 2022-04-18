@@ -1,5 +1,5 @@
 # Debrider Controller Device Control Software
-Debrider Controller Software with Qt
+Micro-Debrider Controller Software with Qt
 ### Considering that you already installed Raspian Buster to your Raspberry Pi.
 ### Note : It's important that you install Buster version of Raspian not the Bullseye version, because wiringpi, and several other libraries are not available for Bullseye version.
 ## Before building project ; Make sure that you have an internet connection
