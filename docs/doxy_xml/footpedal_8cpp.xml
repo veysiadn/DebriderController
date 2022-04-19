@@ -6,7 +6,8 @@
     <includes refid="m__defines_8h" local="yes">include/m_defines.h</includes>
     <includes local="no">iostream</includes>
     <includes local="no">wiringPi.h</includes>
-    <includes local="no">time.h</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">chrono</includes>
     <incdepgraph>
       <node id="2">
         <label>include/footpedal.h</label>
@@ -35,14 +36,22 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>QThread</label>
       </node>
+      <node id="9">
+        <label>chrono</label>
+      </node>
       <node id="7">
         <label>iostream</label>
+      </node>
+      <node id="8">
+        <label>thread</label>
       </node>
       <node id="6">
         <label>time.h</label>
@@ -61,8 +70,8 @@
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wiringPi.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><ref refid="classFootPedal_1a984faf3d9f989adeb132339c377b14a6" kindref="member">FootPedal::FootPedal</ref>()</highlight></codeline>
 <codeline lineno="9"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
@@ -208,10 +217,10 @@
 <codeline lineno="150"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classFootPedal_1a4488869799265b29496823efdd59dfa0" kindref="member">FootPedal::TickClock</ref>()</highlight></codeline>
 <codeline lineno="151"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(<ref refid="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" kindref="member">ADC_SPI_CLK</ref>,<sp/>HIGH);</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;usleep(100);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::this_thread::sleep_for(std::chrono::microseconds(50));</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(<ref refid="m__defines_8h_1af6dea666329d7c4a33a2d59b98f4afa0" kindref="member">ADC_SPI_CLK</ref>,<sp/>LOW);</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>nanosleep((const<sp/>struct<sp/>timespec<sp/>[]){{0,500}},nullptr);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;usleep(100);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>nanosleep((const<sp/>struct<sp/>timespec<sp/>[]){{0,100}},nullptr);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>std::this_thread::sleep_for(std::chrono::microseconds(50));</highlight></codeline>
 <codeline lineno="157"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><ref refid="classFootPedal_1ae924b102bbeae161b0e72b4c34ad9b73" kindref="member">FootPedal::~FootPedal</ref>()</highlight></codeline>
