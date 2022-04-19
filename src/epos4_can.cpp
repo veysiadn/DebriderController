@@ -254,15 +254,16 @@ void MaxonMotor::DisableDevice(void *keyHandle_, unsigned short Node_ID)
 
 void MaxonMotor::EnableVelocityMode()
 {
-    if(m_Mode == OMD_PROFILE_VELOCITY_MODE)     return;
-
     unsigned int error_code = 0;
 
-    if (!VCS_ActivateProfileVelocityMode(m_KeyHandle_MCP, m_Node_ID_MCP, &error_code))
+    if(m_Mode != OMD_PROFILE_VELOCITY_MODE)
     {
-        std::cout << "Activate Profile Velocity Mode Failed!" << std::endl;
-        m_ErrorFlag = 1;
-        return;
+        if (!VCS_ActivateProfileVelocityMode(m_KeyHandle_MCP, m_Node_ID_MCP, &error_code))
+        {
+            std::cout << "Activate Profile Velocity Mode Failed!" << std::endl;
+            m_ErrorFlag = 1;
+            return;
+        }
     }
 
     m_Mode = OMD_PROFILE_VELOCITY_MODE;

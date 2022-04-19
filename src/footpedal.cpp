@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <wiringPi.h>
-#include <time.h>
-
+#include <thread>
+#include <chrono>
 FootPedal::FootPedal()
 {
 
@@ -150,10 +150,10 @@ void FootPedal::GetCmdOutInfo(const int pin_channel, Int8U &cmd_out, int &cmd_ou
 void FootPedal::TickClock()
 {
     digitalWrite(ADC_SPI_CLK, HIGH);
-    this->usleep(100);
+    std::this_thread::sleep_for(std::chrono::microseconds(50));
     digitalWrite(ADC_SPI_CLK, LOW);
-//    nanosleep((const struct timespec []){{0,500}},nullptr);
-    this->usleep(100);
+//    nanosleep((const struct timespec []){{0,100}},nullptr);
+    std::this_thread::sleep_for(std::chrono::microseconds(50));
 }
 
 FootPedal::~FootPedal()
