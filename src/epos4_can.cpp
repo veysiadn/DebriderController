@@ -534,8 +534,8 @@ void MaxonMotor::EnablePositionModeWithSpeed(int speed)
 
     // profile 값 설정 : 속도, 가감속 값
     unsigned int ProfileVelocity = unsigned(speed);
-    unsigned int ProfileAcceleration = 200000;
-    unsigned int ProfileDeceleration = 200000;
+    unsigned int ProfileAcceleration = 300000;
+    unsigned int ProfileDeceleration = 300000;
 
     // 설정한 위치값으로 이동시켜주는 VCS 함수
     if (!VCS_SetPositionProfile(m_KeyHandle_MCP, m_Node_ID_MCP, ProfileVelocity,

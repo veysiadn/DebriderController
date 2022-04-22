@@ -150,6 +150,7 @@ void MainWindow::ResetWatchdogTimerIC()
     digitalWrite(VDD_RESET,HIGH);
     delay(10);
 }
+
 void MainWindow::SetDefaultUI()
 {
     DisableGUI();
@@ -171,6 +172,7 @@ void MainWindow::ShowControlUI()
         init_window_.hide();
     }
 }
+
 void MainWindow::on_btnDecreaseRPM_clicked()
 {
     ui->radioMAXRPM->setChecked(false);
@@ -193,8 +195,7 @@ void MainWindow::on_btnDecreaseRPM_clicked()
 
 void MainWindow::on_btnIncreaseRPM_clicked()
 {
-    debrider_motor_target_speed_ += CHANGE_RPM_RATE;
-
+    debrider_motor_target_speed_ += CHANGE_RPM_RATE;    
     if(debrider_motor_target_speed_ > BLDC_MAX_RPM)
     {
         debrider_motor_target_speed_ = BLDC_MAX_RPM;
@@ -246,6 +247,7 @@ void MainWindow::on_btnDecreaseFlow_clicked()
     if(pump_running_status_) pwmWrite(SUCTION_MOTOR_PWM,pump_motor_target_speed_);
     pump_motor_printed_speed_val_=int(((pump_motor_target_speed_-120.0)/4.0)+10.0);
     if(pump_motor_printed_speed_val_ < 0) pump_motor_printed_speed_val_ = 0 ;
+    if(pump_motor_printed_speed_val_==0) pump_running_status_=false;
     PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
 }
 
@@ -260,8 +262,10 @@ void MainWindow::on_btnIncreaseFlow_clicked()
 
 void MainWindow::on_btnIrrigationMove_clicked()
 {
-    MovePumpMotor();
-    PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+    if(pump_motor_target_speed_ > 0){
+        MovePumpMotor();
+        PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+    }
 }
 
 void MainWindow::on_btnIrrigationStop_clicked()
@@ -306,15 +310,15 @@ void MainWindow::PrintStatus(int dSpeed, int pSpeed)
     speed_label_ = " " + QString::number(pSpeed) + " ";
     ui->p_MotorSpeedInfo->setText(speed_label_);
     if(pump_running_status_==false)
-    status_label_ = QString(" Debrider Motor Set :  %1 RPM \n Pump Motor Set : % %2  ").arg(dSpeed).arg(pSpeed);
+        status_label_ = QString(" Debrider Motor Set :  %1 RPM \n Pump Motor Set : % %2  ").arg(dSpeed).arg(pSpeed);
     else
-    status_label_ = QString(" Debrider Motor Set:  %1 RPM \n Pump Motor Running at : % %2  ").arg(dSpeed).arg(pSpeed);
-    if(motor_thread_.m_DebriderInstantSpeed < 20 && pump_running_status_==true)
+        status_label_ = QString(" Debrider Motor Set:  %1 RPM \n Pump Motor Running at : % %2  ").arg(dSpeed).arg(pSpeed);
+    if(motor_thread_.m_DebriderInstantSpeed < 0 && pump_running_status_==true)
     {
         status_label_= QString(" Debrider Motor Running at CW MODE at :  %1 RPM \n "
                             "Pump Motor Running at : % %2  ").arg(motor_thread_.m_DebriderInstantSpeed*(-1)).arg(pSpeed);
     }
-    else if(motor_thread_.m_DebriderInstantSpeed > 20 && pump_running_status_==true)
+    else if(motor_thread_.m_DebriderInstantSpeed > 0 && pump_running_status_==true)
     {
         status_label_ = QString(" Debrider Motor Running at CCW MODE at :  %1 RPM \n "
                             "Pump Motor Running at : % %2  ").arg(motor_thread_.m_DebriderInstantSpeed).arg(pSpeed);
@@ -380,6 +384,7 @@ void MainWindow::ShowPedalButtonStates()
           motor_thread_.m_DebriderTargetSpeed = -debrider_motor_target_speed_;
         else motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
         PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+        motor_thread_.m_DebriderInstantSpeed = 0;
     }
    // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
 

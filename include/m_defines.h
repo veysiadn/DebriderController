@@ -15,8 +15,8 @@
 #define ENCODER_RESOLUTION  1024            /// 1024 Counts Per Turn
 #define GEAR_RATIO          5               /// 5 : 1 Gear Ration
 #define CLOSE_BLADE_VELOCITY 100            /// VeysiAdn - Velocity that will be used in close blade mode.
-#define OSC_MODE_AMP         15000          /// VeysiAdn - Oscillation mode position oscillation range. -15k ~ +15k
 #define INC_PER_ROTATION    ENCODER_RESOLUTION*GEAR_RATIO*4 /// Encoder increment value per rotation.
+#define OSC_MODE_AMP    INC_PER_ROTATION     /// VeysiAdn - Oscillation mode position oscillation range. -15k ~ +15k
 
 
 #define MAX_ANALOG_OUTPUT           310     /// Maximum analog value acquired from pedal.
