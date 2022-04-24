@@ -218,12 +218,13 @@
     <member refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" kind="define"><name>ENCODER_RESOLUTION</name></member>
     <member refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" kind="define"><name>GEAR_RATIO</name></member>
     <member refid="m__defines_8h_1a661c6c96ad8978be8657789aae876020" kind="define"><name>CLOSE_BLADE_VELOCITY</name></member>
-    <member refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" kind="define"><name>OSC_MODE_AMP</name></member>
     <member refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" kind="define"><name>INC_PER_ROTATION</name></member>
+    <member refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" kind="define"><name>OSC_MODE_AMP</name></member>
     <member refid="m__defines_8h_1acd21751cadfe75b41534fa2d356d29a3" kind="define"><name>MAX_ANALOG_OUTPUT</name></member>
     <member refid="m__defines_8h_1a73f015fff1e940e183c941f856e18b30" kind="define"><name>BLDC_MAX_RPM</name></member>
     <member refid="m__defines_8h_1a95c751d552102fe985d37cb85c2ed8c1" kind="define"><name>CHANGE_RPM_RATE</name></member>
     <member refid="m__defines_8h_1adf0fa78908ed3c7ddabb09a1a8954b5a" kind="define"><name>PUMP_PWM_RANGE</name></member>
+    <member refid="m__defines_8h_1a0b4c9bdfff5082bbbe3cee4127eaed73" kind="define"><name>OSC_MODE_MAX_RPM</name></member>
     <member refid="m__defines_8h_1a4fdcb8df721ab069b17e0ee011a56805" kind="define"><name>MIN_ANALOG_PEDAL_OUTPUT</name></member>
     <member refid="m__defines_8h_1a114c3d212b07214cd983a904f6a68f28" kind="define"><name>MAX_ANALOG_PEDAL_OUTPUT</name></member>
     <member refid="m__defines_8h_1aeb553970bb72febda4d8c526be85948a" kind="define"><name>ADC_MAX_OUTPUT</name></member>

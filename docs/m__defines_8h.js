@@ -37,6 +37,7 @@ var m__defines_8h =
     [ "MAX_ANALOG_PEDAL_OUTPUT", "m__defines_8h.html#a114c3d212b07214cd983a904f6a68f28", null ],
     [ "MIN_ANALOG_PEDAL_OUTPUT", "m__defines_8h.html#a4fdcb8df721ab069b17e0ee011a56805", null ],
     [ "OSC_MODE_AMP", "m__defines_8h.html#adbc1b59dfaf1d8562a8915926e5e954c", null ],
+    [ "OSC_MODE_MAX_RPM", "m__defines_8h.html#a0b4c9bdfff5082bbbe3cee4127eaed73", null ],
     [ "PEDAL_BUZZER", "m__defines_8h.html#a396cfcfeb51bc5d3b7a7f73a12fe92b6", null ],
     [ "PUMP_PWM_RANGE", "m__defines_8h.html#adf0fa78908ed3c7ddabb09a1a8954b5a", null ],
     [ "SOLENOID_VALVE_ENABLE", "m__defines_8h.html#aa5f2c9c3d7db2650b85ff3f9bd716bf0", null ],

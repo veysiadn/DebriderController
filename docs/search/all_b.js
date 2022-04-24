@@ -28,5 +28,6 @@ var searchData=
   ['opencancommunication_25',['OpenCANCommunication',['../classMaxonMotor.html#a273db5d88e244e5db3e1b080f1151b54',1,'MaxonMotor']]],
   ['openspiport_26',['OpenSPIPort',['../classFootPedal.html#a32a9f52dc834e66bbfc70e7022042669',1,'FootPedal']]],
   ['osc_5fmode_5famp_27',['OSC_MODE_AMP',['../m__defines_8h.html#adbc1b59dfaf1d8562a8915926e5e954c',1,'m_defines.h']]],
-  ['oscillationcomplete_28',['OscillationComplete',['../classEposThread.html#ae07f935fa8ca208db6423964a6affae5',1,'EposThread']]]
+  ['osc_5fmode_5fmax_5frpm_28',['OSC_MODE_MAX_RPM',['../m__defines_8h.html#a0b4c9bdfff5082bbbe3cee4127eaed73',1,'m_defines.h']]],
+  ['oscillationcomplete_29',['OscillationComplete',['../classEposThread.html#ae07f935fa8ca208db6423964a6affae5',1,'EposThread']]]
 ];

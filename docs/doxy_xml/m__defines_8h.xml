@@ -154,9 +154,9 @@
         </inbodydescription>
         <location file="include/m_defines.h" line="17" column="9" bodyfile="include/m_defines.h" bodystart="17" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" prot="public" static="no">
-        <name>OSC_MODE_AMP</name>
-        <initializer>15000</initializer>
+      <memberdef kind="define" id="m__defines_8h_1aae638294dae324558d32f20ad29cd501" prot="public" static="no">
+        <name>INC_PER_ROTATION</name>
+        <initializer><ref refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" kindref="member">ENCODER_RESOLUTION</ref>*<ref refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" kindref="member">GEAR_RATIO</ref>*4</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -165,9 +165,9 @@
         </inbodydescription>
         <location file="include/m_defines.h" line="18" column="9" bodyfile="include/m_defines.h" bodystart="18" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="m__defines_8h_1aae638294dae324558d32f20ad29cd501" prot="public" static="no">
-        <name>INC_PER_ROTATION</name>
-        <initializer><ref refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" kindref="member">ENCODER_RESOLUTION</ref>*<ref refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" kindref="member">GEAR_RATIO</ref>*4</initializer>
+      <memberdef kind="define" id="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" prot="public" static="no">
+        <name>OSC_MODE_AMP</name>
+        <initializer><ref refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" kindref="member">INC_PER_ROTATION</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -219,6 +219,17 @@
         <inbodydescription>
         </inbodydescription>
         <location file="include/m_defines.h" line="25" column="9" bodyfile="include/m_defines.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="m__defines_8h_1a0b4c9bdfff5082bbbe3cee4127eaed73" prot="public" static="no">
+        <name>OSC_MODE_MAX_RPM</name>
+        <initializer>2500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/m_defines.h" line="26" column="9" bodyfile="include/m_defines.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="m__defines_8h_1a4fdcb8df721ab069b17e0ee011a56805" prot="public" static="no">
         <name>MIN_ANALOG_PEDAL_OUTPUT</name>
@@ -647,15 +658,15 @@
 <codeline lineno="15" refid="m__defines_8h_1a8cdc17f43c9f3850f60d04f98216fc13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENCODER_RESOLUTION<sp/><sp/>1024<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16" refid="m__defines_8h_1a1b5f0a2cda8866a2a87331026ac8bd9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GEAR_RATIO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17" refid="m__defines_8h_1a661c6c96ad8978be8657789aae876020" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CLOSE_BLADE_VELOCITY<sp/>100<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18" refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSC_MODE_AMP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15000<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_PER_ROTATION<sp/><sp/><sp/><sp/>ENCODER_RESOLUTION*GEAR_RATIO*4<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="m__defines_8h_1aae638294dae324558d32f20ad29cd501" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_PER_ROTATION<sp/><sp/><sp/><sp/>ENCODER_RESOLUTION*GEAR_RATIO*4<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="m__defines_8h_1adbc1b59dfaf1d8562a8915926e5e954c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSC_MODE_AMP<sp/><sp/><sp/><sp/>INC_PER_ROTATION<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22" refid="m__defines_8h_1acd21751cadfe75b41534fa2d356d29a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ANALOG_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>310<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23" refid="m__defines_8h_1a73f015fff1e940e183c941f856e18b30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLDC_MAX_RPM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12000<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24" refid="m__defines_8h_1a95c751d552102fe985d37cb85c2ed8c1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHANGE_RPM_RATE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1000<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25" refid="m__defines_8h_1adf0fa78908ed3c7ddabb09a1a8954b5a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PUMP_PWM_RANGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>480<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="m__defines_8h_1a0b4c9bdfff5082bbbe3cee4127eaed73" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSC_MODE_MAX_RPM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2500</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28" refid="m__defines_8h_1a4fdcb8df721ab069b17e0ee011a56805" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN_ANALOG_PEDAL_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29" refid="m__defines_8h_1a114c3d212b07214cd983a904f6a68f28" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ANALOG_PEDAL_OUTPUT<sp/><sp/><sp/><sp/><sp/>3.3<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
