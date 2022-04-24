@@ -23,7 +23,7 @@
 #define BLDC_MAX_RPM                12000   /// Maximum RPM value for BLDC Motor
 #define CHANGE_RPM_RATE             1000    /// Increment and decrement values for BLDC MOTOR RPM
 #define PUMP_PWM_RANGE              480     /// Maximum PWM value for Pump Motor (%100)
-
+#define OSC_MODE_MAX_RPM            2500
 
 #define MIN_ANALOG_PEDAL_OUTPUT      1      /// Minimum output voltage of analog pedal.
 #define MAX_ANALOG_PEDAL_OUTPUT     3.3     /// Maximim output voltage of analog pedal (unpressed).

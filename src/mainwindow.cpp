@@ -176,50 +176,89 @@ void MainWindow::ShowControlUI()
 void MainWindow::on_btnDecreaseRPM_clicked()
 {
     ui->radioMAXRPM->setChecked(false);
-    debrider_motor_target_speed_ -= CHANGE_RPM_RATE;
-    QString qstr;
-    if(debrider_motor_target_speed_ < 0)
-    {
-        debrider_motor_target_speed_ = 0;
-        ui->lblStatusMsg->setText(QString("error : cannot decrease RPM\n"
-                                          "RPM cannot be less then 0 "));
-    }
-    else
-        PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+    if(ui->radioCW->isChecked() || ui->radioCCW->isChecked()){
+        debrider_motor_target_speed_ -= CHANGE_RPM_RATE;
+        QString qstr;
+        if(debrider_motor_target_speed_ < 0)
+        {
+            debrider_motor_target_speed_ = 0;
+            ui->lblStatusMsg->setText(QString("error : cannot decrease RPM\n"
+                                              "RPM cannot be less then 0 "));
+        }
+        else
+            PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
 
-    if(ui->radioCCW->isChecked())
+        if(ui->radioCCW->isChecked())
+            motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
+        else
+            motor_thread_.m_DebriderTargetSpeed = -debrider_motor_target_speed_;
+    }else {
+        if(debrider_motor_target_speed_ == 0){
+            ui->lblStatusMsg->setText(QString("error : cannot decrease RPM\n"
+                                              "RPM cannot be less then 0 "));
+        }else if(debrider_motor_target_speed_ > 500){
+            debrider_motor_target_speed_ -= CHANGE_RPM_RATE;
+            PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+        }else {
+            debrider_motor_target_speed_ = 0 ;
+            PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+        }
         motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
-    else
-        motor_thread_.m_DebriderTargetSpeed = -debrider_motor_target_speed_;
+    }
 }
 
 void MainWindow::on_btnIncreaseRPM_clicked()
 {
-    debrider_motor_target_speed_ += CHANGE_RPM_RATE;    
-    if(debrider_motor_target_speed_ > BLDC_MAX_RPM)
-    {
-        debrider_motor_target_speed_ = BLDC_MAX_RPM;
-        ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
-                                          "Max RPM for Debrider : 12000 RPM"));
+    if(ui->radioCW->isChecked() || ui->radioCCW->isChecked()){
+        debrider_motor_target_speed_ += CHANGE_RPM_RATE;
+        if(debrider_motor_target_speed_ > BLDC_MAX_RPM)
+        {
+            debrider_motor_target_speed_ = BLDC_MAX_RPM;
+            ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
+                                              "Max RPM for Debrider : 12000 RPM"));
+        }
+        else
+            PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+
+        if(debrider_motor_target_speed_==BLDC_MAX_RPM)
+            ui->radioMAXRPM->setChecked(true);
+
+        if(ui->radioCCW->isChecked())
+          motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
+        else
+          motor_thread_.m_DebriderTargetSpeed = -debrider_motor_target_speed_;
+    }else {
+        if(debrider_motor_target_speed_ !=0)
+            debrider_motor_target_speed_ += CHANGE_RPM_RATE;
+        else debrider_motor_target_speed_ = 500 ;
+        if(debrider_motor_target_speed_ > OSC_MODE_MAX_RPM)
+        {
+            debrider_motor_target_speed_ = OSC_MODE_MAX_RPM;
+            ui->lblStatusMsg->setText(QString("error : cannot increase more than MAX RPM\n"
+                                              "Max RPM for Debrider in OSC Mode : 2500 RPM"));
+        }
+        else
+            PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+        if(debrider_motor_target_speed_==OSC_MODE_MAX_RPM)
+            ui->radioMAXRPM->setChecked(true);
+        motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
     }
-    else
-        PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
 
-    if(debrider_motor_target_speed_==BLDC_MAX_RPM)
-        ui->radioMAXRPM->setChecked(true);
-
-    if(ui->radioCCW->isChecked())
-      motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
-    else
-      motor_thread_.m_DebriderTargetSpeed = -debrider_motor_target_speed_;
 }
 
 void MainWindow::on_radioCW_toggled(bool checked)
 {
     if(checked) 
     {
+        if(motor_thread_.m_Oscillate && debrider_motor_target_speed_){
+            debrider_motor_target_speed_ += 500;
+            PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+        }
         motor_thread_.m_DebriderTargetSpeed = -debrider_motor_target_speed_;
         motor_thread_.m_Oscillate = 0;
+        if(ui->radioMAXRPM->isChecked()){
+            ui->radioMAXRPM->setChecked(false);
+        }
     }
 }
 
@@ -227,8 +266,15 @@ void MainWindow::on_radioCCW_toggled(bool checked)
 {
    if(checked)
     {
+       if(motor_thread_.m_Oscillate && debrider_motor_target_speed_){
+           debrider_motor_target_speed_ += 500;
+           PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
+       }
        motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
        motor_thread_.m_Oscillate = 0;
+       if(ui->radioMAXRPM->isChecked()){
+           ui->radioMAXRPM->setChecked(false);
+       }
     }
 }
 
@@ -237,6 +283,9 @@ void MainWindow::on_radioOSC_toggled(bool checked)
     if(checked)
     {
         motor_thread_.m_Oscillate = 1;
+        debrider_motor_target_speed_ = 0;
+        motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
+        PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
     }
 }
 
@@ -262,7 +311,7 @@ void MainWindow::on_btnIncreaseFlow_clicked()
 
 void MainWindow::on_btnIrrigationMove_clicked()
 {
-    if(pump_motor_target_speed_ > 0){
+    if(pump_motor_printed_speed_val_ > 0){
         MovePumpMotor();
         PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
     }
@@ -365,7 +414,7 @@ void MainWindow::ShowPedalButtonStates()
 {
     // ######### HARDWARE MAXRPM BUTTON CLICKED SETTINGS START  ###########
     int debriderMotorSetSpeed=debrider_motor_target_speed_;
-    if(motor_thread_.m_GuiChangePresetRPM){
+    if(motor_thread_.m_GuiChangePresetRPM && !(ui->radioOSC->isChecked())){
         RunBuzzer();
         if((debrider_motor_target_speed_ < 1000)  || debrider_motor_target_speed_==BLDC_MAX_RPM) debriderMotorSetSpeed=1000;
         if((debrider_motor_target_speed_ >= 1000) && debrider_motor_target_speed_ < 3000) debriderMotorSetSpeed=3000;
@@ -385,6 +434,18 @@ void MainWindow::ShowPedalButtonStates()
         else motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
         PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
         motor_thread_.m_DebriderInstantSpeed = 0;
+    }else if(motor_thread_.m_GuiChangePresetRPM && ui->radioOSC->isChecked()) {
+        RunBuzzer();
+        if((debrider_motor_target_speed_ < 1000)  || debrider_motor_target_speed_==OSC_MODE_MAX_RPM) debriderMotorSetSpeed=500;
+        if((debrider_motor_target_speed_ >= 500) && debrider_motor_target_speed_ < 1500) debriderMotorSetSpeed=1500;
+        if((debrider_motor_target_speed_ >= 1500 && debrider_motor_target_speed_ < 2500)) debriderMotorSetSpeed=OSC_MODE_MAX_RPM;
+        debrider_motor_target_speed_=debriderMotorSetSpeed;
+        motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;
+        if(debrider_motor_target_speed_!=OSC_MODE_MAX_RPM){ ui->radioMAXRPM->setChecked(false);  }
+        else                               { ui->radioMAXRPM->setChecked(true);
+        }
+        motor_thread_.m_GuiChangePresetRPM=0;
+        PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
     }
    // #########  HARDWARE MAXRPM BUTTON CLICKED SETTINGS FINISH   #########
 
