@@ -59,7 +59,16 @@ void MotorThread::run()
                 // CKim - Close EPOS
                 m_Motor.CloseAllDevice();
                 emit UpdateGUI(m_CurrState);
-                std::cout<<"State is " << m_CurrState << std::endl;
+                if(m_CurrState==DEBRIDER_STATE_SPI_ERROR)
+                    std::cout << "Pedal connection error.\n";
+                else if(m_CurrState==DEBRIDER_STATE_EPOS_ERROR)
+                    std::cout << "EPOS connection error.\n";
+                else if(m_CurrState==DEBRIDER_STATE_EMERGENCY)
+                    std::cout << "Controller in emergency mode. Possible reasons;\n"
+                                 "EPOS connection error, Pedal connection error,Emergency button pressed,"
+                                 "Watchdog relay error.";
+                else
+                    std::cout << "Unknown error, missing state initialization.\n";
             }
             m_PrevState = m_CurrState;
             PulseWatchDog();
@@ -86,7 +95,6 @@ void MotorThread::run()
 
                 m_EposThread.SetTransition(kInit);
 
-
             }
             PulseWatchDog();
             continue;
@@ -99,7 +107,8 @@ void MotorThread::run()
         // 1. Read relay state
         if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW)
         {
-            std::cout << "Relay disconnected " << std::endl;
+            std::cout << "Loop relay check. SGN is LOW. Either emergency button is pressed or watchdog error. \n";
+            std::cout << "Terminating EPOS communication.\n";
             // ###EMERGENCY_MODE ACTIONS###
             m_Emergency = 1;
             m_CurrState = DEBRIDER_STATE_EMERGENCY;
@@ -121,7 +130,7 @@ void MotorThread::run()
             // ###SPI_ERROR ACTIONS###
             m_CurrState=DEBRIDER_STATE_EMERGENCY;
             emit UpdateGUI(m_CurrState);
-            std::cout << "SPI CONNECTION ERROR " << std::endl;
+            std::cout << "SPI CONNECTION ERROR. " << std::endl;
             continue;
         }
         // ### EPOS_ERROR ACTIONS ###
@@ -131,7 +140,7 @@ void MotorThread::run()
         {
             m_CurrState=DEBRIDER_STATE_EMERGENCY;
             emit UpdateGUI(m_CurrState);
-            std::cout << "EPOS CONNECTION ERROR " << std::endl;
+            std::cout << "EPOS CONNECTION ERROR." << std::endl;
             continue;   //break;
         }
         // ------------------------------------------------------------------ //
@@ -164,7 +173,7 @@ void MotorThread::run()
         // CKim - Left Pedal Pressed, state transition from ENABLED to RUNNING or OSC
         if(m_PrevState == DEBRIDER_STATE_ENABLED && m_LeftPedalDown == 1)
         {
-           // std::cout<<"State transition from enabled to run/osc\n";
+            std::cout<<"State transition from enabled to run/osc\n";
             PulseWatchDog();
             if(m_Oscillate)
             {
@@ -191,7 +200,7 @@ void MotorThread::run()
         // Will return to ENABLED through callback upon completion of closing
         if (m_PrevState == DEBRIDER_STATE_ENABLED && m_CloseBlade)
         {
-            //std::cout<<"State transition from enabled to close\n";
+            std::cout<<"State transition from enabled to close\n";
             m_CurrState = DEBRIDER_STATE_CLOSE_BLADE;
             m_CloseBlade = 0;
             PulseWatchDog();
@@ -234,7 +243,7 @@ void MotorThread::run()
                 m_DebriderInstantSpeed=0;
                 m_Motor.MoveVelocity(0);
                 m_CurrState = DEBRIDER_STATE_ENABLED;
-               // std::cout << "Returning to Enabled from running\n";
+                std::cout << "Returning to Enabled from running\n";
                 emit UpdateGUI(m_CurrState);
             }
 
@@ -243,7 +252,7 @@ void MotorThread::run()
                 PulseWatchDog();
                 m_EposThread.Abort();
                 if(m_EposThread.GetWaitingForMotionInfo()) continue ;
-               // std::cout << "Returning to Enabled from oscillation\n";
+//                std::cout << "Returning to Enabled from oscillation\n";
                 emit UpdateGUI(DEBRIDER_STATE_ENABLED);
             }
         }
@@ -251,7 +260,7 @@ void MotorThread::run()
         // CKim - Blade closed
         if(m_PrevState == DEBRIDER_STATE_BLADE_CLOSED)
         {
-            //std::cout << "Returning to Enabled from closed\n";
+            std::cout << "Returning to Enabled from closed\n";
             m_CurrState = DEBRIDER_STATE_ENABLED;
             emit UpdateGUI(m_CurrState);
         }
@@ -343,14 +352,14 @@ void MotorThread::on_FootPedalLButton()
 {
     // CKim - Left Button changes RPM to MAX
     m_LeftButtonClicked = 1;
-    //std::cout<<"Left Click\n";
+    std::cout<<"Left Click\n";
 }
 
 void MotorThread::on_FootPedalRButton()
 {
     // CKim - Right button changes spin direction
     m_RightButtonClicked = 1;
-    //std::cout<<"Right Click\n";
+    std::cout<<"Right Click\n";
 }
 
 void MotorThread::on_RightFootPedal()
@@ -417,7 +426,7 @@ void MotorThread::ProcessPedalButtons()
 void MotorThread::PulseWatchDog()
 {
     // CKim - Pulse watchdog
-    if(m_WatchdogTimer.nsecsElapsed()>=2500000)
+    if(m_WatchdogTimer.nsecsElapsed()>=5000000)
     {
         if(m_WatchdogState)
         {

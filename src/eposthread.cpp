@@ -18,7 +18,10 @@ void EposThread::RunInitialization()
 {
 
     int state = DEBRIDER_STATE_INIT;
-
+    digitalWrite(VDD_RESET,LOW);
+    delay(10);
+    digitalWrite(VDD_RESET,HIGH);
+    delay(10);
     if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW)
     {
         std::cout<<"Waiting for relay\n";
@@ -61,7 +64,7 @@ void EposThread::RunInitialization()
             emit InitializationComplete(state);
             break;
         }
-        msleep(200);
+        msleep(300);
     }
     if(state==DEBRIDER_STATE_EPOS_ERROR)
     {
@@ -99,7 +102,7 @@ void EposThread::RunInitialization()
                 if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
                     state=DEBRIDER_STATE_EMERGENCY;
                     emit InitializationComplete(state);
-                    break;
+                    return;
                 }else {
                     state=DEBRIDER_STATE_INITIALIZING;
                 }
@@ -122,7 +125,7 @@ void EposThread::RunInitialization()
 
         while(digitalRead(INITIALIZATION_SWTICH)==LOW && state == DEBRIDER_STATE_READY){
             if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
-                std::cout << "Relay opened" << std::endl;
+                std::cout << "Init relay check.SGN is LOW. Either emergency button is pressed or watchdog error. \n";
                 state=DEBRIDER_STATE_EMERGENCY;
                 emit InitializationComplete(state);
                 return;
@@ -134,7 +137,7 @@ void EposThread::RunInitialization()
                 return;
             }
             if(m_pMotor->EPOSGetError()){
-                std::cout << "Motor error occured." << std::endl;
+                std::cout << "Motor error occured.May be handpiece disconnected." << std::endl;
                 state=DEBRIDER_STATE_EPOS_ERROR;
                 emit InitializationComplete(state);
                 return;

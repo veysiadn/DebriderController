@@ -35,7 +35,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_ExitEmergencyClicked(int a)
 {
     if(digitalRead(EMERGENCY_RELAY_CONTROL)==LOW){
-        std::cout << "Emergency button not released\n" << std::endl;
+        std::cout << "SGN is LOW. Either emergency button is pressed or watchdog failure.\n";
         return;
     }
     if(digitalRead(INITIALIZATION_SWTICH)==HIGH){
@@ -330,7 +330,12 @@ void MainWindow::on_btnCloseBlade_clicked()
 
 void MainWindow::on_radioMAXRPM_clicked()
 {
-    debrider_motor_target_speed_ = BLDC_MAX_RPM;
+    if(ui->radioOSC->isChecked()){
+        debrider_motor_target_speed_ = OSC_MODE_MAX_RPM;
+        motor_thread_.m_DebriderTargetSpeed=debrider_motor_target_speed_;
+    }else {
+        debrider_motor_target_speed_ = BLDC_MAX_RPM;
+    }
     PrintStatus(debrider_motor_target_speed_,pump_motor_printed_speed_val_);
     if(ui->radioCCW->isChecked())
       motor_thread_.m_DebriderTargetSpeed = debrider_motor_target_speed_;

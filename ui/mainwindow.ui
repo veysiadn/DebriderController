@@ -795,7 +795,7 @@ QRadioButton::indicator {
     <item>
      <widget class="QLabel" name="lblStatusMsg">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
