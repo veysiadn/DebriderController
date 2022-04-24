@@ -110,10 +110,10 @@ Macros</h2></td></tr>
 <tr class="separator:a1b5f0a2cda8866a2a87331026ac8bd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a661c6c96ad8978be8657789aae876020"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#a661c6c96ad8978be8657789aae876020">CLOSE_BLADE_VELOCITY</a>&#160;&#160;&#160;100</td></tr>
 <tr class="separator:a661c6c96ad8978be8657789aae876020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc1b59dfaf1d8562a8915926e5e954c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#adbc1b59dfaf1d8562a8915926e5e954c">OSC_MODE_AMP</a>&#160;&#160;&#160;15000</td></tr>
-<tr class="separator:adbc1b59dfaf1d8562a8915926e5e954c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae638294dae324558d32f20ad29cd501"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#aae638294dae324558d32f20ad29cd501">INC_PER_ROTATION</a>&#160;&#160;&#160;<a class="el" href="m__defines_8h.html#a8cdc17f43c9f3850f60d04f98216fc13">ENCODER_RESOLUTION</a>*<a class="el" href="m__defines_8h.html#a1b5f0a2cda8866a2a87331026ac8bd9a">GEAR_RATIO</a>*4</td></tr>
 <tr class="separator:aae638294dae324558d32f20ad29cd501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc1b59dfaf1d8562a8915926e5e954c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#adbc1b59dfaf1d8562a8915926e5e954c">OSC_MODE_AMP</a>&#160;&#160;&#160;<a class="el" href="m__defines_8h.html#aae638294dae324558d32f20ad29cd501">INC_PER_ROTATION</a></td></tr>
+<tr class="separator:adbc1b59dfaf1d8562a8915926e5e954c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd21751cadfe75b41534fa2d356d29a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#acd21751cadfe75b41534fa2d356d29a3">MAX_ANALOG_OUTPUT</a>&#160;&#160;&#160;310</td></tr>
 <tr class="separator:acd21751cadfe75b41534fa2d356d29a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73f015fff1e940e183c941f856e18b30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#a73f015fff1e940e183c941f856e18b30">BLDC_MAX_RPM</a>&#160;&#160;&#160;12000</td></tr>
@@ -122,6 +122,8 @@ Macros</h2></td></tr>
 <tr class="separator:a95c751d552102fe985d37cb85c2ed8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf0fa78908ed3c7ddabb09a1a8954b5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#adf0fa78908ed3c7ddabb09a1a8954b5a">PUMP_PWM_RANGE</a>&#160;&#160;&#160;480</td></tr>
 <tr class="separator:adf0fa78908ed3c7ddabb09a1a8954b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4c9bdfff5082bbbe3cee4127eaed73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#a0b4c9bdfff5082bbbe3cee4127eaed73">OSC_MODE_MAX_RPM</a>&#160;&#160;&#160;2500</td></tr>
+<tr class="separator:a0b4c9bdfff5082bbbe3cee4127eaed73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fdcb8df721ab069b17e0ee011a56805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#a4fdcb8df721ab069b17e0ee011a56805">MIN_ANALOG_PEDAL_OUTPUT</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a4fdcb8df721ab069b17e0ee011a56805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a114c3d212b07214cd983a904f6a68f28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m__defines_8h.html#a114c3d212b07214cd983a904f6a68f28">MAX_ANALOG_PEDAL_OUTPUT</a>&#160;&#160;&#160;3.3</td></tr>
@@ -719,7 +721,21 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define OSC_MODE_AMP&#160;&#160;&#160;15000</td>
+          <td class="memname">#define OSC_MODE_AMP&#160;&#160;&#160;<a class="el" href="m__defines_8h.html#aae638294dae324558d32f20ad29cd501">INC_PER_ROTATION</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b4c9bdfff5082bbbe3cee4127eaed73" name="a0b4c9bdfff5082bbbe3cee4127eaed73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4c9bdfff5082bbbe3cee4127eaed73">&#9670;&nbsp;</a></span>OSC_MODE_MAX_RPM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OSC_MODE_MAX_RPM&#160;&#160;&#160;2500</td>
         </tr>
       </table>
 </div><div class="memdoc">
